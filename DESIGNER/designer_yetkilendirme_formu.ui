@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DESIGNER_YETKILENDIRME_FORMU</class>
+ <widget class="QDialog" name="DESIGNER_YETKILENDIRME_FORMU">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>918</width>
+    <height>534</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Kullanıcı Yetkileri</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_3" rowstretch="1,1,50">
+   <property name="sizeConstraint">
+    <enum>QLayout::SetNoConstraint</enum>
+   </property>
+   <item row="0" column="0">
+    <widget class="QWidget" name="navigation_buttons_widget" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <layout class="QGridLayout" name="gridLayout_2" columnstretch="1,20,20,40">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <italic>true</italic>
+        </font>
+       </property>
+       <property name="text">
+        <string>Kullanıcı Kodu </string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_4">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <italic>true</italic>
+        </font>
+       </property>
+       <property name="text">
+        <string>Kullanıcı Adı</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>488</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="label_kullanici_kodu">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(0, 0, 255);</string>
+       </property>
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1" colspan="2">
+      <widget class="QLabel" name="label_kullanici_adi">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(0, 0, 255);</string>
+       </property>
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0">
+    <widget class="QFrame" name="frame">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_yetkilendirme_yapabilir_mi">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Yetkilendirme yapabilir mi ?                                   </string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="comboBox_yetkilendirme_yapabilir_mi">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <item>
+         <property name="text">
+          <string>Hayır</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Evet</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QLabel" name="label_kayit_ekleyebilir_mi">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Kayıt ekleyebilir mi ?                                                </string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4">
+       <widget class="QComboBox" name="comboBox_kayit_ekleyebilir_mi">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <item>
+         <property name="text">
+          <string>Hayır</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Evet</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_bilgisayarlara_girebilir_mi">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Bilgisayarlar formuna girebilir mi ?                       </string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="comboBox_bilgisayar_formuna_girebilir_mi">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <item>
+         <property name="text">
+          <string>Hayır</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Evet</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QLabel" name="label_kayit_silebilir_mi_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Kayıt güncelleyebilir mi ?                                        </string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="4">
+       <widget class="QComboBox" name="comboBox_kayit_guncelleyebilir_mi">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <item>
+         <property name="text">
+          <string>Hayır</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Evet</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_kullanicilara_girebilir_mi">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Kullanıcılar formuna girebilir mi ?                          </string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QComboBox" name="comboBox_kullanicilar_formuna_girebilir_mi">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <item>
+         <property name="text">
+          <string>Hayır</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Evet</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="2" column="3">
+       <widget class="QLabel" name="label_kayit_silebilir_mi">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Kayıt silebilir mi ?                                                      </string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="4">
+       <widget class="QComboBox" name="comboBox_kayit_silebilir_mi">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <item>
+         <property name="text">
+          <string>Hayır</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Evet</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_firmalara_girebilir_mi">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Firmalar formuna girebilir mi ?                               </string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QComboBox" name="comboBox_firmalar_formuna_girebilir_mi">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <item>
+         <property name="text">
+          <string>Hayır</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Evet</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_yonetim_007_bilgilerini_gorebilir_mi">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Yönetim 007 bilgilerini görebilir mi ?</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QComboBox" name="comboBox_yonetim_007_bilgilerini_gorebilir_mi">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <item>
+         <property name="text">
+          <string>Hayır</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Evet</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="label_veritabanini_guncelleyebilir_mi">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Veritabanını güncelleyebilir mi ?</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QComboBox" name="comboBox_veritabanini_guncelleyebilir_mi">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <item>
+         <property name="text">
+          <string>Hayır</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Evet</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QLabel" name="label_adak_std_veritabanini_guncelleyebilir_mi">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Adak Std Veritabanını güncelleyebilir mi?</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QComboBox" name="comboBox_adak_std_veritabanini_guncelleyebilir_mi">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <item>
+         <property name="text">
+          <string>Hayır</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Evet</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>comboBox_yetkilendirme_yapabilir_mi</tabstop>
+  <tabstop>comboBox_bilgisayar_formuna_girebilir_mi</tabstop>
+  <tabstop>comboBox_kullanicilar_formuna_girebilir_mi</tabstop>
+  <tabstop>comboBox_firmalar_formuna_girebilir_mi</tabstop>
+  <tabstop>comboBox_yonetim_007_bilgilerini_gorebilir_mi</tabstop>
+  <tabstop>comboBox_veritabanini_guncelleyebilir_mi</tabstop>
+  <tabstop>comboBox_adak_std_veritabanini_guncelleyebilir_mi</tabstop>
+  <tabstop>comboBox_kayit_ekleyebilir_mi</tabstop>
+  <tabstop>comboBox_kayit_guncelleyebilir_mi</tabstop>
+  <tabstop>comboBox_kayit_silebilir_mi</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

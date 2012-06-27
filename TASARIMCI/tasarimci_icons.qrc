@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/tasarimci_icons">
+        <file>ICONS/tasarimci_bilgi_sec.png</file>
+        <file>ICONS/tasarimci_designer_modu.png</file>
+        <file>ICONS/tasarimci_justify_center.png</file>
+        <file>ICONS/tasarimci_justify_left.png</file>
+        <file>ICONS/tasarimci_justify_right.png</file>
+        <file>ICONS/tasarimci_onizleme_modu.png</file>
+        <file>ICONS/tasarimci_text_bold.png</file>
+        <file>ICONS/tasarimci_text_italic.png</file>
+        <file>ICONS/tasarimci_text_underline.png</file>
+        <file>ICONS/tasarimci_text_strikethrough.png</file>
+    </qresource>
+</RCC>

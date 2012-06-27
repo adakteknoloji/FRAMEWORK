@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PRINTER_TEST</class>
+ <widget class="QWidget" name="PRINTER_TEST">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>542</width>
+    <height>399</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>PRINTER_TEST</string>
+  </property>
+  <widget class="QPushButton" name="pushButton_send">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>340</y>
+     <width>111</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Send Printer</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="textEdit">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>90</y>
+     <width>521</width>
+     <height>241</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>0</y>
+     <width>211</width>
+     <height>54</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Kalite</string>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QRadioButton" name="radioButton_normal_quality">
+      <property name="text">
+       <string>Normal</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QRadioButton" name="radioButton_nlq_quality">
+      <property name="text">
+       <string>NLQ</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>0</y>
+     <width>255</width>
+     <height>54</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Mode</string>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <widget class="QRadioButton" name="radioButton_normal">
+      <property name="text">
+       <string>Normal</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QRadioButton" name="radioButton_large">
+      <property name="text">
+       <string>Large</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QRadioButton" name="radioButton_compressed">
+      <property name="text">
+       <string>Compressed</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

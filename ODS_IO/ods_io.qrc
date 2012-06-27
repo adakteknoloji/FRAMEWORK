@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/ods_io_resources">
+        <file>ods_file/meta.xml</file>
+        <file>ods_file/mimetype</file>
+        <file>ods_file/settings.xml</file>
+        <file>ods_file/styles.xml</file>
+        <file>ods_file/thumbnail.png</file>
+        <file>ods_file/manifest.xml</file>
+        <file>ods_file/current.xml</file>
+    </qresource>
+</RCC>

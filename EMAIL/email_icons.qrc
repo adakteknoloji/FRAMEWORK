@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/email_icons">
+        <file>email_splash_background.jpg</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SMS_SENDER_GUI</class>
+ <widget class="QDialog" name="SMS_SENDER_GUI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>591</width>
+    <height>365</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>SMS Gönder</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout" columnstretch="0,0,0,0,0,0">
+   <property name="sizeConstraint">
+    <enum>QLayout::SetNoConstraint</enum>
+   </property>
+   <item row="0" column="0">
+    <widget class="QLabel" name="label_from">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Kimden :</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2" colspan="3">
+    <widget class="QLineEdit" name="line_edit_from"/>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QLabel" name="label_to">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Gönderilecek Tel. No: +</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0" colspan="6">
+    <widget class="QTextEdit" name="text_edit_message"/>
+   </item>
+   <item row="5" column="0" colspan="5">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>134</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="5" column="5">
+    <widget class="QWidget" name="widget_batch_buttons" native="true">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="6">
+    <widget class="Line" name="line">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0" colspan="6">
+    <widget class="QLabel" name="label_body">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Mesaj</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignHCenter|Qt::AlignTop</set>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QLineEdit" name="line_edit_ulke_kodu">
+     <property name="maximumSize">
+      <size>
+       <width>40</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>90</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="4">
+    <widget class="QLineEdit" name="line_edit_to"/>
+   </item>
+   <item row="1" column="3">
+    <widget class="QLabel" name="label_gsm_zero">
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>line_edit_from</tabstop>
+  <tabstop>line_edit_ulke_kodu</tabstop>
+  <tabstop>line_edit_to</tabstop>
+  <tabstop>text_edit_message</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EMAIL_SENDER_GUI</class>
+ <widget class="QDialog" name="EMAIL_SENDER_GUI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>855</width>
+    <height>610</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>EMAIL GUI</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_4" columnstretch="8,4">
+   <property name="sizeConstraint">
+    <enum>QLayout::SetNoConstraint</enum>
+   </property>
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Mesaj Bilgileri</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_from">
+        <property name="text">
+         <string>Kimden:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="label_gonderenin_gercek_ismi">
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLineEdit" name="line_edit_from">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_to">
+        <property name="text">
+         <string>Kime:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" colspan="2">
+       <widget class="QLineEdit" name="line_edit_to"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_subject">
+        <property name="text">
+         <string>Konu:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1" colspan="2">
+       <widget class="QLineEdit" name="line_edit_subject"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="title">
+      <string>Sunucu Ayarları</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Posta Sunucusu:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" colspan="3">
+       <widget class="QLineEdit" name="line_edit_mail_server">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Port:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="line_edit_port">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Bağlantı Güvenliği:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QComboBox" name="combobox_baglanti_guvenligi">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <item>
+         <property name="text">
+          <string>YOK</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>SSLV2</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>SSLV3</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>TLSV1</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STARTTLS</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="2" column="0" colspan="3">
+       <widget class="QCheckBox" name="check_box_kullanici_parola">
+        <property name="text">
+         <string>Kullanıcı Adı ve Parola Kullan</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" colspan="4">
+       <widget class="QFrame" name="frame_user_info">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>E-Mail Kullanıcı Adı:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="line_edit_kullanici_adi">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>E-Mail Parola:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="line_edit_parola">
+           <property name="echoMode">
+            <enum>QLineEdit::Password</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <widget class="QLabel" name="label_body">
+       <property name="text">
+        <string>Mesaj   :</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QTextEdit" name="text_edit_body_begin">
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWebView" name="web_view_body">
+         <property name="url">
+          <url>
+           <string>about:blank</string>
+          </url>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTextEdit" name="text_edit_body_end">
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>281</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="1">
+    <widget class="QWidget" name="widget_batch_buttons" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>70</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QWebView</class>
+   <extends>QWidget</extends>
+   <header>QtWebKit/QWebView</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>line_edit_from</tabstop>
+  <tabstop>line_edit_to</tabstop>
+  <tabstop>line_edit_subject</tabstop>
+  <tabstop>line_edit_mail_server</tabstop>
+  <tabstop>line_edit_port</tabstop>
+  <tabstop>combobox_baglanti_guvenligi</tabstop>
+  <tabstop>check_box_kullanici_parola</tabstop>
+  <tabstop>line_edit_kullanici_adi</tabstop>
+  <tabstop>line_edit_parola</tabstop>
+  <tabstop>text_edit_body_begin</tabstop>
+  <tabstop>web_view_body</tabstop>
+  <tabstop>text_edit_body_end</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/yonetim_icons">
+        <file>yonetim_bul_ikonu.png</file>
+        <file>yonetim_splash.png</file>
+        <file>yonetim_mail.png</file>
+        <file>yonetim_tamam.png</file>
+        <file>yonetim_question_mark.png</file>
+        <file>yonetim_info_icon.png</file>
+        <file>yonetim_kilit.png</file>
+        <file>yonetim_kullanici_yetkileri.png</file>
+        <file>adak_logo.png</file>
+    </qresource>
+</RCC>

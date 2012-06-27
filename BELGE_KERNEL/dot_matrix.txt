@@ -1,0 +1,51 @@
+
+    STRCPY (G_YAZICI[0].prnname, "IBM");
+
+    G_YAZICI[0].prn_type      = T_SEKSEN;
+    G_YAZICI[0].satir_sayisi  = 66;
+
+    G_YAZICI[0].normal[0]     = 18; /* CANCEL CONDENSED */
+
+    G_YAZICI[0].normal[1]     = 20; /* CANCEL LARGE     */
+
+    G_YAZICI[0].normal[2]     = 27; /* CANCEL NLQ       */
+    G_YAZICI[0].normal[3]     = 72;
+
+    G_YAZICI[0].large[0]      = 14;
+
+    G_YAZICI[0].condensed[0]  = 15;
+
+    G_YAZICI[0].nlq[0]        = 27;
+    G_YAZICI[0].nlq[1]        = 71;
+
+    G_YAZICI[0].italic[0]     = 27;
+    G_YAZICI[0].italic[1]     = 73;
+    G_YAZICI[0].italic[2]     = 11;
+
+
+//  EPSON Yazicilar
+
+    STRCPY (G_YAZICI[1].prnname, "EPSON");
+
+    G_YAZICI[1].prn_type      = T_SEKSEN;
+    G_YAZICI[1].satir_sayisi  = 66;
+
+    G_YAZICI[1].normal[0]     = 18;
+    G_YAZICI[1].normal[1]     = 27;
+    G_YAZICI[1].normal[2]     = 87;
+    G_YAZICI[1].normal[3]     = 48;
+    G_YAZICI[1].normal[4]     = 27;
+    G_YAZICI[1].normal[5]     = 'x';
+    G_YAZICI[1].normal[6]     =   1;
+    
+    G_YAZICI[1].large[0]      = 27;
+    G_YAZICI[1].large[1]      = 87;
+    G_YAZICI[1].large[2]      = 49;
+    
+    G_YAZICI[1].condensed[0]  = 27;
+    G_YAZICI[1].condensed[1]  = 15;
+    
+    G_YAZICI[1].nlq[0]        = 27;
+    G_YAZICI[1].nlq[1]        = 'x';
+    G_YAZICI[1].nlq[2]        =  1;
+

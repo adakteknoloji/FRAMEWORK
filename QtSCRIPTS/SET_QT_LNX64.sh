@@ -1,0 +1,8 @@
+#!/bin/bash
+
+export ADAK_OS=LNX64
+export ADAK_RELEASE=1
+
+PATH="/ADAK/QtLNX64/bin:$PATH"
+
+LD_LIBRARY_PATH="/ADAK/QtLNX64/lib:$LD_LIBRARY_PATH"

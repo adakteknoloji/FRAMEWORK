@@ -1,0 +1,16 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Encoding=UTF-8
+Name=E9 [ CRM + e-ticaret ]
+Name[tr]=E9 [ CRM + e-ticaret ]
+Name[x-test]=E9 [ CRM + e-ticaret ]
+Exec=/opt/ADAK/E9/adak_exec.sh E9
+Type=Application
+Icon=E9_logo.png
+GenericName=E9
+GenericName[tr]=E9
+GenericName[x-test]=E9
+Terminal=false
+Categories=Qt;Application;Office;
+
+ 

@@ -1,0 +1,38 @@
+<?xml version="1.0" ?><!DOCTYPE PISI SYSTEM "http://www.uludag.org.tr/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+	<Name>xx_name_xx</Name>
+	<Homepage>http://www.cerenbilgisayar.com.tr</Homepage>
+	<Packager>
+	    <Name>Ceren Bilgisayar ve Yazilim</Name>
+	    <Email>info@cerenbilgisayar.com.tr</Email>
+	</Packager>
+	<License>As-Is</License>
+	<PartOf>office</PartOf>
+	<IsA>app:gui</IsA>
+	<Summary>xx_name_versiyon_xx</Summary>
+	<Summary xml:lang="tr">K9 Ticari Paket</Summary>
+        <Description xml:lang="tr">K9 Ticari Paket</Description>
+        <Archive sha1sum="xx_sha1sum_xx" type="targz">file:xx_name_versiyon_xx.tar.gz</Archive>
+    </Source>
+    <Package>
+	<Name>xx_name_xx</Name>
+	<Files>
+            <Path fileType="executable">/opt/CEREN/</Path>
+	    <Path fileType="data">/usr/share/applications/</Path>
+	    <Path fileType="data">/usr/share/icons/</Path>
+	</Files>
+	<Provides>
+            <COMAR script="package.py">System.Package</COMAR>
+        </Provides>
+    </Package>
+    <History>
+	<Update release="1">
+	    <Date>2010-01-01</Date>
+	    <Version>xx_versiyon_xx</Version>
+	    <Comment>Ilk Versiyon</Comment>
+	    <Name>Ceren Bilgisayar ve Yazilim</Name>
+	    <Email>info@cerenbilgisayar.com.tr</Email>
+	</Update>
+    </History>
+</PISI>

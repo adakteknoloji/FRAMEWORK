@@ -1,0 +1,18 @@
+prefix=C:\QtMINGW
+exec_prefix=${prefix}
+libdir=C:/QtMINGW/lib
+includedir=C:/QtMINGW/include/qtmain
+qt_config=include_source_dir lex yacc warn_on uic resources incremental_off windows release ReleaseBuild Release build_pass warn_on release link_prl copy_dir_files debug_and_release debug_and_release_target precompile_header release stl exceptions rtti mmx sse sse2 minimal-config small-config medium-config large-config full-config release incremental create_prl link_prl depend_includepath QTDIR_build release ReleaseBuild Release build_pass staticlib warn_on png qt_install_headers qt warn_on depend_includepath qmake_cache target_qt debug_and_release static create_pc release ReleaseBuild Release build_pass no_autoqmake staticlib static moc thread
+moc_location=${prefix}\bin\moc.exe
+uic_location=${prefix}\bin\uic.exe
+rcc_location=${prefix}\bin\rcc.exe
+lupdate_location=${prefix}\bin\lupdate.exe
+lrelease_location=${prefix}\bin\lrelease.exe
+
+Name: Qtmain
+Description: Qtmain Library
+Version: 4.8.2
+Libs: -L${libdir} -lqtmain 
+Libs.private: -LC:\OpenSSL-Win32\lib   
+Cflags: -DQT_THREAD_SUPPORT -IC:/QtMINGW/include -I${includedir}
+

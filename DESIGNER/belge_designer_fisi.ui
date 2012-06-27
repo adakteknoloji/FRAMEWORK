@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>BELGE_DESIGNER_FISI</class>
+ <widget class="QDialog" name="BELGE_DESIGNER_FISI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>408</width>
+    <height>427</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Belge  Designer</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="sizeConstraint">
+    <enum>QLayout::SetNoConstraint</enum>
+   </property>
+   <item row="0" column="0" colspan="2">
+    <widget class="QWidget" name="navigation_button_widget" native="true"/>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,2,1">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Belge:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="line_edit_belge_adi"/>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0" colspan="2">
+    <widget class="QTableWidget" name="table_widget_degiskenler"/>
+   </item>
+   <item row="3" column="0">
+    <widget class="QPushButton" name="push_button_header_olustur">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>:/icons/header_olustur.png</normaloff>:/icons/header_olustur.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>100</width>
+       <height>32</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>line_edit_belge_adi</tabstop>
+  <tabstop>table_widget_degiskenler</tabstop>
+  <tabstop>push_button_header_olustur</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

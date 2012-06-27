@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DESIGNER_ANA_MENU</class>
+ <widget class="QMainWindow" name="DESIGNER_ANA_MENU">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>390</width>
+    <height>357</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Adak Designer</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QWidget" name="main_widget" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>390</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <action name="action_hakkinda">
+   <property name="text">
+    <string>Hakkında</string>
+   </property>
+  </action>
+  <action name="action_cikis">
+   <property name="text">
+    <string>Çıkış</string>
+   </property>
+  </action>
+  <action name="actionYetk_lend_rme">
+   <property name="text">
+    <string>Yetkılendırme</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="designer_icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>

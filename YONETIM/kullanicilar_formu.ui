@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>KULLANICILAR_FORMU</class>
+ <widget class="QDialog" name="KULLANICILAR_FORMU">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1051</width>
+    <height>702</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>KULLANICILAR</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_4" rowstretch="0,10,80" columnstretch="100,0">
+   <property name="margin">
+    <number>3</number>
+   </property>
+   <item row="0" column="0" colspan="2">
+    <widget class="QWidget" name="navigation_buttons_widget" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <layout class="QGridLayout" name="gridLayout" rowstretch="1,1,1,1,1,1" columnstretch="10,2,10,0">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_kullanici_kodu">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Kullanıcı Kodu</string>
+       </property>
+       <property name="buddy">
+        <cstring>lineEdit_kullanici_kodu</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="lineEdit_kullanici_kodu">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>150</width>
+         <height>16777215</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_kullanici_adi">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Kullanıcı Adı</string>
+       </property>
+       <property name="buddy">
+        <cstring>lineEdit_kullanici_adi</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="lineEdit_kullanici_adi">
+       <property name="maximumSize">
+        <size>
+         <width>350</width>
+         <height>16777215</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_email">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>E Mail </string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="lineEdit_email">
+       <property name="maximumSize">
+        <size>
+         <width>300</width>
+         <height>16777215</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>E-Mail Kullanıcı Adı </string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_aciklama">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>NOT</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1" colspan="2">
+      <widget class="QLimitedTextEdit" name="limitedTextEdit_not">
+       <property name="maximumSize">
+        <size>
+         <width>450</width>
+         <height>70</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QCheckBox" name="check_box_sifre">
+       <property name="text">
+        <string>Şifre Değiştir</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="line_edit_email_kullanici_adi">
+       <property name="maximumSize">
+        <size>
+         <width>300</width>
+         <height>16777215</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QLabel" name="label_2">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+         <weight>75</weight>
+         <italic>true</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Email bilgisi, hata bildirimleri ve rapor gönderimi için gereklidir.
+Lütfen boş bırakmayınız.</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QFrame" name="frame_sifre">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_7">
+        <property name="margin">
+         <number>6</number>
+        </property>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="line_edit_yeni_sifre">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>150</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="line_edit_yeni_sifre_tekrar">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>150</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_6">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Yeni Şifre(Tekrar)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_5">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Yeni Şifre</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="5" column="3">
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>438</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="2" column="2">
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="1" column="3" rowspan="3">
+      <layout class="QGridLayout" name="gridLayout_6" columnstretch="6,2,6">
+       <item row="0" column="0">
+        <spacer name="horizontalSpacer_8">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="pushButton_yetki_ata">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>KULLANICININ YETKİLERİ</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>:/yonetim_icons/yonetim_kullanici_yetkileri.png</normaloff>:/yonetim_icons/yonetim_kullanici_yetkileri.png</iconset>
+         </property>
+         <property name="flat">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <spacer name="horizontalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0">
+    <layout class="QGridLayout" name="gridLayout_3" columnstretch="1,35,1,15">
+     <item row="0" column="0">
+      <widget class="QPushButton" name="button_bilgisayar_sec">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="acceptDrops">
+        <bool>false</bool>
+       </property>
+       <property name="toolTip">
+        <string>Bilgisayar seçimi için tıklayınız</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>:/yonetim_icons/yonetim_bul_ikonu.png</normaloff>:/yonetim_icons/yonetim_bul_ikonu.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="0" column="3">
+      <widget class="QPushButton" name="button_veritabani_sec">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="acceptDrops">
+        <bool>false</bool>
+       </property>
+       <property name="toolTip">
+        <string>Veritabanı seçimi için tıklayınız</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>:/yonetim_icons/yonetim_bul_ikonu.png</normaloff>:/yonetim_icons/yonetim_bul_ikonu.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0" colspan="2">
+      <widget class="QFrame" name="frame">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_5">
+        <property name="margin">
+         <number>3</number>
+        </property>
+        <item row="1" column="0" colspan="2">
+         <widget class="QTableWidget" name="table_widget_bilgisayarlar">
+          <property name="font">
+           <font>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAsNeeded</enum>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAsNeeded</enum>
+          </property>
+          <attribute name="horizontalHeaderCascadingSectionResizes">
+           <bool>false</bool>
+          </attribute>
+          <attribute name="horizontalHeaderMinimumSectionSize">
+           <number>26</number>
+          </attribute>
+          <attribute name="horizontalHeaderStretchLastSection">
+           <bool>true</bool>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>bilgisayar_id</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Bilgisayar Kodu</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Bilgisayar Adı</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Dongle IP</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Kablolu Ağ Mac</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Kablosuz Ağ Mac</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>3G Mac</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_3">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Kullanıcının Çalışabileceği Bilgisayarlar</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <spacer name="horizontalSpacer_5">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="1" column="3">
+      <widget class="QFrame" name="frame_2">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <property name="margin">
+         <number>3</number>
+        </property>
+        <item row="1" column="0">
+         <widget class="QTableWidget" name="table_widget_veritabanlari">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <attribute name="horizontalHeaderStretchLastSection">
+           <bool>true</bool>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>veritabani_id</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Veritabanı ( Şirket )</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Veritabanı Tanımı</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_4">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Kullanıcının Çalışabileceği Veritabanları</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QLimitedTextEdit</class>
+   <extends>QTextEdit</extends>
+   <header>QLimitedTextEdit.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>lineEdit_kullanici_kodu</tabstop>
+  <tabstop>lineEdit_kullanici_adi</tabstop>
+  <tabstop>lineEdit_email</tabstop>
+  <tabstop>line_edit_email_kullanici_adi</tabstop>
+  <tabstop>limitedTextEdit_not</tabstop>
+  <tabstop>check_box_sifre</tabstop>
+  <tabstop>button_bilgisayar_sec</tabstop>
+  <tabstop>button_veritabani_sec</tabstop>
+  <tabstop>table_widget_bilgisayarlar</tabstop>
+  <tabstop>table_widget_veritabanlari</tabstop>
+ </tabstops>
+ <resources>
+  <include location="yonetim_icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>

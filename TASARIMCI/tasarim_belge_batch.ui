@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TASARIM_BELGE_BATCH</class>
+ <widget class="QDialog" name="TASARIM_BELGE_BATCH">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>547</width>
+    <height>421</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2" rowstretch="5,0,0" columnstretch="90,0">
+   <property name="margin">
+    <number>3</number>
+   </property>
+   <item row="0" column="0" colspan="2">
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string/>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_7">
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Belge Adı</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="line_edit_tasarim_adi"/>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Kopya Sayısı</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QCommaEdit" name="comma_edit_copy_count">
+        <property name="maximumSize">
+         <size>
+          <width>60</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="whatsThis">
+         <string>Sayilari formatina(Or:1,000,234.50) donusturur. </string>
+        </property>
+        <property name="QCommaEdit" stdset="0">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>100</width>
+          <height>100</height>
+         </rect>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_8">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Yazdırılacak Satır Sayısı</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QCommaEdit" name="comma_edit_row_count">
+        <property name="maximumSize">
+         <size>
+          <width>60</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="whatsThis">
+         <string>Sayilari formatina(Or:1,000,234.50) donusturur. </string>
+        </property>
+        <property name="QCommaEdit" stdset="0">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>100</width>
+          <height>100</height>
+         </rect>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_7">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Belge Türü</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="label_belge_turu">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>-</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="label_11">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Yazıcı Türü</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="5" column="1">
+       <widget class="QLabel" name="label_yazici_turu">
+        <property name="text">
+         <string>xxx_yazici</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>708</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="title">
+      <string>Belge Boyutları</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <property name="margin">
+       <number>3</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QWidget" name="widget_belge_boyutlari_mm" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_5" columnstretch="1,5,2">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Belge Genişliği</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QCommaEdit" name="comma_edit_belge_genisligi">
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="whatsThis">
+            <string>Sayilari formatina(Or:1,000,234.50) donusturur. </string>
+           </property>
+           <property name="QCommaEdit" stdset="0">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>100</width>
+             <height>100</height>
+            </rect>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLabel" name="label_5">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>mm</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_4">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Belge Yüksekliği</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QCommaEdit" name="comma_edit_belge_yuksekligi">
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="whatsThis">
+            <string>Sayilari formatina(Or:1,000,234.50) donusturur. </string>
+           </property>
+           <property name="QCommaEdit" stdset="0">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>100</width>
+             <height>100</height>
+            </rect>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QLabel" name="label_6">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>mm</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_9">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Satırlar Arası Boşluk                    </string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QCommaEdit" name="comma_edit_space_between_rows">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="whatsThis">
+            <string>Sayilari formatina(Or:1,000,234.50) donusturur. </string>
+           </property>
+           <property name="QCommaEdit" stdset="0">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>100</width>
+             <height>100</height>
+            </rect>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QLabel" name="label_10">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>mm</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QWidget" name="widget_belge_boyutlari_satir" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_6">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_belge_satir">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Belge Satır Sayısı</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QCommaEdit" name="comma_edit_belge_satir_sayisi">
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="whatsThis">
+            <string>Sayilari formatina(Or:1,000,234.50) donusturur. </string>
+           </property>
+           <property name="QCommaEdit" stdset="0">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>100</width>
+             <height>100</height>
+            </rect>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_toplam_karakter">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Satırdaki Toplam Karakter Sayısı</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QCommaEdit" name="comma_edit_satirdaki_toplam_karakter_sayisi">
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="whatsThis">
+            <string>Sayilari formatina(Or:1,000,234.50) donusturur. </string>
+           </property>
+           <property name="QCommaEdit" stdset="0">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>100</width>
+             <height>100</height>
+            </rect>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_12">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Satırlar Arası Boşluk</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QCommaEdit" name="comma_edit_satirlar_arasi_satir_sayisi">
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="whatsThis">
+            <string>Sayilari formatina(Or:1,000,234.50) donusturur. </string>
+           </property>
+           <property name="QCommaEdit" stdset="0">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>100</width>
+             <height>100</height>
+            </rect>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QWidget" name="widget_navigation_buttons" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QCommaEdit</class>
+   <extends>QLineEdit</extends>
+   <header>QCommaEdit.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>line_edit_tasarim_adi</tabstop>
+  <tabstop>comma_edit_copy_count</tabstop>
+  <tabstop>comma_edit_row_count</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

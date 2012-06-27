@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SQL_TABLOLAR_FISI</class>
+ <widget class="QDialog" name="SQL_TABLOLAR_FISI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1036</width>
+    <height>632</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Tablolar</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2" rowstretch="1,1,50,1" columnstretch="1,1,50">
+   <property name="sizeConstraint">
+    <enum>QLayout::SetNoConstraint</enum>
+   </property>
+   <item row="0" column="0" colspan="3">
+    <widget class="QWidget" name="navigation_button_widget" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="3">
+    <layout class="QGridLayout" name="gridLayout" columnstretch="1,30,30,60">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_tablo_adi">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Tablo Adı </string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1" colspan="2">
+      <widget class="QLineEdit" name="lineEdit_tablo_adi">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_unique_table_column">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Unique Alan ID Adı </string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="lineEdit_alan_adi">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2" colspan="2">
+      <widget class="QLabel" name="label">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <italic>true</italic>
+        </font>
+       </property>
+       <property name="text">
+        <string> ( INTEGER, AUTO INCREMENT, NOT NULL )</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_aciklama">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Açıklama </string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="3">
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="2" column="1" colspan="2">
+      <widget class="QLimitedTextEdit" name="limitedTextEdit_aciklama"/>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0" colspan="3">
+    <widget class="QTableWidget" name="tablewidget_tablo_satirlari"/>
+   </item>
+   <item row="3" column="0">
+    <widget class="QPushButton" name="button_indexler">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>:/designer_icons/designer_index_button.png</normaloff>:/designer_icons/designer_index_button.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>128</width>
+       <height>64</height>
+      </size>
+     </property>
+     <property name="autoDefault">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2">
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>857</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="3" column="1">
+    <widget class="QPushButton" name="button_header_olustur">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="toolTip">
+      <string>Header Dosyası Oluştur</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>:/designer_icons/designer_header_olustur_icon.png</normaloff>:/designer_icons/designer_header_olustur_icon.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>64</width>
+       <height>64</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QLimitedTextEdit</class>
+   <extends>QTextEdit</extends>
+   <header>QLimitedTextEdit.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>lineEdit_tablo_adi</tabstop>
+  <tabstop>lineEdit_alan_adi</tabstop>
+  <tabstop>limitedTextEdit_aciklama</tabstop>
+  <tabstop>tablewidget_tablo_satirlari</tabstop>
+  <tabstop>button_indexler</tabstop>
+  <tabstop>button_header_olustur</tabstop>
+ </tabstops>
+ <resources>
+  <include location="designer_icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>

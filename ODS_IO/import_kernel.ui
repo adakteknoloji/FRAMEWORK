@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>IMPORT_KERNEL</class>
+ <widget class="QDialog" name="IMPORT_KERNEL">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>860</width>
+    <height>552</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2" rowstretch="1,0,0,0,0,0,0,0,0,0" columnstretch="0,0,0">
+   <property name="margin">
+    <number>3</number>
+   </property>
+   <item row="9" column="2">
+    <widget class="QWidget" name="widget_batch_buttons" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="3">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Dosya Encoding :  </string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QComboBox" name="comboBox_dosya_encoding">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0" colspan="3">
+    <widget class="Line" name="line">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Önizleme(&lt;span style=&quot; color:#ff0000;&quot;&gt;Eğer bilgilerin yerleri önizlemede yanlışsa,  bilgilerin alınacağı dosyadan buradaki sıraya göre düzeltilmesi gereklidir.&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0" colspan="3">
+    <widget class="QTableWidget" name="table_widget_onizleme"/>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="label_kaydedilmeyecek_veriler">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Veri tabanında zaten kayıtlı olanlar.... </string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0" colspan="3">
+    <widget class="QTableWidget" name="table_widget_kaydedilmisler"/>
+   </item>
+   <item row="7" column="0">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Kayıtların Ekleneceği Gruplar:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0" colspan="2">
+    <widget class="QTextEdit" name="text_edit_gruplar">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>80</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="2">
+    <widget class="QPushButton" name="push_button_gruplar">
+     <property name="text">
+      <string>Grup Seç</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="0">
+    <widget class="QLabel" name="label_bulunan_kayit_sayisi">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="1">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="0" colspan="3">
+    <layout class="QGridLayout" name="gridLayout_3" columnstretch="1,10,2,3">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_dosya_adi">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Dosya:                   </string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="line_edit_dosya_path"/>
+     </item>
+     <item row="0" column="2">
+      <widget class="QPushButton" name="push_button_dosya_sec">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Dosya Seç</string>
+       </property>
+       <property name="autoDefault">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

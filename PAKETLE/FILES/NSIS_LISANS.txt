@@ -1,0 +1,10 @@
+Bu program CEREN Bilgisayar ve Yazilim Ltd. tarafindan gelistirilmistir. 
+
+Isteyen herkes ucretsiz olarak kullanabilir, kopyalayabilir, cogaltabilir ve dagitabilir.
+
+
+DIKKAT !.
+
+DIKKAT !.
+
+K9 calisiyorken kurulus yapiyorsaniz HATA verecektir.

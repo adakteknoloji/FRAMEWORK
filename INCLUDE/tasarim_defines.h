@@ -1,0 +1,9 @@
+#ifndef TASARIM_DEFINES_H
+#define TASARIM_DEFINES_H
+
+enum TASARIMCI_MODU {
+    DESIGNER_MODU = 0,
+    ONIZLEME_MODU = 1
+};
+
+#endif // TASARIM_DEFINES_H

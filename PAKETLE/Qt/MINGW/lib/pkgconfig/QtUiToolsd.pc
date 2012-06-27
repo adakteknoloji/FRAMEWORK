@@ -1,0 +1,14 @@
+prefix=C:\QtMINGW
+exec_prefix=${prefix}
+libdir=C:/QtMINGW/lib
+includedir=C:/QtMINGW/include/QtUiTools
+qt_config=include_source_dir lex yacc warn_on debug uic resources incremental_off windows debug DebugBuild Debug build_pass qt warn_on link_prl copy_dir_files debug_and_release debug_and_release_target precompile_header stl exceptions rtti mmx sse sse2 minimal-config small-config medium-config large-config full-config incremental create_prl link_prl depend_includepath QTDIR_build debug DebugBuild Debug build_pass qt staticlib debug_and_release build_all create_pc debug DebugBuild Debug build_pass no_autoqmake static staticlib moc thread
+
+Name: Qtuitoolsd
+Description: Qtuitoolsd Library
+Version: 4.8.2
+Libs: -L${libdir} -lQtUiToolsd 
+Libs.private: -LC:\OpenSSL-Win32\lib -lQtXmld4 -lQtGuid4 -lQtCored4   
+Cflags: -IC:/QtMINGW/include -I${includedir}
+Requires: QtXml
+

@@ -1,0 +1,20 @@
+Title K9 Ticari Paket
+Version 
+Description K9 Ticari Paket yazılımını içerir.
+
+http://www.cerenbilgisayar.com.tr ' den indirilebilirsiniz.
+
+DefaultLocation /
+DeleteWarning 
+
+### Package Flags
+
+NeedsAuthorization YES
+Required NO
+Relocatable NO
+RequiresReboot NO
+UseUserMask NO
+OverwritePermissions NO
+InstallFat NO
+RootVolumeOnly NO
+OnlyUpdateInstalledLanguages NO

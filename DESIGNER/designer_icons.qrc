@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/designer_icons">
+        <file>designer_logo.png</file>
+        <file>designer_index_button.png</file>
+        <file>designer_header_olustur.png</file>
+        <file>designer_about.png</file>
+        <file>designer_about_button.png</file>
+        <file>designer_exit_button.png</file>
+        <file>designer_tablolar_button.png</file>
+        <file>designer_bilgisayarlar_button.png</file>
+        <file>designer_kullanicilar_button.png</file>
+        <file>designer_firmalar_button.png</file>
+        <file>designer_yetkilendirme_button.png</file>
+        <file>designer_splash.png</file>
+        <file>designer_header_olustur_icon.png</file>
+        <file>designer_reports.png</file>
+        <file>designer_database.png</file>
+    </qresource>
+</RCC>

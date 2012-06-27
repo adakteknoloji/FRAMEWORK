@@ -1,0 +1,39 @@
+<RCC>
+    <qresource prefix="/kernel_icons">
+        <file>kernel_empty_icon.png</file>
+        <file>kernel_align_icon.png</file>
+        <file>kernel_alt_grup_ekleme_ikonu.png</file>
+        <file>kernel_ana_grup_ekleme_ikonu.png</file>
+        <file>kernel_ara_ikonu.png</file>
+        <file>kernel_cikis_ikonu.png</file>
+        <file>kernel_ekle_ikonu.png</file>
+        <file>kernel_getir_ikonu.png</file>
+        <file>kernel_guncellestir_ikonu.png</file>
+        <file>kernel_ilk_kayit_ikonu.png</file>
+        <file>kernel_export_ikonu.png</file>
+        <file>kernel_kapat_ikonu.png</file>
+        <file>kernel_kaydet_ikonu.png</file>
+        <file>kernel_onceki_kayit_ikonu.png</file>
+        <file>kernel_oo_writer_ikonu.png</file>
+        <file>kernel_report.png</file>
+        <file>kernel_run_icon.png</file>
+        <file>kernel_sil_ikonu.png</file>
+        <file>kernel_son_kayit_ikonu.png</file>
+        <file>kernel_sonraki_kayit_ikonu.png</file>
+        <file>kernel_splash_background.png</file>
+        <file>kernel_text_ikonu.png</file>
+        <file>kernel_unknown_icon.png</file>
+        <file>kernel_yardim_ikonu.png</file>
+        <file>kernel_yazdir_ikonu.png</file>
+        <file>kernel_yeni_kayit_ac_ikonu.png</file>
+        <file>kernel_yenile_ikonu.png</file>
+        <file>kernel_html_ikonu.png</file>
+        <file>kernel_ara_searchedit_ikonu.png</file>
+        <file>kernel_calendar_ikonu.png</file>
+        <file>kernel_wait_icon.png</file>
+        <file>kernel_menu_ikonu.png</file>
+        <file>kernel_home_ikonu.png</file>
+        <file>kernel_alt_menu_ikonu.png</file>
+        <file>kernel_ust_satira_ekle.png</file>
+    </qresource>
+</RCC>

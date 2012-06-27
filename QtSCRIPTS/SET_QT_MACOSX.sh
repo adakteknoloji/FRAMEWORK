@@ -1,0 +1,8 @@
+#!/bin/bash
+
+export ADAK_OS=MACOSX
+export ADAK_RELEASE=1
+
+PATH="/QtMACOSX/bin:$PATH"
+
+LD_LIBRARY_PATH="/QtMACOSX/lib:$LD_LIBRARY_PATH"

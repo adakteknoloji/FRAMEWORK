@@ -1,0 +1,42 @@
+%define name    aaa
+%define version 1.00
+%define release ceren
+
+Name:           %{name} 
+Summary:        K9 - Ticari Paket
+Version:        %{version} 
+Release:        %{release} 
+Source0:        %{name}-%{version}.tar.gz
+URL:            http://www.cerenbilgisayar.com.tr/ 
+Group:          Applications/Multimedia 
+BuildArch:      x86_64
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot 
+License:        MIT-like 
+
+%description
+Ceren Bilgisayar ' a ait K9 Ticari Paket  programini icerir
+
+%prep 
+%setup -q
+mkdir -p $RPM_BUILD_ROOT
+cp -rf * $RPM_BUILD_ROOT/
+
+%post
+/bin/sh /opt/CEREN/K9/install.sh
+
+
+%clean 
+
+%files 
+%defattr(-,root,root) 
+/opt/CEREN/K9
+
+/usr/share/applications/K9.desktop
+/usr/share/icons/K9_logo.png
+
+
+%changelog 
+* Tue Dec 22 2009 Ceren Bilgisayar <info@cerenbilgisayar.com.tr> 1.00
+- Ilk versiyon
+
+

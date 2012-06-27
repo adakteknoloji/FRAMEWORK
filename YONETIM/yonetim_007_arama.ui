@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>YONETIM_007_ARAMA</class>
+ <widget class="QDialog" name="YONETIM_007_ARAMA">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>759</width>
+    <height>497</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>007 YÖNETİM</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout" rowstretch="1,0,0,0,0" columnstretch="10,0">
+   <property name="margin">
+    <number>3</number>
+   </property>
+   <item row="0" column="0" colspan="2">
+    <widget class="QFrame" name="main_frame">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <kerning>true</kerning>
+      </font>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <property name="lineWidth">
+      <number>0</number>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <property name="margin">
+       <number>2</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QCheckBox" name="checkbox_tarih">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>26</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QFrame" name="frame_tarih">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_4" columnstretch="1,10,1,10,10">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_baslangic_trh">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>81</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Tarih Aralığı</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QDateEdit" name="dateEdit_first_date">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>242</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>242</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="displayFormat">
+            <string>dd MMMM yyyy dddd</string>
+           </property>
+           <property name="calendarPopup">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLabel" name="label">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Ignored">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>30</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>-</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QDateEdit" name="dateEdit_second_date">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>242</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>242</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="displayFormat">
+            <string>dd MMMM yyyy  dddd</string>
+           </property>
+           <property name="calendarPopup">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="4">
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QCheckBox" name="checkbox_log_turu">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>26</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QFrame" name="frame_log_turu">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_3" columnstretch="1,4,10">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_log_turu">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>81</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Log Türü</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QComboBox" name="comboBox_log_turu">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="cursor">
+            <cursorShape>ArrowCursor</cursorShape>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QCheckBox" name="checkbox_kullanici">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>26</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QFrame" name="frame_kullanici">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_5" columnstretch="1,5,40">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_kullanici">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>81</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Kullanıcı</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QComboBox" name="comboBox_kullanicilar">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="cursor">
+            <cursorShape>ArrowCursor</cursorShape>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QTableWidget" name="tableWidget"/>
+   </item>
+   <item row="2" column="0" colspan="2">
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="3" column="0" colspan="2">
+    <widget class="QLimitedTextEdit" name="limitedTextEdit_ekstra_bilgiler">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>110</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0" colspan="2">
+    <widget class="QWidget" name="widget_batch_buttons" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QLimitedTextEdit</class>
+   <extends>QTextEdit</extends>
+   <header>QLimitedTextEdit.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>checkbox_tarih</tabstop>
+  <tabstop>dateEdit_first_date</tabstop>
+  <tabstop>dateEdit_second_date</tabstop>
+  <tabstop>checkbox_log_turu</tabstop>
+  <tabstop>comboBox_log_turu</tabstop>
+  <tabstop>checkbox_kullanici</tabstop>
+  <tabstop>comboBox_kullanicilar</tabstop>
+  <tabstop>tableWidget</tabstop>
+  <tabstop>limitedTextEdit_ekstra_bilgiler</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

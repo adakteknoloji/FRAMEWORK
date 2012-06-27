@@ -1,0 +1,24 @@
+#ifndef YARDIM_HATIRLATMA_DIALOG_H
+#define YARDIM_HATIRLATMA_DIALOG_H
+
+#include <QDialog>
+
+namespace Ui {
+    class YARDIM_HATIRLATMA_DIALOG;
+}
+
+class YARDIM_HATIRLATMA_DIALOG : public QDialog
+{
+    Q_OBJECT
+
+public:
+    explicit YARDIM_HATIRLATMA_DIALOG(QWidget *parent = 0);
+    ~YARDIM_HATIRLATMA_DIALOG();
+
+private:
+    Ui::YARDIM_HATIRLATMA_DIALOG *ui;
+};
+
+void SHOW_YARDIM_HATIRLATMA_DIALOG();
+
+#endif // YARDIM_HATIRLATMA_DIALOG_H
