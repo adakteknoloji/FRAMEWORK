@@ -32,6 +32,8 @@ bool PROGRAMA_UYGUN_DONGLE_VARMI ()
         case E9_PROGRAMI      :
             break;
         case ADAK_DESIGNER       :
+            break;
+            /*
             dongle_id_str = GET_DONGLE_IP ();
             for (int i=0; ; i++) {
                 if (DESIGNER_DONGLELARI[i].a1 EQ 0) {
@@ -45,7 +47,8 @@ bool PROGRAMA_UYGUN_DONGLE_VARMI ()
                     return true;
                 }
             }
-            break;
+            return false;
+            */
     }
 
     return true;
