@@ -23,7 +23,8 @@ static struct ADAK_PROGRAM_STRUCT  ADAK_PROGRAM_LIST[NUM_OF_ADAK_PROGRAMS] =
 
     {QString::fromUtf8("E9 [ CRM + e-ticaret ]")       , "E9"            , "E9"       , ADAK_VERSION, false  },
 
-    {""        , ""        , "" , "", false  }, // 3
+    {QString::fromUtf8("GANYAN Programı ]")            , "GANYAN"        , "GANYAN"   , ADAK_VERSION, false  },
+
     {""        , ""        , "" , "", false  }, // 4
     {""        , ""        , "" , "", false  }, // 5
     {""        , ""        , "" , "", false  }, // 6
