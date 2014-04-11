@@ -5,11 +5,12 @@ TEMPLATE = app
 TARGET   = XYZ
 DEPENDPATH += .
 INCLUDEPATH += . /ADAK/FRAMEWORK/INCLUDE ../E9 ../E9/INCLUDE
-HEADERS   += xyz.h \
-             xyz_ana_menu.h 
-FORMS     += xyz_ana_menu.ui
 SOURCES   += xyz_main.cpp \
              xyz_ana_menu.cpp
+HEADERS   += xyz.h \
+             xyz_ana_menu_class.h \
+             xyz_ana_menu_open.h
+FORMS     += xyz_ana_menu.ui
 RESOURCES += xyz_icons.qrc
 
 LIBS +=  /ADAK/FRAMEWORK/$$OBJDIR/libADAK.a ../E9/$$OBJDIR/libE9.a
