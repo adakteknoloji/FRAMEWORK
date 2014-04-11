@@ -49,7 +49,7 @@ enum ADAK_PROGRAM_ENUM {
     YONETIM_libADAK    =  0,
     ADAK_DESIGNER      =  1,
     E9_PROGRAMI        =  2,
-    GANYAN_PROGRAMI    =  2,
+    GANYAN_PROGRAMI    =  3,
     TEST_PROGRAMI      = 99
 };
 
