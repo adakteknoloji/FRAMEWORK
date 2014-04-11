@@ -6,9 +6,12 @@ set DEST_DIR=\ADAK\FRAMEWORK
 mkdir %DEST_DIR%
 mkdir %DEST_DIR%\INCLUDE
 mkdir %DEST_DIR%\TEMPLATE
+mkdir %DEST_DIR%\TEMPLATE\ICONS
 
 
 copy TEMPLATE\*                         %DEST_DIR%\TEMPLATE
+copy TEMPLATE\ICONS\*                   %DEST_DIR%\TEMPLATE\ICONS
+
 
 copy INCLUDE\adak.pri                                %DEST_DIR%\INCLUDE
 
