@@ -2,19 +2,19 @@ include (/ADAK/FRAMEWORK/INCLUDE/adak.pri)
 
 QT += sql network webkit
 TEMPLATE = app
-TARGET   = XYZ
+TARGET   = GANGAN
 DEPENDPATH += .
-INCLUDEPATH += . /ADAK/FRAMEWORK/INCLUDE ../E9 ../E9/INCLUDE
-SOURCES   += xyz_main.cpp \
-             xyz_ana_menu.cpp
+INCLUDEPATH += . /ADAK/FRAMEWORK/INCLUDE
 HEADERS   += xyz.h \
              xyz_ana_menu_class.h \
              xyz_ana_menu_open.h
 FORMS     += xyz_ana_menu.ui
+SOURCES   += xyz_main.cpp \
+             xyz_ana_menu.cpp
 RESOURCES += xyz_icons.qrc
 
-LIBS +=  /ADAK/FRAMEWORK/$$OBJDIR/libADAK.a ../E9/$$OBJDIR/libE9.a
-PRE_TARGETDEPS += /ADAK/FRAMEWORK/$$OBJDIR/libADAK.a ../E9/$$OBJDIR/libE9.a
+LIBS +=  /ADAK/FRAMEWORK/$$OBJDIR/libADAK.a
+PRE_TARGETDEPS += /ADAK/FRAMEWORK/$$OBJDIR/libADAK.a
 
 win32:LIBS += -L"C:/Program Files/MySQL/MySQL Server 5.5/lib" \
     -L"C:/Program Files/PostgreSQL/9.0/lib" \

@@ -6,15 +6,15 @@ ADAK_SQL_STRUCT xyz_db = {
     1,
     {
         {
-            "temp",
+            "sabit_degerler",
             2,
             {
-                {"temp_id", INTEGER, 0, false, 1, true, true },
-                {"temp_str", TEXT, 30, false, 1, false, false }
+                {"degerler_id", INTEGER, 0, false, 1, true, true },
+                {"program_versiyon", TEXT, 4, false, 1, false, false }
             },
             1,
             {
-                { PRIMARY , 1, {"temp_id"} }
+                { PRIMARY , 1, {"degerler_id"} }
             }
         }
     }

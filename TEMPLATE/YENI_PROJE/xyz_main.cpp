@@ -8,7 +8,6 @@
 #include "xyz_ana_menu_open.h"
 #include "xyz_db.h"
 
-
 extern ADAK_SQL *       G_YONETIM_DB;
 extern ADAK_SQL *       DB;
 extern ADAK_SQL_STRUCT  xyz_db;

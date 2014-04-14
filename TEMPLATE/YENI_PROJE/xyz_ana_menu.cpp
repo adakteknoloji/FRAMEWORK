@@ -1,19 +1,19 @@
-#include <QPushButton>
-#include <QLabel>
-#include "ui_xyz_ana_menu.h"
+#include "xyz.h"
 #include "xyz_ana_menu_class.h"
 #include "xyz_ana_menu_open.h"
+#include "ui_xyz_ana_menu.h"
 #include "adak_sql.h"
+#include "kernel_utils.h"
 
 
 extern ADAK_SQL * DB;
 
 enum {
-    MENU_COLUMN_1                 = 10,
-        MENU_XYZ_FISI             = 11,
+    MENU_DOSYA                    = 10,
+        MENU_CIKIS                = 11,
 
-    MENU_COLUMN_2                 = 20,
-        MENU_XYZ_RAPORU           = 21,
+    MENU_YARDIM                   = 20,
+        MENU_HAKKINDA             = 21,
 };
 
 /**************************************************************************************
@@ -38,46 +38,37 @@ XYZ_ANA_MENU::XYZ_ANA_MENU ( QWidget * p_parent ) : MENU_KERNEL ( p_parent ), ui
     START_KERNEL();
 }
 
-/***************************************************************************************
+/**************************************************************************************
                    XYZ_ANA_MENU::~XYZ_ANA_MENU
-****************************************************************************************/
+***************************************************************************************/
 
-XYZ_ANA_MENU::~XYZ_ANA_MENU()
+XYZ_ANA_MENU::~XYZ_ANA_MENU ( )
 {
-
 }
 
 /***************************************************************************************
                    XYZ_ANA_MENU::SETUP_FORM
 ****************************************************************************************/
 
-XYZ_ANA_MENU::SETUP_FORM()
+void XYZ_ANA_MENU::SETUP_FORM()
 {
     struct MENU_STRUCT MENULER[] = {
 
-       { MENU_COLUMN_1              , ""           , 0             , "" , "" , 0 ,"" , 0 , MENU_SAYFADA },
-       { MENU_XYZ_FISI              , "XYZ Fişi"   , MENU_COLUMN_1 , "" , "" , 0 ,"" , 0 , MENU_SAYFADA },
-       { MENU_COLUMN_2              , ""           , 0             , "" , "" , 0 ,"" , 0 , MENU_SAYFADA },
-       { MENU_XYZ_RAPORU            , "XYZ Raporu" , MENU_COLUMN_2 , "" , "" , 0 ,"" , 0 , MENU_SAYFADA },
+        { MENU_DOSYA,                tr ("Dosya")            , 0,         "" , "" , 0, "", 0, MENU_TOPMENUDE }  ,
+            { MENU_CIKIS,            tr ( "Çıkış" )          , MENU_DOSYA,"" , "" , 0, "", 0, MENU_TOPMENUDE},
 
-       { 0                          , ""           ,  0            , "" , "" , 0 , "", 0, MENU_SAYFADA }
+        { MENU_YARDIM,               tr ("Yardım")           , 0,         "" , "" , 0, "", 0, MENU_TOPMENUDE },
+            {MENU_HAKKINDA,          tr ( "Hakkında" )       , MENU_YARDIM,"", "" , 0, "", 0, MENU_TOPMENUDE },
 
+        { 0       , ""   , 0, "","",0,"",0,MENU_SAYFADA }
     };
 
+    SET_KERNEL_STRUCT                       ( MENULER );
+    REGISTER_MENU_WIDGET                    ( ui->main_widget );
 
-    SET_KERNEL_STRUCT         ( MENULER );
+    SHOW_MENU_ITEM                          ( MENU_CIKIS      );
+    SHOW_MENU_ITEM                          ( MENU_HAKKINDA   );
 
-    REGISTER_MENU_WIDGET      ( ui->main_xyz_widget );
-
-    HIDE_BUTTON_COLUMN_HEADER ();
-
-    SET_ICON_SIZE             ( 120, 120 );
-
-    SET_BUTTON_TEXT_POS       ( BUTTON_DISINDA_ALT_TARAFTA );
-
-    SHOW_MENU_ITEM            ( MENU_XYZ_RAPORU );
-
-    KULLANICI_YETKILERINI_AYARLA();     
 }
 
 /**************************************************************************************
@@ -87,12 +78,6 @@ XYZ_ANA_MENU::SETUP_FORM()
 void XYZ_ANA_MENU::KULLANICI_YETKILERINI_AYARLA ()
 {
 
-    XYZ_KULLANICI_YETKILERI_STRUCT * XYZ_KULLANICI_YETKILERI = (XYZ_KULLANICI_YETKILERI_STRUCT *) GET_KULLANICI_YETKILERI();
-
-    if ( XYZ_KULLANICI_YETKILERI->xyz_fisi_girebilir_mi EQ 1 ) {
-
-        SHOW_MENU_ITEM ( MENU_XYZ_FISI        );
-    }
 }
 
 /**************************************************************************************
@@ -102,11 +87,8 @@ void XYZ_ANA_MENU::KULLANICI_YETKILERINI_AYARLA ()
 void XYZ_ANA_MENU::MENU_ITEM_CLICKED ( int p_enum_id )
 {
     switch ( p_enum_id ) {
-
-        case MENU_XYZ_FISI :
-             OPEN_XYZ_FISI(this);
-             break;
-
+        case MENU_CIKIS :
+            close ();
         default :
             break;
     }
