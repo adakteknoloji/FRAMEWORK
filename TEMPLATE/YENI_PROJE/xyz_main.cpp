@@ -10,7 +10,6 @@
 
 extern ADAK_SQL *       G_YONETIM_DB;
 extern ADAK_SQL *       DB;
-extern ADAK_SQL_STRUCT  xyz_db;
 
 static void UPGRADE_TO_VERSION (QString version);
 
