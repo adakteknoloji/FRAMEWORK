@@ -37,7 +37,7 @@ void OPEN_XYZ_FORMU ( int record_id, QWidget * parent )
                    XYZ_FORMU::XYZ_FORMU
 ***************************************************************************************/
 
-XYZ_FORMU::XYZ_FORMU ( QWidget * parent ) : FORM_KERNEL ( parent ), m_ui(new Ui::XYZ_FORMU)
+XYZ_FORMU::XYZ_FORMU ( QWidget * parent ) : FORM_KERNEL ( parent )
 {
     setupUi     ( this );
     START_FORM_KERNEL ( this , DB );
