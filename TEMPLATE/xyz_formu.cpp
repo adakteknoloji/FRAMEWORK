@@ -403,7 +403,7 @@ int XYZ_FORMU::SELECT_RECORD()
 
 int XYZ_FORMU::LOCK_RECORD( int record_id )
 {
-    return DB->LOCK_ROW ( "firma_bilgileri_id", "e9_sabit_degerler", QString ( "firma_bilgileri_id = %1").arg ( record_id ) );
+    return DB->LOCK_ROW ( "xyz_id", "xyz", QString ( "xyz_id = %1").arg ( record_id ) );
 }
 
 /**************************************************************************************
@@ -412,7 +412,7 @@ int XYZ_FORMU::LOCK_RECORD( int record_id )
 
 void XYZ_FORMU::UNLOCK_RECORD( int record_id )
 {
-    DB->UNLOCK_ROW ( "firma_bilgileri_id", "e9_sabit_degerler", QString ( "firma_bilgileri_id = %1").arg ( record_id ) );
+    DB->UNLOCK_ROW ( "xyz_id", "xyz", QString ( "xyz_id = %1").arg ( record_id ) );
 }
 
 /**************************************************************************************
