@@ -11,7 +11,7 @@ do
 	echo -e "\n\n$dizin DERLENIYOR\n\n"
 	cd $dizin
 	qmake
-	make -j 4
+	make -j 8
 	cd ..
 	echo -e "\n\n$dizin DERLENDI\n\n"
 done
@@ -26,7 +26,7 @@ for dizin in $DIZINLER
     echo -e "\n\n$dizin DERLENIYOR\n\n"
     cd $dizin
     qmake
-    make -j 4
+    make -j 8
     cd ..
     echo -e "\n\n$dizin DERLENDI\n\n"
 done

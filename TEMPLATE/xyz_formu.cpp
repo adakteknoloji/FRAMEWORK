@@ -221,8 +221,8 @@ int XYZ_FORMU::CHECK_VAR (QObject * object)
 
 int XYZ_FORMU::CHECK_EMPTY ()
 {
-    if (firmanin_para_birimi EQ NULL ) {
-        MSG_WARNING(tr("Temel para birimini tanımlamalısınız!..") , NULL);
+    if ( commaEdit_yaris_no->GET_INTEGER() EQ 0) {
+        MSG_ERROR(tr("Yarış No boş bırakılamaz"), commaEdit_yaris_no);
         return ADAK_FAIL;
     }
     return ADAK_OK;
