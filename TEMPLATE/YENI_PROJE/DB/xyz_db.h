@@ -2,19 +2,21 @@
 #define XYZ_DB_H
 
 ADAK_SQL_STRUCT xyz_db = {
-    3,
+    98,
     1,
     {
         {
-            "sabit_degerler",
-            2,
+            "xyz_ayarlar",
+            4,
             {
-                {"degerler_id", INTEGER, 0, false, 1, true, true },
-                {"program_versiyon", TEXT, 4, false, 1, false, false }
+                {"ayarlar_id", INTEGER, 0, false, 1, true, true },
+                {"program_version", TEXT, 10, false, 1, false, false },
+                {"mali_yil_baslangic_tarihi", INTEGER, 8, false, 1, false, false },
+                {"mali_yil_bitis_tarihi", INTEGER, 8, false, 1, false, false }
             },
             1,
             {
-                { PRIMARY , 1, {"degerler_id"} }
+                { PRIMARY , 1, {"ayarlar_id"} }
             }
         }
     }
