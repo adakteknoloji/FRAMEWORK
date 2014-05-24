@@ -2,7 +2,7 @@ include (/ADAK/FRAMEWORK/INCLUDE/adak.pri)
 
 QT += sql network webkit
 TEMPLATE = app
-TARGET   = GANGAN
+TARGET   = XYZ
 DEPENDPATH += .
 INCLUDEPATH += . /ADAK/FRAMEWORK/INCLUDE
 HEADERS   += xyz.h \
