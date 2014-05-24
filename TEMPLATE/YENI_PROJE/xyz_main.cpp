@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
     a.setWindowIcon(icon);
 
     INIT_PROGRAM( &xyz_db, NULL);
-    if ( PROGRAMA_GIRIS ( argc, argv, XYZ_PROGRAMI , XYZ_PROGRAMI, NULL ) EQ ADAK_OK ) {
+    if ( PROGRAMA_GIRIS ( argc, argv, TEST_PROGRAMI , TEST_PROGRAMI, NULL ) EQ ADAK_OK ) {
         CHECK_VERSION_UPGRADES ("program_version","xyz_ayarlar",&UPGRADE_TO_VERSION);
         OPEN_XYZ_ANA_MENU (NULL);
         a.exec();
