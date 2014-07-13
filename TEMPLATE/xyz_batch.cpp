@@ -30,15 +30,15 @@ void OPEN_XYZ_BATCH ( QWidget * parent )
                    XYZ_BATCH::XYZ_BATCH
 ***************************************************************************************/
 
-XYZ_BATCH::XYZ_BATCH ( QWidget * parent ) :  BATCH_KERNEL ( parent ), m_ui ( new Ui::XYZ_BATCH )
+XYZ_BATCH::XYZ_BATCH ( QWidget * parent ) :  BATCH_KERNEL ( parent )
 {
-    m_ui->setupUi      ( this );    
+    setupUi      ( this );    
     START_BATCH_KERNEL ( this, DB );
 }
 
 // TableWidget larda item changed yada double clicked eventlari check var da kontrol edilebilir.
 // Gelen object daima table widget olacaktir.Bu yuzden objectname kontrol etmeliyiz mesela check var dusen bir table widget icin;
-//    if (object EQ m_ui->tableWidget ) {
+//    if (object EQ tableWidget ) {
 //        if (object.objectName() EQ "ITEM_CHANGED") {
 //            item changed gerekli olanlar yapilir ve adak_fail yada adak_ok dondurulur
 //        }
@@ -60,10 +60,10 @@ void XYZ_BATCH::SETUP_FORM ()
     SET_NAME_OF_RUN_BATCH_BUTTON ( "xxxxyyyzzz" );
 
     // Programa ilk girildiginde focuslanacak widget setlenmelidir.
-    SET_FIRST_FOCUS_WIDGET ( m_ui->xyz_widget );
+    SET_FIRST_FOCUS_WIDGET ( xyz_widget );
 
     // Butonumuzun eklenecegi widgeti register ediyoruz.
-    REGISTER_BUTTON_WIDGET ( m_ui->widget_batch_buttons );
+    REGISTER_BUTTON_WIDGET ( widget_batch_buttons );
 
     SET_PAGE_TITLE    (tr("BLA BLA EKRANI"));
     SET_SETTING_NAME  ("BLA_BLA_BATCH");
@@ -71,7 +71,7 @@ void XYZ_BATCH::SETUP_FORM ()
 
     //Tum lineeditlerin ve limitedtexteditlerin uzunlugu INIT_KERNEL dan sonra setlenmeli.Cunku bu widgetlarin default degeri 1 characterdir.
     //Ayrica eger bu widgetlara setlenmesi gereken degerler varsa bunu da uzunluklar setlendikten sonra yapmaliyiz.
-    m_ui->line_edit_xyz->setMaxLength(25);
+    line_edit_xyz->setMaxLength(25);
 }
 
 /**************************************************************************************
@@ -82,7 +82,7 @@ int XYZ_BATCH::CHECK_VAR ( QObject * object )
 {
     SQL_QUERY query (DB);
 
-    if ( object EQ m_ui->dateedit_bts_tarihi ) {
+    if ( object EQ dateedit_bts_tarihi ) {
 
         query.PREPARE_SELECT ("e9_sabit_degerler","muhasebe_yili_ilkgun,muhasebe_yili_songun");
 

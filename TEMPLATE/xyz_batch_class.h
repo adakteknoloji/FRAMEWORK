@@ -2,12 +2,13 @@
 #define XYZ_BATCH_CLASS_H
 
 #include "batch_kernel.h"
+#include "ui_xyz_batxh.h"
 
 namespace Ui {
     class XYZ_BATCH;
 }
 
-class XYZ_BATCH : public BATCH_KERNEL
+class XYZ_BATCH : public BATCH_KERNEL, public Ui::XYZ_BATCH
 {
     Q_OBJECT
 
