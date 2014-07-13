@@ -23,7 +23,7 @@ extern ADAK_SQL *           DB;
 void OPEN_XYZ_BATCH ( QWidget * parent )
 {
     XYZ_BATCH * F = new XYZ_BATCH ( parent );
-    F->EXEC();
+    F->EXEC(NOT_FULL_SCREEN);
 }
 
 /**************************************************************************************
