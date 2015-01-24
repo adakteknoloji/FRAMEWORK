@@ -6,6 +6,7 @@
 #include "ui_xyz_fisi.h"
 
 class XYZ_FISI : public FIS_KERNEL , public Ui::XYZ_FISI
+{
     Q_OBJECT;
 
 public:

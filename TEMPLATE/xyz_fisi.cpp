@@ -83,7 +83,7 @@ void XYZ_FISI::SETUP_FORM()
     SET_TABLE_ROW_WIDGETS ( XYZ_SOYADI_COLUMN  , WIDGET_LINE_EDIT );
 
     // Kernelin ilk acilis ve yeni kayit durumlarinda hangi widgeta focuslanilmasi isteniyorsa o setlenmelidir.
-    SET_FIRST_FOCUS_WIDGET (widget_..._xyz);
+    SET_FIRST_FOCUS_WIDGET (tableWidget_fis_satirlari);
 
     SET_PAGE_TITLE    (tr("XYZ FISI EKRANI"));
     SET_SETTING_NAME  ("XYZ_FISI");
