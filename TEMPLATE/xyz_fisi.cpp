@@ -9,16 +9,13 @@ extern ADAK_SQL *           DB;
 // Not : Fis ve form kernellarinda kullanilan kernel button widgetlarinin horizontal sizepolicy expanding vertical size policy fixed olmali.
 
 // Her bir satir icin tek tek columnlar define edilebilir boylelikle daha rahat columnlara erisebiliriz.
-// Asagida basit bir ornegini gorebilirsiniz.Burada genelikle ROW_ID_COLUMN,FIS_ID_COLUMN ve ORDER_NUMBER_COLUMN ihtiyac duyariz.
-#define ROW_ID_COLUMN                  0  // Satirin idsini tutacak column
-#define FIS_ID_COLUMN                  1  // Satirin bagli oldugu fisin idsi
+// Asagida basit bir ornegini gorebilirsiniz.Burada genelikle ROW_ID_COLUMN,FORM_ID_COLUMN ve ORDER_NUMBER_COLUMN ihtiyac duyariz.
+#define FORM_ID_COLUMN                 0  // Satirin bagli oldugu fisin idsi
+#define ROW_ID_COLUMN                  1  // Satirin idsini tutacak column
 #define ORDER_NUMBER_COLUMN            2  // Satirlari siralamak amacli kullanilacak column
-#define XYZ_ADI_COLUMN                 3
-#define XYZ_SOYADI_COLUMN              4
-#define XYZ_...                        5
-  .
-  .
-  .
+#define XYZ_ID_COLUMN                  3  // Satirlari siralamak amacli kullanilacak column
+#define XYZ_ADI_COLUMN                 4
+#define XYZ_SOYADI_COLUMN              5
 
 // Bu fisi cagirmak icin kullanacagimiz fonksiyon.Burda modal lik icin parent i aldik.
 // Burdaki diger paremetre ise id dir buda direk kerneli bir kayitla baslatmak istedigimiz zaman kullanacagimiz deger.
@@ -32,17 +29,17 @@ extern ADAK_SQL *           DB;
 void OPEN_XYZ_FISI ( int xyz_id, QWidget * parent )
 {
     XYZ_FISI * F = new XYZ_FISI ( xyz_id, parent );
-    F->setWindowState ( Qt::WindowMaximized );
-    F->EXEC();
+    F->EXEC(NOT_FULL_SCREEN);
+
 }
 
 /**************************************************************************************
                    XYZ_FISI::XYZ_FISI
 ***************************************************************************************/
 
-XYZ_FISI::XYZ_FISI(int record_id, QWidget * parent) :FIS_KERNEL(parent)
+XYZ_FISI::XYZ_FISI ( int record_id, QWidget * parent ):FIS_KERNEL(parent)
 {
-    m_ui->setupUi    ( this );        
+    setupUi    ( this );        
     START_FIS_KERNEL ( this, DB );
  }
  
@@ -60,23 +57,23 @@ void XYZ_FISI::SETUP_FORM()
 
 
     // Kernel butonlarinin bulunacagi widget lar setlenir.
-    REGISTER_BUTTONS_WIDGET ( m_ui->kernel_buttons_widget );
+    REGISTER_BUTTONS_WIDGET ( kernel_buttons_widget );
 
     // Kernelin kullanacagi widget ve column sayisi setlenir.
-    REGISTER_TABLE_WIDGET ( m_ui->table_widget_xyz, 6 );
+    REGISTER_TABLE_WIDGET ( tableWidget_fis_satirlari, 6 );
+
+    // Satirin bagli olacagi fisin numarasini tutacak column setlenir.
+    SET_FORM_ID_COLUMN_POSITION ( FORM_ID_COLUMN );
 
     // Satir siralama yani order numaralarinin yazilacagi column setlenir.
     SET_FIS_ORDER_COLUMN_NUMBER ( ORDER_NUMBER_COLUMN );
 
-    // Satirin bagli olacagi fisin numarasini tutacak column setlenir.
-    SET_FORM_ID_COLUMN_POSITION ( FIS_ID_COLUMN );
-
     // Satirin idsini tutacak olan column setlenir.
-    SET_ROW_ID_COLUMN_POSITION ( ROW_ID_COLUMN );
+    SET_ROW_ID_COLUMN_POSITION  ( ROW_ID_COLUMN );
 
     // Kac columnin hidelanacagi setlenir.Burda dikkat edilmesi gereken verilen deger kadar ilk columnlar hidelanir.
     // Mesela 3 ise 0,1,2 numarali columnlar hidelanacaktir.
-    SET_NUMBER_OF_HIDDEN_COLUMN ( 3 );
+    SET_NUMBER_OF_HIDDEN_COLUMN ( 4 );
 
     // Bu fonksiyon ise kernelin otomatik olarak satir order numlarin reorganize edilmesi saglar.
     // Burda kernela database bilgilerini setleyerek bu isi yapabiliriz.
@@ -91,27 +88,27 @@ void XYZ_FISI::SETUP_FORM()
     // Kernelin ilk acilis ve yeni kayit durumlarinda hangi widgeta focuslanilmasi isteniyorsa o setlenmelidir.
     SET_FIRST_FOCUS_WIDGET (widget_..._xyz);
 
-    SET_PAGE_TITLE    (tr("BLA BLA EKRANI"));
-    SET_SETTING_NAME  ("BLA_BLA_FISI");
-    SET_HELP_PAGE     ("bla_bla.html");
+    SET_PAGE_TITLE    (tr("XYZ FISI EKRANI"));
+    SET_SETTING_NAME  ("XYZ_FISI");
+    SET_HELP_PAGE     ("xyz_fisi.html");
        
     //Tum lineeditlerin ve limitedtexteditlerin uzunlugu INIT_KERNEL dan sonra setlenmeli.Cunku bu widgetlarin default degeri 1 characterdir.
     //Ayrica eger bu widgetlara setlenmesi gereken degerler varsa bunu da uzunluklar setlendikten sonra yapmaliyiz.
-    m_ui->line_edit_xyz->setMaxLength(25);
+    line_edit_xyz->setMaxLength(25);
 
     // Column headerlari setlenir.Dikkat burda hidelanacak columnlar(ornegimizde 3 tane row_id,fis_id ve order_column)
     // ve son da kernelin ekleyecegi 2(son 2 column "" olan) column icinde header ismi atanmali.
-    m_ui->table_widget_xyz->setHorizontalHeaderLabels (QStringList() << "row_id" << "fis_id" << "order_number_column" << tr("XYZ Adı") << tr("XYZ Soyadı")
+    table_widget_xyz->setHorizontalHeaderLabels (QStringList() << "row_id" << "fis_id" << "order_number_column" << tr("XYZ Adı") << tr("XYZ Soyadı")
                                                                      << tr("XYZ ...") << tr("") << tr("") );
 
-    m_ui->table_widget_xyz->setColumnWidth(XYZ_ADI_COLUMN     , 999);
-    m_ui->table_widget_xyz->setColumnWidth(XYZ_SOYADI_COLUMN  , 999);
-    m_ui->table_widget_xyz->setColumnWidth(...                , 999);
+    table_widget_xyz->setColumnWidth(XYZ_ADI_COLUMN     , 999);
+    table_widget_xyz->setColumnWidth(XYZ_SOYADI_COLUMN  , 999);
+    table_widget_xyz->setColumnWidth(...                , 999);
 
 
     // Normal de kernel otomatik olarak widgeta focuslanir ancak INIT_FIS_KERNEL dan sonra tablewidgettla oynadigimiz dan focus
     // table widget a gecer bu yuzden tekrar focusu first widget a veririz.
-    DISABLE_CLEAR_ON_WIDGET(m_ui->lineedit_muhasebe_ayraci);
+    DISABLE_CLEAR_ON_WIDGET(lineedit_muhasebe_ayraci);
     FOCUS_FIRST_WIDGET ();;
 }
 
@@ -154,8 +151,8 @@ int XYZ_FISI::GET_FIS_RECORD ( int record_id )
     query.NEXT();
 
     // Fis bilgilerini setliyoruz.
-    m_ui->line_edit_xyz_kodu->setText ( query.VALUE(0).toString() );
-    m_ui->line_edit_xyz...->setText ( query.VALUE(1).toString() );
+    line_edit_xyz_kodu->setText ( query.VALUE(0).toString() );
+    line_edit_xyz...->setText ( query.VALUE(1).toString() );
 
     // Fisin satirlarini okuyoruz.Siralayarak okuyoruz.Burda dikkat edilmesi gereken siralamanin order num a gore yapilmasi gerekir.
     // Boylelikle satirlar uygun yerlestirilmis olur.
@@ -172,11 +169,11 @@ int XYZ_FISI::GET_FIS_RECORD ( int record_id )
     while ( query.NEXT() EQ true ) {
         current_row = ADD_NEW_LINE ();
 
-        QLineEdit  *   line_edit   = ( QLineEdit * ) m_ui->table_widget_xyz->cellWidget( current_row, XYZ_ADI_COLUMN );
+        QLineEdit  *   line_edit   = ( QLineEdit * ) table_widget_xyz->cellWidget( current_row, XYZ_ADI_COLUMN );
         line_edit->setText ( query.VALUE("xyz_adi").toString());
-        line_edit   = ( QLineEdit * ) m_ui->table_widget_xyz->cellWidget( current_row, XYZ_SOYADI_COLUMN);
+        line_edit   = ( QLineEdit * ) table_widget_xyz->cellWidget( current_row, XYZ_SOYADI_COLUMN);
         line_edit->setText(query.VALUE("xyz_soyadi").toString());
-        QComboBox * combo_box   = ( QComboBox * ) m_ui->table_widget_xyz->cellWidget( current_row, XYZ_...);
+        QComboBox * combo_box   = ( QComboBox * ) table_widget_xyz->cellWidget( current_row, XYZ_...);
         combo_box->setEditText(query.VALUE("xyz_...").toString());
 
     QTableWidgetItem * new_item;
@@ -188,14 +185,14 @@ int XYZ_FISI::GET_FIS_RECORD ( int record_id )
         QString row_id       = query.VALUE ("row_id").toString();
         QString order_number = query.VALUE ("order_number").toString();
 
-        new_item = new QTableWidgetItem ( tr("%1").arg(row_id) );
-        m_ui->table_widget_xyz->setItem (current_row, ROW_ID_COLUMN, new_item );
-
         new_item = new QTableWidgetItem ( tr("%1").arg(record_id) );
-        m_ui->table_widget_xyz->setItem ( current_row, FIS_ID_COLUMN, new_item );
+        table_widget_xyz->setItem ( current_row, FORM_ID_COLUMN, new_item );
+
+        new_item = new QTableWidgetItem ( tr("%1").arg(row_id) );
+        table_widget_xyz->setItem (current_row, ROW_ID_COLUMN, new_item );
 
         new_item = new QTableWidgetItem ( tr("%1").arg(order_number) );
-        m_ui->table_widget_xyz->setItem ( current_row, ORDER_COLUMN, new_item );
+        table_widget_xyz->setItem ( current_row, ORDER_COLUMN, new_item );
 
     }
 
@@ -214,7 +211,7 @@ void XYZ_FISI::SET_LINE_DEFAULTS ( int row_number )
 
 // TableWidget larda item changed yada double clicked eventlari check var da kontrol edilebilir.
 // Gelen object daima table widget olacaktir.Bu yuzden objectname kontrol etmeliyiz mesela check var dusen bir table widget icin;
-//     if (object EQ m_ui->tableWidget ) {
+//     if (object EQ tableWidget ) {
 //         if (object.objectName() EQ "ITEM_CHANGED") {
 //             item changed gerekli olanlar yapilir ve adak_fail yada adak_ok dondurulur
 //         }
@@ -234,13 +231,13 @@ int XYZ_FISI::CHECK_FIS_FORM_VAR ( QObject * object )
 {
 
     // Widgetlarda focus out olundugunda buraya duser. Burda o widgeta yazilan degerin dogrulugunu kontrol ediyoruz.
-    if (object EQ m_ui->line_edit_xyz) {
-        if (m_ui->line_edit_xyz->text().isEmpty() EQ true ) {
+    if (object EQ line_edit_xyz) {
+        if (line_edit_xyz->text().isEmpty() EQ true ) {
       MSG_ERROR(tr("Hata ....") , NULL);
     }
     }
-    else if (object EQ m_ui->comma_edit_xyz) {
-        if (m_ui->comma_edit_xyz->text().isEmpty() EQ true ) {
+    else if (object EQ comma_edit_xyz) {
+        if (comma_edit_xyz->text().isEmpty() EQ true ) {
       MSG_ERROR(tr("Hata ....") , NULL);
     }
     }
@@ -250,7 +247,7 @@ int XYZ_FISI::CHECK_FIS_FORM_VAR ( QObject * object )
 
     // TableWidget larda item changed yada double clicked eventlari check var da kontrol edilebilir.
     // Gelen object daima table widget olacaktir.Bu yuzden objectname kontrol etmeliyiz mesela check var dusen bir table widget icin;
-    //     if (object EQ m_ui->tableWidget ) {
+    //     if (object EQ tableWidget ) {
     //         if (object.objectName() EQ "ITEM_CHANGED") {
     //             item changed gerekli olanlar yapilir ve adak_fail yada adak_ok dondurulur
     //         }
@@ -272,12 +269,12 @@ int XYZ_FISI::CHECK_FIS_FORM_VAR ( QObject * object )
 int XYZ_FISI::CHECK_FIS_FORM_EMPTY()
 {
     // Kaydetmeden veya guncellemeden once formda bos birakilamicak alanlari kontrol ediyoruz
-    if ( m_ui->line_edit_xyz_ad->text().isEmpty() EQ true ) {
-        MSG_ERROR(tr("Ad boş bırakılamaz"), m_ui->line_edit_xyz_ad);
+    if ( line_edit_xyz_ad->text().isEmpty() EQ true ) {
+        MSG_ERROR(tr("Ad boş bırakılamaz"), line_edit_xyz_ad);
         return ADAK_FAIL;
     }
-    else if ( m_ui->line_edit_xyz_soyad->text().isEmpty() EQ true ) {
-        MSG_ERROR(tr("Soyad boş bırakılamaz"), m_ui->line_edit_xyz_soyad);
+    else if ( line_edit_xyz_soyad->text().isEmpty() EQ true ) {
+        MSG_ERROR(tr("Soyad boş bırakılamaz"), line_edit_xyz_soyad);
         return ADAK_FAIL;
     }
     return ADAK_OK;
@@ -304,9 +301,9 @@ int XYZ_FISI::ADD_FIS_RECORD ()
 
     sql_query.PREPARE_INSERT ( "xyz_bilgileri","xyz_id", "xyz_kodu, xyz_..., ...");
 
-    sql_query.SET_VALUE ( ":xyz_kodu" , m_ui->line_edit_xyz_kodu->text() );
-    sql_query.SET_VALUE ( ":xyz_..."  , m_ui->line_edit_xyz_...->text() );
-    sql_query.SET_VALUE ( ":..."      , m_ui->line_edit_...->text() );
+    sql_query.SET_VALUE ( ":xyz_kodu" , line_edit_xyz_kodu->text() );
+    sql_query.SET_VALUE ( ":xyz_..."  , line_edit_xyz_...->text() );
+    sql_query.SET_VALUE ( ":..."      , line_edit_...->text() );
 
     return sql_query.INSERT();
 }
@@ -332,9 +329,9 @@ void XYZ_FISI::UPDATE_FIS_RECORD ( int record_id )
 
     sql_query.PREPARE_INSERT ( "xyz_bilgileri","id", "xyz_kodu, xyz_..., ... " );
 
-    sql_query.SET_VALUE ( ":xyz_kodu" , m_ui->line_edit_xyz_kodu->text() );
-    sql_query.SET_VALUE ( ":xyz_..."  , m_ui->line_edit_xyz_...->text() );
-    sql_query.SET_VALUE ( ":..."      , m_ui->line_edit_...->text() );
+    sql_query.SET_VALUE ( ":xyz_kodu" , line_edit_xyz_kodu->text() );
+    sql_query.SET_VALUE ( ":xyz_..."  , line_edit_xyz_...->text() );
+    sql_query.SET_VALUE ( ":..."      , line_edit_...->text() );
 
     sql_query.UPDATE();
 }
@@ -388,8 +385,8 @@ int XYZ_FISI::FIND_FIS_RECORD()
     SQL_QUERY   query(DB);
 
     query.PREPARE_SELECT ( "adr_sahis_bilgileri", "sahis_id","sahis_adi = :sahis_adi AND sahis_soyadi = :sahis_soyadi)" );
-    query.SET_VALUE      ( ":sahis_adi"   , m_ui->line_edit_ad->text() );
-    query.SET_VALUE      ( ":sahis_soyadi", m_ui->line_edit_soyad->text() );
+    query.SET_VALUE      ( ":sahis_adi"   , line_edit_ad->text() );
+    query.SET_VALUE      ( ":sahis_soyadi", line_edit_soyad->text() );
 
     if ( query.SELECT() EQ 0 ) {
         return 0;
@@ -481,8 +478,8 @@ int XYZ_FISI::FIND_PREV_FIS_RECORD()
                                  "AND fis_numarasi < :fis_numarasi",0,1,  );
 
     query.SET_VALUE            ( ":fis_turu"       , xyz_fis_turu );
-    query.SET_VALUE            ( ":fis_tarihi"     , m_ui->dateedit_fis_tarihi->date().toString ( "yyyy.MM.dd" ) );
-    query.SET_VALUE            ( ":fis_numarasi"   , m_ui->line_edit_fis_no->text().toInt()                      );
+    query.SET_VALUE            ( ":fis_tarihi"     , dateedit_fis_tarihi->date().toString ( "yyyy.MM.dd" ) );
+    query.SET_VALUE            ( ":fis_numarasi"   , line_edit_fis_no->text().toInt()                      );
 
     if ( query.SELECT("fis_tarihi DESC, fis_numarasi DESC",0,1) > 0 ) {
         query.NEXT();
@@ -493,7 +490,7 @@ int XYZ_FISI::FIND_PREV_FIS_RECORD()
                                  "AND fis_tarihi   < :fis_tarihi " );
 
     query.SET_VALUE     (  ":fis_turu"      , xyz_fis_turu );
-    query.SET_VALUE     (  ":fis_tarihi"    , m_ui->dateedit_fis_tarihi->date().toString ( "yyyy.MM.dd" ) );
+    query.SET_VALUE     (  ":fis_tarihi"    , dateedit_fis_tarihi->date().toString ( "yyyy.MM.dd" ) );
 
     if ( query.SELECT("fis_tarihi DESC, fis_numarasi DESC",0,1) EQ 0 ) {
         return 0;
@@ -533,8 +530,8 @@ int XYZ_FISI::FIND_NEXT_FIS_RECORD()
                                  "AND fis_numarasi > :fis_numarasi");
 
     query.SET_VALUE     (  ":fis_turu"      , xyz_fis_turu );
-    query.SET_VALUE     (  ":fis_tarihi"    , m_ui->dateedit_fis_tarihi->date().toString ( "yyyy.MM.dd" ) );
-    query.SET_VALUE     (  ":fis_numarasi"  , m_ui->line_edit_fis_no->text().toInt()                      );
+    query.SET_VALUE     (  ":fis_tarihi"    , dateedit_fis_tarihi->date().toString ( "yyyy.MM.dd" ) );
+    query.SET_VALUE     (  ":fis_numarasi"  , line_edit_fis_no->text().toInt()                      );
 
     if ( query.SELECT("fis_tarihi, fis_numarasi ",0,1) > 0 ) {
         query.NEXT();
@@ -545,7 +542,7 @@ int XYZ_FISI::FIND_NEXT_FIS_RECORD()
                                  "AND fis_tarihi   > :fis_tarihi ");
 
     query.SET_VALUE     (  ":fis_turu"      , m_fis_turu );
-    query.SET_VALUE     (  ":fis_tarihi"    , m_ui->dateedit_fis_tarihi->date().toString ( "yyyy.MM.dd" ) );
+    query.SET_VALUE     (  ":fis_tarihi"    , dateedit_fis_tarihi->date().toString ( "yyyy.MM.dd" ) );
 
     if ( query.SELECT("fis_tarihi, fis_numarasi ",0,1) EQ 0 ) {
         return 0;
@@ -573,7 +570,7 @@ int XYZ_FISI::CHECK_LINE_VAR ( int row_number, QObject * object )
 
 int XYZ_FISI::CHECK_LINE_EMPTY ( int row_number )
 {
-    QLineEdit * line_edit_xyz        = ( QLineEdit * ) m_ui->table_widget_xyz->cellWidget ( row_number, XYZ_ADI_COLUMN );
+    QLineEdit * line_edit_xyz        = ( QLineEdit * ) table_widget_xyz->cellWidget ( row_number, XYZ_ADI_COLUMN );
 
     if ( line_edit_xyz->text().isEmpty() EQ true ) {
         MSG_ERROR(tr("XYZ adı boş bırakılamaz"), line_edit_xyz);
@@ -606,13 +603,13 @@ void XYZ_FISI::ADD_LINE ( int record_id, int row_number )
     QString         xyz_ad;
     QString         xyz_soyad;
 
-    QLineEdit * lineEdit = ( QLineEdit * ) m_ui->table_widget_xyz->cellWidget ( row_number, XYZ_ADI_COLUMN );
+    QLineEdit * lineEdit = ( QLineEdit * ) table_widget_xyz->cellWidget ( row_number, XYZ_ADI_COLUMN );
     xyz_ad               = lineEdit->text();
 
-    lineEdit             = ( QLineEdit * ) m_ui->table_widget_xyz->cellWidget ( row_number, SAHIS_SOYADI_COLUMN);
+    lineEdit             = ( QLineEdit * ) table_widget_xyz->cellWidget ( row_number, SAHIS_SOYADI_COLUMN);
     xyz_soyad            = lineEdit->text();
 
-    order_number            = m_ui->table_widget_xyz->item( row_number , ORDER_NUMBER_COLUMN )->text();
+    order_number            = table_widget_xyz->item( row_number , ORDER_NUMBER_COLUMN )->text();
 
     query.PREPARE_INSERT ( "xyz_fis_satirlari","xyz_id","order_number, ad, soyad");
 
@@ -649,15 +646,15 @@ void XYZ_FISI::UPDATE_LINE ( int record_id, int row_number )
     QString             xyz_ad;
     QString             xyz_soyad;
 
-    QLineEdit * lineEdit = ( QLineEdit * ) m_ui->table_widget_xyz->cellWidget ( row_number, XYZ_ADI_COLUMN );
+    QLineEdit * lineEdit = ( QLineEdit * ) table_widget_xyz->cellWidget ( row_number, XYZ_ADI_COLUMN );
     xyz_ad               = lineEdit->text();
 
-    lineEdit             = ( QLineEdit * ) m_ui->table_widget_xyz->cellWidget ( row_number, SAHIS_SOYADI_COLUMN);
+    lineEdit             = ( QLineEdit * ) table_widget_xyz->cellWidget ( row_number, SAHIS_SOYADI_COLUMN);
     xyz_soyad            = lineEdit->text();
 
-    int xyz_id    = m_ui->tablewidget_fis_satirlari->item ( row_number, ROW_ID_COLUMN )->text().toInt();
+    int xyz_id    = tablewidget_fis_satirlari->item ( row_number, ROW_ID_COLUMN )->text().toInt();
 
-    order_number         = m_ui->table_widget_xyz->item( row_number , ORDER_NUMBER_COLUMN )->text();
+    order_number         = table_widget_xyz->item( row_number , ORDER_NUMBER_COLUMN )->text();
 
     query.PREPARE_INSERT ( "xyz_fis_satirlari" ,"xyz_id","order_number,ad,soyad" , "record_id = :record_id" );
 
@@ -690,7 +687,7 @@ void XYZ_FISI::DELETE_LINE ( int record_id, int row_number )
 
     SQL_QUERY query(DB);
 
-    int xyz_id = m_ui->table_widget_xyz->item ( row_number, ROW_ID_COLUMN )->text().toInt();
+    int xyz_id = table_widget_xyz->item ( row_number, ROW_ID_COLUMN )->text().toInt();
 
     query.PREPARE_DELETE ( "xyz_fis_satirlari","xyz_id = :xyz_id" );
     query.SET_VALUE      ( ":xyz_id", xyz_id );

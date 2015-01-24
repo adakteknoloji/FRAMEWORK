@@ -124,7 +124,7 @@
     </layout>
    </item>
    <item row="1" column="0">
-    <widget class="QTableWidget" name="tablewidget_fis_satirlari"/>
+    <widget class="QTableWidget" name="tableWidget_fis_satirlari"/>
    </item>
    <item row="2" column="0">
     <layout class="QGridLayout" name="gridLayout_2">
