@@ -107,7 +107,7 @@ void XYZ_FISI::SETUP_FORM()
     // Normal de kernel otomatik olarak widgeta focuslanir ancak INIT_FIS_KERNEL dan sonra tablewidgettla oynadigimiz dan focus
     // table widget a gecer bu yuzden tekrar focusu first widget a veririz.
     //DISABLE_CLEAR_ON_WIDGET(lineedit_muhasebe_ayraci);
-    FOCUS_FIRST_WIDGET ();;
+    FOCUS_FIRST_WIDGET ();
 }
 
 /**************************************************************************************
@@ -446,6 +446,7 @@ int XYZ_FISI::FIND_LAST_FIS_RECORD()
     query.NEXT();
 
     return query.VALUE(0).toInt();
+}
 
 /**************************************************************************************
              XYZ_FISI::FIND_PREV_FIS_RECORD
@@ -697,18 +698,18 @@ void XYZ_FISI::DELETE_LINE ( int record_id, int row_number )
                    XYZ_FISI::LOCK_FIS_RECORD
 ***************************************************************************************/
 
-int XYZ_FISI::LOCK_FIS_RECORD ( int record_id )
+int XYZ_FISI::LOCK_FIS_RECORD ( int xyz_form_id )
 {
-    return DB->LOCK_ROW ( "xyz_id", "xyz_bilgileri", QString ( "xyz_id = %1" ).arg ( record_id ));
+    return DB->LOCK_ROW ( "xyz_id", "xyz_fisleri", QString ( "xyz_form_id = %1" ).arg ( xyz_form_id ));
 }
 
 /**************************************************************************************
                    XYZ_FISI::UNLOCK_FIS_RECORD
 ***************************************************************************************/
 
-void XYZ_FISI::UNLOCK_FIS_RECORD ( int record_id )
+void XYZ_FISI::UNLOCK_FIS_RECORD ( int xyz_form_id )
 {
-    DB->UNLOCK_ROW ( "xyz_id", "xyz_bilgileri", QString ( "xyz_id = %1" ).arg ( record_id ));
+    DB->UNLOCK_ROW ( "xyz_id", "xyz_fisleri", QString ( "xyz_form_id = %1" ).arg ( xyz_form_id ));
 }
 
 /**************************************************************************************
