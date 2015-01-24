@@ -2,28 +2,22 @@
 #define XYZ_FISI_CLASS_H
 
 #include <fis_kernel.h>
+#include "stt15.h"
+#include "ui_xyz_fisi.h"
 
-namespace ui {
-    class XYZ_FISI;
-}
-
-class XYZ_FISI : public FIS_KERNEL
-
-{
+class XYZ_FISI : public FIS_KERNEL , public Ui::XYZ_FISI
     Q_OBJECT;
 
 public:
 
-     XYZ_FISI                                                  ( int, QWidget * parent = 0 );
-    ~XYZ_FISI                                                  (){}
+     XYZ_FISI ( int, QWidget * parent = 0 );
+    ~XYZ_FISI (){}
 
 private:
 
-    Ui::XYZ_FISI   *        m_ui;
-
-    void   		    SETUP_FORM                               ();
+    void                    SETUP_FORM                               ();
     void                    NEW_FIS_RECORD                           ();
-    void    		    CLEAR_FORM_MEMBERS		             ();
+    void                    CLEAR_FORM_MEMBERS                       ();
     int                     GET_FIS_RECORD                           (int fis_id);
 
     int                     CHECK_FIS_FORM_VAR                       (QObject * object);
