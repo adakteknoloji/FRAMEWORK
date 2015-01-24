@@ -40,7 +40,7 @@ void OPEN_XYZ_FISI ( int xyz_id, QWidget * parent )
                    XYZ_FISI::XYZ_FISI
 ***************************************************************************************/
 
-XYZ_FISI::XYZ_FISI(int record_id, QWidget * parent) :FIS_KERNEL(parent) m_ui ( new Ui::XYZ_FISI )
+XYZ_FISI::XYZ_FISI(int record_id, QWidget * parent) :FIS_KERNEL(parent)
 {
     m_ui->setupUi    ( this );        
     START_FIS_KERNEL ( this, DB );
