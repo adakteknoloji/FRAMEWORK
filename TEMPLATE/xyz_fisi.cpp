@@ -107,6 +107,7 @@ void XYZ_FISI::SETUP_FORM()
     // Normal de kernel otomatik olarak widgeta focuslanir ancak INIT_FIS_KERNEL dan sonra tablewidgettla oynadigimiz dan focus
     // table widget a gecer bu yuzden tekrar focusu first widget a veririz.
     //DISABLE_CLEAR_ON_WIDGET(lineedit_muhasebe_ayraci);
+    SET_FIRST_FOCUS_WIDGET(tableWidget_fis_satirlari);
     FOCUS_FIRST_WIDGET ();
 }
 
