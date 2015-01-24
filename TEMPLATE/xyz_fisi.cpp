@@ -52,7 +52,7 @@ void XYZ_FISI::SETUP_FORM()
     // record mode atamasi init kerneldan once yapilmalidir.Cunku gui init kernelda olusturulur.
     // single record mode da database de en az 1 kayit oldugu kabul edilir.bu yuzden yoksa bir kere yaratilmalidir.
     //
-    // SET_SINGLE_RECORD_MODE (m_xyz_form_id);
+    // SET_SINGLE_RECORD_ID (m_xyz_form_id);
 
 
     // Kernel butonlarinin bulunacagi widget lar setlenir.
@@ -64,11 +64,11 @@ void XYZ_FISI::SETUP_FORM()
     // Satirin bagli olacagi fisin numarasini tutacak column setlenir.
     SET_FORM_ID_COLUMN_POSITION ( FORM_ID_COLUMN );
 
-    // Satir siralama yani order numaralarinin yazilacagi column setlenir.
-    SET_FIS_ORDER_COLUMN_NUMBER ( ORDER_NUMBER_COLUMN );
-
     // Satirin idsini tutacak olan column setlenir.
     SET_ROW_ID_COLUMN_POSITION  ( ROW_ID_COLUMN );
+
+    // Satir siralama yani order numaralarinin yazilacagi column setlenir.
+    SET_FIS_ORDER_COLUMN_NUMBER ( ORDER_NUMBER_COLUMN );
 
     // Kac columnin hidelanacagi setlenir.Burda dikkat edilmesi gereken verilen deger kadar ilk columnlar hidelanir.
     // Mesela 4 ise 0,1,2,3 numarali columnlar gizlenecekler.
@@ -76,7 +76,7 @@ void XYZ_FISI::SETUP_FORM()
 
     // Bu fonksiyon ise kernelin otomatik olarak satir order numlarin reorganize edilmesi saglar.
     // Burda kernela database bilgilerini setleyerek bu isi yapabiliriz.
-    SET_FIS_ORDER_DATABASE ("xyz_satirlari", "order_number", "xyz_row_id" );
+    SET_FIS_ORDER_DATABASE ("xyz_satirlari", "order_number", "xyz_form_id" );
 
     // Sirasiyla her columna gelecek widgetlari setliyoruz.Parametre olarak column numarasini ve widget in turunu gonderiyoruz.
     SET_TABLE_ROW_WIDGETS ( XYZ_ADI_COLUMN     , WIDGET_LINE_EDIT );
@@ -91,22 +91,22 @@ void XYZ_FISI::SETUP_FORM()
        
     //Tum lineeditlerin ve limitedtexteditlerin uzunlugu INIT_KERNEL dan sonra setlenmeli.Cunku bu widgetlarin default degeri 1 characterdir.
     //Ayrica eger bu widgetlara setlenmesi gereken degerler varsa bunu da uzunluklar setlendikten sonra yapmaliyiz.
-    line_edit_xyz->setMaxLength(25);
+    lineEdit_fis_no->setMaxLength(25);
 
     // Column headerlari setlenir.Dikkat burda hidelanacak columnlar(ornegimizde 3 tane row_id,fis_id ve order_column)
     // ve son da kernelin ekleyecegi 2(son 2 column "" olan) column icinde header ismi atanmali.
-    table_widget_xyz->setHorizontalHeaderLabels (QStringList() << 
+    tableWidget_fis_satirlari->setHorizontalHeaderLabels (QStringList() << 
     << "form_id" << "row_id" << "order_number" << "xyz_row_id"
     << tr("XYZ Adı") << tr("XYZ Soyadı")
     << tr("") << tr("") );
 
-    table_widget_xyz->setColumnWidth(XYZ_ADI_COLUMN     , 999);
-    table_widget_xyz->setColumnWidth(XYZ_SOYADI_COLUMN  , 999);
+    tableWidget_fis_satirlari->setColumnWidth(XYZ_ADI_COLUMN     , 999);
+    tableWidget_fis_satirlari->setColumnWidth(XYZ_SOYADI_COLUMN  , 999);
 
 
     // Normal de kernel otomatik olarak widgeta focuslanir ancak INIT_FIS_KERNEL dan sonra tablewidgettla oynadigimiz dan focus
     // table widget a gecer bu yuzden tekrar focusu first widget a veririz.
-    DISABLE_CLEAR_ON_WIDGET(lineedit_muhasebe_ayraci);
+    //DISABLE_CLEAR_ON_WIDGET(lineedit_muhasebe_ayraci);
     FOCUS_FIRST_WIDGET ();;
 }
 
@@ -116,7 +116,7 @@ void XYZ_FISI::SETUP_FORM()
 
 void XYZ_FISI::CLEAR_FORM_MEMBERS()
 {
-    m_grup_idleri.clear();
+    //m_grup_idleri.clear();
 }
 
 /**************************************************************************************
