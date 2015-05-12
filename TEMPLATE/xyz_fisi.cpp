@@ -36,7 +36,7 @@ void OPEN_XYZ_FISI ( QWidget * p_parent , int p_xyz_form_id )
                    XYZ_FISI::XYZ_FISI
 ***************************************************************************************/
 
-XYZ_FISI::XYZ_FISI ( QWidget * p_parent , int p_xyz_form_id ):FIS_KERNEL(parent)
+XYZ_FISI::XYZ_FISI ( QWidget * p_parent , int p_xyz_form_id ):FIS_KERNEL(p_parent)
 {
     setupUi          ( this );        
     START_FIS_KERNEL ( this, DB );
@@ -95,7 +95,7 @@ void XYZ_FISI::SETUP_FORM()
 
     // Column headerlari setlenir.Dikkat burda hidelanacak columnlar(ornegimizde 3 tane row_id,fis_id ve order_column)
     // ve son da kernelin ekleyecegi 2(son 2 column "" olan) column icinde header ismi atanmali.
-    tableWidget_fis_satirlari->setHorizontalHeaderLabels (QStringList() << 
+    tableWidget_fis_satirlari->setHorizontalHeaderLabels (QStringList()
     << "form_id" << "row_id" << "order_number" << "xyz_row_id"
     << tr("XYZ Adı") << tr("XYZ Soyadı")
     << tr("") << tr("") );
@@ -168,30 +168,30 @@ int XYZ_FISI::GET_FIS_RECORD ( int record_id )
     while ( query.NEXT() EQ true ) {
         current_row = ADD_NEW_LINE ();
 
-        QLineEdit  *   line_edit   = ( QLineEdit * ) table_widget_xyz->cellWidget( current_row, XYZ_ADI_COLUMN );
+        QLineEdit  *   line_edit   = ( QLineEdit * ) tableWidget_xyz->cellWidget( current_row, XYZ_ADI_COLUMN );
         line_edit->setText ( query.VALUE("xyz_adi").toString());
-        line_edit   = ( QLineEdit * ) table_widget_xyz->cellWidget( current_row, XYZ_SOYADI_COLUMN);
+        line_edit   = ( QLineEdit * ) tableWidget_xyz->cellWidget( current_row, XYZ_SOYADI_COLUMN);
         line_edit->setText(query.VALUE("xyz_soyadi").toString());
-        QComboBox * combo_box   = ( QComboBox * ) table_widget_xyz->cellWidget( current_row, XYZ_...);
+        QComboBox * combo_box   = ( QComboBox * ) tableWidget_xyz->cellWidget( current_row, XYZ_...);
         combo_box->setEditText(query.VALUE("xyz_...").toString());
 
     QTableWidgetItem * new_item;
 
     // new_item = new QTableWidgetItem(tr("%1").arg(...));
-    // table_widget_xyz->setItem(current_row, ..._COLUMN, new_item);
+    // tableWidget_xyz->setItem(current_row, ..._COLUMN, new_item);
 
     // hide edilmis columnlarimizi setliyoruz.
         QString row_id       = query.VALUE ("row_id").toString();
         QString order_number = query.VALUE ("order_number").toString();
 
         new_item = new QTableWidgetItem ( tr("%1").arg(record_id) );
-        table_widget_xyz->setItem ( current_row, FORM_ID_COLUMN, new_item );
+        tableWidget_xyz->setItem ( current_row, FORM_ID_COLUMN, new_item );
 
         new_item = new QTableWidgetItem ( tr("%1").arg(row_id) );
-        table_widget_xyz->setItem (current_row, ROW_ID_COLUMN, new_item );
+        tableWidget_xyz->setItem (current_row, ROW_ID_COLUMN, new_item );
 
         new_item = new QTableWidgetItem ( tr("%1").arg(order_number) );
-        table_widget_xyz->setItem ( current_row, ORDER_COLUMN, new_item );
+        tableWidget_xyz->setItem ( current_row, ORDER_NUMBER_COLUMN, new_item );
 
     }
 
@@ -570,7 +570,7 @@ int XYZ_FISI::CHECK_LINE_VAR ( int row_number, QObject * object )
 
 int XYZ_FISI::CHECK_LINE_EMPTY ( int row_number )
 {
-    QLineEdit * line_edit_xyz        = ( QLineEdit * ) table_widget_xyz->cellWidget ( row_number, XYZ_ADI_COLUMN );
+    QLineEdit * line_edit_xyz        = ( QLineEdit * ) tableWidget_xyz->cellWidget ( row_number, XYZ_ADI_COLUMN );
 
     if ( line_edit_xyz->text().isEmpty() EQ true ) {
         MSG_ERROR(tr("XYZ adı boş bırakılamaz"), line_edit_xyz);
@@ -603,13 +603,13 @@ void XYZ_FISI::ADD_LINE ( int record_id, int row_number )
     QString         xyz_ad;
     QString         xyz_soyad;
 
-    QLineEdit * lineEdit = ( QLineEdit * ) table_widget_xyz->cellWidget ( row_number, XYZ_ADI_COLUMN );
+    QLineEdit * lineEdit = ( QLineEdit * ) tableWidget_xyz->cellWidget ( row_number, XYZ_ADI_COLUMN );
     xyz_ad               = lineEdit->text();
 
-    lineEdit             = ( QLineEdit * ) table_widget_xyz->cellWidget ( row_number, SAHIS_SOYADI_COLUMN);
+    lineEdit             = ( QLineEdit * ) tableWidget_xyz->cellWidget ( row_number, SAHIS_SOYADI_COLUMN);
     xyz_soyad            = lineEdit->text();
 
-    order_number            = table_widget_xyz->item( row_number , ORDER_NUMBER_COLUMN )->text();
+    order_number            = tableWidget_xyz->item( row_number , ORDER_NUMBER_COLUMN )->text();
 
     query.PREPARE_INSERT ( "xyz_fis_satirlari","xyz_id","order_number, ad, soyad");
 
@@ -620,7 +620,7 @@ void XYZ_FISI::ADD_LINE ( int record_id, int row_number )
     int row_id = query.INSERT();
 
     // insert bittikten sonra row_id table widget daki row_id_column i yaziyoruz.
-    table_widget_xyz->setItem (row_number, ROW_ID_COLUMN, new QTableWidgetItem ( (QVariant(row_id)).toString() ) );
+    tableWidget_xyz->setItem (row_number, ROW_ID_COLUMN, new QTableWidgetItem ( (QVariant(row_id)).toString() ) );
 }
 
 /**************************************************************************************
@@ -646,15 +646,15 @@ void XYZ_FISI::UPDATE_LINE ( int record_id, int row_number )
     QString             xyz_ad;
     QString             xyz_soyad;
 
-    QLineEdit * lineEdit = ( QLineEdit * ) table_widget_xyz->cellWidget ( row_number, XYZ_ADI_COLUMN );
+    QLineEdit * lineEdit = ( QLineEdit * ) tableWidget_xyz->cellWidget ( row_number, XYZ_ADI_COLUMN );
     xyz_ad               = lineEdit->text();
 
-    lineEdit             = ( QLineEdit * ) table_widget_xyz->cellWidget ( row_number, SAHIS_SOYADI_COLUMN);
+    lineEdit             = ( QLineEdit * ) tableWidget_xyz->cellWidget ( row_number, SAHIS_SOYADI_COLUMN);
     xyz_soyad            = lineEdit->text();
 
     int xyz_id    = tablewidget_fis_satirlari->item ( row_number, ROW_ID_COLUMN )->text().toInt();
 
-    order_number         = table_widget_xyz->item( row_number , ORDER_NUMBER_COLUMN )->text();
+    order_number         = tableWidget_xyz->item( row_number , ORDER_NUMBER_COLUMN )->text();
 
     query.PREPARE_INSERT ( "xyz_fis_satirlari" ,"xyz_id","order_number,ad,soyad" , "record_id = :record_id" );
 
@@ -687,7 +687,7 @@ void XYZ_FISI::DELETE_LINE ( int record_id, int row_number )
 
     SQL_QUERY query(DB);
 
-    int xyz_id = table_widget_xyz->item ( row_number, ROW_ID_COLUMN )->text().toInt();
+    int xyz_id = tableWidget_xyz->item ( row_number, ROW_ID_COLUMN )->text().toInt();
 
     query.PREPARE_DELETE ( "xyz_fis_satirlari","xyz_id = :xyz_id" );
     query.SET_VALUE      ( ":xyz_id", xyz_id );
