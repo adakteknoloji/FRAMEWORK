@@ -20,7 +20,7 @@ QStringList GET_MAC_ADDRESS()
 {
     QStringList      text_mac_address;
 
-    #ifdef LINUX
+    #ifndef WIN32
         QList<QNetworkInterface> my_interface = QNetworkInterface::allInterfaces();
         for ( int i = 0 ; i < my_interface.size() ; i++ ) {
             if ( text_mac_address.contains( my_interface.at(i).hardwareAddress()) == false &&
