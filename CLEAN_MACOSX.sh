@@ -1,21 +1,21 @@
-rm -rf ADAK_STD/MACOSX
-rm -rf BELGE_KERNEL/MACOSX
-rm -rf DESIGNER/MACOSX
-rm -rf EMAIL/MACOSX
-rm -rf GRUP_KERNEL/MACOSX
-rm -rf KERNEL/MACOSX
-rm -rf LOGIN/MACOSX
-rm -rf MACOSX
-rm -rf MENU_KERNEL/MACOSX
-rm -rf ODS_IO/MACOSX
-rm -rf QAdakDate/MACOSX
-rm -rf QCommaEdit/MACOSX
-rm -rf QLimitedTextEdit/MACOSX
-rm -rf QSearchEdit/MACOSX
-rm -rf REPORT_KERNEL/MACOSX
-rm -rf SMS/MACOSX
-rm -rf SQL/MACOSX
-rm -rf TASARIMCI/MACOSX
-rm -rf UPDATE_DB/MACOSX
-rm -rf UTILS/MACOSX
-rm -rf YONETIM/MACOSX
+rm -rf ADAK_STD/MACOSX ADAK_STD/Makefile
+rm -rf BELGE_KERNEL/MACOSX BELGE_KERNEL/Makefile
+rm -rf DESIGNER/MACOSX DESIGNER/Makefile
+rm -rf EMAIL/MACOSX EMAIL/Makefile
+rm -rf GRUP_KERNEL/MACOSX GRUP_KERNEL/Makefile
+rm -rf KERNEL/MACOSX KERNEL/Makefile
+rm -rf LOGIN/MACOSX LOGIN/Makefile
+rm -rf MACOSX Makefile
+rm -rf MENU_KERNEL/MACOSX MENU_KERNEL/Makefile
+rm -rf ODS_IO/MACOSX ODS_IO/Makefile
+rm -rf QAdakDate/MACOSX QAdakDate/Makefile
+rm -rf QCommaEdit/MACOSX QCommaEdit/Makefile
+rm -rf QLimitedTextEdit/MACOSX QLimitedTextEdit/Makefile
+rm -rf QSearchEdit/MACOSX QSearchEdit/Makefile
+rm -rf REPORT_KERNEL/MACOSX REPORT_KERNEL/Makefile
+rm -rf SMS/MACOSX SMS/Makefile
+rm -rf SQL/MACOSX SQL/Makefile
+rm -rf TASARIMCI/MACOSX TASARIMCI/Makefile
+rm -rf UPDATE_DB/MACOSX UPDATE_DB/Makefile
+rm -rf UTILS/MACOSX UTILS/Makefile
+rm -rf YONETIM/MACOSX YONETIM/Makefile

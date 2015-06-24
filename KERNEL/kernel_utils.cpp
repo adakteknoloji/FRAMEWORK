@@ -26,7 +26,7 @@ void SET_WINDOW_FLAGS ( QDialog * dialog )
     if ( dialog EQ NULL ) {
         return;
     }
-    #ifdef ADAK_MACOSX
+    #ifdef MACOSX
         dialog->setWindowFlags ( Qt::Dialog | Qt::WindowTitleHint | Qt::WindowMinMaxButtonsHint | Qt::WindowSystemMenuHint | Qt::WindowCloseButtonHint);
     #else
         dialog->setWindowModality ( Qt::WindowModal );

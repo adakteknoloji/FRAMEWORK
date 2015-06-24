@@ -66,7 +66,7 @@ QString GET_DONGLE_IP ()
     if (str_ip_number EQ "") {
         char            buf[256];
         unsigned int    dig_ip_number;
-        #ifndef ADAK_MACOSX
+        #ifndef MACOSX
             if (HL_Serial (buf) EQ 0) {
                 dig_ip_number = * (unsigned int *)buf;
                 dig_ip_number &= 0x00FFFFFF;
