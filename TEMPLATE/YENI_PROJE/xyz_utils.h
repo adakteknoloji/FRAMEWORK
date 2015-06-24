@@ -1,0 +1,7 @@
+#ifndef XYZ_UTILS_H
+#define XYZ_UTILS_H
+
+bool XYZ_AYARLAR_STRUCTINI_DOLDUR ();
+
+#endif // XYZ_UTILS_H
+

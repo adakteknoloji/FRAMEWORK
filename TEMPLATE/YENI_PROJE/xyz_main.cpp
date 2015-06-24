@@ -6,10 +6,13 @@
 #include "adak_utils.h"
 #include "yonetim.h"
 #include "xyz_ana_menu_open.h"
-#include "xyz_db.h"
+#include "DB/aats_db.h"
+#include "xyz_utils.h"
 
 extern ADAK_SQL *       G_YONETIM_DB;
 extern ADAK_SQL *       DB;
+
+XYZ_AYARLAR_STRUCT      XYZ_AYARLAR;
 
 static void UPGRADE_TO_VERSION (QString version);
 
@@ -27,6 +30,9 @@ int main(int argc, char *argv[])
 
     INIT_PROGRAM( &xyz_db, NULL);
     if ( PROGRAMA_GIRIS ( argc, argv, TEST_PROGRAMI , TEST_PROGRAMI, NULL ) EQ ADAK_OK ) {
+
+        XYZ_AYARLAR_STRUCTINI_DOLDUR ();
+
         CHECK_VERSION_UPGRADES ("program_version","xyz_ayarlar",&UPGRADE_TO_VERSION);
         OPEN_XYZ_ANA_MENU (NULL);
         a.exec();
@@ -53,6 +59,6 @@ static void UPGRADE_TO_VERSION (QString version)
 {
 
     if ( version < "0.99" ) {
-         // ADD_DEFAULT_BELGELER();
+         // make bla bla 
     }
 }
