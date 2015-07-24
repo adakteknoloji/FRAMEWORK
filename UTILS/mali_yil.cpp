@@ -1,10 +1,10 @@
 #include <QDate>
 #include "adak_utils.h"
 
-static QDate m_mali_yil_first_date  = QDate::fromString("01.01.1999", "ddMMyyyyy");
-static QDate m_mali_yil_365_date    = QDate::fromString("01.01.1999", "ddMMyyyyy");
-static QDate m_array_last_date      = QDate::fromString("01.01.1999", "ddMMyyyyy");
-static int   mali_yil               = 1999;
+static QDate m_mali_yil_first_date  = QDate::fromString("01.01.2015", "ddMMyyyyy");
+static QDate m_mali_yil_365_date    = QDate::fromString("01.01.2015", "ddMMyyyyy");
+static QDate m_array_last_date      = QDate::fromString("01.01.2015", "ddMMyyyyy");
+static int   mali_yil               = 2015;
 
 
 /****************************************************************

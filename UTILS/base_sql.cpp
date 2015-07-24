@@ -102,7 +102,8 @@ void SET_SQL_PASSWORD (QString sql_password)
                    SQL_MOTORU
 ***************************************************************************************/
 
-static QString             g_sql_motoru = "YOK";
+//translate static QString             g_sql_motoru = "YOK";
+static QString             g_sql_motoru = QT_TR_NOOP("NONE");
 QString SQL_MOTORU ()
 {
     return g_sql_motoru;
@@ -115,6 +116,7 @@ QString SQL_MOTORU ()
 void SET_SQL_MOTORU (QString sql_motoru)
 {
     g_sql_motoru = sql_motoru.toUpper();
+    //translate if (g_sql_motoru == "SQLITE" OR g_sql_motoru == tr("NONE")) {
     if (g_sql_motoru == "SQLITE" OR g_sql_motoru == "YOK") {
         //g_sql_driver = SQLITE;
     }

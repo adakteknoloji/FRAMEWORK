@@ -23,7 +23,7 @@ static struct ADAK_PROGRAM_STRUCT  ADAK_PROGRAM_LIST[NUM_OF_ADAK_PROGRAMS] =
 
     {QString::fromUtf8("E9 [ CRM + e-ticaret ]")       , "E9"            , "E9"          , ADAK_VERSION, false  },
 
-    {QString::fromUtf8("GANYAN Programı")              , "GANYAN"        , "GANYAN"      , ADAK_VERSION, false  },
+    {""                                                , ""              , ""            , ""          , false  },
 
     {QString::fromUtf8("AATS Test Creator")            , "TestCreator"   , "TC"          , ADAK_VERSION, false  },
 
@@ -133,7 +133,7 @@ static struct ADAK_PROGRAM_STRUCT  ADAK_PROGRAM_LIST[NUM_OF_ADAK_PROGRAMS] =
 QString ADAK_ISLETIM_SISTEMI ()
 {
 #ifdef WIN32
-    return "Windows Xp/Vista/7";
+    return "Windows Xp/Vista/7/8";
 #endif
 #ifdef LNX32
     return "LINUX 32Bit";

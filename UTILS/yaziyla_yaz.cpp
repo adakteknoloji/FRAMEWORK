@@ -3,37 +3,70 @@
 #include <QStringList>
 #include "adak_utils.h"
 
-static const QString LEVEL_NAMES    [] = { "",  QObject::tr ( "Bin"     ),
-                                                QObject::tr ( "Milyon"  ),
-                                                QObject::tr ( "Milyar"  ),
-                                                QObject::tr ( "Trilyon" ),
-                                                QObject::tr ( "Trilyar" ) };
+//translate static const QString LEVEL_NAMES    [] = { "",  QT_TR_NOOP ( "Bin"     ),
+                                                //translate QT_TR_NOOP ( "Milyon"  ),
+                                                //translate QT_TR_NOOP ( "Milyar"  ),
+                                                //translate QT_TR_NOOP ( "Trilyon" ),
+                                                //translate QT_TR_NOOP ( "Trilyar" ) };
+//translate 
+//translate static const  QString BIRLER        []  = { "", QT_TR_NOOP ( "Bir"   ),
+                                                //translate QT_TR_NOOP ( "Iki"   ),
+                                                //translate QT_TR_NOOP ( "Uc"    ),
+                                                //translate QT_TR_NOOP ( "Dort"  ),
+                                                //translate QT_TR_NOOP ( "Bes"   ),
+                                                //translate QT_TR_NOOP ( "Alti"  ),
+                                                //translate QT_TR_NOOP ( "Yedi"  ),
+                                                //translate QT_TR_NOOP ( "Sekiz" ),
+                                                //translate QT_TR_NOOP ( "Dokuz" ) };
+//translate 
+//translate 
+//translate static const QString ONLAR          []  = { "", QT_TR_NOOP ( "On"     ),
+                                                //translate QT_TR_NOOP ( "Yirmi"  ),
+                                                //translate QT_TR_NOOP ( "Otuz"   ),
+                                                //translate QT_TR_NOOP ( "Kirk"   ),
+                                                //translate QT_TR_NOOP ( "Elli"   ),
+                                                //translate QT_TR_NOOP ( "Altmis" ),
+                                                //translate QT_TR_NOOP ( "Yetmis" ),
+                                                //translate QT_TR_NOOP ( "Seksen" ),
+                                                //translate QT_TR_NOOP ( "Doksan" ) };
+//translate 
+//translate static QString YUZLUK_PARCAYI_YAZDIR ( QString p_yazdirilacak_yuzluk );
+//translate 
+//translate QString p_lira_string  = "TL";
+//translate QString p_kurus_string = "KR";
 
-static const  QString BIRLER        []  = { "", QObject::tr ( "Bir"   ),
-                                                QObject::tr ( "Iki"   ),
-                                                QObject::tr ( "Uc"    ),
-                                                QObject::tr ( "Dort"  ),
-                                                QObject::tr ( "Bes"   ),
-                                                QObject::tr ( "Alti"  ),
-                                                QObject::tr ( "Yedi"  ),
-                                                QObject::tr ( "Sekiz" ),
-                                                QObject::tr ( "Dokuz" ) };
+
+static const QString LEVEL_NAMES    [] = { "",  QT_TR_NOOP ( "Thousand"     ),
+                                                QT_TR_NOOP ( "Million"  ),
+                                                QT_TR_NOOP ( "Billion"  ),
+                                                QT_TR_NOOP ( "Trillion" ),
+                                                QT_TR_NOOP ( "Quadtrillion" ) };
+
+static const  QString BIRLER        []  = { "", QT_TR_NOOP ( "One"   ),
+                                                QT_TR_NOOP ( "Two"   ),
+                                                QT_TR_NOOP ( "Three"    ),
+                                                QT_TR_NOOP ( "Four"  ),
+                                                QT_TR_NOOP ( "Five"   ),
+                                                QT_TR_NOOP ( "Six"  ),
+                                                QT_TR_NOOP ( "Seven"  ),
+                                                QT_TR_NOOP ( "Eight" ),
+                                                QT_TR_NOOP ( "Nine" ) };
 
 
-static const QString ONLAR          []  = { "", QObject::tr ( "On"     ),
-                                                QObject::tr ( "Yirmi"  ),
-                                                QObject::tr ( "Otuz"   ),
-                                                QObject::tr ( "Kirk"   ),
-                                                QObject::tr ( "Elli"   ),
-                                                QObject::tr ( "Altmis" ),
-                                                QObject::tr ( "Yetmis" ),
-                                                QObject::tr ( "Seksen" ),
-                                                QObject::tr ( "Doksan" ) };
+static const QString ONLAR          []  = { "", QT_TR_NOOP ( "Ten"     ),
+                                                QT_TR_NOOP ( "Twenty"  ),
+                                                QT_TR_NOOP ( "Thirty"   ),
+                                                QT_TR_NOOP ( "Fourty"   ),
+                                                QT_TR_NOOP ( "Fifty"   ),
+                                                QT_TR_NOOP ( "Sixty" ),
+                                                QT_TR_NOOP ( "Seventy" ),
+                                                QT_TR_NOOP ( "Eighty" ),
+                                                QT_TR_NOOP ( "Ninety" ) };
 
 static QString YUZLUK_PARCAYI_YAZDIR ( QString p_yazdirilacak_yuzluk );
 
-QString p_lira_string  = "TL";
-QString p_kurus_string = "KR";
+QString p_lira_string  = "$";
+QString p_kurus_string = "Cent";
 
 /***************************************************************************
                             ADAK_YAZIYLA_YAZ
@@ -166,7 +199,7 @@ static QString YUZLUK_PARCAYI_YAZDIR ( QString p_yazdirilacak_yuzluk )
         if ( yuzler_basamagi > 1 ) {
             yuzluk_sayi_to_yazi_string.append ( BIRLER [ yuzler_basamagi ] );
         }
-        yuzluk_sayi_to_yazi_string.append ( QObject::tr("Yüz") );
+        yuzluk_sayi_to_yazi_string.append ( QT_TR_NOOP("Hundred") );
     }
 
     if ( onlar_basamagi > 0 ) {
