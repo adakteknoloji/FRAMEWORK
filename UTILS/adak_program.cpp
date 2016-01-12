@@ -25,7 +25,7 @@ static struct ADAK_PROGRAM_STRUCT  ADAK_PROGRAM_LIST[NUM_OF_ADAK_PROGRAMS] =
 
     {""                                                , ""              , ""            , ""          , false  },
 
-    {QString::fromUtf8("AATS Test Creator")            , "TestCreator"   , "TC"          , ADAK_VERSION, false  },
+    {QString::fromUtf8("Ultimate Tests for Android's Functionality and Stability")      , "uTAFS"          , "uTAFS"         , ADAK_VERSION, false  },
 
     {""        , ""        , "" , "", false  }, // 5
     {""        , ""        , "" , "", false  }, // 6

@@ -25,24 +25,34 @@ int FIRST_LOGIN( USER_LOGIN_INFO_STRUCT * P_USER_LOGIN_INFO, bool p_ilk_kurulum 
     //! NOTE : VERITABANI ILK YARATILDIGINDA DEFAULT OLARAK
     //! OLUSACAK KULLANICI VE BILGISAYAR BILGILERI
 
-    P_USER_LOGIN_INFO->bilgisayar_kodu    = "B01";
-    P_USER_LOGIN_INFO->bilgisayar_adi     = "Bilgisayarı";
-    P_USER_LOGIN_INFO->kullanici_kodu     = "K01";
-    P_USER_LOGIN_INFO->kullanici_adi      = "K01 Kullanıcısı";
+    //translate P_USER_LOGIN_INFO->bilgisayar_kodu    = QT_TR_NOOP_UTF8 ("B01");
+    //translate P_USER_LOGIN_INFO->bilgisayar_adi     = QT_TR_NOOP_UTF8 ("Bilgisayarı");
+    //translate P_USER_LOGIN_INFO->kullanici_kodu     = QT_TR_NOOP_UTF8 ("K01");
+    //translate P_USER_LOGIN_INFO->kullanici_adi      = QT_TR_NOOP_UTF8 ("K01 Kullanıcısı");
+
+    P_USER_LOGIN_INFO->bilgisayar_kodu    = QT_TR_NOOP_UTF8 ("C01");
+    P_USER_LOGIN_INFO->bilgisayar_adi     = QT_TR_NOOP_UTF8 ("C01 Computer");
+    P_USER_LOGIN_INFO->kullanici_kodu     = QT_TR_NOOP_UTF8 ("U01");
+    P_USER_LOGIN_INFO->kullanici_adi      = QT_TR_NOOP_UTF8 ("U01 User");
     P_USER_LOGIN_INFO->kullanici_sifre   = "";
 
     if( p_ilk_kurulum EQ true ) {
-        P_USER_LOGIN_INFO->sql_motoru         = "YOK";
-        P_USER_LOGIN_INFO->secili_sql_profili = "Yerel Disk";
+        P_USER_LOGIN_INFO->sql_motoru         = "NONE";
+        P_USER_LOGIN_INFO->secili_sql_profili = QT_TR_NOOP_UTF8 ("Local Disk");
         P_USER_LOGIN_INFO->veritabani_kodu    = "000";
+        //translate P_USER_LOGIN_INFO->sql_motoru         = QT_TR_NOOP_UTF8 ("YOK");
+        //translate P_USER_LOGIN_INFO->secili_sql_profili = "Yerel Disk";
+        //translate P_USER_LOGIN_INFO->veritabani_kodu    = "000";
     }
 
-    P_USER_LOGIN_INFO->veritabani_tanimi  = QString("%1 Veritabanı").arg( P_USER_LOGIN_INFO->veritabani_kodu );
+    //translate P_USER_LOGIN_INFO->veritabani_tanimi  = QString("%1 Veritabanı").arg( P_USER_LOGIN_INFO->veritabani_kodu );
+    P_USER_LOGIN_INFO->veritabani_tanimi  = QString(QT_TR_NOOP_UTF8 ("%1 Database")).arg( P_USER_LOGIN_INFO->veritabani_kodu );
 
     if ( P_USER_LOGIN_INFO->is_first_login EQ true ) {
         QSplashScreen * splash = CREATE_SPLASH_SCREEN();
         splash->show();
-        splash->showMessage((QString("Program ilk kullanım için hazırlanıyor. Lütfen Bekleyiniz...")), Qt::AlignCenter, Qt::white );
+        //translate splash->showMessage((QString("Program ilk kullanım için hazırlanıyor. Lütfen Bekleyiniz...")), Qt::AlignCenter, Qt::white );
+        splash->showMessage((QString("Configuring program for first usage. Please wait ...")), Qt::AlignCenter, Qt::white );
         splash->finish(NULL);
     }
 
@@ -60,10 +70,14 @@ int FIRST_LOGIN( USER_LOGIN_INFO_STRUCT * P_USER_LOGIN_INFO, bool p_ilk_kurulum 
     //! [1] YENI BIR VERI TABANI OLSTURULUYOR
 
     if( p_ilk_kurulum EQ false ) {
-        QString uyari_string = QObject::tr("Veritabanında gerekli tablolar bulunamadı!"
-            "\nVermiş olduğunuz bilgilere göre veritabanı ve kullanıcı yaratılacaktır.\n\nYapılacaklar;\n"
-            "%1 - %2 : veritabanı yaratılacaktır.\n"
-            "%3 : kullanıcısı yaratılacak ve tüm yetkiler bu kullanıcıya verilecektir.")
+        //translate QString uyari_string = ("Veritabanında gerekli tablolar bulunamadı!"
+            //translate "\nVermiş olduğunuz bilgilere göre veritabanı ve kullanıcı yaratılacaktır.\n\nYapılacaklar;\n"
+            //translate "%1 - %2 : veritabanı yaratılacaktır.\n"
+            //translate "%3 : kullanıcısı yaratılacak ve tüm yetkiler bu kullanıcıya verilecektir.")
+        QString uyari_string = QString ("Tables needed do not exist in database!"
+            "\nWill create tables and a new user according to the information you gave.\n\n Will do;\n"
+            "Create database : %1 - %2 .\n"
+            "Create %3 : user and give it all the permissions.")
             .arg( P_USER_LOGIN_INFO->veritabani_kodu )
             .arg( P_USER_LOGIN_INFO->veritabani_tanimi  )
             .arg( P_USER_LOGIN_INFO->kullanici_kodu  );

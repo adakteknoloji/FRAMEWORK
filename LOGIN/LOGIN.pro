@@ -46,3 +46,7 @@ FORMS += \
     yeni_sunucu_tanimlama_batch.ui
 
 RESOURCES +=
+
+TRANSLATIONS = login_tr.ts
+CODECFORTR  = UTF-8
+CODECFORSRC = UTF-8

@@ -1,4 +1,5 @@
 #include "adak_utils.h"
+#include <QObject>
 
 /******************************************************************************************/
 /*                  GET_ADAK_MODULE_NAME                                */
@@ -8,38 +9,38 @@ QString GET_ADAK_MODULE_NAME(int modul_id)
 {
     switch ( modul_id ) {
         case MUHASEBE_MODULU :
-            return "MUHASEBE MODÜLÜ";
+            return QObject::tr ("MUHASEBE MODÜLÜ");
         case ISLETME_MODULU  :
-            return "İŞLETME MODÜLÜ";
+            return QObject::tr ("İŞLETME MODÜLÜ");
         case DOVIZ_MODULU    :
-            return "DÖVİZ MODÜLÜ";
+            return QObject::tr ("DÖVİZ MODÜLÜ");
         case ADRES_MODULU    :
-            return "ADRES MODÜLÜ";
+            return QObject::tr ("ADRES MODÜLÜ");
 
         case CARI_MODULU     :
-            return "CARİ MODÜLÜ";
+            return QObject::tr ("CARİ MODÜLÜ");
         case CEKSENET_MODULU :
-            return "ÇEK-SENET MODÜLÜ";
+            return QObject::tr ("ÇEK-SENET MODÜLÜ");
         case BANKA_MODULU    :
-            return "BANKA MODÜLÜ";
+            return QObject::tr ("BANKA MODÜLÜ");
         case SUBE_MODULU    :
-            return "ŞUBE MODÜLÜ";
+            return QObject::tr ("ŞUBE MODÜLÜ");
 
         case STOK_MODULU     :
-            return "STOK MODÜLÜ";
+            return QObject::tr ("STOK MODÜLÜ");
         case IRSALIYE_MODULU     :
-            return "İRSALİYE MODÜLÜ";
+            return QObject::tr ("İRSALİYE MODÜLÜ");
         case FATURA_MODULU     :
-            return "FATURA MODÜLÜ";
+            return QObject::tr ("FATURA MODÜLÜ");
 
         case DEMIRBAS_MODULU :
-            return "DEMİRBAŞ MODÜLÜ";
+            return QObject::tr ("DEMİRBAŞ MODÜLÜ");
         case PERSONEL_MODULU :
-            return "PERSONEL MODÜLÜ";
+            return QObject::tr ("PERSONEL MODÜLÜ");
         case FAIZ_MODULU     :
-            return "FAİZ MODÜLÜ";
+            return QObject::tr ("FAİZ MODÜLÜ");
         default              :
-            return "Meçhul MODÜL";
+            return QObject::tr ("Meçhul MODÜL");
     }
 }
 

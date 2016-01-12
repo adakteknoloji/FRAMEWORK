@@ -566,7 +566,6 @@ int PROCESS_CONSOLE_ARGUMENTS(int argc, char *argv[], USER_LOGIN_INFO_STRUCT *P_
     }
 
     if (QString(argv[1]).toUpper() EQ "--UPDATE_ADAKSTD" OR QString(argv[1]).toUpper() EQ "-UPDATE_ADAKSTD") {
-        qDebug(QVariant(4).toString().toUtf8().data());
         if ( argc < 4 ) {
             cerr << "Güncelleme işlemi için aşagıdaki format kullanılmalı\n\t\tE9 -update_adakstd ipveyahost port sql_motoru db_user db_passwd " << endl;
             exit(0);
@@ -640,7 +639,7 @@ int CHECK_KULLANICI_BILGISAYARA_KAYITLI_MI( int p_ynt_bilgisayar_id, int p_ynt_k
         return ADAK_OK;
     }
     //! SQLITE OZEL
-    if ( SQL_MOTORU() EQ "YOK" ) {
+    if ( SQL_MOTORU() EQ "NONE" ) {
         if (G_YONETIM_DB->SQL_TABLES_EXISTS("") EQ false ){
             ADAK_ERROR(QObject::tr("Veritabanında Tablo yok."), NULL, NULL);
             return ADAK_FAIL;
@@ -1329,9 +1328,9 @@ bool FIRST_LOGINE_GIRECEK_MI(USER_LOGIN_INFO_STRUCT *P_USER_INFO)
 
         //! YONETIM DB VAR
 
-        SET_SQL_MOTORU( "YOK" );
+        SET_SQL_MOTORU( "NONE" );
 
-        P_USER_INFO->sql_motoru         = "YOK";
+        P_USER_INFO->sql_motoru         = "NONE";
         P_USER_INFO->secili_sql_profili = "Yerel Disk";
         P_USER_INFO->veritabani_kodu    = "";
 
@@ -1353,7 +1352,7 @@ bool FIRST_LOGINE_GIRECEK_MI(USER_LOGIN_INFO_STRUCT *P_USER_INFO)
     }
 
     //! SETTINGS VAR YONETIM_DB YOKSA
-    if ( P_USER_INFO->sql_motoru EQ "YOK" ) {
+    if ( P_USER_INFO->sql_motoru EQ "NONE" ) {
 
         QString yonetim_db_file_path = QDir::currentPath() + "/" + SQL_DBNAME_ONEK() + "adak_yonetim.db";
         if ( FILE_EXISTS( yonetim_db_file_path ) EQ false ) {

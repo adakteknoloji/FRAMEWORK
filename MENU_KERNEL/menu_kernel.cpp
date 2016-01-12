@@ -395,7 +395,7 @@ void MENU_KERNEL::ADD_MENU_KERNEL_BUTTON ( QLayout * layout,int button_type,QStr
 {
     QWidget * widget = new QWidget ( this );
 
-    QString button_text_label_style_sheet = "font: 15px;";
+    QString button_text_label_style_sheet = "font: 12px;";
 
     int button_pos = -1;
 
@@ -416,7 +416,7 @@ void MENU_KERNEL::ADD_MENU_KERNEL_BUTTON ( QLayout * layout,int button_type,QStr
         menu_button_item->setSizePolicy ( QSizePolicy::Fixed,QSizePolicy::Fixed );
         menu_button_item->setObjectName ( QVariant ( M_KERNEL_MENU_SECENEGI[index].enum_id ).toString() );
         menu_button_item->setStyleSheet ( "QToolButton { text-align: left;  background-color:rgba (255, 255, 255, 0); "
-                                          "font: 17px \"Monospace\";  } ;" );
+                                          "font: 14px \"Monospace\";  } ;" );
     }
     else {
         menu_button_item->setSizePolicy ( QSizePolicy::Expanding,QSizePolicy::Fixed );
@@ -550,7 +550,7 @@ void MENU_KERNEL::ADD_MENU_KERNEL_LABEL ( QLayout * layout,int label_type,QStrin
     QLabel * label = new QLabel ( label_text, this );
 
     if ( label_type EQ MENU_HEADER_ITEM ) {
-         label->setStyleSheet( "QLabel { font: 16px \"Serif\"; }; " );
+         label->setStyleSheet( "QLabel { font: 14px \"Serif\"; }; " );
         label->setSizePolicy ( QSizePolicy::Expanding,QSizePolicy::Fixed );
         label->setAlignment  ( Qt::AlignLeft );
     }

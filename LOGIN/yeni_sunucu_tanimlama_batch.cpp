@@ -102,13 +102,13 @@ void YENI_SUNUCU_TANIMLAMA_BATCH::SETUP_FORM ()
     m_ui->lineEdit_veritabani_onek->setMaxLength(20);
 
     if ( m_user_info->sql_motoru.isEmpty() EQ true ) {
-        m_user_info->sql_motoru = "YOK";
+        m_user_info->sql_motoru = "NONE";
     }
 
     m_ui->lineEdit_veritabani_kodu->setText( "firma_veri_tabani" );
 
     if ( m_user_info->secili_sql_profili.isEmpty() EQ true OR m_yeni_profil EQ true ) {
-        m_user_info->sql_motoru = "YOK";
+        m_user_info->sql_motoru = "NONE";
         m_user_info->sql_sunucu = "localhost";
         FILL_SELECTED_SQL( m_user_info->sql_motoru );
     }
@@ -192,7 +192,7 @@ int YENI_SUNUCU_TANIMLAMA_BATCH::CHECK_VAR ( QObject * object )
 
 int YENI_SUNUCU_TANIMLAMA_BATCH::CHECK_RUN ()
 {
-    if ( m_ui->combobox_sql_motoru->currentText() NE "YOK" ) {
+    if ( m_ui->combobox_sql_motoru->currentText() NE "NONE" ) {
         if (m_ui->lineEdit_sql_port->text().isEmpty() EQ true ) {
             MSG_ERROR(tr("Sql motoru port bilgisi boş bırakılamaz\n") , m_ui->lineEdit_sql_port);
             m_ui->lineEdit_sql_port->setText(QVariant(GET_DEFAULT_SQL_PORT_NUMBER(GET_SQL_DB_DRIVER_ENUM(m_ui->combobox_sql_motoru->currentText()))).toString());
@@ -388,7 +388,7 @@ void YENI_SUNUCU_TANIMLAMA_BATCH::KAYITLI_PROFILI_SIL(bool kaydi_sil_button_clic
 
 void YENI_SUNUCU_TANIMLAMA_BATCH::FILL_SELECTED_SQL ( QString sql_motoru )
 {
-    if ( sql_motoru EQ "YOK" ) {
+    if ( sql_motoru EQ "NONE" ) {
         m_ui->lineEdit_sunucu->clear();
         m_ui->lineEdit_sql_port->clear();
     }

@@ -1,4 +1,5 @@
 #include <QString>
+#include <QObject>
 #include <QCryptographicHash>
 #include <adak_utils.h>
 
@@ -102,8 +103,8 @@ void SET_SQL_PASSWORD (QString sql_password)
                    SQL_MOTORU
 ***************************************************************************************/
 
-//translate static QString             g_sql_motoru = "YOK";
-static QString             g_sql_motoru = QT_TR_NOOP("NONE");
+//static QString             g_sql_motoru = QObject::tr ("NONE");
+static QString             g_sql_motoru = "NONE";
 QString SQL_MOTORU ()
 {
     return g_sql_motoru;
@@ -116,8 +117,8 @@ QString SQL_MOTORU ()
 void SET_SQL_MOTORU (QString sql_motoru)
 {
     g_sql_motoru = sql_motoru.toUpper();
-    //translate if (g_sql_motoru == "SQLITE" OR g_sql_motoru == tr("NONE")) {
-    if (g_sql_motoru == "SQLITE" OR g_sql_motoru == "YOK") {
+    //if (g_sql_motoru == "SQLITE" OR g_sql_motoru == QObject::tr ("NONE")) {
+    if (g_sql_motoru == "SQLITE" OR g_sql_motoru == "NONE") {
         //g_sql_driver = SQLITE;
     }
     else if (g_sql_motoru == "MYSQL") {

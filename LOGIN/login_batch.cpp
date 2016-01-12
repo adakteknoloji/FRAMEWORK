@@ -54,9 +54,11 @@ LOGIN_BATCH::LOGIN_BATCH ( USER_LOGIN_INFO_STRUCT * user_informations,bool * all
 void LOGIN_BATCH::SETUP_FORM ()
 {
     SET_ENTER_KEY_FOR_RUN_BATCH  ( true );
+    // translate SET_NAME_OF_RUN_BATCH_BUTTON ( tr ( "Giriş" ) );
     SET_NAME_OF_RUN_BATCH_BUTTON ( tr ( "Giriş" ) );
     REGISTER_BUTTON_WIDGET       ( m_ui->widget_batch_buttons );
 
+    // translate SET_PAGE_TITLE( ADAK_PROGRAM_SHORTNAME( ADAK_DISPLAY_ID() ) + tr(" Giriş Ekranı V") + ADAK_PROGRAM_VERSION(ADAK_DISPLAY_ID()));
     SET_PAGE_TITLE( ADAK_PROGRAM_SHORTNAME( ADAK_DISPLAY_ID() ) + tr(" Giriş Ekranı V") + ADAK_PROGRAM_VERSION(ADAK_DISPLAY_ID()));
     SET_SETTING_NAME    ( "LOGIN_BATCH");
     SET_AUTO_EXIT_BATCH ( true );
@@ -286,7 +288,7 @@ void LOGIN_BATCH::RUN_BATCH()
 
     if ( m_user_info->veritabani_kodu.isEmpty() EQ false ) {
 
-        if ( m_user_info->sql_motoru EQ "YOK" ) {
+        if ( m_user_info->sql_motoru EQ "NONE" ) {
             if ( PROGRAM_DB_VAR_MI( m_user_info->veritabani_kodu ) EQ false ) {
                 MSG_WARNING( "Veritabanı yok!", NULL );
                 return;

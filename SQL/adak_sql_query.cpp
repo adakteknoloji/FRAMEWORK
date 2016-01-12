@@ -382,7 +382,8 @@ bool SQL_QUERY::EXEC  ()
     m_bind_values_names.clear();
     m_bind_values.clear();
 
-    return exec();
+    bool return_value = exec();
+    return return_value;
 }
 
 /***********************************************************/

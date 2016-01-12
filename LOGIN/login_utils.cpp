@@ -217,7 +217,7 @@ void CLEAR_SETTINGS(USER_LOGIN_INFO_STRUCT *P_USER_LOGIN_INFO)
     P_USER_LOGIN_INFO->sql_user_created           = false;
     P_USER_LOGIN_INFO->sql_informations_approved  = false;
     P_USER_LOGIN_INFO->sql_tablolari_guncellestir = false;
-    P_USER_LOGIN_INFO->sql_motoru                 = "YOK";
+    P_USER_LOGIN_INFO->sql_motoru                 = "NONE";
     P_USER_LOGIN_INFO->sql_sunucu                 = "localhost";
     P_USER_LOGIN_INFO->sql_db_on_ek               = "";
     P_USER_LOGIN_INFO->sql_username               = "";

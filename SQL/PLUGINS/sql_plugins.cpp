@@ -68,7 +68,7 @@ int GET_DEFAULT_SQL_PORT_NUMBER ( DB_DRIVER db_driver )
 
 DB_DRIVER GET_SQL_DB_DRIVER_ENUM ( QString driver_name )
 {
-    if ( driver_name.toUpper() EQ "YOK" ) {
+    if ( driver_name.toUpper() EQ "NONE" ) {
         return SQLITE;
     }
     else if ( driver_name.toUpper() EQ "MYSQL" ) {
@@ -96,7 +96,7 @@ DB_DRIVER GET_SQL_DB_DRIVER_ENUM ( QString driver_name )
 
 QStringList GET_SQL_DRIVER_LIST()
 {
-    return (QStringList() << "YOK"  << "PostgreSQL" << "MySQL" << "MicrosoftSQL"<< "ORACLE" << "ODBC" );
+    return (QStringList() << "NONE"  << "PostgreSQL" << "MySQL" << "MicrosoftSQL"<< "ORACLE" << "ODBC" );
 }
 
 /**************************************************************************************

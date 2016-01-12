@@ -53,7 +53,7 @@ bool ADAK_ADD_PIXMAP_TO_BUTTON (QPushButton * push_button, QString * file_path, 
     file_dialog.setFileMode ( QFileDialog::AnyFile );
 
     //Dikkat burdaki dosya uzantilari silinmeli dosya isminden.
-    file_extensions << QT_TR_NOOP("Image Files - Max. 512kb (*.png *.xpm *.jpg *.jpeg *.svg *.gif *.ico  *.tiff");
+    file_extensions << QObject::tr ("Image Files - Max. 512kb (*.png *.xpm *.jpg *.jpeg *.svg *.gif *.ico  *.tiff");
 
     file_dialog.setNameFilters ( file_extensions    );
     file_dialog.setViewMode    ( QFileDialog::Detail );
@@ -77,7 +77,7 @@ bool ADAK_ADD_PIXMAP_TO_BUTTON (QPushButton * push_button, QString * file_path, 
 
         if ( file.size() > 512000) {
             //ADAK_WARNING (qApp->tr("Resim dosyaları 512kb büyük olamaz."),NULL, parent );
-            ADAK_WARNING (QT_TR_NOOP("Image files must be smaller than 512KB."),NULL, parent );
+            ADAK_WARNING (QObject::tr ("Image files must be smaller than 512KB."),NULL, parent );
             return false;
         }
 

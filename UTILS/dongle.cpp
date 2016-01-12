@@ -13,8 +13,6 @@ struct DONGLE_STRUCT {
 };
 
 static struct DONGLE_STRUCT DESIGNER_DONGLELARI[] = {
-    {10,45,249,106},        // Cavit VURAL
-    {10,46,53,180},         // Celal SAVUR
     {0,0,0,0}
 };
 
