@@ -51,7 +51,7 @@ YENI_SUNUCU_TANIMLAMA_BATCH::YENI_SUNUCU_TANIMLAMA_BATCH (bool yeni_profil , USE
 
 void YENI_SUNUCU_TANIMLAMA_BATCH::SETUP_FORM ()
 {
-    SET_NAME_OF_RUN_BATCH_BUTTON( tr("Bağlan") );
+    SET_NAME_OF_RUN_BATCH_BUTTON( tr("Connect") );
 
     SET_FIRST_FOCUS_WIDGET( m_ui->line_edit_profil_ismi );
 
@@ -89,7 +89,7 @@ void YENI_SUNUCU_TANIMLAMA_BATCH::SETUP_FORM ()
     m_ui->tool_button_kayitli_profili_sil->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
     m_ui->tool_button_kayitli_profili_sil->setIconSize(QSize(32,32));
 
-    SET_PAGE_TITLE   (tr("YENİ SUNUCU TANIMLAMA"));
+    SET_PAGE_TITLE   (tr("NEW SERVER DEFINITION"));
     SET_SETTING_NAME ("YENİ_SUNUCU_TANIMLAMA");
     SET_HELP_PAGE    ("yeni-sunucu-tanimlama");
 
@@ -151,8 +151,8 @@ int YENI_SUNUCU_TANIMLAMA_BATCH::CHECK_VAR ( QObject * object )
     if ( object EQ m_ui->lineEdit_sql_port ) {
         QRegExp non_digit("(\\D+)");
         if (m_ui->lineEdit_sql_port->text().contains(non_digit) EQ true ) {
-            MSG_ERROR(tr("Port numarası sadece nümerik karakterlerden oluşabilir") , NULL);
-            return ADAK_FAIL;
+            MSG_ERROR(tr("The port number can only consist of numeric characters.") , NULL);
+            return ADAK_FAIL;//Port numarası sadece nümerik karakterlerden oluşabilir
         }
     }
     else if ( object EQ m_ui->combobox_sql_motoru ) {
@@ -168,8 +168,8 @@ int YENI_SUNUCU_TANIMLAMA_BATCH::CHECK_VAR ( QObject * object )
     }
     else if( object EQ m_ui->lineEdit_veritabani_kodu ) {
         if ( m_ui->lineEdit_sql_kul_adi->text().contains(letter) EQ true ) {
-            MSG_ERROR(tr("Veritabanı ismi rakam,harf veya \'_\' dışında karakter içeremez.") , m_ui->lineEdit_veritabani_kodu );
-            return ADAK_FAIL_UNDO;
+            MSG_ERROR(tr("Database name numbers, letters or \ '_ \' can not contain characters outside.") , m_ui->lineEdit_veritabani_kodu );
+            return ADAK_FAIL_UNDO;//Veritabanı ismi rakam,harf veya \'_\' dışında karakter içeremez.
         }
         SET_UYARI_LABEL();
     }
@@ -194,15 +194,15 @@ int YENI_SUNUCU_TANIMLAMA_BATCH::CHECK_RUN ()
 {
     if ( m_ui->combobox_sql_motoru->currentText() NE "NONE" ) {
         if (m_ui->lineEdit_sql_port->text().isEmpty() EQ true ) {
-            MSG_ERROR(tr("Sql motoru port bilgisi boş bırakılamaz\n") , m_ui->lineEdit_sql_port);
+            MSG_ERROR(tr("SQL engine port information can not be empty\n") , m_ui->lineEdit_sql_port);//Sql motoru port bilgisi boş bırakılamaz\n
             m_ui->lineEdit_sql_port->setText(QVariant(GET_DEFAULT_SQL_PORT_NUMBER(GET_SQL_DB_DRIVER_ENUM(m_ui->combobox_sql_motoru->currentText()))).toString());
             return ADAK_FAIL;
         }
     }
     if (m_ui->line_edit_profil_ismi->text().isEmpty() EQ true) {
-        MSG_ERROR(tr("SQL profil ismi boş bırakılamaz.\nSql ayarlarınıza uygun bir profil ismi tanımlamanız gerekmektedir.") , m_ui->line_edit_profil_ismi);
+        MSG_ERROR(tr("SQL profile name can not be empty\nYou must define a suitable profile name of your SQL settings.") , m_ui->line_edit_profil_ismi);
         return ADAK_FAIL;
-    }
+    }//SQL profil ismi boş bırakılamaz.\nSql ayarlarınıza uygun bir profil ismi tanımlamanız gerekmektedir.
 
     OTOMATIK_SIFRE_KONTROLU();
 
@@ -216,7 +216,7 @@ int YENI_SUNUCU_TANIMLAMA_BATCH::CHECK_RUN ()
                                                   m_ui->lineEdit_veritabani_kodu->text() );
 
     if ( *m_run_batch_click EQ false ) {
-        MSG_ERROR( QString("Bağlantı Kurulamadı. Veritabanlarını yaratmışmıydınız ? \nHata:%1").arg( hata_mesaji ) , NULL);
+        MSG_ERROR( QString(tr("Connection Failed. Did you create databases ? \nHata:%1")).arg( hata_mesaji ) , NULL);
         return ADAK_FAIL;
     }
 
@@ -250,11 +250,11 @@ void YENI_SUNUCU_TANIMLAMA_BATCH::RUN_BATCH ()
     G_YONETIM_DB = NULL;
 
     if ( CONNECT_TO_DB( ADAK_YONETIM, m_user_info, true ) EQ ADAK_FAIL ) {
-        qDebug( "Yonetim veri tabanina baglanamamadim." );
+        qDebug( "I could not connect to database administration." );//Yonetim veri tabanina baglanamamadim.
         return;
     }
     if ( CONNECT_TO_DB( ADAK_PROGRAM, m_user_info, true ) EQ ADAK_FAIL ) {
-        qDebug( "Program veri tabanina baglanamamadim." );
+        qDebug( "I could not connect to programme database." );//Program veri tabanina baglanamamadim
         return;
     }
 
@@ -460,24 +460,24 @@ void YENI_SUNUCU_TANIMLAMA_BATCH::SQL_UYARISINI_GUNCELLE( DB_DRIVER p_sql_motoru
             m_ui->label_sql_uyarisi->setVisible(false);
             break;
         case PSQL:
-            server_turu = "Postgres Server' da ";
+            server_turu = tr(" In Postgres Server");//Postgres Server' da
             db_olusturma_komutu = "CREATE DATABASE  veritabani_adi  WITH ENCODING <br>'UTF8' TEMPLATE template0;";
             break;
         case MYSQL:
-            server_turu = "Mysql Server' da ";
+            server_turu = tr("In Mysql Server ");
             db_olusturma_komutu = "CREATE DATABASE IF NOT EXISTS  veritabani_adi  <br>DEFAULT CHARACTER SET utf8 COLLATE utf8_turkish_ci";
             break;
         case MSSQL:
-            server_turu = "MSsql Server' da ";
+            server_turu = tr("In MSsql Server");
             db_olusturma_komutu = "CREATE DATABASE veritabani_adi ;";
             break;
         case ORACLE:
-            server_turu = "Oracle Server' da ";
+            server_turu = tr("In Oracle Server");
             db_olusturma_komutu = "CREATE USER veritabani_adi IDENTIFIED BY veritabani_adi <br>DEFAULT TABLESPACE users TEMPORARY TABLESPACE temp "
                                   "<br > ve sonra  GRANT ALL PRIVILEGES TO veritabani_adi";
             break;
         case ODBC:
-            server_turu = "ODBC' de ";
+            server_turu = tr("In ODBC");
             db_olusturma_komutu = "CREATE DATABASE IF NOT EXISTS veritabani_adi <br>DEFAULT CHARACTER SET utf8 COLLATE utf8_turkish_ci;";
             break;
         default:

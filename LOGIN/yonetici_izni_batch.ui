@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>443</width>
+    <width>453</width>
     <height>145</height>
    </rect>
   </property>
@@ -64,7 +64,7 @@ p, li { white-space: pre-wrap; }
       </sizepolicy>
      </property>
      <property name="text">
-      <string>Yönetici Şifresi</string>
+      <string>Admin Password</string>
      </property>
     </widget>
    </item>
