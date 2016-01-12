@@ -40,9 +40,9 @@ PROGRAMI_GUNCELLESTIRIN_BATCH::PROGRAMI_GUNCELLESTIRIN_BATCH (QString url, QStri
 
 void PROGRAMI_GUNCELLESTIRIN_BATCH::SETUP_FORM ()
 {
-    SET_NAME_OF_RUN_BATCH_BUTTON ( "Programı Güncelle" );
+    SET_NAME_OF_RUN_BATCH_BUTTON tr( "Update Programme" );
 
-    SET_PAGE_TITLE    (tr("Yeni Versiyon - %1").arg(m_new_version));
+    SET_PAGE_TITLE    (tr("New version - %1").arg(m_new_version));
     SET_SETTING_NAME  ("YENI_VERSIYON");
     SET_HELP_PAGE     ("guncellestirme.html");
 
