@@ -108,7 +108,7 @@ int START_PROGRAM(int argc, char *argv[], USER_LOGIN_INFO_STRUCT *P_USER_INFO, Q
 
     if ( G_YONETIM_DB EQ NULL ) {
         if ( CONNECT_TO_DB( ADAK_YONETIM, P_USER_INFO, false ) EQ ADAK_FAIL ) {
-            ADAK_WARNING( QObject::tr( "<b>%1</b> Veritabanına tespit edilemedi!").arg( SQL_DBNAME_ONEK() + "adak_yonetim" ), NULL, NULL );
+            ADAK_WARNING( QObject::tr( "<b>%1</b> Database could not be determined!").arg( SQL_DBNAME_ONEK() + "adak_yonetim" ), NULL, NULL );
         }
     }
 
@@ -193,7 +193,7 @@ int SET_BILGISAYAR_INFO ( USER_LOGIN_INFO_STRUCT *P_USER_INFO )
 
     SQL_QUERY sql_query      ( G_YONETIM_DB );
 
-    QString     mac_adresi      = "Kayıtlı Olmayan Mac Adres(ler)i:";
+    QString     mac_adresi      = "Non-registered Mac Address(s):";
     QStringList mac_adressleri  = GET_MAC_ADDRESS();
 
     QString dongle_ip  = GET_DONGLE_IP();
@@ -270,11 +270,11 @@ int SET_BILGISAYAR_INFO ( USER_LOGIN_INFO_STRUCT *P_USER_INFO )
     }
 
     if ( GET_USER_LOGIN_STATUS() EQ USER_ON_LOGIN_SCREEN ) {
-        ADAK_ERROR( QString("Bu bilgisayar sisteme kayıtlı değil.\n%1").arg(mac_adresi)   , NULL,NULL);
+        ADAK_ERROR( QString(QObject::tr("This computer is not registered in the system.\n%1")).arg(mac_adresi)   , NULL,NULL);
     }
 
     P_USER_INFO->bilgisayar_id   =  -1;
-    P_USER_INFO->bilgisayar_kodu =  "Kayıtlı Değil";
+    P_USER_INFO->bilgisayar_kodu =  "Non-registered";
 
     return ADAK_FAIL;
 }
@@ -304,7 +304,7 @@ int SET_KULLANICI_INFO( USER_LOGIN_INFO_STRUCT *P_USER_INFO )
 
     if ( sql_query.SELECT() EQ 0) {
         if ( GET_USER_LOGIN_STATUS() EQ USER_ON_LOGIN_SCREEN ) {
-            ADAK_ERROR( QObject::tr("Bu kodla kullanıcı bulunamadı") , NULL,NULL);
+            ADAK_ERROR( QObject::tr("This coded user not found") , NULL,NULL);
         }
         return ADAK_FAIL;
     }
@@ -324,7 +324,7 @@ int SET_KULLANICI_INFO( USER_LOGIN_INFO_STRUCT *P_USER_INFO )
 
          if ( query.SELECT() EQ 0 ) {
             if ( GET_USER_LOGIN_STATUS() EQ USER_ON_LOGIN_SCREEN ) {
-                ADAK_ERROR( QObject::tr("Kullanıcı bilgisayara kayıtlı değil.") , NULL,NULL);
+                ADAK_ERROR( QObject::tr("This user is not registered on the computer.") , NULL,NULL);
             }
             return ADAK_FAIL;
         }
@@ -407,7 +407,7 @@ int SET_KULLANICI_PAROLA ( USER_LOGIN_INFO_STRUCT *P_USER_INFO )
 
     if ( sql_query.SELECT() EQ 0 ) {
         if ( GET_USER_LOGIN_STATUS() EQ USER_ON_LOGIN_SCREEN ) {
-            ADAK_ERROR(QObject::tr ( "Hatalı parola" ) , NULL,NULL);
+            ADAK_ERROR(QObject::tr( "Invalid password" ) , NULL,NULL);
         }
         return ADAK_FAIL;
     }
@@ -449,8 +449,8 @@ int SET_VERITABANI_INFO ( USER_LOGIN_INFO_STRUCT *P_USER_INFO )
 
     if ( query.SELECT() EQ 0 ) {
         P_USER_INFO->veritabani_id      = -1;
-        P_USER_INFO->veritabani_kodu    = "Tanımlı Değil";
-        P_USER_INFO->veritabani_tanimi  = "Tanımlı Değil";
+        P_USER_INFO->veritabani_kodu    = QObject::tr("Not Defined");
+        P_USER_INFO->veritabani_tanimi  = QObject::tr("Not Defined");
         return ADAK_FAIL;
     }
 
@@ -538,7 +538,7 @@ int PROCESS_CONSOLE_ARGUMENTS(int argc, char *argv[], USER_LOGIN_INFO_STRUCT *P_
 
     if (QString(argv[1]).toUpper() EQ "--SQL_UPDATE" OR QString(argv[1]).toUpper() EQ "-SQL_UPDATE") {
         if ( argc < 4 ) {
-            cerr << "Güncelleme işlemi için aşagıdaki format kullanılmalı\n\t\tE9 -sql_update ipveyahost port sql_motoru db_user db_passwd " << endl;
+            cerr << QObject::tr("The following format should be used to update\n\t\tE9 -sql_update ipveyahost port sql_motoru db_user db_passwd ") << endl;
             exit(0);
         }
 
@@ -561,13 +561,13 @@ int PROCESS_CONSOLE_ARGUMENTS(int argc, char *argv[], USER_LOGIN_INFO_STRUCT *P_
         }
 
         G_YONETIM_DB->UPDATE_TABLES( GET_YONETIM_DB_STRUCTS() );
-        cerr << "Tablo güncelleme işlemi tamamlandı." << endl;
+        cerr << QObject::tr("Table update process is completed.") << endl;
         exit(0);
     }
 
     if (QString(argv[1]).toUpper() EQ "--UPDATE_ADAKSTD" OR QString(argv[1]).toUpper() EQ "-UPDATE_ADAKSTD") {
         if ( argc < 4 ) {
-            cerr << "Güncelleme işlemi için aşagıdaki format kullanılmalı\n\t\tE9 -update_adakstd ipveyahost port sql_motoru db_user db_passwd " << endl;
+            cerr << QObject::tr("The following format should be used for update\n\t\tE9 -update_adakstd ipveyahost port sql_motoru db_user db_passwd ") << endl;
             exit(0);
         }
 
@@ -590,7 +590,7 @@ int PROCESS_CONSOLE_ARGUMENTS(int argc, char *argv[], USER_LOGIN_INFO_STRUCT *P_
         }
         G_YONETIM_DB->UPDATE_TABLES( GET_YONETIM_DB_STRUCTS() );
 
-        cerr << "ADAK_STD güncelleme işlemi tamamlandı." << endl;
+        cerr << QObject::tr("ADAK_STD update process is completed.") << endl;
         exit(0);
     }
 
@@ -604,20 +604,20 @@ int PROCESS_CONSOLE_ARGUMENTS(int argc, char *argv[], USER_LOGIN_INFO_STRUCT *P_
 int CHECK_USER_ACCESS( USER_LOGIN_INFO_STRUCT *P_USER_INFO )
 {
     if (PROGRAMA_UYGUN_DONGLE_VARMI() EQ false) {
-        ADAK_ERROR("DONGLE bulunamadı / UYGUN bir dongle değil ! \n\n Dongle IP : " + GET_DONGLE_IP(), NULL , NULL);
+        ADAK_ERROR(QObject::tr("Unknown DONGLE/ it is not suitable DONGLE ! \n\n Dongle IP : ") + GET_DONGLE_IP(), NULL , NULL);
         exit (1);
     }
 
     if ( GET_USER_LOGIN_STATUS() EQ USER_ON_LOGIN_SCREEN ) {
         if (P_USER_INFO->bilgisayar_id EQ -1 AND P_USER_INFO->kullanici_id NE 1 AND P_USER_INFO->is_first_login EQ false) {
             QStringList mac_adresleri = GET_MAC_ADDRESS();
-            QString     mac_adresi      = "Kayıtlı Olmayan Mac Adres(ler)i:";
+            QString     mac_adresi      = QObject::tr("Non-registered Mac Address (s):");
 
             for ( int i = 0 ; i < mac_adresleri.size() ; i++ ) {
                 mac_adresi.append(QString("\n" + mac_adresleri.at(i)));
             }
 
-            ADAK_ERROR(QString("Bu bilgisayar sisteme kayıtlı değil!\n%1").arg(mac_adresi), NULL , NULL);
+            ADAK_ERROR(QString(QObject::tr("This computer is not registered in the system.\n%1")).arg(mac_adresi), NULL , NULL);
             return ADAK_FAIL;
         }
 
@@ -641,7 +641,7 @@ int CHECK_KULLANICI_BILGISAYARA_KAYITLI_MI( int p_ynt_bilgisayar_id, int p_ynt_k
     //! SQLITE OZEL
     if ( SQL_MOTORU() EQ "NONE" ) {
         if (G_YONETIM_DB->SQL_TABLES_EXISTS("") EQ false ){
-            ADAK_ERROR(QObject::tr("Veritabanında Tablo yok."), NULL, NULL);
+            ADAK_ERROR(QObject::tr("No Tables in the database"), NULL, NULL);
             return ADAK_FAIL;
         }
     }
@@ -660,7 +660,7 @@ int CHECK_KULLANICI_BILGISAYARA_KAYITLI_MI( int p_ynt_bilgisayar_id, int p_ynt_k
     sql_query.SET_VALUE      ( ":kullanici_id" , p_ynt_kullanici_id  );
 
     if ( sql_query.SELECT() EQ 0 ) {
-        ADAK_ERROR(QObject::tr("Kullanıcı bilgisayarda kayıtlı değil.") , NULL,NULL);
+        ADAK_ERROR(QObject::tr("This user is not registered on the computer.") , NULL,NULL);
         return ADAK_FAIL;
     }
 
@@ -686,7 +686,7 @@ int TRY_TO_CONNECT_DB( USER_LOGIN_INFO_STRUCT *P_USER_INFO )
 
             QString secilen_profil = SQL_SUNUCU_SEC(NULL);
 
-            if ( secilen_profil EQ "Yeni Sunucu" ) {
+            if ( secilen_profil EQ QObject::tr("New Server") ) {
                 P_USER_INFO->secili_sql_profili = secilen_profil;
                 return ADAK_FAIL;
             }
@@ -719,12 +719,12 @@ int TRY_TO_CONNECT_DB( USER_LOGIN_INFO_STRUCT *P_USER_INFO )
         }
     }
 
-    baglanti_status.append(QObject::tr("<br>Bağlantı Kuruldu"));
+    baglanti_status.append(QObject::tr("<br>Connection Established"));
 
-    QString status_str = QString("IP/Adres        : <b>%1</b><br>Port: <b>%2</b><br>SQL Motoru: <b>%3</b><br>");
+    QString status_str = QString(QObject::tr("IP/Address        : <b>%1</b><br>Port: <b>%2</b><br>SQL Engine: <b>%3</b><br>"));
 
     if (GET_SQL_DB_DRIVER_ENUM( P_USER_INFO->sql_motoru) EQ SQLITE) {
-        status_str = QString("SQL Motoru      : <b>SQLite</b><br>");
+        status_str = QString(QObject::tr("SQL Engine      : <b>SQLite</b><br>"));
     }
     else {
         status_str = QString(status_str)
@@ -816,7 +816,7 @@ int LOGIN( USER_LOGIN_INFO_STRUCT *P_USER_INFO)
             if ( sql_query.SELECT() EQ 0 ) {
                 QSplashScreen * splash = CREATE_SPLASH_SCREEN();
                 splash->show();
-                splash->showMessage((QString("Veritabanı hazırlanıyor. Lütfen Bekleyiniz...")), Qt::AlignCenter, Qt::white );
+                splash->showMessage((QString(QObject::tr("Preparing database. Please wait..."))), Qt::AlignCenter, Qt::white );
                 DB->SQL_CREATE_TABLES(GET_PROGRAM_DB_STRUCTS().at(i));
                 splash->finish(NULL);
 
@@ -832,7 +832,7 @@ int LOGIN( USER_LOGIN_INFO_STRUCT *P_USER_INFO)
             if( DB->SQL_TABLES_EXISTS("") EQ false ) {
                 QSplashScreen * splash = CREATE_SPLASH_SCREEN();
                 splash->show();
-                splash->showMessage((QString("Veritabanı hazırlanıyor. Lütfen Bekleyiniz...")), Qt::AlignCenter, Qt::white );
+                splash->showMessage((QString(QObject::tr("Preparing database. Please wait..."))), Qt::AlignCenter, Qt::white );
                 DB->SQL_CREATE_TABLES(GET_PROGRAM_DB_STRUCTS().at(i));
                 splash->finish(NULL);
 
@@ -866,7 +866,7 @@ int LOGIN( USER_LOGIN_INFO_STRUCT *P_USER_INFO)
 
             if ( sql_query.SELECT() NE 0 ) {
                 if (G_YONETIM_DB->GET_SQL_DRIVER_ENUM () NE SQLITE) {
-                    ADAK_INFO(QObject::tr ( "Dikkat !. \"yonetici\" şifresi atanmamış.Güvenlik sorunları yaşamamak için, \"yonetici\" şifresi atamalısınız." ) , NULL,NULL);
+                    ADAK_INFO(QObject::tr ( tr("Attention!. \"administration\" password is not assigned. You should assign \"administrator\" password for avoid security problems.") ) , NULL,NULL);
                 }
             }
         }
@@ -1062,7 +1062,7 @@ int TRY_AUTO_LOGIN( USER_LOGIN_INFO_STRUCT *P_USER_INFO )
         return ADAK_FAIL;
     }
 
-    if ( P_USER_INFO->veritabani_kodu EQ "Tanımlı Değil") {
+    if ( P_USER_INFO->veritabani_kodu EQ QObject::tr("Not Defined")) {
         return ADAK_FAIL;
     }
 
@@ -1094,7 +1094,7 @@ int VERITABANLARINI_GUNCELLE()
 
     QSplashScreen * splash = CREATE_SPLASH_SCREEN();
     splash->show();
-    splash->showMessage((QString("Veritabanındaki SQL tabloları düzenleniyor. Lütfen Bekleyiniz...")), Qt::AlignCenter, Qt::white );
+    splash->showMessage((QString(QObject::tr("SQL tables is organizing in database. Please wait..."))), Qt::AlignCenter, Qt::white );
 
     G_YONETIM_DB->UPDATE_TABLES( GET_YONETIM_DB_STRUCTS() );
     DB->UPDATE_TABLES          ( GET_PROGRAM_DB_STRUCTS() );
@@ -1258,7 +1258,7 @@ int CREATE_TABLES_OF_DATABASE(QList<ADAK_SQL_STRUCT *> db_struct, int db_type, Q
     QSplashScreen * splash = CREATE_SPLASH_SCREEN();
 
     splash->show();
-    splash->showMessage ( QObject::tr ( "Program ilk kullanım için hazırlanıyor. Lütfen Bekleyiniz..." ), Qt::AlignCenter, Qt::white );
+    splash->showMessage ( QObject::tr( "The program is preparing for first usage. Please wait..." ), Qt::AlignCenter, Qt::white );
 
     if( db_type EQ ADAK_YONETIM ) {
         G_YONETIM_DB->SQL_CREATE_TABLES  ( db_struct, p_db_name );
@@ -1403,7 +1403,7 @@ void INIT_PROGRAM_DEFAULTS( )
     QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
     QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
 
-    QCoreApplication::setOrganizationName("Adak Teknoloji");
+    QCoreApplication::setOrganizationName(QObject::tr("Adak Technology"));
     QCoreApplication::setOrganizationDomain(ADAK_PROGRAM_WEB(ADAK_DISPLAY_ID()));
     QCoreApplication::setApplicationName(ADAK_PROGRAM_SHORTNAME(ADAK_DISPLAY_ID()));
 }

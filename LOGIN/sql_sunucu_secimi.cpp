@@ -14,7 +14,7 @@ QString SQL_SUNUCU_SEC ( QWidget * parent )
     QString secilen_sunucu = "";
 
     SQL_SUNUCU_SECIMI * F = new SQL_SUNUCU_SECIMI ( &secilen_sunucu , parent );
-    if ( secilen_sunucu NE "Yeni Sunucu") {        
+    if ( secilen_sunucu NE tr("New Server")) {
         F->EXEC (NOT_FULL_SCREEN);
     }
 
@@ -33,9 +33,9 @@ SQL_SUNUCU_SECIMI::SQL_SUNUCU_SECIMI( QString * secilen_sunucu ,QWidget * parent
 
     SET_HEADERS (QStringList() << "Sunucular" );
 
-    SET_PAGE_TITLE    ( QObject::tr ( "SUNUCU SEÇİMİ" ) );
+    SET_PAGE_TITLE    ( QObject::tr ( "SERVER SELECTION" ) );
     SET_SETTING_NAME  ( "SUNUCU_SECIMI" );
-    SET_HELP_PAGE     ( QObject::tr("sql_sunucu_secimi") );
+    SET_HELP_PAGE     ("sql_sunucu_secimi" );
 
     INIT_KERNEL ( DB );
 }
@@ -53,13 +53,13 @@ void SQL_SUNUCU_SECIMI::FILL_TABLE()
     QString sunucu_str_list = settings.value("kayitli_sql_sunuculari","").toString();
 
     if ( sunucu_str_list.isEmpty() EQ true ) {
-        *m_secilen_sunucu = "Yeni Sunucu";
+        *m_secilen_sunucu = "New Server";
         close();
         return;
     }
 
     QStringList sunucu_str = sunucu_str_list.split("-");
-    sunucu_str << "Yeni Sunucu";
+    sunucu_str << "New Server";
 
     int current_row = -1;
 
@@ -67,8 +67,8 @@ void SQL_SUNUCU_SECIMI::FILL_TABLE()
         current_row = ADD_NEW_ROW();
         table_widget->item(current_row,0)->setText( sunucu_str.at(i) );
     }
-
-    MSG_ERROR("Bağlantı Kurulamadı. Başka bir sunucu seçin yada yeni bir sunucu ekleyin.",NULL);
+    //Bağlantı kurulamadı Başka bir sunucu seçin veya yeni bir sunucu ekleyin
+    MSG_ERROR("Unable to connect. Select another server or add a new server.",NULL);
 }
 
 /**************************************************************************************

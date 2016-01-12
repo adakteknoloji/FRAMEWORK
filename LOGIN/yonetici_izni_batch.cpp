@@ -37,7 +37,7 @@ YONETICI_IZNI_BATCH::YONETICI_IZNI_BATCH ( bool * onay_alindi,QWidget * parent )
 
 void YONETICI_IZNI_BATCH::SETUP_FORM ()
 {
-    SET_NAME_OF_RUN_BATCH_BUTTON ( "Onayla" );
+    SET_NAME_OF_RUN_BATCH_BUTTON ( tr("Confirm") );
 
     SET_ENTER_KEY_FOR_RUN_BATCH  (true);
 
@@ -45,7 +45,7 @@ void YONETICI_IZNI_BATCH::SETUP_FORM ()
 
     REGISTER_BUTTON_WIDGET ( m_ui->widget_run );
 
-    SET_PAGE_TITLE    (tr("YÖNETİCİ ONAYI GEREKLİ"));
+    SET_PAGE_TITLE    (tr("ADMINISTRATOR APPROVAL IS REQUIRED"));
     SET_AUTO_EXIT_BATCH ( true );
     SET_SETTING_NAME  ("YONETICI_IZNI");
     SET_HELP_PAGE     ("yönetici_onayı_batch.html");
@@ -79,7 +79,7 @@ int YONETICI_IZNI_BATCH::CHECK_RUN ()
     sql_query.SET_VALUE ( ":parola", QString( hash.toHex() ) );
 
     if ( sql_query.SELECT() EQ 0 ) {
-        MSG_INFO(QObject::tr ( "Yönetici şifresini yanlış girdiniz.Kontrol ediniz.") , m_ui->line_edit_yonetici_sifre );
+        MSG_INFO(QObject::tr ( "You entered the wrong administrator password.Please check.") , m_ui->line_edit_yonetici_sifre );
         return ADAK_FAIL;
     }
 

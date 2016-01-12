@@ -53,7 +53,7 @@ void OPEN_ADAK_SQL_ERROR_DIALOG ( const QString& hostname,    const QString& db_
     mesaj_icerigi        += QObject::tr ("Server             :&nbsp;") + hostname                                       + "<br />";
     mesaj_icerigi        += QObject::tr ("Operating System   :&nbsp;") + os                                             + "<br />";
     mesaj_icerigi        += QObject::tr ("Database           :&nbsp;") + db_name                                        + "<br />";
-    mesaj_icerigi        += QObject::tr ("SQL MOTOR          :&nbsp;") + driver_name                                    + "<br />";
+    mesaj_icerigi        += QObject::tr ("SQL Engine         :&nbsp;") + driver_name                                    + "<br />";
     mesaj_icerigi        += QObject::tr ("Error Number       :&nbsp;") + QVariant ( error_number ).toString()           + "<br />";
     mesaj_icerigi        += QObject::tr ("ERror Type         :&nbsp;") + error_type                                     + "<br />";
     mesaj_icerigi        += QObject::tr ("Error Message      :&nbsp;") + error_text                                     + "<br />";
