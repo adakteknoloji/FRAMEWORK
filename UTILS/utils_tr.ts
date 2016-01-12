@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
 <TS version="2.0" language="tr_TR">
-<defaultcodec>UTF-8</defaultcodec>
-<context>
-    <name>QKeySequence</name>
-    <message>
-        <source>O</source>
-        <translation type="obsolete">T</translation>
-    </message>
-</context>
 <context>
     <name>QObject</name>
     <message>
@@ -91,83 +83,82 @@
         <translation>İ</translation>
     </message>
     <message>
-        <source>NONE</source>
-        <translation type="obsolete">YOK</translation>
-    </message>
-    <message>
         <location filename="module_names.cpp" line="12"/>
-        <source>MUHASEBE MODÜLÜ</source>
+        <source>ACCOUNTING MODULE</source>
         <translation>MUHASEBE MODÜLÜ</translation>
     </message>
     <message>
         <location filename="module_names.cpp" line="14"/>
-        <source>İŞLETME MODÜLÜ</source>
+        <source>BUSINESS MODULE</source>
         <translation>İŞLETME MODÜLÜ</translation>
     </message>
     <message>
         <location filename="module_names.cpp" line="16"/>
-        <source>DÖVİZ MODÜLÜ</source>
+        <source>CURRENCY MODULE</source>
         <translation>DÖVİZ MODÜLÜ</translation>
     </message>
     <message>
         <location filename="module_names.cpp" line="18"/>
-        <source>ADRES MODÜLÜ</source>
+        <source>ADDRESS MODULE</source>
+        <oldsource>ADRES MODÜLÜ</oldsource>
         <translation>ADRES MODÜLÜ</translation>
     </message>
     <message>
         <location filename="module_names.cpp" line="21"/>
-        <source>CARİ MODÜLÜ</source>
-        <translation>CARİ MODÜLÜ</translation>
+        <source>CURRENT MODULE</source>
+        <translation>CARİ MODÜL</translation>
     </message>
     <message>
         <location filename="module_names.cpp" line="23"/>
-        <source>ÇEK-SENET MODÜLÜ</source>
-        <translation>ÇEK-SENET MODÜLÜ</translation>
-    </message>
-    <message>
-        <location filename="module_names.cpp" line="25"/>
-        <source>BANKA MODÜLÜ</source>
-        <translation>BANKA MODÜLÜ</translation>
+        <source>CHEQUE &amp; BOND MODULE</source>
+        <translation>ÇEK &amp; SENET MODÜLÜ</translation>
     </message>
     <message>
         <location filename="module_names.cpp" line="27"/>
-        <source>ŞUBE MODÜLÜ</source>
+        <source>SUBOFFICE MODULE</source>
         <translation>ŞUBE MODÜLÜ</translation>
     </message>
     <message>
-        <location filename="module_names.cpp" line="30"/>
-        <source>STOK MODÜLÜ</source>
-        <translation>STOK MODÜLÜ</translation>
-    </message>
-    <message>
         <location filename="module_names.cpp" line="32"/>
-        <source>İRSALİYE MODÜLÜ</source>
+        <source>DISPATCH NOTE MODULE</source>
         <translation>İRSALİYE MODÜLÜ</translation>
     </message>
     <message>
         <location filename="module_names.cpp" line="34"/>
-        <source>FATURA MODÜLÜ</source>
+        <source>BILL MODULE</source>
         <translation>FATURA MODÜLÜ</translation>
     </message>
     <message>
         <location filename="module_names.cpp" line="37"/>
-        <source>DEMİRBAŞ MODÜLÜ</source>
-        <translation>DEMİRBAŞ MODÜLÜ</translation>
+        <source>FIXTURE MODULE</source>
+        <translation>DEMİRBAŞ</translation>
     </message>
     <message>
         <location filename="module_names.cpp" line="39"/>
-        <source>PERSONEL MODÜLÜ</source>
+        <source>STAFF MODULE</source>
         <translation>PERSONEL MODÜLÜ</translation>
     </message>
     <message>
         <location filename="module_names.cpp" line="41"/>
-        <source>FAİZ MODÜLÜ</source>
+        <source>INTEREST MODULE</source>
         <translation>FAİZ MODÜLÜ</translation>
     </message>
     <message>
         <location filename="module_names.cpp" line="43"/>
-        <source>Meçhul MODÜL</source>
-        <translation>Meçhul MODÜL</translation>
+        <source>UNKNOWN MODULE</source>
+        <translation>MEÇHUL MODÜL</translation>
+    </message>
+    <message>
+        <location filename="module_names.cpp" line="25"/>
+        <source>BANK MODULE</source>
+        <oldsource>BANKA MODÜLÜ</oldsource>
+        <translation>BANKA MODÜLÜ</translation>
+    </message>
+    <message>
+        <location filename="module_names.cpp" line="30"/>
+        <source>STOCK MODULE</source>
+        <oldsource>STOK MODÜLÜ</oldsource>
+        <translation>STOK MODÜLÜ</translation>
     </message>
     <message>
         <location filename="yaziyla_yaz.cpp" line="6"/>
@@ -298,13 +289,6 @@
         <location filename="yaziyla_yaz.cpp" line="170"/>
         <source>Hundred</source>
         <translation>Yüz</translation>
-    </message>
-</context>
-<context>
-    <name>addButton</name>
-    <message>
-        <source>Okey</source>
-        <translation type="obsolete">Tamam</translation>
     </message>
 </context>
 </TS>
