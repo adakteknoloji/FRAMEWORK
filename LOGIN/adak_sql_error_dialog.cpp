@@ -32,7 +32,7 @@ void OPEN_ADAK_SQL_ERROR_DIALOG ( const QString& hostname,    const QString& db_
     }
     else {
         // hatanin_olustugu_form = QT_TR_NOOP_UTF8 ("KERNEL dışı ekran");
-        hatanin_olustugu_form = QT_TR_NOOP_UTF8 ("Screen is out of KERNEL");
+        hatanin_olustugu_form = QObject::tr ("Screen is out of KERNEL");
     }
 //    QString mesaj_icerigi = "Tarih                 :&nbsp;" + QDate::currentDate().toString ( "dd.MM.yyyy" ) + "<br />";
 //    mesaj_icerigi        += "Saat                  :&nbsp;" + QTime::currentTime().toString ( "hh:mm" )      + "<br />";
@@ -48,18 +48,18 @@ void OPEN_ADAK_SQL_ERROR_DIALOG ( const QString& hostname,    const QString& db_
 //    mesaj_icerigi        += "Hatalı Sorgu          :&nbsp;" + hatali_query                                   + "<br />";
 
 
-    QString mesaj_icerigi = QT_TR_NOOP_UTF8 ("Date               :&nbsp;") + QDate::currentDate().toString ( "dd.MM.yyyy" ) + "<br />";
-    mesaj_icerigi        += QT_TR_NOOP_UTF8 ("Time               :&nbsp;") + QTime::currentTime().toString ( "hh:mm" )      + "<br />";
-    mesaj_icerigi        += QT_TR_NOOP_UTF8 ("Server             :&nbsp;") + hostname                                       + "<br />";
-    mesaj_icerigi        += QT_TR_NOOP_UTF8 ("Operating System   :&nbsp;") + os                                             + "<br />";
-    mesaj_icerigi        += QT_TR_NOOP_UTF8 ("Database           :&nbsp;") + db_name                                        + "<br />";
-    mesaj_icerigi        += QT_TR_NOOP_UTF8 ("SQL MOTOR          :&nbsp;") + driver_name                                    + "<br />";
-    mesaj_icerigi        += QT_TR_NOOP_UTF8 ("Error Number       :&nbsp;") + QVariant ( error_number ).toString()           + "<br />";
-    mesaj_icerigi        += QT_TR_NOOP_UTF8 ("ERror Type         :&nbsp;") + error_type                                     + "<br />";
-    mesaj_icerigi        += QT_TR_NOOP_UTF8 ("Error Message      :&nbsp;") + error_text                                     + "<br />";
-    mesaj_icerigi        += QT_TR_NOOP_UTF8 ("Screen name        :&nbsp;") + hatanin_olustugu_form                          + "<br />";
-    mesaj_icerigi        += QT_TR_NOOP_UTF8 ("Description        :&nbsp;") + aciklama                                       + "<br />";
-    mesaj_icerigi        += QT_TR_NOOP_UTF8 ("Failed query       :&nbsp;") + hatali_query                                   + "<br />";
+    QString mesaj_icerigi = QObject::tr ("Date               :&nbsp;") + QDate::currentDate().toString ( "dd.MM.yyyy" ) + "<br />";
+    mesaj_icerigi        += QObject::tr ("Time               :&nbsp;") + QTime::currentTime().toString ( "hh:mm" )      + "<br />";
+    mesaj_icerigi        += QObject::tr ("Server             :&nbsp;") + hostname                                       + "<br />";
+    mesaj_icerigi        += QObject::tr ("Operating System   :&nbsp;") + os                                             + "<br />";
+    mesaj_icerigi        += QObject::tr ("Database           :&nbsp;") + db_name                                        + "<br />";
+    mesaj_icerigi        += QObject::tr ("SQL MOTOR          :&nbsp;") + driver_name                                    + "<br />";
+    mesaj_icerigi        += QObject::tr ("Error Number       :&nbsp;") + QVariant ( error_number ).toString()           + "<br />";
+    mesaj_icerigi        += QObject::tr ("ERror Type         :&nbsp;") + error_type                                     + "<br />";
+    mesaj_icerigi        += QObject::tr ("Error Message      :&nbsp;") + error_text                                     + "<br />";
+    mesaj_icerigi        += QObject::tr ("Screen name        :&nbsp;") + hatanin_olustugu_form                          + "<br />";
+    mesaj_icerigi        += QObject::tr ("Description        :&nbsp;") + aciklama                                       + "<br />";
+    mesaj_icerigi        += QObject::tr ("Failed query       :&nbsp;") + hatali_query                                   + "<br />";
 
 
     error_dialog.m_ui->textEdit_mail_text->setText        ( mesaj_icerigi );

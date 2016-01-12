@@ -33,9 +33,9 @@ SQL_SUNUCU_SECIMI::SQL_SUNUCU_SECIMI( QString * secilen_sunucu ,QWidget * parent
 
     SET_HEADERS (QStringList() << "Sunucular" );
 
-    SET_PAGE_TITLE    ( tr ( "SUNUCU SEÇİMİ" ) );
+    SET_PAGE_TITLE    ( QObject::tr ( "SUNUCU SEÇİMİ" ) );
     SET_SETTING_NAME  ( "SUNUCU_SECIMI" );
-    SET_HELP_PAGE     ( tr("sql_sunucu_secimi") );
+    SET_HELP_PAGE     ( QObject::tr("sql_sunucu_secimi") );
 
     INIT_KERNEL ( DB );
 }

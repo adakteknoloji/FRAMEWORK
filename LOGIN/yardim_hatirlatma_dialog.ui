@@ -36,7 +36,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Unutmayın, programın her yerinde</string>
+        <string>Do not forget the program can get help</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -63,7 +63,7 @@
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="yonetim_icons.qrc">:/yonetim_icons/yonetim_question_mark.png</pixmap>
+          <pixmap>:/yonetim_icons/yonetim_question_mark.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -86,7 +86,7 @@
         </font>
        </property>
        <property name="text">
-        <string>butonu ile yardım alabilirsiniz</string>
+        <string>anywhere with this button.</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -161,10 +161,10 @@
             <string notr="true">text-align:center</string>
            </property>
            <property name="text">
-            <string>Programı Başlat</string>
+            <string>Start Programme</string>
            </property>
            <property name="icon">
-            <iconset resource="yonetim_icons.qrc">
+            <iconset>
              <normaloff>:/yonetim_icons/yonetim_tamam.png</normaloff>:/yonetim_icons/yonetim_tamam.png</iconset>
            </property>
           </widget>

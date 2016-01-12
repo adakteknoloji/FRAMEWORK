@@ -30,15 +30,15 @@ int FIRST_LOGIN( USER_LOGIN_INFO_STRUCT * P_USER_LOGIN_INFO, bool p_ilk_kurulum 
     //translate P_USER_LOGIN_INFO->kullanici_kodu     = QT_TR_NOOP_UTF8 ("K01");
     //translate P_USER_LOGIN_INFO->kullanici_adi      = QT_TR_NOOP_UTF8 ("K01 Kullanıcısı");
 
-    P_USER_LOGIN_INFO->bilgisayar_kodu    = QT_TR_NOOP_UTF8 ("C01");
-    P_USER_LOGIN_INFO->bilgisayar_adi     = QT_TR_NOOP_UTF8 ("C01 Computer");
-    P_USER_LOGIN_INFO->kullanici_kodu     = QT_TR_NOOP_UTF8 ("U01");
-    P_USER_LOGIN_INFO->kullanici_adi      = QT_TR_NOOP_UTF8 ("U01 User");
+    P_USER_LOGIN_INFO->bilgisayar_kodu    = QObject::tr ("C01");
+    P_USER_LOGIN_INFO->bilgisayar_adi     = QObject::tr ("C01 Computer");
+    P_USER_LOGIN_INFO->kullanici_kodu     = QObject::tr ("U01");
+    P_USER_LOGIN_INFO->kullanici_adi      = QObject::tr ("U01 User");
     P_USER_LOGIN_INFO->kullanici_sifre   = "";
 
     if( p_ilk_kurulum EQ true ) {
         P_USER_LOGIN_INFO->sql_motoru         = "NONE";
-        P_USER_LOGIN_INFO->secili_sql_profili = QT_TR_NOOP_UTF8 ("Local Disk");
+        P_USER_LOGIN_INFO->secili_sql_profili = QObject::tr ("Local Disk");
         P_USER_LOGIN_INFO->veritabani_kodu    = "000";
         //translate P_USER_LOGIN_INFO->sql_motoru         = QT_TR_NOOP_UTF8 ("YOK");
         //translate P_USER_LOGIN_INFO->secili_sql_profili = "Yerel Disk";
@@ -46,7 +46,7 @@ int FIRST_LOGIN( USER_LOGIN_INFO_STRUCT * P_USER_LOGIN_INFO, bool p_ilk_kurulum 
     }
 
     //translate P_USER_LOGIN_INFO->veritabani_tanimi  = QString("%1 Veritabanı").arg( P_USER_LOGIN_INFO->veritabani_kodu );
-    P_USER_LOGIN_INFO->veritabani_tanimi  = QString(QT_TR_NOOP_UTF8 ("%1 Database")).arg( P_USER_LOGIN_INFO->veritabani_kodu );
+    P_USER_LOGIN_INFO->veritabani_tanimi  = QString(QObject::tr ("%1 Database")).arg( P_USER_LOGIN_INFO->veritabani_kodu );
 
     if ( P_USER_LOGIN_INFO->is_first_login EQ true ) {
         QSplashScreen * splash = CREATE_SPLASH_SCREEN();

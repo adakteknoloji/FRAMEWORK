@@ -38,8 +38,8 @@ VERITABANI_SECIMI::VERITABANI_SECIMI( int kullanici_id , QString * veritabani_is
     m_veritabani_tanimi      = veritabani_tanimi;
 
     SET_WINDOW_SIZE  (400, 400 );
-    SET_PAGE_TITLE ( tr ( "VERİTABANI SEÇİMİ" ) );
-    SET_HEADERS ( QStringList()<<tr("Veritabani Id")<<tr ( "Veritabanı" )<<tr ( "Veritabanı Tanımı" ) );
+    SET_PAGE_TITLE ( QObject::tr ( "VERİTABANI SEÇİMİ" ) );
+    SET_HEADERS ( QStringList()<<QObject::tr("Veritabani Id")<<QObject::tr ( "Veritabanı" )<<QObject::tr ( "Veritabanı Tanımı" ) );
     SET_SORTING ( false );
 
     SET_HELP_PAGE   ( "yonetim-islemleri_veritabani-degistir" );

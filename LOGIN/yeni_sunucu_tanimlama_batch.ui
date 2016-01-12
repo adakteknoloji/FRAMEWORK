@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>500</width>
-    <height>566</height>
+    <height>631</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -24,7 +24,7 @@
     <number>4</number>
    </property>
    <property name="horizontalSpacing">
-    <number>-1</number>
+    <number>6</number>
    </property>
    <item row="0" column="0">
     <widget class="QGroupBox" name="groupBox_sql_bilgileri">
@@ -35,9 +35,9 @@
       </sizepolicy>
      </property>
      <property name="title">
-      <string>SQL Ayarları</string>
+      <string>SQL Settings</string>
      </property>
-     <layout class="QGridLayout" name="gridLayout" rowstretch="1,1,1,1,0,1,1,1,1,1,1,1,1" columnstretch="1,18,6,2">
+     <layout class="QGridLayout" name="gridLayout" rowstretch="1,1,1,1,0,1,1,1,1,1,1" columnstretch="1,18,6,2">
       <property name="margin">
        <number>6</number>
       </property>
@@ -50,7 +50,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>SQL Sunucu İsmi</string>
+         <string>SQL Server Name</string>
         </property>
        </widget>
       </item>
@@ -73,7 +73,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>SQL Motoru  </string>
+         <string>SQL Engine  </string>
         </property>
        </widget>
       </item>
@@ -96,7 +96,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>IP / Sunucu</string>
+         <string>IP / Server</string>
         </property>
        </widget>
       </item>
@@ -131,7 +131,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Port  Numarası </string>
+         <string>Port Number</string>
         </property>
        </widget>
       </item>
@@ -172,7 +172,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Veritabanı SID</string>
+         <string>Database SID</string>
         </property>
        </widget>
       </item>
@@ -188,7 +188,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Veritabanı Ön eki </string>
+         <string>Database Prefix</string>
         </property>
        </widget>
       </item>
@@ -208,7 +208,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Şirket/Veritabanı Kodu</string>
+         <string>Company/Database Code</string>
         </property>
        </widget>
       </item>
@@ -224,7 +224,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>SQL Kullanıcısı    </string>
+         <string>SQL User   </string>
         </property>
        </widget>
       </item>
@@ -244,7 +244,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>SQL Şifresi</string>
+         <string>SQL Password</string>
         </property>
        </widget>
       </item>
@@ -301,7 +301,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Mac Adresi</string>
+         <string>Mac Address</string>
         </property>
        </widget>
       </item>
@@ -386,7 +386,7 @@
       <item row="10" column="2" colspan="2">
        <widget class="QCheckBox" name="checkBox_otomatik_sifre">
         <property name="text">
-         <string>Otomatik Şifre Kullan</string>
+         <string>Use Auto Password</string>
         </property>
        </widget>
       </item>
@@ -404,7 +404,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Profili Sil</string>
+        <string>Delete Profile</string>
        </property>
       </widget>
      </item>
@@ -447,7 +447,7 @@
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <layout class="QGridLayout" name="gridLayout_3" rowstretch="1,1,1,1,1,1,1,1,1">
+     <layout class="QGridLayout" name="gridLayout_3" rowstretch="1,1,1,1,1,1,1">
       <item row="2" column="0" rowspan="2" colspan="2">
        <widget class="QLabel" name="label_uyari_1">
         <property name="sizePolicy">
@@ -473,8 +473,8 @@ p, li { white-space: pre-wrap; }
          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Veritabanlarını oluşturuken &lt;span style=&quot; font-weight:600;&quot;&gt;UTF8&lt;/span&gt; olmasına dikkat edin.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:10pt;&quot;&gt;Be careful that &lt;/span&gt;&lt;a name=&quot;result_box&quot;&gt;&lt;/a&gt;the &lt;span style=&quot; font-weight:600;&quot;&gt;UTF-8&lt;/span&gt; when creating databases.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>
@@ -490,8 +490,10 @@ p, li { white-space: pre-wrap; }
          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;%1 UTF8 Veritabanı oluşturmak için &lt;br /&gt;&amp;quot;&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;%2&lt;/span&gt;&amp;quot; &lt;br /&gt;komutunu kullanabilirsiniz.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:10pt;&quot;&gt;You can use the command&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:10pt; font-weight:600; font-style:italic;&quot;&gt;&amp;quot;%2&amp;quot; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:10pt;&quot;&gt;for creating %1 UTF8 Database.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>
@@ -504,7 +506,7 @@ p, li { white-space: pre-wrap; }
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Yönetim Veritabanı</string>
+         <string>Administrator Database</string>
         </property>
        </widget>
       </item>
@@ -536,7 +538,7 @@ p, li { white-space: pre-wrap; }
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Şirket Veritabanı</string>
+         <string>Company Database</string>
         </property>
        </widget>
       </item>

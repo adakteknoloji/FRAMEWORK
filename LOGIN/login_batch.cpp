@@ -55,7 +55,7 @@ void LOGIN_BATCH::SETUP_FORM ()
 {
     SET_ENTER_KEY_FOR_RUN_BATCH  ( true );
     // translate SET_NAME_OF_RUN_BATCH_BUTTON ( tr ( "Giriş" ) );
-    SET_NAME_OF_RUN_BATCH_BUTTON ( tr ( "Giriş" ) );
+    SET_NAME_OF_RUN_BATCH_BUTTON ( tr ( "Enter" ) );
     REGISTER_BUTTON_WIDGET       ( m_ui->widget_batch_buttons );
 
     // translate SET_PAGE_TITLE( ADAK_PROGRAM_SHORTNAME( ADAK_DISPLAY_ID() ) + tr(" Giriş Ekranı V") + ADAK_PROGRAM_VERSION(ADAK_DISPLAY_ID()));
@@ -156,7 +156,7 @@ int LOGIN_BATCH::CHECK_VAR(QObject * object)
 
         bool yeni_profil_mi = false;
 
-        if( m_ui->combo_box_sql_profilleri->currentText() EQ "Yeni Sunucu" ) {
+        if( m_ui->combo_box_sql_profilleri->currentText() EQ tr("New Server") ) {
             yeni_profil_mi = true;
         }
         else if( object EQ m_ui->combo_box_sql_profilleri ) {
@@ -179,8 +179,8 @@ int LOGIN_BATCH::CHECK_VAR(QObject * object)
     }
     else if ( object EQ m_ui->line_edit_kullanici_kodu) {
 
-        if ( m_ui->line_edit_kullanici_kodu->text().toLower() EQ QObject::tr( "yönetici") ) {
-            m_ui->line_edit_kullanici_kodu->setText( "yonetici" );
+        if ( m_ui->line_edit_kullanici_kodu->text().toLower() EQ QObject::tr( "Administrator") ) {
+            m_ui->line_edit_kullanici_kodu->setText( tr("administrator") );
         }
 
         if ( m_user_info->is_first_login EQ false ) {
@@ -280,7 +280,7 @@ void LOGIN_BATCH::RUN_BATCH()
         }
     }
     else {
-        int secim = MSG_YES_NO( "Veritabanında Tablolar Yok Oluşturulsun mu ?", NULL );
+        int secim = MSG_YES_NO( tr("Veritabanında Tablolar Yok Oluşturulsun mu ?"), NULL );
         if ( secim EQ ADAK_YES ) {
             m_user_info->is_first_login = true;
         }
@@ -290,7 +290,7 @@ void LOGIN_BATCH::RUN_BATCH()
 
         if ( m_user_info->sql_motoru EQ "NONE" ) {
             if ( PROGRAM_DB_VAR_MI( m_user_info->veritabani_kodu ) EQ false ) {
-                MSG_WARNING( "Veritabanı yok!", NULL );
+                MSG_WARNING( tr("No Database!"), NULL );
                 return;
             }
             else {
@@ -302,13 +302,13 @@ void LOGIN_BATCH::RUN_BATCH()
                                               GET_SQL_DB_DRIVER_ENUM( m_user_info->sql_motoru ) );
 
             if( DB->CONNECT_TO_DATABASE( false ) EQ ADAK_FAIL ) {
-                 MSG_WARNING( "Veritabanı yok!", NULL );
+                 MSG_WARNING( tr("No Database!"), NULL );
                 return;
             }
         }
 
         if( DB->SQL_TABLES_EXISTS("") EQ false ) {
-            int secim = MSG_YES_NO( "Veritabanında Tablolar Yok Oluşturulsun mu ?", NULL );
+            int secim = MSG_YES_NO( tr("Veritabanında Tablolar Yok Oluşturulsun mu ?"), NULL );
             if ( secim EQ ADAK_YES ) {
                // m_user_info->is_first_login = true;
             }
@@ -447,7 +447,7 @@ void LOGIN_BATCH::SECILI_PROFILI_YUKLE (QString profil)
     m_ui->line_edit_kullanici_kodu->setText(m_user_info->kullanici_kodu);
     m_ui->line_edit_kullanici_adi->setText(m_user_info->kullanici_adi);
 
-    if ( m_user_info->secili_sql_profili EQ "Yeni Sunucu" ) {
+    if ( m_user_info->secili_sql_profili EQ tr("New Server") ) {
         if ( OPEN_YENI_SUNUCU_TANIMLAMA_BATCH( true, m_user_info, this ) EQ true ) {
 
             FILL_SQL_PROFILLERI();
@@ -456,12 +456,12 @@ void LOGIN_BATCH::SECILI_PROFILI_YUKLE (QString profil)
             //! baglanti status try_connect_db'de de var
             QString baglanti_status;
 
-            baglanti_status.append(QObject::tr("Bağlantı Kuruldu"));
+            baglanti_status.append(QObject::tr("Connected Server"));
 
-            QString status_str = QString("IP/Adres        : <b>%1</b><br>Port: <b>%2</b><br>SQL Motoru: <b>%3</b><br>");
+            QString status_str = QString(tr("IP/Adress        : <b>%1</b><br>Port: <b>%2</b><br>SQL Engine: <b>%3</b><br>"));
 
             if (GET_SQL_DB_DRIVER_ENUM( m_user_info->sql_motoru) EQ SQLITE) {
-                status_str = QString("SQL Motoru      : <b>SQLite</b><br>");
+                status_str = QString(tr("SQL Engine      : <b>SQLite</b><br>"));
             }
             else {
                 status_str = QString(status_str)
