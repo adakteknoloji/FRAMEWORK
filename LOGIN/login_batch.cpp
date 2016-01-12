@@ -59,7 +59,7 @@ void LOGIN_BATCH::SETUP_FORM ()
     REGISTER_BUTTON_WIDGET       ( m_ui->widget_batch_buttons );
 
     // translate SET_PAGE_TITLE( ADAK_PROGRAM_SHORTNAME( ADAK_DISPLAY_ID() ) + tr(" Giriş Ekranı V") + ADAK_PROGRAM_VERSION(ADAK_DISPLAY_ID()));
-    SET_PAGE_TITLE( ADAK_PROGRAM_SHORTNAME( ADAK_DISPLAY_ID() ) + tr(" Giriş Ekranı V") + ADAK_PROGRAM_VERSION(ADAK_DISPLAY_ID()));
+    SET_PAGE_TITLE( ADAK_PROGRAM_SHORTNAME( ADAK_DISPLAY_ID() ) + tr("Login Screen V") + ADAK_PROGRAM_VERSION(ADAK_DISPLAY_ID()));
     SET_SETTING_NAME    ( "LOGIN_BATCH");
     SET_AUTO_EXIT_BATCH ( true );
     SET_HELP_PAGE       ( "E9_giris");
@@ -225,16 +225,16 @@ int LOGIN_BATCH::CHECK_RUN()
 {
     if ( IS_DB_CONNECTED(ADAK_YONETIM) EQ ADAK_FAIL ) {
         if ( m_ui->line_edit_kullanici_kodu->text().isEmpty() EQ true ) {
-           MSG_ERROR(tr("Kullanıcı kodu girilmemiş") , m_ui->line_edit_kullanici_kodu );
+           MSG_ERROR(tr("User code has not been entered") , m_ui->line_edit_kullanici_kodu );
            return ADAK_FAIL;
         }
-        if ( m_ui->line_edit_kullanici_kodu->text() EQ tr("yonetici") ) {
-            MSG_ERROR(tr("'yonetici' sistem için özel bir kullanıcı kodudur. Lütfen farklı bir kullanıcı kodu giriniz."), m_ui->line_edit_kullanici_kodu );
+        if ( m_ui->line_edit_kullanici_kodu->text() EQ tr("administrator") ) {
+            MSG_ERROR(tr("'administrator' is a specific user code for the system. Please enter a different user code."), m_ui->line_edit_kullanici_kodu );
             return ADAK_FAIL;
         }
     }
     if ( m_ui->line_edit_kullanici_kodu->text().isEmpty() EQ true ) {
-        MSG_ERROR(tr("Kullanıcı kodu girilmemiş") , m_ui->line_edit_kullanici_kodu );
+        MSG_ERROR(tr("User code has not been entered") , m_ui->line_edit_kullanici_kodu );
         return ADAK_FAIL;
     }
 
@@ -280,7 +280,7 @@ void LOGIN_BATCH::RUN_BATCH()
         }
     }
     else {
-        int secim = MSG_YES_NO( tr("Veritabanında Tablolar Yok Oluşturulsun mu ?"), NULL );
+        int secim = MSG_YES_NO( tr("No tables in the database. Are tables created?"), NULL );
         if ( secim EQ ADAK_YES ) {
             m_user_info->is_first_login = true;
         }
@@ -308,7 +308,7 @@ void LOGIN_BATCH::RUN_BATCH()
         }
 
         if( DB->SQL_TABLES_EXISTS("") EQ false ) {
-            int secim = MSG_YES_NO( tr("Veritabanında Tablolar Yok Oluşturulsun mu ?"), NULL );
+            int secim = MSG_YES_NO( tr("No tables in the database. Are tables created?"), NULL );
             if ( secim EQ ADAK_YES ) {
                // m_user_info->is_first_login = true;
             }
@@ -402,7 +402,7 @@ void LOGIN_BATCH::FILL_SQL_PROFILLERI()
     QString profil_str    = settings.value("kayitli_sql_sunuculari","").toString();
     QStringList profiller = profil_str.split("-");
 
-    profiller << "Yeni Sunucu";
+    profiller << tr("New Server");
 
     m_ui->combo_box_sql_profilleri->clear();
     m_ui->combo_box_sql_profilleri->addItems(profiller);

@@ -448,7 +448,7 @@ p, li { white-space: pre-wrap; }
               </sizepolicy>
              </property>
              <property name="toolTip">
-              <string>Bu alan işaretlenirse, programa bundan sonraki girişlerde giriş ekranı görünmeden direkt giriş yapılır</string>
+              <string/>
              </property>
              <property name="styleSheet">
               <string notr="true">color:blue; font: 9pt &quot;Sans Serif&quot;;</string>
