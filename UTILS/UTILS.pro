@@ -32,6 +32,3 @@ SOURCES += dongle.cpp \
 HEADERS += ../INCLUDE/adak_utils.h \
            ../INCLUDE/adak_defines.h
 
-TRANSLATIONS = utils_tr.ts
-CODECFORTR  = UTF-8
-CODECFORSRC = UTF-8

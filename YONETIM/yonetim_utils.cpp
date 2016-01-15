@@ -76,7 +76,7 @@ QString BILGISAYAR_BILGISI_OLUSTUR ( int bilgisayar_id )
             mac_adresi.append(QString(mac_adressleri.at(0) + "-"));
         }
 
-        return "KAYITLI DEGIL # MAC: " + mac_adresi +" # DONGLE: "+ GET_DONGLE_IP();
+        return QObject::tr("KAYITLI DEGIL # MAC: ") + mac_adresi +QObject::tr(" # DONGLE: ")+ GET_DONGLE_IP();
     }
     sql_query.NEXT();
     return sql_query.VALUE(0).toString() + " # Kablolu Ağ Mac Adresi" + sql_query.VALUE(1).toString()
@@ -161,15 +161,15 @@ void CHECK_VERSION_UPGRADES (QString program_version_column_name , QString progr
     }
 
     if ( program_version_in_db > new_program_version ) {
-        ADAK_ERROR("Bu programın versiyonu , veritabanının versiyonundan daha küçük. Programı güncelleyin , aksi taktirde verileriniz bozulur.",NULL,NULL);
-        exit(77);
+        ADAK_ERROR(QObject::tr("Version of this program is smaller than the version of the database. Update the program, otherwise the data will be corrupted."),NULL,NULL);
+        exit(77);//Bu programın versiyonu , veritabanının versiyonundan daha küçük. Programı güncelleyin , aksi taktirde verileriniz bozulur.
     }
 
     VERITABANLARINI_GUNCELLE();
 
     QSplashScreen * splash = CREATE_SPLASH_SCREEN();
     splash->show();
-    splash->showMessage((QString("Programınızın versiyonu yükseltiliyor. Lütfen Bekleyiniz...")), Qt::AlignCenter, Qt::white );
+    splash->showMessage((QString(QObject::tr("Upgrading Programme. Please wait..."))), Qt::AlignCenter, Qt::white );//Programınızın versiyonu yükseltiliyor. Lütfen Bekleyiniz...
 
     double current_program_version = program_version_in_db;
 
@@ -206,10 +206,10 @@ void CHECK_VERSION_UPGRADES (QString program_version_column_name , QString progr
 
     splash->finish(NULL);
 
-    ADAK_WARNING("Programın versiyonu yükseltilmiştir.\n"
-                "Yeni özellikler için lütfen Kullanıcı Yetkileri ' ni kontrol ediniz.\n"
-                "Kullanıcı Yetkileri ' ni Kullanıcılar Ekranı ' ndan ayarlayabilirsiniz.\n\n"
-                "Bazı hataları gidermek için Yönetim İşlemleri->E9 Onar ' ı kullanabilirsiniz."
+    ADAK_WARNING("Version of programme is upgrade.\n"
+                "Please check User Authority for new properties. \n"//Yeni özellikler için lütfen Kullanıcı Yetkileri ' ni kontrol ediniz.
+                "You can set User Authorization in the User's Screen\n\n"//Kullanıcı Yetkileri ' ni Kullanıcılar Ekranı ' ndan ayarlayabilirsiniz.
+                "You can use Management Actions -> E9 repair for resolving some errors"//Bazı hataları gidermek için Yönetim İşlemleri->E9 Onar ' ı kullanabilirsiniz.
                 ,NULL,NULL);
 
     DB->COMMIT_TRANSACTION();
@@ -289,24 +289,24 @@ MENU_STRUCT * SISTEM_GET_MENU_STRUCT()
 
     static struct MENU_STRUCT SISTEM_MENU_STRUCT[] = {
 
-            { MENU_SIS_KULLANICILAR,           QObject::tr ("Kullanıcılar"),            "YNT1","","" ,false,1, 0 },
-            { MENU_SIS_BILGISAYARLAR,          QObject::tr ("Bilgisayarlar"),           "YNT2","","" ,false,1, 0 },
-            { MENU_SIS_VERITABANLARI,          QObject::tr ("Veritabanları"),           "YNT3","","",false,1 , 0 },
+            { MENU_SIS_KULLANICILAR,           QObject::tr ("Users"),            "YNT1","","" ,false,1, 0 },
+            { MENU_SIS_BILGISAYARLAR,          QObject::tr ("Computers"),           "YNT2","","" ,false,1, 0 },
+            { MENU_SIS_VERITABANLARI,          QObject::tr ("Databases"),           "YNT3","","",false,1 , 0 },
             { MENU_SEPERATOR,                  QObject::tr (""),                        "","","",false,1 , 0 },
 
-            { MENU_SIS_KULLANICI_DEGISTIR ,    QObject::tr ("Kullanıcı Değiştir"),      "YNT4","","" ,false,1, 0 },
-            { MENU_SIS_VERITABANI_DEGISTIR,    QObject::tr ("Veritabanı Değiştir"),     "YNT5","","" ,false,1, 0 },
-            { MENU_SIS_SIFRE_DEGISTIR ,        QObject::tr ("Şifre Değiştir"),          "YNT6","","",false,1, 0 },
+            { MENU_SIS_KULLANICI_DEGISTIR ,    QObject::tr ("Change User"),      "YNT4","","" ,false,1, 0 },
+            { MENU_SIS_VERITABANI_DEGISTIR,    QObject::tr ("Change Database"),     "YNT5","","" ,false,1, 0 },
+            { MENU_SIS_SIFRE_DEGISTIR ,        QObject::tr ("Change Password"),          "YNT6","","",false,1, 0 },
             { MENU_SEPERATOR,                  QObject::tr (""),                        "","","",false,1 , 0 },
 
-            { MENU_SIS_POSTA_SUNUCUSU,         QObject::tr ("Posta Sunucusu Tanımlama"),"YNT7","","",false,1 , 0 },
-            { MENU_SIS_SMS_SUNUCUSU        ,   QObject::tr ("SMS Sunucusu Tanımlama"),  "YNT8","","",false,1, 0 },
+            { MENU_SIS_POSTA_SUNUCUSU,         QObject::tr ("Define the Mail Server"),"YNT7","","",false,1 , 0 },
+            { MENU_SIS_SMS_SUNUCUSU        ,   QObject::tr ("Define SMS Server"),  "YNT8","","",false,1, 0 },
             { MENU_SEPERATOR,                  QObject::tr (""),                        "","","",false,1 , 0 },
             { MENU_SEPERATOR,                  QObject::tr (""),                        "","","",false,1 , 0 },
-            { MENU_SIS_YONETIM_LOG_BILGILERI,  QObject::tr ("Yönetim Log Bilgileri"),   "YNT9","","" ,false,1, 0  },
-            { MENU_SIS_HAKKIMIZDA,             QObject::tr ("Hakkında"),                "YNT10","","",false,1 , 0              },
-            { MENU_SIS_OTOMATIK_SIFRE_URET,    QObject::tr ("Otomatik Şifreyi Üret"),   "YNT11","","" ,false,1, 0 },
-            { MENU_SIS_OTOMATIK_GIRIS_KAPAT,   QObject::tr ("Otomatik Girişi Kapat"),   "YNT12","","" ,false,1, 0 },
+            { MENU_SIS_YONETIM_LOG_BILGILERI,  QObject::tr ("Log Details of management"),   "YNT9","","" ,false,1, 0  },
+            { MENU_SIS_HAKKIMIZDA,             QObject::tr ("About"),                "YNT10","","",false,1 , 0              },
+            { MENU_SIS_OTOMATIK_SIFRE_URET,    QObject::tr ("Generate Aotumatic Password"),   "YNT11","","" ,false,1, 0 },
+            { MENU_SIS_OTOMATIK_GIRIS_KAPAT,   QObject::tr ("Close Auto Login"),   "YNT12","","" ,false,1, 0 },
 
             { MENU_END       , ""  , "" , "","",false,1,0}
     };
@@ -356,8 +356,8 @@ void SISTEM_ITEM_CLICKED(int menu_item, QWidget *parent, void    (*F_PROGRAM_KUL
 
                 if ( sql_query.SELECT() > 0 ) {
                     sql_query.NEXT();
-                    ADAK_INFO( "Kullanıcı değişikliği başarılı. Seçilen kullanıcı: "+ sql_query.VALUE(0).toString().toUtf8() + " " + sql_query.VALUE(1).toString().toUtf8(), NULL , NULL );
-                    //Burada 0 daima ilk pencere
+                    ADAK_INFO( " User changing successfully. The selected user:"+ sql_query.VALUE(0).toString().toUtf8() + " " + sql_query.VALUE(1).toString().toUtf8(), NULL , NULL );
+                    //Burada 0 daima ilk pencere   //Kullanıcı değişikliği başarılı. Seçilen kullanıcı:
                     static_cast<SEKME_MENU_KERNEL *>(G_SEKME_MENU_KERNEL.at(0))->REFRESH_MENU_KERNEL();
                 }
             }
@@ -392,17 +392,17 @@ void SISTEM_ITEM_CLICKED(int menu_item, QWidget *parent, void    (*F_PROGRAM_KUL
                 QSettings settings ( "ADAK_SETTINGS", ADAK_PROGRAM_SHORTNAME(ADAK_DISPLAY_ID()));
                 settings.setValue( "is_auto_login", false );
 
-                ADAK_INFO( QObject::tr("Otomatik Giriş İptal edildi..."), NULL, parent );
+                ADAK_INFO( QObject::tr("Automatic login has been canceled"), NULL, parent );//Otomatik Giriş İptal edildi...
                 static_cast<SEKME_MENU_KERNEL *>(G_SEKME_MENU_KERNEL.at(0));
 
             }
             break;
 
         case MENU_SIS_OTOMATIK_SIFRE_URET:{
-                ADAK_INFO( QObject::tr("SQL Kullanıcı Şifresi<br><br> "
+                ADAK_INFO( QObject::tr("SQL User Password<br><br> "
                       "<b>%1</b><br><br>"
-                      "Dikkat: Bu Şifreyi Veritabanında oluşturduğunuz kullanıcıya atayın.").arg( SQL_DEFAULT_PASSWORD() ), NULL, NULL );
-            break;
+                      "Attention: Assign the password that the user you created in database.").arg( SQL_DEFAULT_PASSWORD() ), NULL, NULL );
+            break;//Dikkat!Bu Şifreyi Veritabanında oluşturduğunuz kullanıcıya atayın.
         }
         case MENU_SIS_HAKKIMIZDA :{
             OPEN_YONETIM_HAKKIMIZDA( parent );

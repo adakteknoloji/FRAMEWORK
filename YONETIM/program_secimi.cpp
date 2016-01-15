@@ -34,13 +34,13 @@ PROGRAM_SECIMI::PROGRAM_SECIMI(bool check_exe, QWidget *parent) : SECIM_KERNELI 
 
     SET_WINDOW_SIZE  (300, 300 );
 
-    SET_HEADERS ( QStringList()<<tr("Program_Id")<<tr("PROGRAM"));
+    SET_HEADERS ( QStringList()<<"Program_Id"<<"PROGRAM_SECIMI");
 
     INIT_KERNEL (G_YONETIM_DB);
 
     HIDE_COLUMN_HEADER ( true );
 
-    SET_PAGE_TITLE  ( tr ( "PROGRAM SEÇİMİ" ) );
+    SET_PAGE_TITLE  ( "PROGRAM_SECIMI"  );
     SET_HELP_PAGE   ( "program_secimi" );
 
     QTableWidget * table_widget = GET_TABLE_WIDGET();

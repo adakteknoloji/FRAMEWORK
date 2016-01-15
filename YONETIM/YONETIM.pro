@@ -54,3 +54,6 @@ FORMS += bilgisayarlar_formu.ui \
     hata_istek_batch.ui
 
 RESOURCES += yonetim_icons.qrc
+
+
+
