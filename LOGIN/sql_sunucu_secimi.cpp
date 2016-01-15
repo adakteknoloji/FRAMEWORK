@@ -14,7 +14,7 @@ QString SQL_SUNUCU_SEC ( QWidget * parent )
     QString secilen_sunucu = "";
 
     SQL_SUNUCU_SECIMI * F = new SQL_SUNUCU_SECIMI ( &secilen_sunucu , parent );
-    if ( secilen_sunucu NE tr("New Server")) {
+    if ( secilen_sunucu NE QObject::tr("New Server")) {
         F->EXEC (NOT_FULL_SCREEN);
     }
 

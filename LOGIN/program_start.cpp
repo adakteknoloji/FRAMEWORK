@@ -538,7 +538,7 @@ int PROCESS_CONSOLE_ARGUMENTS(int argc, char *argv[], USER_LOGIN_INFO_STRUCT *P_
 
     if (QString(argv[1]).toUpper() EQ "--SQL_UPDATE" OR QString(argv[1]).toUpper() EQ "-SQL_UPDATE") {
         if ( argc < 4 ) {
-            cerr << QObject::tr("The following format should be used to update\n\t\tE9 -sql_update ipveyahost port sql_motoru db_user db_passwd ") << endl;
+            cerr << QObject::tr("The following format should be used to update\n\t\tE9 -sql_update ipveyahost port sql_motoru db_user db_passwd ").toStdString() << endl;
             exit(0);
         }
 
@@ -561,13 +561,13 @@ int PROCESS_CONSOLE_ARGUMENTS(int argc, char *argv[], USER_LOGIN_INFO_STRUCT *P_
         }
 
         G_YONETIM_DB->UPDATE_TABLES( GET_YONETIM_DB_STRUCTS() );
-        cerr << QObject::tr("Table update process is completed.") << endl;
+        cerr << QObject::tr("Table update process is completed.").toStdString() << endl;
         exit(0);
     }
 
     if (QString(argv[1]).toUpper() EQ "--UPDATE_ADAKSTD" OR QString(argv[1]).toUpper() EQ "-UPDATE_ADAKSTD") {
         if ( argc < 4 ) {
-            cerr << QObject::tr("The following format should be used for update\n\t\tE9 -update_adakstd ipveyahost port sql_motoru db_user db_passwd ") << endl;
+            cerr << QObject::tr("The following format should be used for update\n\t\tE9 -update_adakstd ipveyahost port sql_motoru db_user db_passwd ").toStdString() << endl;
             exit(0);
         }
 
@@ -590,7 +590,7 @@ int PROCESS_CONSOLE_ARGUMENTS(int argc, char *argv[], USER_LOGIN_INFO_STRUCT *P_
         }
         G_YONETIM_DB->UPDATE_TABLES( GET_YONETIM_DB_STRUCTS() );
 
-        cerr << QObject::tr("ADAK_STD update process is completed.") << endl;
+        cerr << QObject::tr("ADAK_STD update process is completed.").toStdString() << endl;
         exit(0);
     }
 
@@ -866,7 +866,7 @@ int LOGIN( USER_LOGIN_INFO_STRUCT *P_USER_INFO)
 
             if ( sql_query.SELECT() NE 0 ) {
                 if (G_YONETIM_DB->GET_SQL_DRIVER_ENUM () NE SQLITE) {
-                    ADAK_INFO(QObject::tr ( tr("Attention!. \"administration\" password is not assigned. You should assign \"administrator\" password for avoid security problems.") ) , NULL,NULL);
+                    ADAK_INFO(QObject::tr ("Attention!. \"administration\" password is not assigned. You should assign \"administrator\" password for avoid security problems."), NULL,NULL);
                 }
             }
         }

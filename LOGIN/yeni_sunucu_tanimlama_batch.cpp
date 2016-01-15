@@ -168,7 +168,7 @@ int YENI_SUNUCU_TANIMLAMA_BATCH::CHECK_VAR ( QObject * object )
     }
     else if( object EQ m_ui->lineEdit_veritabani_kodu ) {
         if ( m_ui->lineEdit_sql_kul_adi->text().contains(letter) EQ true ) {
-            MSG_ERROR(tr("Database name numbers, letters or \ '_ \' can not contain characters outside.") , m_ui->lineEdit_veritabani_kodu );
+            MSG_ERROR(QObject::tr("Database name numbers, letters or \'_\' can not contain characters outside.") , m_ui->lineEdit_veritabani_kodu );
             return ADAK_FAIL_UNDO;//Veritabanı ismi rakam,harf veya \'_\' dışında karakter içeremez.
         }
         SET_UYARI_LABEL();
