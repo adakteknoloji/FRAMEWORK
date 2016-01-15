@@ -29,7 +29,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Kullanıcı Değiştirme Ekranı</string>
+   <string>CHANGING USER SCREEN</string>
   </property>
   <layout class="QGridLayout" name="gridLayout" rowstretch="5,1,1" columnstretch="10,10,2">
    <property name="sizeConstraint">
@@ -59,7 +59,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Kullanıcı Kodu   </string>
+         <string>User Code:</string>
         </property>
        </widget>
       </item>
@@ -82,7 +82,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Kullanıcı Adı</string>
+         <string>User Name:</string>
         </property>
        </widget>
       </item>
@@ -108,7 +108,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Parola</string>
+         <string>Password:</string>
         </property>
        </widget>
       </item>
