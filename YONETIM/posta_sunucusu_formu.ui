@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Posta Sunucusu</string>
+   <string>MAIL SERVER</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_3" rowstretch="1,0">
    <property name="sizeConstraint">
@@ -71,7 +71,7 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>Posta Sunucusu</string>
+           <string>Mail Server:</string>
           </property>
          </widget>
         </item>
@@ -91,7 +91,7 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>Port</string>
+           <string>Port:</string>
           </property>
          </widget>
         </item>
@@ -107,7 +107,7 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>Bağlantı Güvenliği</string>
+           <string>Link Security:</string>
           </property>
          </widget>
         </item>
@@ -121,7 +121,7 @@
           </property>
           <item>
            <property name="text">
-            <string>YOK</string>
+            <string>NOT</string>
            </property>
           </item>
           <item>

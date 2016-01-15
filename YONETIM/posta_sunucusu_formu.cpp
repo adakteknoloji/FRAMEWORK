@@ -41,7 +41,7 @@ void POSTA_SUNUCUSU_FORMU::SETUP_FORM ()
 
     SET_FIRST_FOCUS_WIDGET( m_ui->line_edit_mail_server );
 
-    SET_PAGE_TITLE ( tr ( "POSTA SUNUCUSU" ) );
+    SET_PAGE_TITLE ( tr ( "MAIL SERVER" ) );
     SET_SETTING_NAME   ( "POSTA_SUNUCUSU" );
     SET_HELP_PAGE ( "yonetim-islemleri_posta-sunucusu-tanimlama" );
 
