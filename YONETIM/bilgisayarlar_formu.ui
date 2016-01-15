@@ -84,7 +84,7 @@
            </size>
           </property>
           <property name="toolTip">
-           <string>Bilgisayar için bir kod giriniz</string>
+           <string>Enter a code for computer</string>
           </property>
          </widget>
         </item>
@@ -125,7 +125,7 @@
            </size>
           </property>
           <property name="toolTip">
-           <string>Bilgisayar için bir ad giriniz</string>
+           <string>Enter a name for the Computer</string>
           </property>
          </widget>
         </item>
@@ -299,7 +299,9 @@
            </sizepolicy>
           </property>
           <property name="toolTip">
-           <string>Mac adresi her bilgisayar etherneti için dünyada tek olan bir sayı dizisidir. Her bir ethernet kartı için eşsizdir.</string>
+           <string>
+
+The Ethernet MAC address of each computer in the world for a single number in a sequence. Is unique for each Ethernet card.</string>
           </property>
           <property name="inputMask">
            <string>NN:NN:NN:NN:NN:NN; </string>
@@ -330,7 +332,7 @@
            </size>
           </property>
           <property name="toolTip">
-           <string>Dongle ip giriniz.Bu bilgisayarınızda takılı durumda bulunan dongle a ait tekil bir sayıdır</string>
+           <string>Enter Dongle IP.This is a unique number that belongs in the case of a dongle installed on your computer.</string>
           </property>
          </widget>
         </item>
@@ -555,7 +557,7 @@ Mac Addresses      </string>
       <bool>false</bool>
      </property>
      <property name="toolTip">
-      <string>Kullanıcı seçimi için tıklayınız</string>
+      <string>Click for user selection</string>
      </property>
      <property name="text">
       <string/>

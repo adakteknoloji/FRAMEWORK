@@ -191,7 +191,7 @@ int BILGISAYARLAR_FORMU::CHECK_VAR ( QObject * p_object )
     }
     else if ( p_object EQ m_ui->lineEdit_bilgisayar_adi ) {
         if ( m_ui->lineEdit_bilgisayar_adi->text().count() > 50 ) {
-            MSG_ERROR(tr ( "Computer name canm not be more than 50 characters.") , NULL);
+            MSG_ERROR(tr ( "Computer name can not be more than 50 characters.") , NULL);
             return ADAK_FAIL;//Bilgisayar adi 50 karakterden fazla olamaz.
         }
     }
@@ -271,7 +271,7 @@ int BILGISAYARLAR_FORMU::CHECK_ADD ()
 
         if ( sql_query.SELECT () > 0 ) {
             MSG_ERROR(QString( m_ui->line_edit_mac_1->text() + " " +
-                                  tr ( "These MAC Address registered in a computer present in the system" ) ),NULL);
+                                  tr ( "This MAC Address registered in a computer present in the system" ) ),NULL);
             return ADAK_FAIL;//Bu mac adresi ile kayıtlı bir bilgisayar sistemde mevcut
         }
     }
@@ -286,7 +286,7 @@ int BILGISAYARLAR_FORMU::CHECK_ADD ()
 
         if ( sql_query.SELECT () > 0 ) {
             MSG_ERROR(QString( m_ui->line_edit_mac_2->text() + " " +
-                                  tr ( "These MAC Address registered in a computer present in the system" ) ),NULL);
+                                  tr ( "This MAC Address registered in a computer present in the system" ) ),NULL);
             return ADAK_FAIL;
         }
 
@@ -302,7 +302,7 @@ int BILGISAYARLAR_FORMU::CHECK_ADD ()
 
         if ( sql_query.SELECT () > 0 ) {
             MSG_ERROR(QString( m_ui->line_edit_mac_3->text() + " " +
-                                  tr ( "These MAC Address registered in a computer present in the system" )) ,NULL);
+                                  tr ( "This MAC Address registered in a computer present in the system" )) ,NULL);
             return ADAK_FAIL;
         }
     }
@@ -312,7 +312,7 @@ int BILGISAYARLAR_FORMU::CHECK_ADD ()
                                      "AND silinmis_mi = 0 ");
         sql_query.SET_VALUE        (  ":dongle_ip", m_ui->lineEdit_dongle_IP->text() );
         if ( sql_query.SELECT () > 0 ) {
-            MSG_ERROR( tr ( "The dongle is registered in the system" ) , NULL);
+            MSG_ERROR( tr ( "This dongle is registered in the system" ) , NULL);
             return ADAK_FAIL;//Bu dongle sistemde kayıtlı
         }
     }
@@ -582,9 +582,9 @@ void BILGISAYARLAR_FORMU::UPDATE_RECORD ( int p_bilgisayar_id )
         mac_adresi.append(QString(mac_adressleri.at(0) + "-"));
     }
 
-    QString log_detaylari = tr("Bilgisayar ID: ") + QVariant (  p_bilgisayar_id ).toString() + tr(" # Bilgisayar Kodu: ")
+    QString log_detaylari = tr("Computer ID: ") + QVariant (  p_bilgisayar_id ).toString() + tr(" # Computer Code: ")
                           + m_ui->lineEdit_bilgisayar_kodu->text() + tr("|AD: ") + m_ui->lineEdit_bilgisayar_adi->text()
-                          + tr(" # MAC Adresi : ")  + mac_adresi
+                          + tr(" # MAC Address : ")  + mac_adresi
                           + tr(" # DONGLE IP: ") + m_ui->lineEdit_dongle_IP->text();
 
     YONETIM_007_KAYIT ( LOG_BILGISAYARLAR, LOG_KAYIT_GUNCELLEME, log_detaylari );
@@ -647,9 +647,9 @@ void BILGISAYARLAR_FORMU::DELETE_RECORD ( int p_bilgisayar_id )
     }
 
 
-    QString log_detaylari = tr("Bilgisayar ID: ")+ QVariant( p_bilgisayar_id).toString() + tr(" # Bilgisayar Kodu: ")
+    QString log_detaylari = tr("Computer ID: ")+ QVariant( p_bilgisayar_id).toString() + tr(" # Computer Code: ")
                           + m_ui->lineEdit_bilgisayar_kodu->text() + tr("|AD: ") + m_ui->lineEdit_bilgisayar_adi->text()
-                          + tr(" # MAC Adresi : ")  + mac_adresi
+                          + tr(" # MAC Address : ")  + mac_adresi
                           + tr(" # DONGLE IP: ") + m_ui->lineEdit_dongle_IP->text();
 
 
