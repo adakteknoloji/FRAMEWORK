@@ -28,13 +28,13 @@ int BILGISAYAR_SEC ( QDialog * parent )
 
 BILGISAYAR_SECIMI::BILGISAYAR_SECIMI( QWidget * parent ) : SECIM_KERNELI ( parent )
 {
-    SET_PAGE_TITLE   ( tr ( "BİLGİSAYAR SEÇİMİ" )  );
+    SET_PAGE_TITLE   ( tr ( "COMPUTER SELECTION" )  );
     SET_HELP_PAGE    ( "bilgisayar_secimi" );
 
     SET_WINDOW_SIZE  ( 500, 1000 );
 
-    SET_HEADERS ( QStringList()<<tr ( "Bilgisayar Id" )<<tr ( "Bilgisayar kodu" )<<tr ( "Bilgisayar Adı" )
-                  <<tr ( "Dongle IP" )<<tr ( "Kablolu Ağ Mac" )<<tr ( "Kablosuz Ağ Mac" )
+    SET_HEADERS ( QStringList()<<tr ( "Computer Id" )<<tr ( "Computer Code" )<<tr ( "Computer Name" )
+                  <<tr ( "Dongle IP" )<<tr ( "Wired Network Mac" )<<tr ( "Wireless Network Mac" )
                   <<tr ( "3G Mac" ) );
 
     SET_SORTING     ( false );
