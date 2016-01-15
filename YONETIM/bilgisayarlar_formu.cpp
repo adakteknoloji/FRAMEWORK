@@ -51,7 +51,7 @@ void BILGISAYARLAR_FORMU::SETUP_FORM ()
     REGISTER_CHANGER_BUTTON ( m_ui->button_mac_kopyala                );
     REGISTER_CHANGER_BUTTON ( m_ui->button_kullanici_sec              );
 
-    SET_PAGE_TITLE      ( tr ( "BİLGİSAYARLAR" ) );
+    SET_PAGE_TITLE      ( tr ( "COMPUTERS" ) );
     SET_HELP_PAGE       ( "yonetim-islemleri_bilgisayarlar" );
 
     m_ui->table_widget_kullanicilar->hideColumn(0);
@@ -185,14 +185,14 @@ int BILGISAYARLAR_FORMU::CHECK_VAR ( QObject * p_object )
 
     if ( p_object EQ m_ui->lineEdit_bilgisayar_kodu ) {
         if ( m_ui->lineEdit_bilgisayar_kodu->text().count() > 10 ) {
-            MSG_ERROR(tr ( "Bilgisayar kodu 10 karakterden fazla olamaz.") , NULL);
-            return ADAK_FAIL;
+            MSG_ERROR(tr ( "Computer code canm not be more than 10 characters.") , NULL);
+            return ADAK_FAIL;//Bilgisayar kodu 10 karakterden fazla olamaz.
         }
     }
     else if ( p_object EQ m_ui->lineEdit_bilgisayar_adi ) {
         if ( m_ui->lineEdit_bilgisayar_adi->text().count() > 50 ) {
-            MSG_ERROR(tr ( "Bilgisayar adi 50 karakterden fazla olamaz.") , NULL);
-            return ADAK_FAIL;
+            MSG_ERROR(tr ( "Computer name canm not be more than 50 characters.") , NULL);
+            return ADAK_FAIL;//Bilgisayar adi 50 karakterden fazla olamaz.
         }
     }
     else if ( p_object EQ m_ui->line_edit_mac_1 ) {
@@ -223,11 +223,11 @@ int BILGISAYARLAR_FORMU::CHECK_VAR ( QObject * p_object )
 int BILGISAYARLAR_FORMU::CHECK_EMPTY ()
 {
     if ( m_ui->lineEdit_bilgisayar_kodu->text().isEmpty() EQ true ) {
-        MSG_ERROR(tr ( "Bilgisayar kodu girilmemiş" ) , m_ui->lineEdit_bilgisayar_kodu);
+        MSG_ERROR(tr ( "Computer code has not been entered." ) , m_ui->lineEdit_bilgisayar_kodu);
         return ADAK_FAIL;
     }
     if ( m_ui->lineEdit_bilgisayar_adi->text().isEmpty() EQ true ) {
-        MSG_ERROR(tr ( "Bilgisayar Adı girilmemiş" )  , m_ui->lineEdit_bilgisayar_adi);
+        MSG_ERROR(tr ( "Computer code has not been entered." )  , m_ui->lineEdit_bilgisayar_adi);
         return ADAK_FAIL;
     }
     QString mac_1 = m_ui->line_edit_mac_1->text().replace ( ":", "" );;
@@ -239,8 +239,8 @@ int BILGISAYARLAR_FORMU::CHECK_EMPTY ()
          mac_3.isEmpty()              EQ true AND
          m_ui->lineEdit_dongle_IP->text().isEmpty() EQ true ) {
 
-        MSG_ERROR(tr ( "Bilgisayar kaydederken MAC adreslerinden en az birini veya DONGLE IP yi girmelisiniz." ) , m_ui->line_edit_mac_1);
-        return ADAK_FAIL;
+        MSG_ERROR(tr ( "You must enter at least one of the computer recording the MAC addresses or DONGLE IP." ) , m_ui->line_edit_mac_1);
+        return ADAK_FAIL;//Bilgisayar kaydederken MAC adreslerinden en az birini veya DONGLE IP yi girmelisiniz.
     }
 
     return ADAK_OK;
@@ -258,8 +258,8 @@ int BILGISAYARLAR_FORMU::CHECK_ADD ()
                                 "AND silinmis_mi = 0 ","");
     sql_query.SET_VALUE       ( ":bilgisayar_kodu", m_ui->lineEdit_bilgisayar_kodu->text() );
     if ( sql_query.SELECT () > 0 ) {
-        MSG_ERROR( tr ( "Bu kodla kayıtlı bir bilgisayar sistemde mevcut" ) , NULL );
-        return ADAK_FAIL;
+        MSG_ERROR( tr ( "These codes registered in a computer present in the system" ) , NULL );
+        return ADAK_FAIL;//Bu kodla kayıtlı bir bilgisayar sistemde mevcut
     }
 
     if ( m_ui->line_edit_mac_1->text().replace ( ":", "" ).isEmpty() EQ false ) {
@@ -271,8 +271,8 @@ int BILGISAYARLAR_FORMU::CHECK_ADD ()
 
         if ( sql_query.SELECT () > 0 ) {
             MSG_ERROR(QString( m_ui->line_edit_mac_1->text() + " " +
-                                  tr ( "Bu mac adresi ile kayıtlı bir bilgisayar sistemde mevcut" ) ),NULL);
-            return ADAK_FAIL;
+                                  tr ( "These MAC Address registered in a computer present in the system" ) ),NULL);
+            return ADAK_FAIL;//Bu mac adresi ile kayıtlı bir bilgisayar sistemde mevcut
         }
     }
 
@@ -286,7 +286,7 @@ int BILGISAYARLAR_FORMU::CHECK_ADD ()
 
         if ( sql_query.SELECT () > 0 ) {
             MSG_ERROR(QString( m_ui->line_edit_mac_2->text() + " " +
-                                  tr ( "Bu mac adresi ile kayıtlı bir bilgisayar sistemde mevcut" ) ),NULL);
+                                  tr ( "These MAC Address registered in a computer present in the system" ) ),NULL);
             return ADAK_FAIL;
         }
 
@@ -302,7 +302,7 @@ int BILGISAYARLAR_FORMU::CHECK_ADD ()
 
         if ( sql_query.SELECT () > 0 ) {
             MSG_ERROR(QString( m_ui->line_edit_mac_3->text() + " " +
-                                  tr ( "Bu mac adresi ile kayıtlı bir bilgisayar sistemde mevcut" )) ,NULL);
+                                  tr ( "These MAC Address registered in a computer present in the system" )) ,NULL);
             return ADAK_FAIL;
         }
     }
@@ -312,8 +312,8 @@ int BILGISAYARLAR_FORMU::CHECK_ADD ()
                                      "AND silinmis_mi = 0 ");
         sql_query.SET_VALUE        (  ":dongle_ip", m_ui->lineEdit_dongle_IP->text() );
         if ( sql_query.SELECT () > 0 ) {
-            MSG_ERROR( tr ( "Bu dongle sistemde kayıtlı" ) , NULL);
-            return ADAK_FAIL;
+            MSG_ERROR( tr ( "The dongle is registered in the system" ) , NULL);
+            return ADAK_FAIL;//Bu dongle sistemde kayıtlı
         }
     }
 
@@ -345,9 +345,9 @@ int BILGISAYARLAR_FORMU::CHECK_ADD ()
 
     if ( ayni_mac_adresi_girilmis EQ true ) {
 
-        MSG_ERROR(QString( tr ("Girilen mac adreslerinden en az ikisi aynı. "
-                                  "Kablolu, kablosuz veya 3G mac adreslerinin hiç biri birbirinin aynısı olamaz.")),NULL);
-        return ADAK_FAIL;
+        MSG_ERROR(QString( tr (" At least two mac addresses is the same."
+                                  "Wired, wireless or 3G not identical none of the mac address.")),NULL);
+        return ADAK_FAIL;//Girilen mac adreslerinden en az ikisi aynı.Kablolu, kablosuz veya 3G mac adreslerinin hiç biri birbirinin aynısı olamaz.
     }
 
     return ADAK_OK;
@@ -432,8 +432,8 @@ int BILGISAYARLAR_FORMU::CHECK_UPDATE ( int p_bilgisayar_id )
     sql_query.SET_VALUE       ( ":bilgisayar_kodu", m_ui->lineEdit_bilgisayar_kodu->text() );
     sql_query.SET_VALUE       ( ":bilgisayar_id", p_bilgisayar_id );
     if ( sql_query.SELECT () > 0 ) {
-        MSG_ERROR(tr ( "Bu kodla kayıtlı başka bir bilgisayar sistemde mevcut" ) , NULL );
-        return ADAK_FAIL;
+        MSG_ERROR(tr ( "This code registered in a computer present in the system" ) , NULL );
+        return ADAK_FAIL;//bu kodla kayıtlı bir bilgisayar sistemde mevcut
     }
 
     if  ( m_ui->lineEdit_dongle_IP->text() NE "" ) {
@@ -443,7 +443,7 @@ int BILGISAYARLAR_FORMU::CHECK_UPDATE ( int p_bilgisayar_id )
         sql_query.SET_VALUE       ( ":bilgisayar_id", p_bilgisayar_id );
 
         if ( sql_query.SELECT () > 0 ) {
-            MSG_ERROR(tr ( "Bu dongle ile kayıtlı başka bir bilgisayar sistemde mevcut" ) , NULL);
+            MSG_ERROR(tr ( "This dongle registered in a computer present in the system" ) , NULL);
             return ADAK_FAIL;
         }
     }
@@ -461,7 +461,7 @@ int BILGISAYARLAR_FORMU::CHECK_UPDATE ( int p_bilgisayar_id )
 
         if ( sql_query.SELECT () > 0 ) {
             MSG_ERROR(QString( m_ui->line_edit_mac_1->text() + " " +
-                                    tr ( "Bu mac adresi ile kayıtlı başka bir bilgisayar sistemde mevcut" )) , NULL);
+                                    tr ( "This MAC address registered in a computer present in the system" )) , NULL);
             return ADAK_FAIL;
         }
     }
@@ -478,7 +478,7 @@ int BILGISAYARLAR_FORMU::CHECK_UPDATE ( int p_bilgisayar_id )
 
         if ( sql_query.SELECT () > 0 ) {
             MSG_ERROR(QString( m_ui->line_edit_mac_2->text() + " " +
-                                     tr ( "Bu mac adresi ile kayıtlı başka bir bilgisayar sistemde mevcut" ) ),NULL);
+                                     tr ( "This MAC address registered in a computer present in the system" ) ),NULL);
             return ADAK_FAIL;
         }
     }
@@ -495,7 +495,7 @@ int BILGISAYARLAR_FORMU::CHECK_UPDATE ( int p_bilgisayar_id )
 
         if ( sql_query.SELECT () > 0 ) {
             MSG_ERROR(QString(  m_ui->line_edit_mac_3->text() + " " +
-                                      tr ( "Bu mac adresi ile kayıtlı başka bir bilgisayar sistemde mevcut" ) ) , NULL);
+                                      tr ( "This MAC address registered in a computer present in the system" ) ) , NULL);
             return ADAK_FAIL;
         }
     }
@@ -528,12 +528,12 @@ int BILGISAYARLAR_FORMU::CHECK_UPDATE ( int p_bilgisayar_id )
 
     if ( ayni_mac_adresi_girilmis EQ true ) {
 
-        MSG_ERROR(tr ("Girilen mac adreslerinden en az ikisi aynı. "
-                                  "Kablolu, kablosuz veya 3G mac adreslerinin hiç biri birbirinin aynısı olamaz."), NULL);
+        MSG_ERROR(tr (" At least two mac addresses is the same."
+                      "Wired, wireless or 3G not identical none of the mac address."), NULL);
         return ADAK_FAIL;
     }
 
-    ADAK_MSG_ENUM answer = MSG_YES_NO_CANCEL(tr ( "Yapılan değişiklikleri onaylıyor musunuz?" ) ,NULL);
+    ADAK_MSG_ENUM answer = MSG_YES_NO_CANCEL(tr ( "Do you approve of the changes you made?" ) ,NULL);//yapılan değişiklikleri onaylıyor musunuz?
     if ( answer EQ ADAK_NO OR answer EQ ADAK_CANCEL) {
         return ADAK_FAIL;
     }
@@ -582,10 +582,10 @@ void BILGISAYARLAR_FORMU::UPDATE_RECORD ( int p_bilgisayar_id )
         mac_adresi.append(QString(mac_adressleri.at(0) + "-"));
     }
 
-    QString log_detaylari = "Bilgisayar ID: " + QVariant (  p_bilgisayar_id ).toString() + " # Bilgisayar Kodu: "
-                          + m_ui->lineEdit_bilgisayar_kodu->text() + "|AD: " + m_ui->lineEdit_bilgisayar_adi->text()
-                          + " # MAC Adresi : "  + mac_adresi
-                          + " # DONGLE IP: " + m_ui->lineEdit_dongle_IP->text();
+    QString log_detaylari = tr("Bilgisayar ID: ") + QVariant (  p_bilgisayar_id ).toString() + tr(" # Bilgisayar Kodu: ")
+                          + m_ui->lineEdit_bilgisayar_kodu->text() + tr("|AD: ") + m_ui->lineEdit_bilgisayar_adi->text()
+                          + tr(" # MAC Adresi : ")  + mac_adresi
+                          + tr(" # DONGLE IP: ") + m_ui->lineEdit_dongle_IP->text();
 
     YONETIM_007_KAYIT ( LOG_BILGISAYARLAR, LOG_KAYIT_GUNCELLEME, log_detaylari );
 
@@ -620,8 +620,8 @@ int BILGISAYARLAR_FORMU::CHECK_DELETE ( int )
     int bilgisayar_sayisi =  query.SELECT();
 
     if ( bilgisayar_sayisi EQ 1 ) {
-        MSG_WARNING("Sistemde kalan tek Bilgisayar Silemezsiniz.!", NULL );
-        return ADAK_FAIL;
+        MSG_WARNING("you can not delete the last remaining computer in the system.!", NULL );
+        return ADAK_FAIL;//"Sistemde kalan tek Bilgisayar Silemezsiniz.!"
     }
 
     return ADAK_OK;
@@ -647,10 +647,10 @@ void BILGISAYARLAR_FORMU::DELETE_RECORD ( int p_bilgisayar_id )
     }
 
 
-    QString log_detaylari = "Bilgisayar ID: " + QVariant( p_bilgisayar_id).toString() + " # Bilgisayar Kodu: "
-                          + m_ui->lineEdit_bilgisayar_kodu->text() + "|AD: " + m_ui->lineEdit_bilgisayar_adi->text()
-                          + " # MAC Adresi : "  + mac_adresi
-                          + " # DONGLE IP: " + m_ui->lineEdit_dongle_IP->text();
+    QString log_detaylari = tr("Bilgisayar ID: ")+ QVariant( p_bilgisayar_id).toString() + tr(" # Bilgisayar Kodu: ")
+                          + m_ui->lineEdit_bilgisayar_kodu->text() + tr("|AD: ") + m_ui->lineEdit_bilgisayar_adi->text()
+                          + tr(" # MAC Adresi : ")  + mac_adresi
+                          + tr(" # DONGLE IP: ") + m_ui->lineEdit_dongle_IP->text();
 
 
     YONETIM_007_KAYIT ( LOG_BILGISAYARLAR, LOG_KAYIT_SILME, log_detaylari );
@@ -807,8 +807,8 @@ int BILGISAYARLAR_FORMU::LISTEYE_KULLANICI_EKLE ()
            continue;
         }
 
-        MSG_INFO(tr ( "Seçilen kullanıcı %n nolu satırda zaten mevcut.","",i+1 ) , NULL );
-        return ADAK_RECORD_UNCHANGED;
+        MSG_INFO(tr ( "On the no. %n line of the selected user is already available","",i+1 ) , NULL );
+        return ADAK_RECORD_UNCHANGED;//Seçilen kullanıcı %n nolu satırda zaten mevcut.
 
     }
 
