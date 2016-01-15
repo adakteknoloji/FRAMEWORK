@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>BUG/REQUEST FORM</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2" rowstretch="0" columnstretch="0">
    <property name="margin">
@@ -40,7 +40,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Lütfen açık ve detaylı yazmaya çalışın</string>
+        <string>Please try to write clear and detailed</string>
        </property>
       </widget>
      </item>
@@ -62,7 +62,7 @@
         </font>
        </property>
        <property name="text">
-        <string>E-Posta Adresiniz :</string>
+        <string>Your E-mail address:</string>
        </property>
       </widget>
      </item>
@@ -100,8 +100,8 @@
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Size &lt;span style=&quot; font-weight:600;&quot;&gt;geri dönüş&lt;/span&gt; yapabilmemiz için lütfen &lt;span style=&quot; font-weight:600;&quot;&gt;E-Posta&lt;/span&gt; adresinizi yazın.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:10pt;&quot;&gt;Please enter your &lt;/span&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:10pt; font-weight:600;&quot;&gt;e-mail&lt;/span&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:10pt;&quot;&gt; address so that we can &lt;/span&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:10pt; font-weight:600;&quot;&gt;return &lt;/span&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:10pt;&quot;&gt;to you.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
@@ -121,7 +121,7 @@ p, li { white-space: pre-wrap; }
         </font>
        </property>
        <property name="text">
-        <string>Gönderilecek adres :</string>
+        <string>Send to:</string>
        </property>
       </widget>
      </item>

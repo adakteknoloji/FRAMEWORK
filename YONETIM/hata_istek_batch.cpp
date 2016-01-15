@@ -34,11 +34,11 @@ HATA_ISTEK_BATCH::HATA_ISTEK_BATCH ( QWidget * parent ) :  BATCH_KERNEL ( parent
 void HATA_ISTEK_BATCH::SETUP_FORM ()
 {
 
-    SET_PAGE_TITLE    (tr("HATA / İSTEK BİLDİRİMİ"));
+    SET_PAGE_TITLE    (tr("BUG/REQUEST FORM"));//HATA/İSTEK BİLDİRİMİ
     SET_SETTING_NAME  ("HATA_ISTEK_EKRANI");
     SET_HELP_PAGE     ("hata_istek");
     SET_AUTO_EXIT_BATCH ( true );
-    SET_NAME_OF_RUN_BATCH_BUTTON ( tr("GÖNDER")      );
+    SET_NAME_OF_RUN_BATCH_BUTTON ( tr("SEND")      );
     REGISTER_BUTTON_WIDGET ( m_ui->widget_batch_button );
 
     if ( KULLANICI_ID() NE -1 ) {
@@ -74,17 +74,17 @@ int HATA_ISTEK_BATCH::CHECK_VAR ( QObject * object )
 int HATA_ISTEK_BATCH::CHECK_RUN ()
 {
     if ( m_ui->text_edit_hata_istek->toPlainText().isEmpty() EQ true ) {
-        MSG_WARNING("Lütfen Hata/İstek kısmını doldurunuz.",m_ui->text_edit_hata_istek);
+        MSG_WARNING("Please fill the bug / request form ",m_ui->text_edit_hata_istek);//Lütfen Hata/İstek kısmını doldurunuz.
         return ADAK_FAIL;
     }
 
     if ( m_ui->line_edit_email->text().isEmpty() EQ true ) {
-        MSG_WARNING("Lütfen iletişim için e-posta adresinizi yazınız.",m_ui->line_edit_email);
+        MSG_WARNING("Please enter your e mail address for contact.",m_ui->line_edit_email);
         return ADAK_FAIL;
     }
 
     if ( m_ui->line_edit_email->text().contains("@",Qt::CaseInsensitive ) EQ false ) {
-        MSG_WARNING("Lütfen geçerli bir e-posta adresi yazınız.",m_ui->line_edit_email);
+        MSG_WARNING("Please write a valid e-mail address.",m_ui->line_edit_email);//Lütfen geçerli bir e-posta adresi yazınız
         return ADAK_FAIL;
     }
 
@@ -98,11 +98,11 @@ int HATA_ISTEK_BATCH::CHECK_RUN ()
 void HATA_ISTEK_BATCH::RUN_BATCH ()
 {
     QString from             = m_ui->line_edit_email->text();
-    QString subject          = "Hata / Istek Bildirimi ( " + ADAK_PROGRAM_LONGNAME(ADAK_DISPLAY_ID()) + " " + ADAK_PROGRAM_VERSION(ADAK_DISPLAY_ID()) + " )";
+    QString subject          = tr("Bug/Request notification( " + ADAK_PROGRAM_LONGNAME(ADAK_DISPLAY_ID()) + " " + ADAK_PROGRAM_VERSION(ADAK_DISPLAY_ID()) + " )");
 
     EMAIL_SET_EMAIL_SERVER ("smtp.gmail.com", 587, STARTTLS );
     EMAIL_SET_USER_EMAIL_INFO ( "adakerror", "qaz123XSW", "Adak Error Sender", true  );
     SEND_MAIL ( "adakerror@gmail.com", from, ADAK_PROGRAM_EMAIL(ADAK_DISPLAY_ID()), subject, QString(m_ui->text_edit_hata_istek->toPlainText()), -1 , -1 , "", false);
 
-    MSG_INFO("Hata / İstek bilgisi gönderildi.", NULL);
+    MSG_INFO("Bug / Request form sent.", NULL);//Hata / İstek bilgisi gönderildi.
 }
