@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>KULLANICILAR</string>
+   <string>USERS</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_4" rowstretch="0,10,80" columnstretch="100,0">
    <property name="margin">
@@ -50,7 +50,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Kullanıcı Kodu</string>
+        <string>User Code</string>
        </property>
        <property name="buddy">
         <cstring>lineEdit_kullanici_kodu</cstring>
@@ -82,7 +82,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Kullanıcı Adı</string>
+        <string>User Name</string>
        </property>
        <property name="buddy">
         <cstring>lineEdit_kullanici_adi</cstring>
@@ -131,7 +131,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>E-Mail Kullanıcı Adı </string>
+        <string>E-Mail User Name </string>
        </property>
       </widget>
      </item>
@@ -144,7 +144,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>NOT</string>
+        <string>NOTE</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -164,7 +164,7 @@
      <item row="5" column="0">
       <widget class="QCheckBox" name="check_box_sifre">
        <property name="text">
-        <string>Şifre Değiştir</string>
+        <string>Change Password</string>
        </property>
        <property name="checked">
         <bool>true</bool>
@@ -198,8 +198,8 @@
         </font>
        </property>
        <property name="text">
-        <string>Email bilgisi, hata bildirimleri ve rapor gönderimi için gereklidir.
-Lütfen boş bırakmayınız.</string>
+        <string>Email information is required for notification and sending error report. 
+Please do not leave blank.</string>
        </property>
       </widget>
      </item>
@@ -265,7 +265,7 @@ Lütfen boş bırakmayınız.</string>
            </sizepolicy>
           </property>
           <property name="text">
-           <string>Yeni Şifre(Tekrar)</string>
+           <string>New Password(Repeat)</string>
           </property>
          </widget>
         </item>
@@ -281,7 +281,7 @@ Lütfen boş bırakmayınız.</string>
            </sizepolicy>
           </property>
           <property name="text">
-           <string>Yeni Şifre</string>
+           <string>New Password</string>
           </property>
          </widget>
         </item>
@@ -347,10 +347,10 @@ Lütfen boş bırakmayınız.</string>
           <string notr="true"/>
          </property>
          <property name="text">
-          <string>KULLANICININ YETKİLERİ</string>
+          <string>USER AUTHORIZATIONS</string>
          </property>
          <property name="icon">
-          <iconset>
+          <iconset resource="yonetim_icons.qrc">
            <normaloff>:/yonetim_icons/yonetim_kullanici_yetkileri.png</normaloff>:/yonetim_icons/yonetim_kullanici_yetkileri.png</iconset>
          </property>
          <property name="flat">
@@ -389,13 +389,13 @@ Lütfen boş bırakmayınız.</string>
         <bool>false</bool>
        </property>
        <property name="toolTip">
-        <string>Bilgisayar seçimi için tıklayınız</string>
+        <string>Click for computer selection</string>
        </property>
        <property name="text">
         <string/>
        </property>
        <property name="icon">
-        <iconset>
+        <iconset resource="yonetim_icons.qrc">
          <normaloff>:/yonetim_icons/yonetim_bul_ikonu.png</normaloff>:/yonetim_icons/yonetim_bul_ikonu.png</iconset>
        </property>
        <property name="iconSize">
@@ -431,13 +431,13 @@ Lütfen boş bırakmayınız.</string>
         <bool>false</bool>
        </property>
        <property name="toolTip">
-        <string>Veritabanı seçimi için tıklayınız</string>
+        <string>Click for database selection</string>
        </property>
        <property name="text">
         <string/>
        </property>
        <property name="icon">
-        <iconset>
+        <iconset resource="yonetim_icons.qrc">
          <normaloff>:/yonetim_icons/yonetim_bul_ikonu.png</normaloff>:/yonetim_icons/yonetim_bul_ikonu.png</iconset>
        </property>
        <property name="iconSize">
@@ -466,7 +466,29 @@ Lütfen boş bırakmayınız.</string>
         <property name="margin">
          <number>3</number>
         </property>
-        <item row="1" column="0" colspan="2">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_3">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>The User Computers That Can Run</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
          <widget class="QTableWidget" name="table_widget_bilgisayarlar">
           <property name="font">
            <font>
@@ -491,17 +513,17 @@ Lütfen boş bırakmayınız.</string>
           </attribute>
           <column>
            <property name="text">
-            <string>bilgisayar_id</string>
+            <string>Computer_Id</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Bilgisayar Kodu</string>
+            <string>Computer Code</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Bilgisayar Adı</string>
+            <string>Computer Name</string>
            </property>
           </column>
           <column>
@@ -511,12 +533,12 @@ Lütfen boş bırakmayınız.</string>
           </column>
           <column>
            <property name="text">
-            <string>Kablolu Ağ Mac</string>
+            <string>Wired Network Mac</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Kablosuz Ağ Mac</string>
+            <string>Wireless Network Mac</string>
            </property>
           </column>
           <column>
@@ -524,28 +546,6 @@ Lütfen boş bırakmayınız.</string>
             <string>3G Mac</string>
            </property>
           </column>
-         </widget>
-        </item>
-        <item row="0" column="0">
-         <widget class="QLabel" name="label_3">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Kullanıcının Çalışabileceği Bilgisayarlar</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
          </widget>
         </item>
        </layout>
@@ -601,17 +601,17 @@ Lütfen boş bırakmayınız.</string>
           </attribute>
           <column>
            <property name="text">
-            <string>veritabani_id</string>
+            <string>database_id</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Veritabanı ( Şirket )</string>
+            <string>Database(Company)</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Veritabanı Tanımı</string>
+            <string>Database Definition</string>
            </property>
           </column>
          </widget>
@@ -631,7 +631,7 @@ Lütfen boş bırakmayınız.</string>
            </font>
           </property>
           <property name="text">
-           <string>Kullanıcının Çalışabileceği Veritabanları</string>
+           <string>The User can Work with Databases</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -661,7 +661,6 @@ Lütfen boş bırakmayınız.</string>
   <tabstop>check_box_sifre</tabstop>
   <tabstop>button_bilgisayar_sec</tabstop>
   <tabstop>button_veritabani_sec</tabstop>
-  <tabstop>table_widget_bilgisayarlar</tabstop>
   <tabstop>table_widget_veritabanlari</tabstop>
  </tabstops>
  <resources>

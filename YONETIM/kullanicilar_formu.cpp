@@ -87,7 +87,7 @@ void KULLANICILAR_FORMU::SETUP_FORM ()
 
     REGISTER_SAVER_BUTTON   ( m_ui->pushButton_yetki_ata );
 
-    SET_PAGE_TITLE    ( tr ( "KULLANICILAR" ) );
+    SET_PAGE_TITLE    ( tr ( "USERS" ) );
     SET_SETTING_NAME  ( "KULLANICILAR_FORMU" );
     SET_HELP_PAGE     ( "yonetim-islemleri_kullanicilar" );
 
@@ -320,11 +320,11 @@ int KULLANICILAR_FORMU::CHECK_VAR ( QObject * p_object )
 int KULLANICILAR_FORMU::CHECK_EMPTY ()
 {
     if ( m_ui->lineEdit_kullanici_kodu->text().isEmpty() EQ true ) {
-        MSG_ERROR(tr ( "Kullanıcı kodu boş bırakılamaz." ) , m_ui->lineEdit_kullanici_kodu );
+        MSG_ERROR(tr ( "User code can not be empty." ) , m_ui->lineEdit_kullanici_kodu );//Kullanıcı kodu boş bırakılamaz
         return ADAK_FAIL;
     }
     if ( m_ui->lineEdit_kullanici_adi->text().isEmpty() EQ true ) {
-        MSG_ERROR(tr ( "Kullanıcı adı boş bırakılamaz." ) , m_ui->lineEdit_kullanici_adi);
+        MSG_ERROR(tr ( "User name can not be empty." ) , m_ui->lineEdit_kullanici_adi);
         return ADAK_FAIL;
     }
     return ADAK_OK;
@@ -343,7 +343,7 @@ int KULLANICILAR_FORMU::CHECK_ADD ()
     sql_query.SET_VALUE      ( ":silinmis_mi " , 0 );
 
     if ( sql_query.SELECT() NE 0 ) {
-        MSG_ERROR(tr ( "Bu kodla kayıtlı bir kullanıcı sistemde mevcut" )  , NULL);
+        MSG_ERROR(tr ( "There are registered users in the system with this code." )  , NULL);//Bu kodla kayıtlı kullanıcı sistemde mevcut
         return ADAK_FAIL;
     }
     return ADAK_OK;
@@ -398,8 +398,8 @@ int KULLANICILAR_FORMU::ADD_RECORD ()
 
     BILGISAYARDA_KAYITLI_KUL_SAY_VE_KULLANICININ_KAYITLI_VERITABANI_SAY_GUNCELLE ();
 
-    QString log_detaylari = "Kullanıcı ID: " + QVariant (  kullanici_id ).toString() + " # Kullanıcı Kodu: " + m_ui->lineEdit_kullanici_kodu->text()
-                           + " # Kullanıcı Adı: " + m_ui->lineEdit_kullanici_adi->text();
+    QString log_detaylari = tr("User ID: ") + QVariant (  kullanici_id ).toString() + tr(" # User Code: ") + m_ui->lineEdit_kullanici_kodu->text()
+                           + tr(" # User Name: ") + m_ui->lineEdit_kullanici_adi->text();
 
     YONETIM_007_KAYIT ( LOG_KULLANICILAR, LOG_KAYIT_EKLEME, log_detaylari );
     return kullanici_id;
@@ -422,19 +422,19 @@ int KULLANICILAR_FORMU::CHECK_UPDATE (int p_kullanici_id )
 
         sql_query.NEXT();
         if ( sql_query.VALUE(0).toInt() NE p_kullanici_id ) {
-            MSG_ERROR(tr ( "Bu kodla kayıtlı bir kullanıcı sistemde mevcut" )  , NULL);
+            MSG_ERROR(tr ( "There are registered users in the system with this code." )  , NULL);//bu kodla kullanıcı sistemde mevcut
             return ADAK_FAIL;
         }
     }
 
     if ( m_ui->check_box_sifre->isChecked() EQ true ) {
         if ( m_ui->line_edit_yeni_sifre->text() NE m_ui->line_edit_yeni_sifre_tekrar->text() ) {
-            MSG_ERROR("Girdiğiniz yeni şifre ile tekrarı uyuşmuyor, lütfen kontrol ediniz.",m_ui->line_edit_yeni_sifre);
+            MSG_ERROR("New and repeat passwords do not match,Please check.",m_ui->line_edit_yeni_sifre);//Girdiğiniz yeni şifre ve tekrarı uyuşmuyor Lütfen kontrol ediniz.
             return ADAK_FAIL;
         }
     }
 
-    ADAK_MSG_ENUM answer = MSG_YES_NO_CANCEL( tr ( "Yapılan değişiklikleri onaylıyor musunuz?" ) , NULL);
+    ADAK_MSG_ENUM answer = MSG_YES_NO_CANCEL( tr ( "Do you approve of the changes you made?" ) , NULL);//Yapılan değişiklikleri onaylıyor musunuz?
     if ( answer EQ ADAK_CANCEL OR answer EQ ADAK_NO  ) {
         return ADAK_FAIL;
     }
@@ -523,12 +523,12 @@ void KULLANICILAR_FORMU::UPDATE_RECORD  ( int p_kullanici_id )
 int KULLANICILAR_FORMU::CHECK_DELETE ( int kullanici_id )
 {
     if ( kullanici_id EQ 1 ) {
-        MSG_INFO("Yönetici kullanıcısı silinemez!",m_ui->limitedTextEdit_not);
+        MSG_INFO(tr("Admin user can not be deleted!"),m_ui->limitedTextEdit_not);//Yönetici kullanıcısı silinemez!
         return ADAK_FAIL;
     }
 
     if ( m_ui->lineEdit_kullanici_kodu->text() EQ KULLANICI_KODU() ) {
-        MSG_WARNING( "Giriş yapmış olduğunuz kullanıcıyı silemezsiniz.!", NULL );
+        MSG_WARNING( tr("You can not delete that login is made!"), NULL );//Giriş yapmış olduğunuz kullanıcıyı silemezsiniz.
         return ADAK_FAIL;
     }
 
@@ -538,7 +538,7 @@ int KULLANICILAR_FORMU::CHECK_DELETE ( int kullanici_id )
     int kullanici_sayisi = query.SELECT();
 
     if ( kullanici_sayisi EQ 2 ) {
-        MSG_WARNING( "Sitemde Kalan Tek Kullanıcı Silemezsiniz.!", NULL );
+        MSG_WARNING( tr("The remaining single-user the system, you can not delete!"), NULL );//Sistemde Kalan Tek Kullanıcı, Silemezsiniz.
         return ADAK_FAIL;
     }
     return ADAK_OK;
@@ -568,8 +568,8 @@ void KULLANICILAR_FORMU::DELETE_RECORD ( int p_kullanici_id )
 
     BILGISAYARDA_KAYITLI_KUL_SAY_VE_KULLANICININ_KAYITLI_VERITABANI_SAY_GUNCELLE ();
 
-    QString log_detaylari = "Kullanıcı ID: " + QVariant( p_kullanici_id).toString() + " # Kullanıcı Kodu: " + m_ui->lineEdit_kullanici_kodu->text()
-                           + " # Kullanıcı Adı: " + m_ui->lineEdit_kullanici_adi->text();
+    QString log_detaylari = tr("User ID: ") + QVariant( p_kullanici_id).toString() + tr(" # User Code: ") + m_ui->lineEdit_kullanici_kodu->text()
+                           + tr(" # User Name: ") + m_ui->lineEdit_kullanici_adi->text();
 
     YONETIM_007_KAYIT ( LOG_KULLANICILAR, LOG_KAYIT_SILME, log_detaylari );
 
@@ -744,7 +744,7 @@ int KULLANICILAR_FORMU::LISTEYE_BILGISAYAR_EKLE ()
            continue;
         }
 
-        MSG_INFO(tr ( "Seçilen bilgisayar %n nolu satırda zaten mevcut.","",i+1 ) ,NULL );
+        MSG_INFO(tr ( "The selected computer is already available on line no %n.","",i+1 ) ,NULL );//Seçilen bilgisayar %n nolu satırda zaten mevcut.
         return ADAK_RECORD_UNCHANGED;
     }
 
@@ -811,7 +811,7 @@ int KULLANICILAR_FORMU::LISTEYE_VERITABANI_EKLE()
            continue;
         }
 
-        MSG_INFO(tr ( "Seçilen veritabanı %n nolu satırda zaten mevcut.", "", i + 1 ) , NULL);
+        MSG_INFO(tr ( "The selected database are already available on line no %n.", "", i + 1 ) , NULL);//Seçilen veritabanı %n nolu satırda zaten mevcut.
         return ADAK_RECORD_UNCHANGED;
     }
 
@@ -904,7 +904,7 @@ void    KULLANICILAR_FORMU::SAVER_BUTTON_CLICKED( QAbstractButton * p_button, in
             }
         }
         if ( yetkisi_bulunan_db_ler.contains( VERITABANI_ID() ) EQ false ) {
-            MSG_WARNING( tr("Kullanıcının  <b> %1 </b>  veritabanında çalışma yetkisi yok.").arg( VERITABANI_ISMI() ), NULL );
+            MSG_WARNING( tr("No work on the user's database <b>%1</b> authority.").arg( VERITABANI_ISMI() ), NULL );//Kullanıcının  <b> %1 </b>  veritabanında çalışma yetkisi yok.
         }
         else {
             M_KULLANICI_YETKILERI_FONK ( p_record_id  ,m_yetkileri_tazele, nativeParentWidget() );
