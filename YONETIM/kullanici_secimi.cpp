@@ -31,13 +31,13 @@ KULLANICI_SECIMI::KULLANICI_SECIMI( bool p_yonetici_goster, QWidget * p_parent, 
 
     SET_WINDOW_SIZE                      ( 500, 700 );
 
-    SET_PAGE_TITLE                       ( tr ("KULLANICI SEÇİMİ") );
+    SET_PAGE_TITLE                       ( tr ("SELECTING USER") );
     SET_HELP_PAGE                        ( "kullanici_secimi");
 
     SET_SORTING                          ( false );
 
-    SET_HEADERS                          ( QStringList()<<tr("Kullanıcı Id")<<tr("Kullanıcı kodu")
-                                          <<tr("Kullanıcı adı")<<tr("Email Adresi"));
+    SET_HEADERS                          ( QStringList()<<tr("User Id")<<tr("User Code")
+                                          <<tr("User Name")<<tr("Email Address"));
 
     INIT_KERNEL                          ( G_YONETIM_DB );
 
