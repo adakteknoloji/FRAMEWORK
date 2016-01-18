@@ -24,7 +24,7 @@ QAdakTabWidget::QAdakTabWidget(QWidget *parent) : QTabWidget(parent)
     connect(tabBar(),SIGNAL(currentChanged(int))   ,this,SLOT  (SLOT_TAB_BAR_CHANGED(int)));
     connect(tabBar(),SIGNAL(tabCloseRequested(int)),this,SLOT  (CLOSE_TAB(int)));
 
-    QPushButton * main_menu             = new QPushButton("Ana Menü");
+    QPushButton * main_menu             = new QPushButton(tr("Main Menu"));
     main_menu->setIconSize              (QSize(16,16));
     main_menu->setIcon                  (QIcon(":/kernel_icons/kernel_home_ikonu.png"));
     main_menu->setSizePolicy            (QSizePolicy::Fixed,QSizePolicy::Expanding);
@@ -64,7 +64,7 @@ int QAdakTabWidget::ADD_TAB(QString name, QWidget *widget,int index, QString ico
 
     HIDE_MAIN_MENU();
 
-    if ( name EQ "Yeni Sekme" ) {
+    if ( name EQ tr("New Tab") ) {
         m_main_menu = widget;
         index = addTab(widget,name);
     }
@@ -111,7 +111,7 @@ void QAdakTabWidget::HIDE_MAIN_MENU()
 {
     //FIXME sondan baslamak daha mantikli
     for ( int i = 0 ; i < count() ; i++ ) {
-        if ( tabText(i) EQ "Yeni Sekme" )  {
+        if ( tabText(i) EQ tr("New Tab") )  {
             removeTab(i);
             break;
         }
@@ -124,10 +124,10 @@ void QAdakTabWidget::HIDE_MAIN_MENU()
 
 void QAdakTabWidget::CLOSE_TAB(int index)
 {
-    if ( tabText(index) EQ "Yeni Sekme" )  {
+    if ( tabText(index) EQ tr("New Tab") )  {
         // BIRDEN FAZLA TAB ACIKSA SORMASINA GEREK YOK
         if ( count() EQ 1 ) {
-            ADAK_MSG_ENUM answer = ADAK_YES_NO( "Program kapatılacaktır. Devam etmek istiyormusunuz?", NULL, this );
+            ADAK_MSG_ENUM answer = ADAK_YES_NO( tr("The program will be closed. Do you want to continue?"), NULL, this );//Program kapatılacaktır. Devam etmek istiyormusunuz?
 
             if ( answer EQ ADAK_NO ) {
                 return;
@@ -136,7 +136,7 @@ void QAdakTabWidget::CLOSE_TAB(int index)
 
         removeTab(index);
         if ( count() EQ 0 ){
-            emit SIGNAL_LAST_TAB_CLOSE( "Yeni Sekme" );
+            emit SIGNAL_LAST_TAB_CLOSE( tr("New Tab") );
         }
     }
     else {
@@ -150,7 +150,7 @@ void QAdakTabWidget::CLOSE_TAB(int index)
 
 void QAdakTabWidget::SLOT_OPEN_MAIN_MENU()
 {
-    ADD_TAB("Yeni Sekme",m_main_menu,0);
+    ADD_TAB(tr("New Tab"),m_main_menu,0);
 }
 
 /******************************************************************************************
@@ -159,7 +159,7 @@ void QAdakTabWidget::SLOT_OPEN_MAIN_MENU()
 
 void QAdakTabWidget::SLOT_TAB_BAR_CHANGED(int index)
 {
-    if ( tabText(index) EQ "Yeni Sekme" ) {
+    if ( tabText(index) EQ tr("New Tab") ) {
         return;
     }
 

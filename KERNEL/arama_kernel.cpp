@@ -9,9 +9,9 @@
 
 ARAMA_KERNEL::ARAMA_KERNEL ( QWidget *parent ) :  BATCH_KERNEL ( parent )
 {
-    m_kernel_button_text        = "Arama Ekranı";
+    m_kernel_button_text        = tr("Search Screen");
     m_auto_start                = false;
-    p_find_button_name          = "Ara";
+    p_find_button_name          = tr("Search");
 
     SET_SORTING(true,1);
     DISABLE_MULTI_ROW_SELECTION();
@@ -254,7 +254,7 @@ void ARAMA_KERNEL::RUN_BATCH()
     KERNEL_UPDATE_STATUS_LABEL ( m_label,p_table_widget->rowCount() );
 
     if ( p_table_widget->rowCount() <= 0 ) {
-        MSG_ERROR("Aradığınız kriterlere uygun kayıt bulunamadı." , NULL);
+        MSG_ERROR(tr("No records were found according to your search criteria.") , NULL);//Aradığınız kriterlere uygun kayıt bulunamadı.
     }
 
     p_table_widget->setEditTriggers ( QTableWidget::NoEditTriggers );

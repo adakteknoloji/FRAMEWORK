@@ -81,8 +81,10 @@ SEKME_MENU_KERNEL::SEKME_MENU_KERNEL( int program_id , QWidget *parent ) : QMain
 
     G_SEKME_MENU_KERNEL  << this;
 
-    SET_MENU_BOTTOM_TEXT ("Bu program <b>ADAK Teknoloji</b> tarafından üretilmiştir , isteyen herkes <b>http://www.adak.com.tr</b> ' dan indirebilir.<br>"
-			  "Programda hiç bir kısıt yoktur</b>.");
+    SET_MENU_BOTTOM_TEXT (tr("This program created by <b>Adak Technology</b>, anyone can download from <b>http://www.adak.com.tr</b>.<br>  ")
+              tr("There is no restriction in the program."));
+    //Bu program <b>ADAK Teknoloji</b> tarafından üretilmiştir , isteyen herkes <b>http://www.adak.com.tr</b> ' dan indirebilir.<br>
+    //Programda hiç bir kısıt yoktur.</b>.
 }
 
 /******************************************************************************************
@@ -184,7 +186,7 @@ void SEKME_MENU_KERNEL::FILL_MENU_STRUCT(int parent_index, int parent_enum_id)
             }
         }
         else {
-            qDebug("Sekme menu kernel da max column 2 olmalidir.Verilen column degerleri 1 yada 2 olabilir.");
+            qDebug(tr("The maximum number of column must be 2 at tab kernel menu.Given the column values may be 1 or 2."));//Sekme menu kernel da max column 2 olmalidir.Verilen column degerleri 1 yada 2 olabilir
             abort();
         }
 
@@ -204,7 +206,7 @@ void SEKME_MENU_KERNEL::FILL_MENU_STRUCT(int parent_index, int parent_enum_id)
 
 void SEKME_MENU_KERNEL::ADD_MENU_BAR(QAdakTabWidget *tab_widget)
 {
-    m_menu             = new QMenu("Menü");
+    m_menu             = new QMenu(tr("Menu"));
 
     ADD_MENU_BAR_CHILDS(m_menu,MENU_ROOT);
 
@@ -267,11 +269,11 @@ void SEKME_MENU_KERNEL::OPEN_EKRANI_AC_DIALOG()
     QDialog * dialog       = new QDialog;
 
     dialog->setLayout      ( h_layout               );
-    dialog->setWindowTitle ( "Ekranı Aç" );
+    dialog->setWindowTitle ( tr("Open Screen") );
 
-    QLabel * label         = new QLabel("Menü Kodu" );
+    QLabel * label         = new QLabel(tr("Menu code") );
     QLineEdit * line_edit  = new QLineEdit;
-    QPushButton * button   = new QPushButton("Getir");
+    QPushButton * button   = new QPushButton("Bring");
 
     QAction * action = new QAction(this);
 
@@ -290,7 +292,7 @@ void SEKME_MENU_KERNEL::OPEN_EKRANI_AC_DIALOG()
         int index = m_menu_codes.indexOf(line_edit->text().toUpper());
 
         if ( index EQ -1 ) {
-            MSG_ERROR(QString("'%1' kod numarasına sahip bir menü bulunamadı.").arg(line_edit->text()),NULL);
+            MSG_ERROR(QString(tr("'%1' could not find a menu with a code number.")).arg(line_edit->text()),NULL);//'%1' kod numarasına sahip bir menü bulunamadı.
         }
         else {
             SLOT_ITEM_CLICKED(QVariant(index).toString());
@@ -506,7 +508,7 @@ void SEKME_MENU_KERNEL::DESTROY_ALL()
 int SEKME_MENU_KERNEL::MENU_INDEX_OF_WIDGET( QWidget * widget )
 {
     // BIRDEN FAZLA CIKTI TAB ACILA  BILMELI
-    if ( widget->windowTitle().trimmed() NE QObject::tr("ÇIKTI ÖNİZLEME") ) {
+    if ( widget->windowTitle().trimmed() NE QObject::tr("OUTPUT PREVIEW") ) {//ÇIKTI ÖNİZLEME
         for ( int i = 0 ; i < m_tab_widgets.size() ; i++ ) {
             if ( widget->windowTitle() EQ m_tab_widgets.at(i)->windowTitle() ) {
                 return i;
@@ -627,7 +629,7 @@ void SEKME_MENU_KERNEL::ADD_CHILD_DIALOG(QWidget * widget, QWidget * parent,  SC
 
     for ( ; ; ) {
         if ( widget_parent EQ NULL ) {
-            qDebug("Child parenti tespit edilemedi!!!!");
+            qDebug(tr("Child's parent could not be determined."));//Child parenti tespit edilemedi!!!!
             return;
         }
 
@@ -708,7 +710,7 @@ int SEKME_MENU_KERNEL::ADD_TAB(QWidget *tab_widget, QString name)
     QList<QWidget *> tool_tips = m_tab_widget->findChildren<QWidget *>("");
 
     for ( int i = 0 ; i < tool_tips.size() ; i++ ) {
-        if ( tool_tips.at(i)->toolTip().contains("Close Tab",Qt::CaseInsensitive) EQ true ) {
+        if ( tool_tips.at(i)->toolTip().contains(tr("Close Tab"),Qt::CaseInsensitive) EQ true ) {
             tool_tips.at(i)->setToolTip("Sekmeyi Kapat");
         }
     }
@@ -1048,7 +1050,7 @@ void SEKME_MENU_KERNEL::SET_MAIN_MENU_DEFAULTS()
 
         main_box_layout->addWidget(m_background);
 
-        ADD_TAB(main_widget,"Yeni Sekme");
+        ADD_TAB(main_widget,tr("New Tab"));
 
         statusBar()->addPermanentWidget(&m_sb_label_firma,1);
         statusBar()->addPermanentWidget(&m_sb_label_user,1);
@@ -1072,9 +1074,9 @@ void SEKME_MENU_KERNEL::SET_MAIN_MENU_DEFAULTS()
 
     ADAK_SET_FONT_SIZE( statusBar(), 0.85 );
 
-    m_sb_label_firma.setText( QString("Veritabanı : <b>%1-%2</b>").arg(VERITABANI_ISMI()).arg(VERITABANI_TANIMI()));
-    m_sb_label_user.setText   ( QString("Kullanıcı : <b>%1-%2</b>").arg(KULLANICI_KODU()).arg(KULLANICI_ADI()));
-    m_sb_label_pc.setText     ( QString("Bilgisayar : <b>%1-%2</b>").arg(BILGISAYAR_KODU()).arg(BILGISAYAR_ADI()));
+    m_sb_label_firma.setText( QString(tr("Database : <b>%1-%2</b>")).arg(VERITABANI_ISMI()).arg(VERITABANI_TANIMI()));
+    m_sb_label_user.setText   ( QString(tr("User : <b>%1-%2</b>")).arg(KULLANICI_KODU()).arg(KULLANICI_ADI()));
+    m_sb_label_pc.setText     ( QString(tr("Computer : <b>%1-%2</b>")).arg(BILGISAYAR_KODU()).arg(BILGISAYAR_ADI()));
     m_sb_label_version.setText( "<b>" + ADAK_PROGRAM_SHORTNAME(ADAK_DISPLAY_ID()) +"-"+ ADAK_PROGRAM_VERSION(ADAK_DISPLAY_ID())+ "</b>");
 
 
@@ -1177,7 +1179,7 @@ bool SEKME_MENU_KERNEL::CLOSE_PROGRAM (bool no_message)
     // YENI SEKME HARIC DIGER MENU SAYISI
     if ( m_tab_widgets.size() EQ 0 ) {
         if (no_message EQ false) {
-            answer = MSG_YES_NO("Program kapatılacaktır. Devam etmek istiyormusunuz?",NULL);
+            answer = MSG_YES_NO(tr("The program will be closed. Do you want to continue?"),NULL);//Program kapatılacaktır. Devam etmek istiyormusunuz?
 
             if ( answer EQ ADAK_NO ) {
                 return false;
@@ -1189,7 +1191,7 @@ bool SEKME_MENU_KERNEL::CLOSE_PROGRAM (bool no_message)
 
     // buraya gelirse mutlaka 1 den fazla tab aciktir
     if (no_message EQ false) {
-        answer = MSG_YES_NO("Program kapatılacaktır. Açık olan Sekmeler var. Devam etmek istiyormusunuz?",NULL);
+        answer = MSG_YES_NO(tr("The program will be closed. There are currently open tabs. Do you want to continue?"),NULL);//Program kapatılacaktır. Açık olan Sekmeler var. Devam etmek istiyormusunuz?
 
         if ( answer EQ ADAK_NO ) {
             return false;

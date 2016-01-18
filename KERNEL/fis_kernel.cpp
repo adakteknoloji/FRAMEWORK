@@ -16,7 +16,7 @@
 
 FIS_KERNEL::FIS_KERNEL ( QWidget * parent ) : FORM_KERNEL ( parent )
 {
-    m_kernel_button_text        = "Fiş Ekranı";
+    m_kernel_button_text        = tr("Plug Screen ");
     is_fis_kernel               = true; // FIXME
     p_table_widget              = NULL;
     p_is_table_filling          = false;
@@ -1178,7 +1178,7 @@ void FIS_KERNEL::ADD_INSERT_BUTTON ( int current_row )
     insert_button->setIconSize(QSize(20,20));
     insert_button->setAutoDefault(false);
     insert_button->setText("");
-    insert_button->setToolTip(tr("Tıklanan satırın üstüne satır ekler"));
+    insert_button->setToolTip(tr("Add the top line of the clicked row."));//Tıklanan satırın üstüne satır ekler
     insert_button->show();
 
     if ( m_is_readonly_mode_on EQ true) {
@@ -1202,7 +1202,7 @@ void FIS_KERNEL::ADD_DELETE_BUTTON ( int current_row )
     delete_button->setIconSize(QSize(20,20));
     delete_button->setAutoDefault(false);
     delete_button->setText("");
-    delete_button->setToolTip(tr("Tıklanan satırı siler"));
+    delete_button->setToolTip(tr("Deletes the clicked row"));//Tıklanan satırı siler
     delete_button->setEnabled(false);
     delete_button->setSizePolicy(QSizePolicy::Ignored,QSizePolicy::Ignored);
     delete_button->show();

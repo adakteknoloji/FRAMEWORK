@@ -53,7 +53,7 @@ BASE_KERNEL::BASE_KERNEL ( QWidget * parent ) : QDialog ( parent )
     m_db_conn            = NULL;
 
     G_FORM_NAME << objectName ();
-    SET_PAGE_TITLE ( "HATA !..  <<<<<  Bu ekrana isim verilmemiş >>>>>  HATA !.." + objectName() );
+    SET_PAGE_TITLE ( tr("ERROR!..  <<<<<  This screen unnamed >>>>>  ERROR !..") + objectName() );//HATA! Bu ekrana isim verilmemis.
     SET_HELP_PAGE ( "" );
     SET_SETTING_NAME ( "" );
     SET_THIS(this);
@@ -102,7 +102,7 @@ SEKME_MENU_KERNEL * GET_PARENT_SEKME_MENU_KERNEL (QWidget * parent)
 {
     for ( ; ; ) {
         if ( parent EQ NULL ) {
-            qDebug("Parent penceresi bulunamadi.");
+            qDebug(QObject::tr("Parent window is not found. "));
         }
 
         if ( G_SEKME_MENU_KERNEL.contains( parent ) EQ true ) {
@@ -446,15 +446,15 @@ void BASE_KERNEL::SHOW_NO_HELP_DIALOG ()
 {
     QString prog_name = ADAK_PROGRAM_LONGNAME(ADAK_DISPLAY_ID()) + " ( " + ADAK_PROGRAM_SHORTNAME(ADAK_DISPLAY_ID()) + "- v" + ADAK_PROGRAM_VERSION(ADAK_DISPLAY_ID()) + " )";
 
-    QLabel * label_program_adi_txt          =    new QLabel("Program Adı: ");
+    QLabel * label_program_adi_txt          =    new QLabel(tr("Program Name: "));
     m_line_edit_program_adi                 =    new QLineEdit(prog_name);
     m_line_edit_program_adi->setStyleSheet("font:monospace; color:blue;");
     m_line_edit_program_adi->setReadOnly(true);
 
-    QLabel      * label_email_adres     = new QLabel( "E-Posta Adresiniz :" );
+    QLabel      * label_email_adres     = new QLabel( tr("Your E-Mail Address :" ));
     m_lineEdit_email_adres  = new QLineEdit;
 
-    QLabel * label_bulunamayan_sayfa_txt    =    new QLabel("Bulunamayan Sayfa: ");
+    QLabel * label_bulunamayan_sayfa_txt    =    new QLabel(tr("Page can be Found at: "));//Bulunamayan Sayfa
 
     QString bulunamayan_sayfa = objectName();
 
@@ -467,7 +467,7 @@ void BASE_KERNEL::SHOW_NO_HELP_DIALOG ()
     m_line_edit_bulunamayan_sayfa->setReadOnly(true);
 
     QToolButton         * send_email        = new QToolButton;
-    send_email->setText(tr("Adak Teknoloji ' ye Bildir."));
+    send_email->setText(tr("Report Adak Technology."));//Adak Teknoloji ' ye Bildir.
     send_email->setIcon(QIcon(":/yonetim_icons/yonetim_mail.png"));
     send_email->setIconSize(QSize(32,32));
     send_email->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
@@ -476,7 +476,7 @@ void BASE_KERNEL::SHOW_NO_HELP_DIALOG ()
 
     QGridLayout * screen_layout             = new QGridLayout();
 
-    QLabel * label_header = new QLabel ( "HATA - Yardım Sayfası Bulunamadı");
+    QLabel * label_header = new QLabel ( tr("ERROR - Help page not found."));
     label_header->setStyleSheet ( "font:monospace; color:red;");
 
     ADAK_SET_FONT_SIZE( label_header, 2.00 ); // x2
@@ -495,8 +495,8 @@ void BASE_KERNEL::SHOW_NO_HELP_DIALOG ()
     screen_layout->addWidget( m_lineEdit_email_adres, 7, 1, 1, 3 );
 
 
-    QLabel * label_note = new QLabel ( "Not: Eğer bu hata mesajını Adak Teknoloji'ye iletirseniz en kısa sürede\n"
-                                       "yardım sayfası hazırlanacaktır.");
+    QLabel * label_note = new QLabel ( tr("Note: If you deliver this error message to Adak technology,\n")//Not: Eğer bu hata mesajını Adak Teknoloji'ye iletirseniz en kısa sürede
+                                       tr("help pages will be prepared as soon as possible."));//yardım sayfası hazırlanacaktır.
     label_note->setStyleSheet("font:bold;");
     screen_layout->addWidget(label_note,8,0,1,3);
 
@@ -505,7 +505,7 @@ void BASE_KERNEL::SHOW_NO_HELP_DIALOG ()
 
     m_error_dialog = new QDialog(this);
     m_error_dialog->setLayout(screen_layout);
-    m_error_dialog->setWindowTitle(tr("HATA"));
+    m_error_dialog->setWindowTitle(tr("ERROR"));
     m_error_dialog->setAttribute(Qt::WA_DeleteOnClose);
     m_error_dialog->show();
 
@@ -523,7 +523,7 @@ void BASE_KERNEL::SLOT_SEND_ADAK_ERROR_EMAIL()
         m_error_dialog->close();
     }
     else {
-        MSG_WARNING( tr( "Lütfen E-Posta Adresinizi yazın.!" ), m_lineEdit_email_adres );
+        MSG_WARNING( tr( "Please write your E-mail address!" ), m_lineEdit_email_adres );//Lütfen E-Posta Adresinizi yazın.
     }
 }
 
@@ -586,16 +586,16 @@ void BASE_KERNEL::SEND_ADAK_ERROR_EMAIL()
         from    = sql_query.VALUE(0).toString();
     }
 
-    QString subject       = tr ( "Yardım Sayfası Bulunamadı." );
+    QString subject       = tr ( "Help page is non found." );
 
-    QString mesaj_icerigi = "Program Adı      : " + m_line_edit_program_adi      ->text()   + "\n\n" +
-                            "Isletim Sistemi  : " + ADAK_ISLETIM_SISTEMI()                 + "\n\n" +
-                            "E-Posta Adresi   : " + m_lineEdit_email_adres->text()           + "\n\n" +
-                            "Bulunamayan Sayfa: " + m_line_edit_bulunamayan_sayfa->text()   + "  " + PAGE_TITLE() + "\n\n";
+    QString mesaj_icerigi = tr("Program Name      : ") + m_line_edit_program_adi      ->text()   + "\n\n" +
+                            tr("Opareting System  : ") + ADAK_ISLETIM_SISTEMI()                 + "\n\n" +
+                            tr("E-Mail Address   : ") + m_lineEdit_email_adres->text()           + "\n\n" +
+                            tr("Page can be Found at: ") + m_line_edit_bulunamayan_sayfa->text()   + "  " + PAGE_TITLE() + "\n\n";
 
     EMAIL_SET_EMAIL_SERVER  ( "smtp.gmail.com", 587, STARTTLS  );
     EMAIL_SET_USER_EMAIL_INFO ( "adakerror", "qaz123XSW", "Adak Error Sender", true );
-    SEND_MAIL ( "adakerror@gmail.com", from, ADAK_PROGRAM_EMAIL(ADAK_DISPLAY_ID()),  subject, mesaj_icerigi , -1 , -1 , "Mesajınız gönderildi" , false);
+    SEND_MAIL ( "adakerror@gmail.com", from, ADAK_PROGRAM_EMAIL(ADAK_DISPLAY_ID()),  subject, mesaj_icerigi , -1 , -1 , tr("Your message has been sent.") , false);
 }
 
 /**************************************************************************************

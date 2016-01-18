@@ -148,7 +148,8 @@ void BASE_EVENT_KERNEL::SET_EVENTS_AND_SIGNALS ( QObject * parent, int kernel_ty
             text_edit->installEventFilter(this);
             if ( kernel_type EQ ADAK_FORM_KERNEL OR kernel_type EQ ADAK_FIS_KERNEL) {
                 if (text_edit->isReadOnly() EQ false AND text_edit->isEnabled() EQ true AND text_edit->isHidden() EQ false) {
-                    MSG_ERROR("TextEdit kullanilmis. TextEdit yerine QLimitedTextEdit kullanilarak limitlenmesi gerekmektedir.",NULL);
+                    MSG_ERROR(tr(""),NULL);
+                    //TextEdit kullanilmis. TextEdit yerine QLimitedTextEdit kullanilarak limitlenmesi gerekmektedir.
                 }
                 connect(text_edit, SIGNAL(textChanged()), this, SLOT(WIDGET_CHANGED()));
                 connect(text_edit, SIGNAL(textChanged()), this, SLOT(WIDGET_TEXT_CHANGED()));
@@ -171,7 +172,7 @@ void BASE_EVENT_KERNEL::SET_EVENTS_AND_SIGNALS ( QObject * parent, int kernel_ty
             plain_text_edit->installEventFilter(this);
             if ( kernel_type EQ ADAK_FORM_KERNEL OR kernel_type EQ ADAK_FIS_KERNEL) {
                 if (plain_text_edit->isReadOnly() EQ false AND plain_text_edit->isEnabled() EQ true AND plain_text_edit->isHidden() EQ false) {
-                    MSG_ERROR("TextEdit kullanilmis. TextEdit yerine QLimitedTextEdit kullanilarak limitlenmesi gerekmektedir.",NULL);
+                    MSG_ERROR(tr("Use TextEdit.It is necessary to QLimitedTextEdit instead of TextEdit is limiting use."),NULL);//TextEdit yerine QLimitedTextEdit kullanilarak limitlenmesi gerekmektedir.
                 }
                 connect ( plain_text_edit, SIGNAL ( textChanged() ), this, SLOT ( WIDGET_CHANGED() ) );
                 connect ( plain_text_edit, SIGNAL ( textChanged() ), this, SLOT ( WIDGET_TEXT_CHANGED() ) );

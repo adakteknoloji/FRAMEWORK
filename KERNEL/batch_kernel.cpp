@@ -18,7 +18,7 @@ BATCH_KERNEL::BATCH_KERNEL ( QWidget* parent ) : BASE_EVENT_KERNEL( parent )
 {
     m_kernel_button_text        = "";
 
-    p_name_of_run_batch_button  = "Tamam";
+    p_name_of_run_batch_button  = tr("Okey");
     p_icon_file_name            = ":/kernel_icons/kernel_run_icon.png";
     close_event_started         = false;
     p_run_batch_on_enter        = false;

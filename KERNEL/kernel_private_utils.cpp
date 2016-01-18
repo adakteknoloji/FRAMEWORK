@@ -48,7 +48,7 @@ QLabel * KERNEL_CREATE_STATUS_LABEL(QLayout * labelin_eklenecegi_layout)
 {
     QLabel * label_status                = new QLabel;
     label_status->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Fixed);
-    label_status->setText(QObject::tr("Bulunan Kayıt Sayısı : 0"));
+    label_status->setText(QObject::tr("Number of Records : 0"));
     labelin_eklenecegi_layout ->addWidget(label_status);
 
     return label_status;
@@ -60,7 +60,7 @@ QLabel * KERNEL_CREATE_STATUS_LABEL(QLayout * labelin_eklenecegi_layout)
 
 void KERNEL_UPDATE_STATUS_LABEL(QLabel * label,int bulunan_kayit_sayisi)
 {
-    label->setText(QObject::tr("Bulunan Kayıt Sayısı : %1").arg(bulunan_kayit_sayisi));
+    label->setText(QObject::tr("Number of Records: %1").arg(bulunan_kayit_sayisi));//Bulunan Kayıt Sayısı : %1
 }
 
 /********************************************************/
@@ -110,7 +110,7 @@ QToolButton * KERNEL_CREATE_DEFAULT_HELP_BUTTON(QWidget * parent)
 {
     QToolButton * yardim_button = new QToolButton ( parent );    
     yardim_button -> setToolButtonStyle ( Qt::ToolButtonTextUnderIcon );
-    yardim_button -> setText ( "Yardım" );
+    yardim_button -> setText ( QObject::tr("Help" ));
     yardim_button -> setIcon ( QIcon(":/kernel_icons/kernel_yardim_ikonu.png"));
     yardim_button -> setIconSize ( QSize(24,24));
     yardim_button -> setToolTip ("F1");

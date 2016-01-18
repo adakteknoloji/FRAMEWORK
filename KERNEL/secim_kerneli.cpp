@@ -15,9 +15,9 @@
 
 SECIM_KERNELI::SECIM_KERNELI ( QWidget * parent ) : BASE_KERNEL ( parent )
 {
-    m_kernel_button_text        = "Seçim Ekranı";
+    m_kernel_button_text        = tr("Selection Sccreen");
 
-    p_window_title      = "... SECIMI";
+    p_window_title      = tr("... SELECTION");
     // FIXME : p_height ve p_width kaldirilacak
     p_height            = 580;
     p_width             = 780;

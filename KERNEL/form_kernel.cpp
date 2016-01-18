@@ -155,7 +155,7 @@ void FORM_KERNEL::AUTOSTART_FORM_KERNEL ( int record_id )
     }
 
     if (p_record_mode EQ SINGLE_RECORD_MODE) {
-        qDebug("******UYARI: SINGLE RECORD MODE AKTIFKEN AUTOSTART KULLANILAMAZ.*******");
+        qDebug(tr("******WARNING: SINGLE RECORD MODE is active, AUTOSTART be not used. *******"));//UYARI: SINGLE RECORD MODE AKTIFKEN AUTOSTART KULLANILAMAZ.
         return;
     }
 
@@ -189,69 +189,69 @@ void FORM_KERNEL::REGISTER_BUTTONS_WIDGET (QWidget * kernel_buttons_widget,bool 
     for ( int i = 0; i <  MULTI_RECORD_MODE_BUTTON_COUNT; i++ ) {
         switch ( i ) {
             case BUTTON_KAYDI_SIL:
-                FORM_BUTTONS [ i ] = CREATE_KERNEL_BUTTON(tr("Kaydı Sil"),":/kernel_icons/kernel_sil_ikonu.png",kernel_buttons_widget,remove_button_text);
+                FORM_BUTTONS [ i ] = CREATE_KERNEL_BUTTON(tr("Delete Record"),":/kernel_icons/kernel_sil_ikonu.png",kernel_buttons_widget,remove_button_text);
                 FORM_BUTTONS [ i ] ->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Delete));
                 FORM_BUTTONS [ i ] ->setToolTip("Ctrl + Del/Delete");
                 connect(FORM_BUTTONS [ i ], SIGNAL(clicked()),   this, SLOT(SLOT_BUTTON_KAYDI_SIL_CLICKED()));
                 break;
             case BUTTON_KAYDET:
-                FORM_BUTTONS [ i ] = CREATE_KERNEL_BUTTON(tr("Kaydet"),":/kernel_icons/kernel_kaydet_ikonu.png",kernel_buttons_widget,remove_button_text);
+                FORM_BUTTONS [ i ] = CREATE_KERNEL_BUTTON(tr("Save"),":/kernel_icons/kernel_kaydet_ikonu.png",kernel_buttons_widget,remove_button_text);
                 FORM_BUTTONS [ i ] ->setEnabled(true);
                 FORM_BUTTONS [ i ] ->setToolTip("Ctrl + S");
                 FORM_BUTTONS [ i ] ->setShortcut(QKeySequence("Ctrl+S"));
                 connect(FORM_BUTTONS [ i ], SIGNAL(clicked()),   this, SLOT(SLOT_BUTTON_KAYDET_CLICKED()));
                 break;
             case BUTTON_YENI_KAYIT:
-                FORM_BUTTONS [ i ] = CREATE_KERNEL_BUTTON(tr("Yeni Kayıt"),":/kernel_icons/kernel_yeni_kayit_ac_ikonu.png",kernel_buttons_widget,remove_button_text);
+                FORM_BUTTONS [ i ] = CREATE_KERNEL_BUTTON(tr("New Record"),":/kernel_icons/kernel_yeni_kayit_ac_ikonu.png",kernel_buttons_widget,remove_button_text);
                 FORM_BUTTONS [ i ] ->setToolTip("F8");
                 FORM_BUTTONS [ i ] ->setShortcut(QKeySequence(Qt::Key_F8));
                 connect(FORM_BUTTONS [ i ], SIGNAL(clicked()),   this, SLOT(SLOT_BUTTON_YENI_KAYIT_CLICKED()));
                 break;
             case BUTTON_YENILE  :
-                FORM_BUTTONS [ i ] = CREATE_KERNEL_BUTTON(tr("Yenile"),":/kernel_icons/kernel_yenile_ikonu.png",kernel_buttons_widget,remove_button_text);
+                FORM_BUTTONS [ i ] = CREATE_KERNEL_BUTTON(tr("Refresh"),":/kernel_icons/kernel_yenile_ikonu.png",kernel_buttons_widget,remove_button_text);
                 FORM_BUTTONS [ i ] ->setToolTip("F5");
                 FORM_BUTTONS [ i ] ->setEnabled(true);
                 FORM_BUTTONS [ i ] ->setShortcut(QKeySequence(Qt::Key_F5));
                 connect(FORM_BUTTONS [ i ], SIGNAL(clicked()),   this, SLOT(SLOT_BUTTON_YENILE_CLICKED()));
                 break;
             case BUTTON_GETIR:
-                FORM_BUTTONS [ i ] = CREATE_KERNEL_BUTTON(tr("Getir"),":/kernel_icons/kernel_getir_ikonu.png",kernel_buttons_widget,remove_button_text);
+                FORM_BUTTONS [ i ] = CREATE_KERNEL_BUTTON(tr("Bring"),":/kernel_icons/kernel_getir_ikonu.png",kernel_buttons_widget,remove_button_text);
                 FORM_BUTTONS [ i ] ->setToolTip("F4");
                 FORM_BUTTONS [ i ] ->setShortcut(QKeySequence(Qt::Key_F4));
                 connect(FORM_BUTTONS [ i ], SIGNAL(clicked()),   this, SLOT(SLOT_BUTTON_GETIR_CLICKED()));
                 break;
             case BUTTON_BUL:
-                FORM_BUTTONS [ i ] = CREATE_KERNEL_BUTTON(tr("Ara / Bul"),":/kernel_icons/kernel_ara_ikonu.png",kernel_buttons_widget,remove_button_text);
+                FORM_BUTTONS [ i ] = CREATE_KERNEL_BUTTON(tr("Search / Find"),":/kernel_icons/kernel_ara_ikonu.png",kernel_buttons_widget,remove_button_text);
                 FORM_BUTTONS [ i ] ->setToolTip("F9");
                 FORM_BUTTONS [ i ] ->setShortcut(QKeySequence(Qt::Key_F9));
                 connect(FORM_BUTTONS [ i ], SIGNAL(clicked()),   this, SLOT(SLOT_BUTTON_BUL_CLICKED()));
                 break;
             case BUTTON_SONRAKI_KAYIT:
-                FORM_BUTTONS [ i ] = CREATE_KERNEL_BUTTON(tr("Sonraki"),":/kernel_icons/kernel_sonraki_kayit_ikonu.png",kernel_buttons_widget,remove_button_text);
+                FORM_BUTTONS [ i ] = CREATE_KERNEL_BUTTON(tr("Next"),":/kernel_icons/kernel_sonraki_kayit_ikonu.png",kernel_buttons_widget,remove_button_text);
                 FORM_BUTTONS [ i ] ->setToolTip("Page Down");
                 FORM_BUTTONS [ i ] ->setShortcut(QKeySequence(Qt::Key_PageDown));
                 connect(FORM_BUTTONS [ i ], SIGNAL(clicked()),   this, SLOT(SLOT_BUTTON_SONRAKI_KAYIT_CLICKED()));
                 break;
             case BUTTON_SON_KAYIT:
-                FORM_BUTTONS [ i ] = CREATE_KERNEL_BUTTON(tr("Son Kayıt"),":/kernel_icons/kernel_son_kayit_ikonu.png",kernel_buttons_widget,remove_button_text);
+                FORM_BUTTONS [ i ] = CREATE_KERNEL_BUTTON(tr("Last Record"),":/kernel_icons/kernel_son_kayit_ikonu.png",kernel_buttons_widget,remove_button_text);
                 FORM_BUTTONS [ i ] ->setToolTip("Ctrl + Page Down");
                 FORM_BUTTONS [ i ] ->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_PageDown));
                 connect(FORM_BUTTONS [ i ], SIGNAL(clicked()),   this, SLOT(SLOT_BUTTON_SON_KAYIT_CLICKED()));
                 break;
             case BUTTON_ONCEKI_KAYIT:
-                FORM_BUTTONS [ i ] = CREATE_KERNEL_BUTTON(tr("Önceki"),":/kernel_icons/kernel_onceki_kayit_ikonu.png",kernel_buttons_widget,remove_button_text);
+                FORM_BUTTONS [ i ] = CREATE_KERNEL_BUTTON(tr("Previous"),":/kernel_icons/kernel_onceki_kayit_ikonu.png",kernel_buttons_widget,remove_button_text);
                 FORM_BUTTONS [ i ] ->setToolTip("Page Up");
                 FORM_BUTTONS [ i ] ->setShortcut(QKeySequence(Qt::Key_PageUp));
                 connect(FORM_BUTTONS [ i ], SIGNAL(clicked()),   this, SLOT(SLOT_BUTTON_ONCEKI_KAYIT_CLICKED()));
                 break;
             case BUTTON_ILK_KAYIT:
-                FORM_BUTTONS [ i ] = CREATE_KERNEL_BUTTON(tr("İlk Kayıt"),":/kernel_icons/kernel_ilk_kayit_ikonu.png",kernel_buttons_widget,remove_button_text);
+                FORM_BUTTONS [ i ] = CREATE_KERNEL_BUTTON(tr("First Record"),":/kernel_icons/kernel_ilk_kayit_ikonu.png",kernel_buttons_widget,remove_button_text);
                 FORM_BUTTONS [ i ] ->setToolTip("Ctrl + Page Up");
                 FORM_BUTTONS [ i ] ->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_PageUp));
                 connect(FORM_BUTTONS [ i ], SIGNAL(clicked()),   this, SLOT(SLOT_BUTTON_ILK_KAYIT_CLICKED()));
                 break;
             case BUTTON_YARDIM:
-                FORM_BUTTONS [ i ] = CREATE_KERNEL_BUTTON(tr("Yardım"),":/kernel_icons/kernel_yardim_ikonu.png",kernel_buttons_widget,remove_button_text);
+                FORM_BUTTONS [ i ] = CREATE_KERNEL_BUTTON(tr("Help"),":/kernel_icons/kernel_yardim_ikonu.png",kernel_buttons_widget,remove_button_text);
                 FORM_BUTTONS [ i ] ->setToolTip("F1");
                 FORM_BUTTONS [ i ] ->setEnabled(true);
                 FORM_BUTTONS [ i ] ->setShortcut(QKeySequence(Qt::Key_F1));
@@ -477,7 +477,7 @@ void FORM_KERNEL::BUTTON_KAYDI_SIL_CLICKED ()
     //    return;
     //}
 
-    ADAK_MSG_ENUM answer = MSG_YES_NO("Kayıt Silinecektir. Devam etmek istermisiniz?" , NULL);
+    ADAK_MSG_ENUM answer = MSG_YES_NO(tr("Recording will be deleted. Do you want to continue?") , NULL);//Kayıt Silinecektir. Devam etmek istermisiniz?
 
     if ( answer NE ADAK_YES ) {
         return;
@@ -884,8 +884,8 @@ void FORM_KERNEL::READONLY_BUTTONS_CLICKED ( int button_enum )
 void FORM_KERNEL::UPDATE_BUTTON_STATUS()
 {
     if ( m_register_button_widget_called EQ false ) {
-        MSG_WARNING( QObject::tr( "Navigator için Widget Setlenmedi" ), NULL );
-        qDebug( "not call REGISTER_BUTTONS_WIDGET Method" );
+        MSG_WARNING( QObject::tr( "Widget is not set for Navigator" ), NULL );//Navigator için Widget Setlenmedi
+        qDebug( tr("not call REGISTER_BUTTONS_WIDGET Method" ));
         exit(0);
     }
     if ( m_is_readonly_mode_on EQ true ) {
