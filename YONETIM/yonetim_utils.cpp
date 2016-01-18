@@ -76,7 +76,7 @@ QString BILGISAYAR_BILGISI_OLUSTUR ( int bilgisayar_id )
             mac_adresi.append(QString(mac_adressleri.at(0) + "-"));
         }
 
-        return QObject::tr("KAYITLI DEGIL # MAC: ") + mac_adresi +QObject::tr(" # DONGLE: ")+ GET_DONGLE_IP();
+        return QObject::tr("NOT REGISTERED # MAC: ") + mac_adresi +QObject::tr(" # DONGLE: ")+ GET_DONGLE_IP();
     }
     sql_query.NEXT();
     return sql_query.VALUE(0).toString() + " # Kablolu Ağ Mac Adresi" + sql_query.VALUE(1).toString()
@@ -121,7 +121,7 @@ void YONETIM_007_CIKIS_KAYDI ()
         return;
     }
     sql_query.NEXT();
-    QString aciklama = QObject::tr("Veritabanı İsmi: ") + sql_query.VALUE(0).toString() + QObject::tr(" # Veritabanı Tanımı: ")+ sql_query.VALUE(1).toString();
+    QString aciklama = QObject::tr("Database Name: ") + sql_query.VALUE(0).toString() + QObject::tr(" # Database Definition: ")+ sql_query.VALUE(1).toString();
 
     YONETIM_007_KAYIT ( LOG_PROGRAM, LOG_PROGRAMDAN_CIKIS, aciklama );
     G_YONETIM_DB->COMMIT_TRANSACTION ();
@@ -206,10 +206,10 @@ void CHECK_VERSION_UPGRADES (QString program_version_column_name , QString progr
 
     splash->finish(NULL);
 
-    ADAK_WARNING("Version of programme is upgrade.\n"
-                "Please check User Authority for new properties. \n"//Yeni özellikler için lütfen Kullanıcı Yetkileri ' ni kontrol ediniz.
-                "You can set User Authorization in the User's Screen\n\n"//Kullanıcı Yetkileri ' ni Kullanıcılar Ekranı ' ndan ayarlayabilirsiniz.
-                "You can use Management Actions -> E9 repair for resolving some errors"//Bazı hataları gidermek için Yönetim İşlemleri->E9 Onar ' ı kullanabilirsiniz.
+    ADAK_WARNING(QObject::tr("Version of programme is upgrade.\n")
+                QObject::tr("Please check User Authority for new properties. \n")//Yeni özellikler için lütfen Kullanıcı Yetkileri ' ni kontrol ediniz.
+                QObject::tr("You can set User Authorization in the User's Screen.\n\n")//Kullanıcı Yetkileri ' ni Kullanıcılar Ekranı ' ndan ayarlayabilirsiniz.
+                QObject::tr("You can use Management Actions -> E9 repair for resolving some errors.")//Bazı hataları gidermek için Yönetim İşlemleri->E9 Onar ' ı kullanabilirsiniz.
                 ,NULL,NULL);
 
     DB->COMMIT_TRANSACTION();
@@ -356,7 +356,7 @@ void SISTEM_ITEM_CLICKED(int menu_item, QWidget *parent, void    (*F_PROGRAM_KUL
 
                 if ( sql_query.SELECT() > 0 ) {
                     sql_query.NEXT();
-                    ADAK_INFO( " User changing successfully. The selected user:"+ sql_query.VALUE(0).toString().toUtf8() + " " + sql_query.VALUE(1).toString().toUtf8(), NULL , NULL );
+                    ADAK_INFO( QObject::tr(" User changing successfully. The selected user:")+ sql_query.VALUE(0).toString().toUtf8() + " " + sql_query.VALUE(1).toString().toUtf8(), NULL , NULL );
                     //Burada 0 daima ilk pencere   //Kullanıcı değişikliği başarılı. Seçilen kullanıcı:
                     static_cast<SEKME_MENU_KERNEL *>(G_SEKME_MENU_KERNEL.at(0))->REFRESH_MENU_KERNEL();
                 }
@@ -399,9 +399,9 @@ void SISTEM_ITEM_CLICKED(int menu_item, QWidget *parent, void    (*F_PROGRAM_KUL
             break;
 
         case MENU_SIS_OTOMATIK_SIFRE_URET:{
-                ADAK_INFO( QObject::tr("SQL User Password<br><br> "
+                ADAK_INFO( QObject::tr("SQL User Password<br><br> ")
                       "<b>%1</b><br><br>"
-                      "Attention: Assign the password that the user you created in database.").arg( SQL_DEFAULT_PASSWORD() ), NULL, NULL );
+                      QObject::tr("Attention: Assign the password that the user you created in database.").arg( SQL_DEFAULT_PASSWORD() ), NULL, NULL );
             break;//Dikkat!Bu Şifreyi Veritabanında oluşturduğunuz kullanıcıya atayın.
         }
         case MENU_SIS_HAKKIMIZDA :{
