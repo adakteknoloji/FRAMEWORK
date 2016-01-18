@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>635</width>
-    <height>86</height>
+    <height>107</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -23,22 +23,6 @@
    <property name="margin">
     <number>3</number>
    </property>
-   <item row="0" column="0">
-    <widget class="QWidget" name="navigation_button_widget" native="true">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>60</width>
-       <height>0</height>
-      </size>
-     </property>
-    </widget>
-   </item>
    <item row="1" column="0">
     <layout class="QGridLayout" name="gridLayout">
      <item row="0" column="0">
@@ -50,7 +34,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>SMS Sunucusu</string>
+        <string>SMS Server:</string>
        </property>
       </widget>
      </item>
@@ -66,7 +50,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Kullanılacak Protokol</string>
+        <string>Protocol:</string>
        </property>
       </widget>
      </item>
@@ -82,7 +66,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>SMS Sunucu İd</string>
+        <string>SMS Server ID:</string>
        </property>
       </widget>
      </item>
@@ -98,7 +82,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Kullanıcı Adı</string>
+        <string>User Name:</string>
        </property>
       </widget>
      </item>
@@ -114,7 +98,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Şifre</string>
+        <string>Password:</string>
        </property>
       </widget>
      </item>
@@ -126,6 +110,22 @@
       </widget>
      </item>
     </layout>
+   </item>
+   <item row="0" column="0">
+    <widget class="QWidget" name="navigation_button_widget" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>60</width>
+       <height>0</height>
+      </size>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

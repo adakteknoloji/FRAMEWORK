@@ -40,7 +40,7 @@ void SMS_SUNUCUSU_FORMU::SETUP_FORM ()
 
     REGISTER_BUTTONS_WIDGET ( m_ui->navigation_button_widget , true);
 
-    SET_PAGE_TITLE ( tr ( "SMS SUNUCUSU" ) );
+    SET_PAGE_TITLE ( tr ( "SMS SERVER" ) );
     SET_SETTING_NAME    ( "SMS_SUNUCUSU" );
     SET_HELP_PAGE       ( "yonetim-islemleri_sms-sunucusu-tanimlama" );
 
