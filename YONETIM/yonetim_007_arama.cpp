@@ -49,12 +49,12 @@ void YONETIM_007_ARAMA::SETUP_FORM ()
     REGISTER_TABLE_WIDGET ( m_ui->tableWidget );
     REGISTER_ARAMA_BUTTONS_WIDGET ( m_ui->widget_batch_buttons );
 
-    SET_HEADERS(QStringList()<<tr ( "log_id")<<tr ( "Tarih" )<<tr ( "Saat" )<<tr ( "Kullanıcı Bilgisi")
-                             <<tr ( "Bilgisayar Bilgisi" )<<tr ( "LOG Türü" )<<tr ( "LOG İşlemi" ) );
+    SET_HEADERS(QStringList()<<tr ( "log_id")<<tr ( "Date" )<<tr ( "Time" )<<tr ( "User Information")
+                             <<tr ( "Computer Informatin" )<<tr ( "LOG Type" )<<tr ( "LOG Operation" ) );
 
     SET_ENTER_KEY_FOR_RUN_BATCH(true);
 
-    SET_FIND_BUTTON_NAME(tr("Kayıtları Göster"));
+    SET_FIND_BUTTON_NAME(tr("Show Records"));
 
     SET_SORTING ( false );
 
@@ -77,7 +77,7 @@ void YONETIM_007_ARAMA::SETUP_FORM ()
     m_ui->comboBox_log_turu->addItem("VERITABANLARI");
     m_ui->comboBox_log_turu->addItem("PROGRAM");
 
-    SET_PAGE_TITLE    ( tr("YÖNETİM 007 / LOG BİLGİLERİ"));
+    SET_PAGE_TITLE    ( tr("ADMINISTRATION 007 / LOG INFORMATION"));
     SET_SETTING_NAME  ("YONETIM_007");
     SET_HELP_PAGE     ("yonetim-islemleri_yonetim-log-bilgileri");
 
@@ -106,14 +106,14 @@ int YONETIM_007_ARAMA::CHECK_VAR ( QObject * object )
 {
     if (object EQ m_ui->dateEdit_first_date ) {
         if ( m_ui->dateEdit_first_date->date() > m_ui->dateEdit_second_date->date() ) {
-            MSG_ERROR(tr("İlk tarih son tarihten büyük olamaz" ) , NULL);
-            return ADAK_FAIL;
+            MSG_ERROR(tr("First date could not be new dated last date." ) , NULL);
+            return ADAK_FAIL;//İlk tarih son tarihten büyük olamaz
         }
     }
     else if ( object EQ m_ui->dateEdit_second_date ) {
         if ( m_ui->dateEdit_second_date->date() < m_ui->dateEdit_first_date->date() ) {
-            MSG_ERROR(tr ( "Son tarih ilk tarihten küçük olamaz" ) , NULL);
-            return ADAK_FAIL;
+            MSG_ERROR(tr ( "Last date could not be dated the first date." ) , NULL);
+            return ADAK_FAIL;//Son tarih ilk tarihten küçük olamaz
         }
     }
     else if ( object EQ m_ui->checkbox_tarih ) {
