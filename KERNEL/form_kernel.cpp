@@ -797,7 +797,7 @@ int FORM_KERNEL::UNSAVED_RECORD_WARNING()
         return KERNEL_NO;
     }
 
-    ADAK_MSG_ENUM answer = MSG_YES_NO_CANCEL(tr ( "Kayıtta değişiklikler yapıldı.Kayıt etmek istiyor musunuz?"),NULL);
+    ADAK_MSG_ENUM answer = MSG_YES_NO_CANCEL(tr ( "Changes are made to the registry. Do you want to save?"),NULL);//Kayıtta değişiklikler yapıldı.Kayıt etmek istiyor musunuz?
 
     switch ( answer ) {
         case ADAK_YES :
@@ -1061,13 +1061,13 @@ bool FORM_KERNEL::TRY_LOCK_RECORD()
     if ( p_record_status EQ NEED_UPDATE OR p_record_status EQ SAVED OR p_record_status EQ CANT_LOCKED ) {
         switch ( p_lock_status ) {
             case CANT_LOCK:
-                MSG_WARNING(tr ( "Kayıt şu anda başka biri tarafından güncelleniyor."),NULL);
+                MSG_WARNING(tr ( "Recording is currently being updated by someone else."),NULL);//Kayıt şu anda başka biri tarafından güncelleniyor.
                 return false;
                 break;
             case LOCK_NOT_REQUESTED:
                 {
                     if ( LOCK_RECORD ( p_current_record_id) EQ ADAK_FAIL ) {
-                        MSG_WARNING(tr ( "Kayıt şu anda başka biri tarafından güncelleniyor."),NULL);
+                        MSG_WARNING(tr ( "Recording is currently being updated by someone else."),NULL);
                         SET_RECORD_STATUS(CANT_LOCKED);
                         UPDATE_BUTTON_STATUS();
                         p_lock_status = CANT_LOCK;
