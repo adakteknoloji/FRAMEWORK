@@ -586,7 +586,7 @@ void BASE_KERNEL::SEND_ADAK_ERROR_EMAIL()
         from    = sql_query.VALUE(0).toString();
     }
 
-    QString subject       = tr ( "Help page is non found." );
+    QString subject       = tr ( "Help page is not found." );
 
     QString mesaj_icerigi = tr("Program Name      : ") + m_line_edit_program_adi      ->text()   + "\n\n" +
                             tr("Opareting System  : ") + ADAK_ISLETIM_SISTEMI()                 + "\n\n" +
@@ -667,7 +667,7 @@ bool BASE_KERNEL::eventFilter ( QObject *obj, QEvent *event )
     if ( event->type() EQ QEvent::Close ) {
         if ( m_db_conn NE NULL ) {
             if ( m_num_of_transactions NE m_db_conn->m_sql_transaction_counter ) {
-                 MSG_ERROR(tr ( "Açık TRANSACTION unuttunuz , sonlandırmanız gerekmektedir!.." ) , NULL);
+                 MSG_ERROR(tr ( "Forgot open TRANSACTION, you must end! .." ) , NULL);//Açık TRANSACTION unuttunuz , sonlandırmanız gerekmektedir!..
                  abort();
             }
         }
