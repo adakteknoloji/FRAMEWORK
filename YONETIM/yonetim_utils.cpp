@@ -121,7 +121,7 @@ void YONETIM_007_CIKIS_KAYDI ()
         return;
     }
     sql_query.NEXT();
-    QString aciklama = "Veritabanı İsmi: " + sql_query.VALUE(0).toString() + " # Veritabanı Tanımı: "+ sql_query.VALUE(1).toString();
+    QString aciklama = QObject::tr("Veritabanı İsmi: ") + sql_query.VALUE(0).toString() + QObject::tr(" # Veritabanı Tanımı: ")+ sql_query.VALUE(1).toString();
 
     YONETIM_007_KAYIT ( LOG_PROGRAM, LOG_PROGRAMDAN_CIKIS, aciklama );
     G_YONETIM_DB->COMMIT_TRANSACTION ();
