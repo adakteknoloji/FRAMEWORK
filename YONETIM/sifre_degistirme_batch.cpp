@@ -47,7 +47,7 @@ void SIFRE_DEGISTIRME_BATCH::SETUP_FORM ()
 
     REGISTER_BUTTON_WIDGET ( m_ui->widget_batch_buttons );
 
-    SET_PAGE_TITLE ( tr ( "ŞİFRE DEĞİŞTİRME EKRANI" ) );
+    SET_PAGE_TITLE ( tr ( "PASSWORD CHANGE SCREEN" ) );
     SET_AUTO_EXIT_BATCH ( true );
 
     SET_SETTING_NAME  ("SIFRE_DEGISTIRME");
@@ -98,12 +98,12 @@ int SIFRE_DEGISTIRME_BATCH::CHECK_RUN()
 
     if ( sql_query.SELECT() EQ 0 ) {
         m_ui->line_edit_old_pass->clear();
-        MSG_INFO(QObject::tr ( "Kullandığınız şifreyi yanlış girdiniz.Şifre değişikliği için kullanmakta olduğunuz şifreyi yazmanız gerekmektedir." ) , m_ui->line_edit_old_pass );
-        return ADAK_FAIL;
+        MSG_INFO(tr( "Your password is wrong.You must write your current password for password changing. " ) , m_ui->line_edit_old_pass );
+        return ADAK_FAIL;//Kullandığınız şifreyi yanlış girdiniz.Şifre değişikliği için kullanmakta olduğunuz şifreyi yazmanız gerekmektedir.
     }
 
     if  ( m_ui->lineEdit_yeni_sifre->text() NE m_ui->lineEdit_yeni_sifre_tekrar->text() ) {
-        MSG_ERROR(tr ( "Girdiğiniz yeni şifre ile tekrarı uyuşmuyor, lütfen kontrol ediniz"), m_ui->lineEdit_yeni_sifre );
+        MSG_ERROR(tr ( "New password and repeat new password are different. Please check them."), m_ui->lineEdit_yeni_sifre );//Girdiğiniz yeni şifre ile tekrarı uyuşmuyor, lütfen kontrol ediniz
         m_ui->lineEdit_yeni_sifre->clear();
         m_ui->lineEdit_yeni_sifre_tekrar->clear();
         return ADAK_FAIL;

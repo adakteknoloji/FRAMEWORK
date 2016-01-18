@@ -29,7 +29,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Şifre Değiştirme</string>
+   <string>Change Password</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2" rowstretch="5,1,1" columnstretch="10,2">
    <property name="sizeConstraint">
@@ -59,7 +59,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Kullanıcı Kodu </string>
+         <string>User Code:</string>
         </property>
        </widget>
       </item>
@@ -79,7 +79,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Yeni şifre </string>
+         <string>New Password:</string>
         </property>
        </widget>
       </item>
@@ -99,7 +99,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Yeni şifre tekrar </string>
+         <string>New Password(Repeat):</string>
         </property>
        </widget>
       </item>
@@ -132,7 +132,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Kullandığınız Şifre</string>
+         <string>Password:</string>
         </property>
        </widget>
       </item>
