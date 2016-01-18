@@ -59,7 +59,7 @@ void VERITABANLARI_FORMU::SETUP_FORM ()
 
     REGISTER_CHANGER_BUTTON ( m_ui->button_kullanici_sec );
 
-    SET_PAGE_TITLE    (tr("VERİTABANLARI ( ŞİRKETLER )"));
+    SET_PAGE_TITLE    (tr("DATABASES ( COMPANIES )"));
     SET_SETTING_NAME  ("VERITABANLARI_FORMU");
     SET_HELP_PAGE     ("yonetim-islemleri_veritabanlari");
 
@@ -162,25 +162,25 @@ int VERITABANLARI_FORMU::CHECK_VAR ( QObject * p_object )
     if ( p_object EQ m_ui->lineEdit_veritabani_kodu ) {
         m_ui->lineEdit_veritabani_kodu->setText(m_ui->lineEdit_veritabani_kodu->text().toLower());
         if ( m_ui->lineEdit_veritabani_kodu->text().count() > 10 ) {
-            MSG_ERROR(tr("Veritabanı ismi 10 karakterden fazla olamaz.") , NULL);
-            return ADAK_FAIL;
+            MSG_ERROR(tr("Database name can not be longer than 10 characters.") , NULL);
+            return ADAK_FAIL;//Veritabanı ismi 10 karakterden fazla olamaz.
         }
          QRegExp letter("(\\W+)");
          if ( m_ui->lineEdit_veritabani_kodu->text().contains(letter) EQ true ) {
-            MSG_ERROR(tr("Veritabanı ismi rakam,harf veya \'_\' dışında karakter içeremez.") , NULL);
-            return ADAK_FAIL;
+            MSG_ERROR(tr("Database name does not contain characters other than number letter and \'_\'.") , NULL);
+            return ADAK_FAIL;//Veritabanı ismi rakam,harf veya \'_\' dışında karakter içeremez.
          }
     }
     else if ( p_object EQ m_ui->lineEdit_veritabani_adi ) {
         if ( m_ui->lineEdit_veritabani_adi->text().count() > 50 ) {
-            MSG_ERROR(tr("Veritabanı tanımı 50 karakterden fazla olamaz.") , NULL);
-            return ADAK_FAIL;
+            MSG_ERROR(tr("Database definition can not be longer than 50 characters.") , NULL);
+            return ADAK_FAIL;//Veritabanı tanımı 50 karakterden fazla olamaz.
         }
     }
     else if ( p_object EQ m_ui->limitedTextEdit_not ) {
         if ( m_ui->limitedTextEdit_not->toPlainText().count() > 100 ) {
-            MSG_ERROR(tr("Açıklama 100 karakterden fazla olamaz.") , NULL);
-            return ADAK_FAIL;
+            MSG_ERROR(tr("Description can not be longer than 100 characters. ") , NULL);
+            return ADAK_FAIL;//Açıklama 100 karakterden fazla olamaz.
         }
     }
     else if ( p_object EQ m_ui->table_widget_kullanicilar ) {
@@ -205,12 +205,12 @@ int VERITABANLARI_FORMU::CHECK_VAR ( QObject * p_object )
 int VERITABANLARI_FORMU::CHECK_EMPTY ()
 {
     if ( m_ui->lineEdit_veritabani_kodu->text().isEmpty() EQ true ) {
-        MSG_ERROR(tr("Veritabanı ismi girilmemiş") , NULL);
-        return ADAK_FAIL;
+        MSG_ERROR(tr("Database name has not been entered.") , NULL);
+        return ADAK_FAIL;//Veritabanı ismi girilmemiş
     }
     if ( m_ui->lineEdit_veritabani_adi->text().isEmpty() EQ true ) {
-        MSG_ERROR(tr("Veritabanı tanımı girilmemiş") , NULL);
-        return ADAK_FAIL;
+        MSG_ERROR(tr("Database Definition has not been entered.") , NULL);
+        return ADAK_FAIL;//Veritabanı tanımı girilmemiş
     }
     return ADAK_OK;
 }
@@ -227,8 +227,8 @@ int VERITABANLARI_FORMU::CHECK_ADD ()
     if ( sql_query.SELECT() > 0 ) {
         sql_query.NEXT();
         if ( sql_query.VALUE(0).toInt() > 0 ) {
-            MSG_ERROR(tr("Bu kodla kayıtlı bir veritabani sistemde mevcut") , NULL);
-            return ADAK_FAIL;
+            MSG_ERROR(tr("These code registered in a database present in the system.") , NULL);
+            return ADAK_FAIL;//Bu kodla kayıtlı bir veritabani sistemde mevcut
         }
     }
 
@@ -237,8 +237,8 @@ int VERITABANLARI_FORMU::CHECK_ADD ()
     ADAK_SQL * db_gecici =  CONNECT_DATABASE( GET_PROGRAM_DB_STRUCTS(), veritabani_ismi, GET_SQL_DB_DRIVER_ENUM( SQL_MOTORU() ), false );
 
     if ( db_gecici EQ NULL ) {
-        MSG_ERROR(tr("Bu kodla kayıtlı bir veritabani sistemde mevcut değildir.") , NULL);
-        return ADAK_FAIL;
+        MSG_ERROR(tr("These code does not registered in a database present in the system.") , NULL);
+        return ADAK_FAIL;//Bu kodla kayıtlı bir veritabani sistemde mevcut değildir.
     }
     db_gecici->DISCONNECT_TO_DATABASE();
 
@@ -254,7 +254,7 @@ int VERITABANLARI_FORMU::ADD_RECORD ()
     QSplashScreen * splash = CREATE_SPLASH_SCREEN();
 
     splash->show();
-    splash->showMessage ( QObject::tr ( "Veritabanı yaratılıyor. Lütfen Bekleyiniz..." ), Qt::AlignCenter,Qt::white );
+    splash->showMessage ( QObject::tr ( "Creating database. Please wait..." ), Qt::AlignCenter,Qt::white );//Veritabanı yaratılıyor. Lütfen Bekleyiniz...
 
     QString veritabani_ismi = QString ( SQL_DBNAME_ONEK() + "adak_" + m_ui->lineEdit_veritabani_kodu->text() );
 
@@ -272,8 +272,8 @@ int VERITABANLARI_FORMU::ADD_RECORD ()
 
     int veritabani_id         = sql_query.INSERT();
 
-    QString log_detaylari = "Verıtabanı ID: " + QVariant ( veritabani_id ).toString() + " # Veritabanı İsmi: " + m_ui->lineEdit_veritabani_kodu->text();
-                           + " # Veritabanı Tanımı: " + m_ui->lineEdit_veritabani_adi->text();
+    QString log_detaylari = tr("Database ID: ") + QVariant ( veritabani_id ).toString() + tr(" # Database Name: ") + m_ui->lineEdit_veritabani_kodu->text();
+                           + tr(" # Database Description: ") + m_ui->lineEdit_veritabani_adi->text();
 
     YONETIM_007_KAYIT ( LOG_VERITABANLARI, LOG_VERITABANI_YARATMA, log_detaylari );
 
@@ -301,7 +301,7 @@ int VERITABANLARI_FORMU::ADD_RECORD ()
     if ( program_ids.size() NE 0 ) {
         YENI_DB->START_TRANSACTION();
         if ( YENI_DB->SQL_CREATE_TABLES( QList<ADAK_SQL_STRUCT *>() , veritabani_ismi ) EQ false ) {
-            MSG_ERROR(tr("Programın veritabanı yaratılamadı") , NULL);
+            MSG_ERROR(tr("Program's database could not create.") , NULL);//Programın veritabanı yaratılamadı
             return -1;
         }
 
@@ -315,8 +315,8 @@ int VERITABANLARI_FORMU::ADD_RECORD ()
 
             sql_query.INSERT();
 
-            QString log_detaylari = "Veritabanı ID: " + QVariant ( veritabani_id ).toString() + " # Veritabanı İsmi: " + m_ui->lineEdit_veritabani_kodu->text()
-                                   + " # Veritabanı Tanımı: " + m_ui->lineEdit_veritabani_adi->text() + " # Program Adı: " + ADAK_PROGRAM_LONGNAME (program_ids.at(i)).toLatin1();
+            QString log_detaylari = tr("Database ID: ") + QVariant ( veritabani_id ).toString() + tr(" # Database Name: ") + m_ui->lineEdit_veritabani_kodu->text()
+                                   + tr(" # Database Definition: ") + m_ui->lineEdit_veritabani_adi->text() + tr(" # Programme Name: ") + ADAK_PROGRAM_LONGNAME (program_ids.at(i)).toLatin1();
 
             YONETIM_007_KAYIT ( LOG_VERITABANLARI, LOG_PROGRAM_TABLOSU_YARATMA, log_detaylari );
         }
@@ -341,7 +341,7 @@ int VERITABANLARI_FORMU::CHECK_UPDATE (int p_veritabani_id)
 {
     Q_UNUSED(p_veritabani_id);
 
-    ADAK_MSG_ENUM answer = MSG_YES_NO_CANCEL(tr("Yapılan değişiklikleri onaylıyor musunuz?"),NULL);
+    ADAK_MSG_ENUM answer = MSG_YES_NO_CANCEL(tr("Do you approve of the changes made?"),NULL);//Yapılan değişiklikleri onaylıyor musunuz?
     if ( answer EQ ADAK_NO OR answer EQ ADAK_CANCEL ) {
         return ADAK_FAIL;
     }
@@ -366,8 +366,8 @@ void VERITABANLARI_FORMU::UPDATE_RECORD ( int p_veritabani_id )
 
     QString veritabani_ismi = QString (SQL_DBNAME_ONEK() + "adak_" + m_ui->lineEdit_veritabani_kodu->text() );
 
-    QString log_detaylari = "Veritabanı ID: " + QVariant( p_veritabani_id ).toString() + " # Veritabanı: " + m_ui->lineEdit_veritabani_kodu->text()
-                           + " # Veritabanı Tanımı: " + m_ui->lineEdit_veritabani_adi->text();
+    QString log_detaylari = tr("Database ID: ") + QVariant( p_veritabani_id ).toString() + tr(" # Database: ") + m_ui->lineEdit_veritabani_kodu->text()
+                           + tr(" # Database Definition: ") + m_ui->lineEdit_veritabani_adi->text();
 
     YONETIM_007_KAYIT ( LOG_VERITABANLARI, LOG_KAYIT_GUNCELLEME, log_detaylari );
 
@@ -411,8 +411,8 @@ void VERITABANLARI_FORMU::UPDATE_RECORD ( int p_veritabani_id )
 
                 insert_query.INSERT();
 
-                QString log_detaylari = "Veritabanı ID: " + QVariant ( p_veritabani_id ).toString() + " # Veritabanı İsmi: " + m_ui->lineEdit_veritabani_kodu->text()
-                                       + " # Veritabanı Tanımı: " + m_ui->lineEdit_veritabani_adi->text() + " # Program Adı: " + ADAK_PROGRAM_LONGNAME (program_ids.at(i)).toLatin1();
+                QString log_detaylari = tr("Database ID: ") + QVariant ( p_veritabani_id ).toString() + tr(" # Database Name: ") + m_ui->lineEdit_veritabani_kodu->text()
+                                       + tr(" # Database Definition: ") + m_ui->lineEdit_veritabani_adi->text() + tr(" # Programme Name: ") + ADAK_PROGRAM_LONGNAME (program_ids.at(i)).toLatin1();
 
                 YONETIM_007_KAYIT ( LOG_VERITABANLARI, LOG_PROGRAM_TABLOSU_YARATMA, log_detaylari );
             }
@@ -439,14 +439,14 @@ int VERITABANLARI_FORMU::CHECK_DELETE(int p_veritabani_id )
     if ( query.SELECT() NE 0 ) {
         while( query.NEXT() EQ true ) {
             if( query.VALUE(0).toInt() EQ KULLANICI_ID() ) {
-                MSG_WARNING( "Kendi Şirketinizi Silemezsiniz!", NULL );
+                MSG_WARNING(tr( "You can not delete your own company!"), NULL );//Kendi Şirketinizi Silemezsiniz
                 return ADAK_FAIL;
             }
         }
     }
 
-    ADAK_MSG_ENUM answer = MSG_YES_NO_CANCEL( tr ( "Bu işlem seçili veritabanının silinmesine ve ilgili verilerin tamamen kaybolmasına "
-                                  "neden olacaktır. Devam etmek istiyor musunuz?"), NULL);
+    ADAK_MSG_ENUM answer = MSG_YES_NO_CANCEL( tr ( "This operation will lead to deletion of the selected database and lose all related data."
+                                  "Do you want to continue?"), NULL);//Bu işlem seçili veritabanının silinmesine ve ilgili verilerin tamamen kaybolmasına neden olacaktır. Devam etmek istiyor musunuz
     if ( answer NE ADAK_YES ) {
         return ADAK_FAIL;
     }
@@ -501,15 +501,15 @@ void VERITABANLARI_FORMU::DELETE_RECORD(int p_veritabani_id)
 
     QSplashScreen * splash = CREATE_SPLASH_SCREEN();
     splash->show();
-    splash->showMessage((QString("%1 Veritabanı siliniyor. Lütfen Bekleyiniz...").arg( veritabani_ismi )), Qt::AlignCenter, Qt::white );
+    splash->showMessage((QString(tr("%1 Deleting Database. Please Wait...")).arg( veritabani_ismi )), Qt::AlignCenter, Qt::white );
     qApp->processEvents();
-    YENI_DB->SQL_DROP_TABLES( GET_PROGRAM_DB_STRUCTS() );
+    YENI_DB->SQL_DROP_TABLES( GET_PROGRAM_DB_STRUCTS() );//%1 Veritabanı siliniyor. Lütfen Bekleyiniz...
 
     splash->finish(NULL);
     YENI_DB->COMMIT_TRANSACTION();
 
-    QString log_detaylari = "Veritabanı ID: " + QVariant( p_veritabani_id).toString() + " # Veritabanı: " + veritabani_ismi
-                           + " # Veritabanı Tanımı: " + m_ui->lineEdit_veritabani_adi->text();
+    QString log_detaylari = tr("Database ID: ") + QVariant( p_veritabani_id).toString() + tr(" # Database: ") + veritabani_ismi
+                           + tr(" # Database Description: ") + m_ui->lineEdit_veritabani_adi->text();
 
     YONETIM_007_KAYIT ( LOG_VERITABANLARI, LOG_VERITABANI_SILME, log_detaylari );
 
@@ -662,8 +662,8 @@ int VERITABANLARI_FORMU::LISTEYE_KULLANICI_EKLE()
            continue;
         }
 
-        MSG_INFO(tr("Seçilen kullanıcı %n nolu satırda zaten mevcut.","",i+1) , NULL);
-        return ADAK_RECORD_UNCHANGED;
+        MSG_INFO(tr("The selected user is already existing rung %n.","",i+1) , NULL);
+        return ADAK_RECORD_UNCHANGED;//Seçilen kullanıcı %n nolu satırda zaten mevcut.
 
     }
 

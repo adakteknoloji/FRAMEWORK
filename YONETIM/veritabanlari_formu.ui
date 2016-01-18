@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>VERİTABANLARI</string>
+   <string>DATABASES</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_6" rowstretch="0,10,80" columnstretch="100,0">
    <property name="margin">
@@ -65,7 +65,7 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>Şirket/Veritabani Kodu</string>
+           <string>Company/Database Code:</string>
           </property>
           <property name="buddy">
            <cstring>lineEdit_veritabani_kodu</cstring>
@@ -91,7 +91,7 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>Şirket/Veritabanı Adı</string>
+           <string>Company/Database Name:</string>
           </property>
           <property name="buddy">
            <cstring>lineEdit_veritabani_adi</cstring>
@@ -117,7 +117,7 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>NOT</string>
+           <string>NOTE</string>
           </property>
          </widget>
         </item>
@@ -196,7 +196,7 @@
              </font>
             </property>
             <property name="text">
-             <string>Bu Veritabanında Çalışabilecek Kullanıcılar</string>
+             <string>Users  can Work in This Database</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -228,13 +228,13 @@
              <bool>false</bool>
             </property>
             <property name="toolTip">
-             <string>Kullanıcı seçimi için tıklayınız</string>
+             <string>Click for user selection</string>
             </property>
             <property name="text">
-             <string>Kullanıcı Ekle</string>
+             <string>Add User</string>
             </property>
             <property name="icon">
-             <iconset>
+             <iconset resource="yonetim_icons.qrc">
               <normaloff>:/yonetim_icons/yonetim_bul_ikonu.png</normaloff>:/yonetim_icons/yonetim_bul_ikonu.png</iconset>
             </property>
             <property name="iconSize">
@@ -260,17 +260,17 @@
           </attribute>
           <column>
            <property name="text">
-            <string>kullanici_id</string>
+            <string>user_id</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Kullanıcı Kodu</string>
+            <string>User Code</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Kullanıcı Adı</string>
+            <string>User Name</string>
            </property>
           </column>
          </widget>
@@ -308,7 +308,7 @@
            </font>
           </property>
           <property name="text">
-           <string>Mevcut Veritabanları</string>
+           <string>Available Databases</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -340,7 +340,7 @@
            </font>
           </property>
           <property name="text">
-           <string>Yaratılacak Veritabanları</string>
+           <string>To be Created Databases</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>

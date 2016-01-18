@@ -21,7 +21,7 @@ YONETIM_HAKKIMIZDA::YONETIM_HAKKIMIZDA( QWidget *parent) : QDialog(parent), m_ui
 {
     m_ui->setupUi ( this );
 
-    QString surum = QString ("Versiyon: ").append ( ADAK_PROGRAM_VERSION(ADAK_DISPLAY_ID()) );
+    QString surum = QString (tr("Version: ")).append ( ADAK_PROGRAM_VERSION(ADAK_DISPLAY_ID()) );
 
     QLocale locale(QLocale::English);
     QString tarih    = (locale.toDate(__DATE__,"MMM  d yyyy")).toString("dd MMMM yyyy");
