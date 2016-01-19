@@ -46,7 +46,7 @@
     </rect>
    </property>
    <property name="title">
-    <string>Kalite</string>
+    <string>Quality</string>
    </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">

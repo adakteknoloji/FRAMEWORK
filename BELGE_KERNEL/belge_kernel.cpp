@@ -177,7 +177,7 @@ void BELGE_KERNEL::START_PRINT ()
         printer.FINISH_PRINTER();
     }
 
-    ADAK_INFO(qApp->tr("Belge Yazdırıldı.\t"),NULL, NULL);
+    ADAK_INFO(qApp->QObject::tr("Printed Document.\t"),NULL, NULL);
 }
 
 /**************************************************************************************
