@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="tr_TR">
+<TS version="2.0" language="tr_TR">
 <context>
     <name>GRUP_KERNEL</name>
     <message>
@@ -126,128 +126,128 @@
     <message>
         <location filename="grup_kernel_grup_fisi.ui" line="20"/>
         <source>Add Sub-Group</source>
-        <translation type="unfinished">Alt Grup Ekle</translation>
+        <translation>Alt Grup Ekle</translation>
     </message>
     <message>
         <location filename="grup_kernel_grup_fisi.ui" line="87"/>
         <source>Group Code:</source>
         <oldsource>Grup Kodu </oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Grup Kodu:</translation>
     </message>
     <message>
         <location filename="grup_kernel_grup_fisi.ui" line="100"/>
         <source>Group Name:</source>
         <oldsource>Grup Adı</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Grup Adı:</translation>
     </message>
     <message>
         <location filename="grup_kernel_grup_fisi.cpp" line="55"/>
         <source>MAIN GROUPS</source>
         <oldsource>ANA GRUPLAR</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>ANA GRUPLAR</translation>
     </message>
     <message>
         <location filename="grup_kernel_grup_fisi.cpp" line="56"/>
         <source>main-groups</source>
         <oldsource>ana-gruplar</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>ana-gruplar</translation>
     </message>
     <message>
         <location filename="grup_kernel_grup_fisi.cpp" line="60"/>
         <source>SUB_GROUPS</source>
         <oldsource>ALT GRUPLAR</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>ALT_GRUPLAR</translation>
     </message>
     <message>
         <location filename="grup_kernel_grup_fisi.cpp" line="61"/>
         <source>sub-groups</source>
         <oldsource>alt-gruplar</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>alt-gruplar</translation>
     </message>
     <message>
         <location filename="grup_kernel_grup_fisi.cpp" line="75"/>
         <source>Database was setting null.</source>
         <oldsource>Database null olarak setlenmis</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Database null olarak setlenmis.</translation>
     </message>
     <message>
         <location filename="grup_kernel_grup_fisi.cpp" line="123"/>
         <source>Main Group Code</source>
         <oldsource>Ana Grup Kodu</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Ana Grup Kodu</translation>
     </message>
     <message>
         <location filename="grup_kernel_grup_fisi.cpp" line="124"/>
         <source>Full Group Code</source>
         <oldsource>Tam Grup Kodu</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Tam Grup Kodu</translation>
     </message>
     <message>
         <location filename="grup_kernel_grup_fisi.cpp" line="269"/>
         <source>The same group code is registered in another group existing system.Please change your group code...</source>
         <oldsource>Aynı grup koduyla kayıtlı başka bir grup sistemde mevcuttur.Lütfen grup kodunuzu değiştiriniz..</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Lütfen grup kodunuzu değiştiriniz..Aynı grup koduyla kayıtlı başka bir grup sistemde mevcuttur...</translation>
     </message>
     <message>
         <location filename="grup_kernel_grup_fisi.cpp" line="287"/>
         <source>Group code can not be empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruo kodu boş bırakılamaz.</translation>
     </message>
     <message>
         <location filename="grup_kernel_grup_fisi.cpp" line="291"/>
         <source>Group name can not be empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>Grup adı boş bırakılamaz.</translation>
     </message>
     <message>
         <location filename="grup_kernel_grup_fisi.cpp" line="504"/>
         <source>Group having subgroup. It must not delete!</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt gruplar mevcut. Silinemez!</translation>
     </message>
     <message>
         <location filename="grup_kernel_grup_fisi.cpp" line="695"/>
         <source>You can not be empty the group code!...</source>
-        <translation type="unfinished"></translation>
+        <translation>Grup kodunu boş bırakamazsınız!...</translation>
     </message>
     <message>
         <location filename="grup_kernel_grup_fisi.cpp" line="699"/>
         <source>You can not be empty the group name!...</source>
-        <translation type="unfinished"></translation>
+        <translation>Grup adını boş bırakamazsınız!...</translation>
     </message>
     <message>
         <location filename="grup_kernel_grup_fisi.cpp" line="752"/>
         <location filename="grup_kernel_grup_fisi.cpp" line="982"/>
         <source>The same group code is available another subgroup. Please change your Group code!...</source>
-        <translation type="unfinished"></translation>
+        <translation>Aynı grup koduna sahip başka bir alt grup bulunmaktadır. Lütfen grup kodunuzu değiştiriniz!...</translation>
     </message>
     <message>
         <location filename="grup_kernel_grup_fisi.cpp" line="847"/>
         <source>An error occured while retrieving upper group information.</source>
-        <translation type="unfinished"></translation>
+        <translation>Üst grup bilgileri alınırken hata oluştu.</translation>
     </message>
     <message>
         <location filename="grup_kernel_grup_fisi.cpp" line="1057"/>
         <source>There are sub-groups of the group you want to delete, you must delete them before! ..</source>
-        <translation type="unfinished"></translation>
+        <translation>Silmek istediğiniz grubun alt grupları var,Önce onları silmelisiniz!..</translation>
     </message>
     <message>
         <location filename="grup_kernel_grup_fisi.cpp" line="1068"/>
         <source> &apos;%1 %2&apos; groups will be deleted.</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;%1 %2&apos; grupları silinecektir.</translation>
     </message>
     <message>
         <location filename="grup_kernel_grup_fisi.cpp" line="1080"/>
         <source>An error occurred while retrieving the number of members registered in the group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupta kayıtlı üye sayısı alınırken hata oluştu.</translation>
     </message>
     <message>
         <location filename="grup_kernel_grup_fisi.cpp" line="1095"/>
         <source>An error occured while retrieving the number of subgroups of the main group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ana grubun altt grup sayısı alınırken hata oluştu.</translation>
     </message>
     <message>
         <location filename="grup_kernel_grup_fisi.cpp" line="1100"/>
         <source>There are records in the group. You can not delete the group.</source>
-        <translation type="unfinished"></translation>
+        <translation>Grupta kayıt(lar) var Grubu silemezsiniz.</translation>
     </message>
 </context>
 <context>
@@ -268,7 +268,7 @@
         <location filename="grup_secim_kernel.cpp" line="97"/>
         <source>Group Code</source>
         <oldsource>Grup Kodu</oldsource>
-        <translation type="unfinished">Grup Kodu</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="grup_secim_kernel.cpp" line="91"/>
@@ -314,7 +314,7 @@ Number</source>
     <message>
         <location filename="tree_kernel.cpp" line="95"/>
         <source>Help</source>
-        <translation type="unfinished">Yardım</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="tree_kernel.cpp" line="149"/>
