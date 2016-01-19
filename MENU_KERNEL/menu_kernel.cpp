@@ -587,13 +587,13 @@ void MENU_KERNEL::ADD_STATUS_BAR_INFO()
     status_bar->setSizePolicy ( QSizePolicy::Expanding,QSizePolicy::Fixed );
 
     QLabel * label_kullanici_info    = CREATE_STATUS_BAR_LABEL();
-    label_kullanici_info->setText ( QString ( "Kullanıcı  :  <span style=\"font-family:'%1'; \">%2 - %3</span>").arg(values_font).arg(KULLANICI_KODU()).arg(KULLANICI_ADI()));
+    label_kullanici_info->setText ( QString ( tr("User  :  <span style=\"font-family:'%1'; \">%2 - %3</span>")).arg(values_font).arg(KULLANICI_KODU()).arg(KULLANICI_ADI()));
 
     QLabel * label_firma_info        = CREATE_STATUS_BAR_LABEL();
-    label_firma_info->setText ( QString ( "Firma  :  <span style=\"font-family:'%1'; \">%2 - %3</span>" ).arg(values_font).arg ( VERITABANI_ISMI() ).arg ( VERITABANI_TANIMI() ) );
+    label_firma_info->setText ( QString ( tr("Company  :  <span style=\"font-family:'%1'; \">%2 - %3</span>") ).arg(values_font).arg ( VERITABANI_ISMI() ).arg ( VERITABANI_TANIMI() ) );
 
     QLabel * label_bilgisayar_info   = CREATE_STATUS_BAR_LABEL();
-    label_bilgisayar_info->setText ( QString ( "Bilgisayar  :  <span style=\"font-family:'%1'; \">%2 - %3</span>" ).arg(values_font).arg(BILGISAYAR_KODU()).arg(BILGISAYAR_ADI() ) );
+    label_bilgisayar_info->setText ( QString ( tr("Computer  :  <span style=\"font-family:'%1'; \">%2 - %3</span>") ).arg(values_font).arg(BILGISAYAR_KODU()).arg(BILGISAYAR_ADI() ) );
 
     QLabel * label_program_info      = CREATE_STATUS_BAR_LABEL();
     label_program_info->setText ( QString ( "<span style=\"font-family:'%1'; \">%2 %3</span>" ).arg(values_font).arg(ADAK_PROGRAM_SHORTNAME(ADAK_DISPLAY_ID())).arg(ADAK_PROGRAM_VERSION(ADAK_DISPLAY_ID())));
