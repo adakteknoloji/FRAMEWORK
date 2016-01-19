@@ -19,9 +19,9 @@ bool              EMAIL_SENDER::p_toplu_gonder        = true;
 bool              EMAIL_SENDER::p_add_log             = true;
 QString           EMAIL_SENDER::p_kimden              = "";
 QString           EMAIL_SENDER::p_kime                = "";
-QString           EMAIL_SENDER::p_gonderen_ismi       = "Isimsiz";
+QString           EMAIL_SENDER::p_gonderen_ismi       = tr("Nameless");
 QString           EMAIL_SENDER::p_alici_ismi          = "";
-QString           EMAIL_SENDER::p_mail_server         = "Tanımlı Değil";
+QString           EMAIL_SENDER::p_mail_server         = tr("Not Described");
 QString           EMAIL_SENDER::p_username            = "";
 QString           EMAIL_SENDER::p_password            = "";
 SSL_PROTOCOL      EMAIL_SENDER::p_protocol            = NO_SSL;
@@ -291,7 +291,7 @@ void EMAIL_SENDER::CONNECTED()
 {
     // qDebug() << "Connected ";
     p_splash_screen->show();
-    p_splash_screen->showMessage ( tr ( "Mesajınız Gönderiliyor..." ),Qt::AlignCenter,Qt::white );
+    p_splash_screen->showMessage ( tr ( "Sending Your Message..." ),Qt::AlignCenter,Qt::white );
     qApp->processEvents();
 }
 
@@ -319,7 +319,7 @@ void EMAIL_SENDER::READY_TO_READ()
              p_socket->setProtocol ( QSsl::TlsV1 );
              p_socket->startClientEncryption();
         }
-        *p_t << "HELO server\r\n";
+        *p_t << QObject::tr("HELLO server\r\n");
         p_t->flush();
 
         if ( p_protocol EQ STARTTLS AND starttls EQ false ) {
@@ -334,13 +334,13 @@ void EMAIL_SENDER::READY_TO_READ()
         }
     }
     else if ( p_state EQ Stls OR response_text EQ "530" ) {
-        *p_t << "STARTTLS\r\n";
+        *p_t << tr("STARTTLS\r\n";)
         p_t->flush();
         p_state = Init;
         starttls = true;
     }
     else if ( p_state EQ Auth && response_text[0] EQ '2' ) {
-        *p_t << "AUTH LOGIN\r\n";
+        *p_t << tr("AUTH LOGIN\r\n");
         p_t->flush();
         p_state = User;
     }
@@ -357,13 +357,13 @@ void EMAIL_SENDER::READY_TO_READ()
         p_state = Mail;
     }
     else if ( p_state EQ Mail && response_text[0] EQ '2' ) {
-        QString string_from = "MAIL FROM: <"+p_from+">\r\n";
+        QString string_from = tr("MAIL FROM: <")+p_from+">\r\n";
         *p_t << string_from;
         p_t->flush();
         p_state = Rcpt;
     }
     else if ( p_state EQ Rcpt && response_text[0] EQ '2' ) {
-        QString string_to = "RCPT TO: <"+p_gonderilen_listesi.last()+">\r\n";
+        QString string_to = tr("RCPT TO: <")+p_gonderilen_listesi.last()+">\r\n";
         *p_t << string_to;
         p_t->flush();
         p_gonderilen_listesi.pop_back();
@@ -372,7 +372,7 @@ void EMAIL_SENDER::READY_TO_READ()
         }
     }
     else if ( p_state EQ Data && response_text[0] EQ '2' ) {
-        *p_t << "DATA\r\n";
+        *p_t << tr("DATA\r\n");
         p_t->flush();
         p_state = Body;
     }
@@ -387,7 +387,7 @@ void EMAIL_SENDER::READY_TO_READ()
         p_state = Quit;
     }
     else if ( p_state EQ Quit && response_text[0] EQ '2' ) {
-        *p_t << "QUIT\r\n";
+        *p_t << tr("QUIT\r\n");
         p_state = Close;
         p_splash_screen->finish ( NULL );
         if ( g_gonderilen_listesi.contains(p_gonderilen_str) EQ false ) {
@@ -521,12 +521,12 @@ void EMAIL_SENDER::SEND_EMAIL ( const QString &from,const QString &gonderenin_ge
 
     QStringList from_str = p_from.split ( "@" );
 
-    p_header  = QString ( "Message-ID: <%1@%2>" ).arg ( CREATE_MESSAGE_ID ( from_str.at(0) ) ).arg ( from_str.at(1) ) +
-                QString ( "\nDate: %1").arg(date_header_str) +
+    p_header  = QString ( tr("Message-ID: <%1@%2>") ).arg ( CREATE_MESSAGE_ID ( from_str.at(0) ) ).arg ( from_str.at(1) ) +
+                QString ( tr("\nDate: %1")).arg(date_header_str) +
                 QString ( "\nFrom: =?utf-8?Q?%1?=  <" ).arg(CREATE_QUOTED_PRINTABLE_STRING(p_sender_name ) )       + p_from    +">"  +
-                QString ( "\nUser-Agent: Adak/1.0 AdakEmailSender/1.0") +
-                QString ( "\nTo: " )                + p_gonderilen_str  +
-                QString ( "\nSubject: " )           + quotable_subject +"\n" + p_mime_string +
+                QString ( tr("\nUser-Agent: Adak/1.0 AdakEmailSender/1.0")) +
+                QString ( tr("\nTo: " ))                + p_gonderilen_str  +
+                QString ( tr("\nSubject: ") )           + quotable_subject +"\n" + p_mime_string +
                 QString ( "\n\n"        );
 
     p_message = "<pre>" + body + "</pre>" + "\n";
@@ -550,7 +550,7 @@ void EMAIL_SENDER::SEND_EMAIL ( const QString &from,const QString &gonderenin_ge
     if ( p_protocol EQ NO_SSL OR p_protocol EQ STARTTLS ) {
         p_socket->connectToHost ( p_mail_server, p_port_number );
         if (  p_socket->waitForConnected (  15000 ) EQ false){
-            g_hata_listesi << QString ("Posta Sunucusuna Bağlanılamadı. ( STARTTLS/NOSSL ) \nSocket Hatasi : %1 %2 ").arg(p_socket->error()).arg(p_socket->errorString ()) ;
+            g_hata_listesi << QString (tr("Could not connect to Mail Server. ( STARTTLS/NOSSL ) \nSocket Error : %1 %2 ")).arg(p_socket->error()).arg(p_socket->errorString ()) ;
         }
     }
     else {
@@ -565,8 +565,8 @@ void EMAIL_SENDER::SEND_EMAIL ( const QString &from,const QString &gonderenin_ge
         }
         p_socket->connectToHostEncrypted ( p_mail_server, p_port_number );
         if( p_socket->waitForEncrypted ( 15000 ) ){
-            g_hata_listesi << QString ("Posta Sunucusuna Bağlanılamadı. ( TLS1/SSL2/SSL3 ) \nSocket Hatasi : %1 %2 ").arg(p_socket->error()).arg(p_socket->errorString ()) ;
-        }
+            g_hata_listesi << QString (tr("Could not connect to Mail Server. ( TLS1/SSL2/SSL3 ) \nSocket Error : %1 %2 ")).arg(p_socket->error()).arg(p_socket->errorString ()) ;
+        }//Posta Sunucusuna Bağlanılamadı. ( TLS1/SSL2/SSL3 ) \nSocket Hatasi : %1 %2
     }
 
     p_t = new QTextStream (  p_socket  );
@@ -733,15 +733,15 @@ void SEND_MAIL ( const QString from,const QString gonderenin_gercek_adi, const Q
     }
 
     if ( gecersiz_to_list.isEmpty() EQ false ) {
-        QString message         = "Aşagıdaki e-mail adres(ler)i hatalıdır. ";
-        QString hatali_adresler = "\nHatalı E-Mail Adresleri: ";
+        QString message         = QObject::tr("These e-mail address are wrong.");//Aşagıdaki e-mail adres(ler)i hatalıdır.
+        QString hatali_adresler = QObject::tr("\nIncorrect E-Mail Addresses: ");
 
         for ( int i = 0 ; i < gecersiz_to_list.size() ; i++ ) {
             hatali_adresler.append("\n" + gecersiz_to_list.at(i));
         }
 
         if ( gecerli_to_list.isEmpty() EQ false ) {
-            message.append("Geçerli olan e-maillere mesajı göndermek ister misiniz?");
+            message.append(QObject::tr("Do you want to send the message to current e-mail?"));//Geçerli olan e-maillere mesajı göndermek ister misiniz?
             message.append(hatali_adresler);
             ADAK_MSG_ENUM answer = ADAK_YES_NO(message,NULL,NULL);
             if ( answer NE ADAK_YES ) {
@@ -762,7 +762,7 @@ void SEND_MAIL ( const QString from,const QString gonderenin_gercek_adi, const Q
     }
 
     if ( gecerli_to_list.isEmpty() EQ true ) {
-        ADAK_ERROR("Gönderilecek e-mail adresi bulunamadı.",NULL,NULL);
+        ADAK_ERROR(QObject::tr("No e-mail address will be sent."),NULL,NULL);//Gönderilecek e-mail adresi bulunamadı.
         if (add_to_log EQ false ) {
             EMAIL_SENDER::START_EMAIL_LOG();
         }
@@ -818,7 +818,7 @@ void SEND_MAIL ( const QString from,const QString gonderenin_gercek_adi, const Q
     }
 
     if ( g_hata_listesi.isEmpty() EQ false ) {
-        QString message = "E-mail gönderimi esnasında aşagıdaki hata(lar) alındı.";
+        QString message = QObject::tr("It below error(s) occured during sending e-mail.");//E-mail gönderimi esnasında aşagıdaki hata(lar) alındı.
 
         for ( int i = 0 ; i < g_hata_listesi.size() ; i++ ) {
             message.append("\n" + g_hata_listesi.at(i));
@@ -832,7 +832,7 @@ void SEND_MAIL ( const QString from,const QString gonderenin_gercek_adi, const Q
     }
 
     if ( g_gonderilemeyen_listesi.isEmpty() EQ false ) {
-        QString message = "E-mail gönderimi esnasında aşagıdaki e-mail(ler)de hata oluştu.";
+        QString message = QObject::tr("There was an error at e-mails when sending e-mail.");//E-mail gönderimi esnasında aşagıdaki e-mail(ler)de hata oluştu.
 
         for ( int i = 0 ; i < g_gonderilemeyen_listesi.size() ; i++ ) {
             message.append("\n" + g_gonderilemeyen_listesi.at(i));
@@ -855,7 +855,7 @@ void SEND_MAIL ( const QString from,const QString gonderenin_gercek_adi, const Q
         return;
     }
 
-    ADAK_INFO("Tespit edilemeyen hata oluştu.",NULL,NULL);
+    ADAK_INFO(QObject::tr("There was an error can not be determined."),NULL,NULL);//Tespit edilemeyen hata oluştu.
 }
 
 /**************************************************************************************

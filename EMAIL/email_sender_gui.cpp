@@ -39,9 +39,9 @@ void EMAIL_SENDER_GUI::SETUP_FORM ()
 {
 
     SET_AUTO_EXIT_BATCH ( true );
-    SET_NAME_OF_RUN_BATCH_BUTTON ( QString::fromUtf8 ( "Gönder" ) );
+    SET_NAME_OF_RUN_BATCH_BUTTON ( QString::fromUtf8 (tr("Send") ) );
     REGISTER_BUTTON_WIDGET ( m_ui->widget_batch_buttons );
-    SET_PAGE_TITLE ("E-POSTA GÖNDERME");
+    SET_PAGE_TITLE (tr("E-MAIL SENDING"));
 
     if ( p_from.isNull() EQ false ) {
         m_ui->line_edit_from->setText ( p_from );
@@ -75,7 +75,8 @@ void EMAIL_SENDER_GUI::SETUP_FORM ()
         m_ui->combobox_baglanti_guvenligi->setCurrentIndex( baglanti_guvenligi );
     }
     else {
-        MSG_ERROR(tr ( "Posta Sunucusu Tanımlanmamış.'Sistem->Posta Sunucusu' menüsünden tanımlanması gerekli."),NULL);
+        MSG_ERROR(tr ("Mail server did not define.It needs to be defined from 'System-Mail Server' menu."),NULL);
+        //Posta Sunucusu Tanımlanmamış.'Sistem->Posta Sunucusu' menüsünden tanımlanması gerekli.
         close();
     }
 
@@ -89,7 +90,8 @@ void EMAIL_SENDER_GUI::SETUP_FORM ()
              m_ui->line_edit_kullanici_adi->setText ( sql_query.VALUE(2).toString() );
         }
         else {
-           MSG_ERROR(tr ( "E-Posta adresiniz veya E-Posta Kullanıcı İsminiz tanımlanmamış.'Sistem->Kullanıcılar' menüsünden tanımlanması gerekli."),NULL);
+           MSG_ERROR(tr ( "Your E-Mail address or E-Mail User name did not define. It needs to be defined from 'System-Users' menu."),NULL);
+           //E-Posta adresiniz veya E-Posta Kullanıcı İsminiz tanımlanmamış.'Sistem->Kullanıcılar' menüsünden tanımlanması gerekli.
            close();
         }
     }
@@ -112,7 +114,7 @@ int EMAIL_SENDER_GUI::CHECK_VAR ( QObject * object )
 
     if ( m_ui->line_edit_from->text().isEmpty() EQ false ) {
         if ( m_ui->line_edit_from->text().contains("@") EQ false OR m_ui->line_edit_from->text().contains ( "." ) EQ false ) {
-            MSG_ERROR(QString::fromUtf8 ( "Gönderen olarak girilen e-mail adresi geçersiz.. " ) ,NULL);
+            MSG_ERROR(QString::fromUtf8 ( tr("Sender e-mail address entered as invalid address.... ") ) ,NULL);//Gönderen olarak girilen e-mail adresi geçersiz
             return ADAK_FAIL;
         }
 
@@ -120,7 +122,7 @@ int EMAIL_SENDER_GUI::CHECK_VAR ( QObject * object )
 
     if ( m_ui->line_edit_to->text().isEmpty() EQ false ) {
         if ( m_ui->line_edit_to->text().contains("@") EQ false OR m_ui->line_edit_to->text().contains ( "." ) EQ false ) {
-            MSG_ERROR(QString::fromUtf8 ( "Alıcı olarak girilen e-mail adresi geçersiz.. ") ,NULL);
+            MSG_ERROR(QString::fromUtf8 ( tr("Recipient e-mail address entered as invalid address.. ")) ,NULL);//Alıcı olarak girilen e-mail adresi geçersiz
             return ADAK_FAIL;
         }
     }
@@ -173,7 +175,7 @@ void EMAIL_SENDER_GUI::RUN_BATCH()
         EMAIL_SENDER::SET_USER_EMAIL_INFO ( "","",p_gonderenin_adi,false );
     }
 
-    SEND_MAIL ( p_from.toUtf8(),p_gonderenin_adi.toUtf8(), p_to.toUtf8(), p_subject.toUtf8(), all_body.toUtf8() , -1,-1 ,"Mesajınız Gönderildi...");
+    SEND_MAIL ( p_from.toUtf8(),p_gonderenin_adi.toUtf8(), p_to.toUtf8(), p_subject.toUtf8(), all_body.toUtf8() , -1,-1 ,tr("Sended Your Message..."));
 
 }
 
