@@ -32,14 +32,14 @@ IMPORT_KERNEL::IMPORT_KERNEL ( QString p_help_page, QWidget * parent ) :  BATCH_
 
 void IMPORT_KERNEL::SETUP_FORM ()
 {
-    SET_NAME_OF_RUN_BATCH_BUTTON ( "İçeri Aktar" );
+    SET_NAME_OF_RUN_BATCH_BUTTON ( tr("Import") );
 
     SET_AUTO_EXIT_BATCH ( true );
 
     SET_FIRST_FOCUS_WIDGET ( m_ui->line_edit_dosya_path );
     REGISTER_BUTTON_WIDGET ( m_ui->widget_batch_buttons );
 
-    SET_PAGE_TITLE    ( tr ( "İÇERİ AKTAR" ) );
+    SET_PAGE_TITLE    ( tr ( "IMPORT" ) );
     SET_SETTING_NAME  ("E9_AKTAR");
 
     SET_HELP_PAGE     ( m_help_page );
@@ -70,14 +70,14 @@ int IMPORT_KERNEL::CHECK_VAR ( QObject * object )
 {
     if ( object EQ m_ui->push_button_dosya_sec ) {
         QString file_name = "";
-        file_name = QFileDialog::getOpenFileName(this,tr("Dosya Seç"), "", tr("ODS Dosyası(*.ods)"));
+        file_name = QFileDialog::getOpenFileName(this,tr("Select File"), "", tr("ODS File(*.ods)"));
 
         if ( file_name.isEmpty() EQ false ) {
             ADAK_CURSOR_BUSY();
 
             unzFile hArchive;
             if( ( hArchive = unzOpen(file_name.toUtf8().data()) ) EQ NULL ){
-                MSG_INFO(tr("Seçilen dosya Formatı uygun değil!!!") , this ) ;
+                MSG_INFO(tr("The selected file format is not appropriate!") , this ) ;//Seçilen dosya Formatı uygun değil!
                 ADAK_CURSOR_NORMAL();
                 return ADAK_FAIL;
             }
@@ -88,7 +88,7 @@ int IMPORT_KERNEL::CHECK_VAR ( QObject * object )
             if( m_import_rows.size() EQ 0 ){
                 m_ui->table_widget_onizleme->clear();
                 m_kayitlar_onaylandi_mi = false;
-                MSG_INFO("Seçilen dosyanın içi boştur" ,this);
+                MSG_INFO(tr("The selected file is empty.") ,this);//Seçilen dosyanın içi boştur
                 ADAK_CURSOR_NORMAL();
                 return ADAK_FAIL;
             }
@@ -141,15 +141,15 @@ void IMPORT_KERNEL::SET_HEADERS( QList<QStringList> headers)
 int IMPORT_KERNEL::CHECK_RUN ()
 {
     if ( m_import_rows.size() EQ 0) {
-        MSG_INFO( "Kaydedilecek veri yok" , NULL);
+        MSG_INFO( tr("No data will be saved") , NULL);//Kaydedilecek veri yok
         return ADAK_FAIL;
     }
     else if( m_kayitlar_onaylandi_mi EQ false ){
-        MSG_WARNING( tr( " Zorunlu Alanlar boş bırakılmış") , this ) ;
+        MSG_WARNING( tr( "Required fields are left empty ") , this ) ;//Zorunlu Alanlar boş bırakılmış
         return ADAK_FAIL ;
     }
     else {
-        ADAK_MSG_ENUM msg_enum = MSG_YES_NO("Tüm bilgiler E9 a aktarılacaktır. Devam edilsin mi?",NULL);
+        ADAK_MSG_ENUM msg_enum = MSG_YES_NO(tr("All information will be transferred to E9.Continue? "),NULL);//Tüm bilgiler E9 a aktarılacaktır. Devam edilsin mi?
 
         if ( msg_enum NE ADAK_YES ) {
             return ADAK_FAIL;
@@ -174,7 +174,7 @@ void IMPORT_KERNEL::RUN_BATCH ()
 
     ADAK_CURSOR_NORMAL();
 
-    MSG_INFO("Tüm bilgiler aktarıldı.",NULL);
+    MSG_INFO(tr("All information transferred. "),NULL);//Tüm bilgiler aktarıldı.
 
 }
 
@@ -186,7 +186,7 @@ void IMPORT_KERNEL::ONIZLEMEYI_GOSTER()
 {
     // Kaydelilmeyeye uygun
     TABLO_DOLDUR(m_ui->table_widget_onizleme, m_import_rows );
-    m_ui->label_bulunan_kayit_sayisi->setText( QString("Aktarılacak kayıt sayısı: %1").arg( m_import_rows.size() ) );
+    m_ui->label_bulunan_kayit_sayisi->setText( QString(tr("Number of Transferred Records: %1")).arg( m_import_rows.size() ) );//Aktarılacak kayıt sayısı
 
     // Varolan kayitlar
 
@@ -271,7 +271,7 @@ bool IMPORT_KERNEL::ROW_DATA_KONTROL()
             if ( m_zorunlu_alanlar.at( j ) EQ "*" ) {
                 if ( j < m_import_rows.at(i).size() AND m_import_rows.at( i ).at( j ) EQ tr( "@" ) ) {
                     ADAK_CURSOR_NORMAL();
-                    MSG_WARNING( QString( " %1 Nolu satırında %2 Zorunlu Alan boş bırakılmış").arg( i ).arg(m_import_rows.at(0).at( j )), NULL );
+                    MSG_WARNING( QString( tr("In number %1 line, %2 Required fields were left blank")).arg( i ).arg(m_import_rows.at(0).at( j )), NULL );//" %1 Nolu satırında %2 Zorunlu Alan boş bırakılmış
                     return false;
                 }
             }

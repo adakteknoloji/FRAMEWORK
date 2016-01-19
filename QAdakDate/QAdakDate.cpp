@@ -152,7 +152,7 @@ void QAdakDate::REFRESH_DATE()
         }
         else {
             if( m_date_changed EQ true ) {
-                QMessageBox::information( this, tr( "Uyarı" ), tr("Girmiş olduğunuz tarih mali yıl içinde değil, lütfen yeni bir tarih girin.!"));
+                QMessageBox::information( this, tr( "Attention" ), tr("Your entered date "));//Girmiş olduğunuz tarih mali yıl içinde değil, lütfen yeni bir tarih girin.!
                 m_date_changed = false;
             }
             if ( m_current_date < MALI_YIL_FIRST_DATE() ) {

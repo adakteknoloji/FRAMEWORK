@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>860</width>
+    <width>955</width>
     <height>552</height>
    </rect>
   </property>
@@ -38,7 +38,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Dosya Encoding :  </string>
+        <string>File Encoding :  </string>
        </property>
       </widget>
      </item>
@@ -77,23 +77,6 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="0">
-    <widget class="QLabel" name="label_2">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="text">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Önizleme(&lt;span style=&quot; color:#ff0000;&quot;&gt;Eğer bilgilerin yerleri önizlemede yanlışsa,  bilgilerin alınacağı dosyadan buradaki sıraya göre düzeltilmesi gereklidir.&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-   </item>
    <item row="4" column="0" colspan="3">
     <widget class="QTableWidget" name="table_widget_onizleme"/>
    </item>
@@ -106,7 +89,7 @@ p, li { white-space: pre-wrap; }
       </sizepolicy>
      </property>
      <property name="text">
-      <string>Veri tabanında zaten kayıtlı olanlar.... </string>
+      <string>Those registered in the database ...</string>
      </property>
     </widget>
    </item>
@@ -116,7 +99,7 @@ p, li { white-space: pre-wrap; }
    <item row="7" column="0">
     <widget class="QLabel" name="label_3">
      <property name="text">
-      <string>Kayıtların Ekleneceği Gruplar:</string>
+      <string>Groups of records to be added:</string>
      </property>
     </widget>
    </item>
@@ -133,7 +116,7 @@ p, li { white-space: pre-wrap; }
    <item row="8" column="2">
     <widget class="QPushButton" name="push_button_gruplar">
      <property name="text">
-      <string>Grup Seç</string>
+      <string>Select Group</string>
      </property>
     </widget>
    </item>
@@ -168,7 +151,7 @@ p, li { white-space: pre-wrap; }
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Dosya:                   </string>
+        <string>File:</string>
        </property>
       </widget>
      </item>
@@ -184,7 +167,7 @@ p, li { white-space: pre-wrap; }
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Dosya Seç</string>
+        <string>Select File</string>
        </property>
        <property name="autoDefault">
         <bool>true</bool>
@@ -205,6 +188,23 @@ p, li { white-space: pre-wrap; }
       </spacer>
      </item>
     </layout>
+   </item>
+   <item row="3" column="0" colspan="2">
+    <widget class="QLabel" name="label_2">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:10pt;&quot;&gt;Preview(&lt;/span&gt;&lt;a name=&quot;result_box&quot;&gt;&lt;/a&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;I&lt;/span&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;f&lt;/span&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt; the location of the preview information is incorrect, the file will be information here that need to be corrected according to the order.&lt;/span&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:10pt;&quot;&gt;)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

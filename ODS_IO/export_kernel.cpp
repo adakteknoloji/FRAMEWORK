@@ -23,9 +23,9 @@ EXPORT_KERNEL::EXPORT_KERNEL ( QString p_help_page, QWidget * parent ) :  BATCH_
 
 void EXPORT_KERNEL::SETUP_FORM ()
 {
-    SET_NAME_OF_RUN_BATCH_BUTTON ( "OpenOffice'e Aktar" );
+    SET_NAME_OF_RUN_BATCH_BUTTON ( tr("Transfer to OpenOffice.") );
 
-    SET_PAGE_TITLE    (tr("IHRAÇ ET"));
+    SET_PAGE_TITLE    (tr("EXPORT"));
     SET_SETTING_NAME  ("IHRAÇ_ET_BATCH");
     SET_HELP_PAGE     ( m_help_page );
 }
@@ -71,7 +71,7 @@ void EXPORT_KERNEL::ADD_ROW(QStringList rows)
 
 void EXPORT_KERNEL::START_EXPORT()
 {
-    QString file_path = QFileDialog::getSaveFileName(NULL, tr("Kaydet"),"",tr("ODS Dosyası(*.ods)"));
+    QString file_path = QFileDialog::getSaveFileName(NULL, tr("Save"),"",tr("ODS File(*.ods)"));
 
     if ( file_path.isEmpty() EQ false ) {
         ADAK_CURSOR_BUSY();
@@ -84,7 +84,7 @@ void EXPORT_KERNEL::START_EXPORT()
 
         ADAK_CURSOR_NORMAL();
 
-        MSG_INFO("Bilgiler Aktarıldı.",NULL);
+        MSG_INFO(tr("Transferred Information."),NULL);
     }
 }
 

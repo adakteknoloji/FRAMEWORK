@@ -277,7 +277,7 @@ void ADAK_EXPORTER::WRITE_FILE_TO_ZIP(zipFile file, QString file_name, QByteArra
     zi.external_fa = 0;
 
     int err = zipOpenNewFileInZip(file,file_name.toUtf8().data(),
-            &zi,NULL,0,NULL,0,"Adak Import",(opt_compress_level != 0) ? Z_DEFLATED : 0,opt_compress_level);
+            &zi,NULL,0,NULL,0,QObject::tr("Adak Import"),(opt_compress_level != 0) ? Z_DEFLATED : 0,opt_compress_level);
 
     if (err != ZIP_OK) {
         return;
