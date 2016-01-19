@@ -13,7 +13,7 @@ int TASARIM_DEGISKENI::s_degisken_count = -1;
 
 TASARIM_DEGISKENI::TASARIM_DEGISKENI(bool p_primary_id_enable)
 {
-    m_text       = "adız değişken";
+    m_text       = QObject::tr("unnamed variable");
     m_belge_degisken_id = -1;
     m_grup       = USER_TEXT;
     m_tasarim_id = -1;

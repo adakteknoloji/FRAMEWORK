@@ -36,7 +36,7 @@ FILE * DOT_MATRIX::OPEN_PRINTER_FILE()
     #endif
 
     if (!m_printer_pipe) {
-        cout << "printer not found" << endl;
+        cout << QObject::tr("printer not found").toASCII() << endl;
     }
     return m_printer_pipe;
 }
@@ -51,7 +51,7 @@ void DOT_MATRIX::WRITE_PRINTER(QString p_line_str)
     //! PIPE KAPATILMAYINCAYA KADAR YAZICIYA GONDERMEZ
 
     if ( m_printer_name == "none"){
-        cerr << "yazici adi setlenmemis" << endl;
+        cerr << QObject::tr("Printer name is not set.").toASCII() << endl;
         return;
     }
 
@@ -67,11 +67,12 @@ void DOT_MATRIX::FINISH_PRINTER()
 {
     #ifdef MSVC
         if (_pclose (m_printer_pipe) != 0) {
-              fprintf (stderr, "Yazici baglantisi kesildi.\n");
+              fprintf (stderr, QObject::tr("Printer connection has been lost.\n").toASCII());
         }
     #else
         if (pclose (m_printer_pipe) != 0) {
-              fprintf (stderr, "Yazici baglantisi kesildi.\n");
+
+              fprintf (stderr, QObject::tr("Printer connection has been lost.\n").toASCII());
         }
     #endif
 }
