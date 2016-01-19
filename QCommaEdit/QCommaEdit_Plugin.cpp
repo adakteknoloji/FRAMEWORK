@@ -35,7 +35,7 @@ QString QCommaEdit_Plugin::name() const
 
 QString QCommaEdit_Plugin::group() const
 {
-        return "Input Widgets";
+        return tr("Input Widgets");
 }
 
 QIcon QCommaEdit_Plugin::icon() const
@@ -45,7 +45,7 @@ QIcon QCommaEdit_Plugin::icon() const
 
 QString QCommaEdit_Plugin::toolTip() const
 {
-        return "Sayilari virgullu olarak alir, yazar";
+        return tr("Number takes as a comma and write. ");//Sayilari virgullu olarak alir, yazar
 }
 
 QString QCommaEdit_Plugin::whatsThis() const

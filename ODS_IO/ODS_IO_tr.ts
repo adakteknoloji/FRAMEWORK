@@ -148,7 +148,7 @@ Eğer bilgilerin yerleri önizlemede yanlışsa,  bilgilerin alınacağı dosyad
     <message>
         <location filename="import_kernel.cpp" line="274"/>
         <source>In number %1 line, %2 Required fields were left blank</source>
-        <translation type="unfinished">%1 nolu satırda %2 zorunlu alanı boş bırakılmış</translation>
+        <translation>%1 nolu satırda %2 zorunlu alanı boş bırakılmış</translation>
     </message>
 </context>
 <context>

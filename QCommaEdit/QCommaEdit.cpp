@@ -205,7 +205,7 @@ const QString QCommaEdit::text()
 double QCommaEdit::GET_DOUBLE()
 {
     if ( p_precision EQ 0 ) {
-        QMessageBox::warning(this,tr("Uyarı"),QString("Sadece integer değer kabul eden bir commaEdit ten double değer istendi.\nWidget:%1").arg(objectName()));
+        QMessageBox::warning(this,tr("Attention"),QString(tr("Sadece integer değer kabul eden bir commaEdit ten double değer istendi.\nWidget:%1")).arg(objectName()));
     }
 
     const QString double_string = REMOVE_COMMA();
@@ -224,7 +224,7 @@ double QCommaEdit::GET_DOUBLE()
 int QCommaEdit::GET_INTEGER()
 {
     if ( p_precision NE 0 ) {
-        QMessageBox::warning(this,tr("Uyarı"),QString("Sadece double değer kabul eden bir commaEdit ten integer değer istendi.\nWidget:%1").arg(objectName()));
+        QMessageBox::warning(this,tr("Attention"),QString(tr("Sadece double değer kabul eden bir commaEdit ten integer değer istendi.\nWidget:%1")).arg(objectName()));
     }
 
     const QString double_string = REMOVE_COMMA();
