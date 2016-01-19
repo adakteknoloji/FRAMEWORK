@@ -32,7 +32,7 @@ DESIGNER_HAKKINDA_BATCH::DESIGNER_HAKKINDA_BATCH ( QWidget * parent ) :  BATCH_K
 
 void DESIGNER_HAKKINDA_BATCH::SETUP_FORM()
 {
-    QString surum = QString ( "Versiyon : " ).append ( GV.versiyon );
+    QString surum = QString (QObject::tr( "Version : ") ).append ( GV.versiyon );
     QFont font;
     font.setPointSize(10);
     m_ui->label_surum->setFont ( font );
@@ -41,7 +41,7 @@ void DESIGNER_HAKKINDA_BATCH::SETUP_FORM()
     m_ui->label_surum->setTextFormat ( Qt::RichText );
     m_ui->label_surum->setText ( surum );
 
-    SET_NAME_OF_RUN_BATCH_BUTTON ( "Tamam" );
+    SET_NAME_OF_RUN_BATCH_BUTTON ( tr("Okey") );
     SET_AUTO_EXIT_BATCH ( true );
 
     // Programa ilk girildiginde focuslanacak widget setlenmelidir.
@@ -50,7 +50,7 @@ void DESIGNER_HAKKINDA_BATCH::SETUP_FORM()
     // Butonumuzun eklenecegi widgeti register ediyoruz.
     REGISTER_BUTTON_WIDGET ( m_ui->widget );
 
-    SET_PAGE_TITLE    (tr("HAKKINDA"));
+    SET_PAGE_TITLE    (tr("ABOUT"));
     SET_SETTING_NAME  ("DESIGNER_HAKKINDA");
     SET_HELP_PAGE     ("hakkinda.html");
 }

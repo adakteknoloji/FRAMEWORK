@@ -18,7 +18,7 @@
 
 int         INDEXLER_ARRAY[INDEXLER_ARRAY_SIZE];
 QComboBox * COMBOBOX_ARRAY[NUMBER_OF_ROWS][NUMBER_OF_COMBOBOX];
-QString     INDEX_NAMES[] = {"INDEX 2","INDEX 3","INDEX 4","INDEX 5","INDEX 6","INDEX 7","INDEX 8","INDEX 9","INDEX 10"};
+QString     INDEX_NAMES[] = {QObject::tr("INDEX 2"),QObject::tr("INDEX 3"),QObject::tr("INDEX 4"),QObject::tr("INDEX 5"),QObject::tr("INDEX 6"),QObject::tr("INDEX 7"),QObject::tr("INDEX 8"),QObject::tr("INDEX 9"),QObject::tr("INDEX 10")};
 
 extern ADAK_SQL *   DB;
 
@@ -50,7 +50,7 @@ p_tablo_id (tablo_id)
 
 void SQL_INDEX_BATCH::SETUP_FORM()
 {
-    SET_NAME_OF_RUN_BATCH_BUTTON(tr("Kaydet"));
+    SET_NAME_OF_RUN_BATCH_BUTTON(tr("Save"));
     SET_AUTO_EXIT_BATCH ( true );
     SET_ENTER_KEY_FOR_RUN_BATCH(true);
 
@@ -223,7 +223,7 @@ bool SQL_INDEX_BATCH::CHECK_TABLE_VALUES()
             if ( COMBOBOX_ARRAY[i][k]->currentIndex() EQ 0 ) {
                 for ( int l = k; l < NUMBER_OF_COMBOBOX; l++ ) {
                     if ( COMBOBOX_ARRAY[i][l]->currentIndex() NE 0 ) {
-                        MSG_ERROR(tr("%n nolu index satırı hatalı","",i+1),NULL);
+                        MSG_ERROR(tr("Incorrect index line %n","",i+1),NULL);//%n nolu index satırı hatalı
                         return false;
                     }
                 }

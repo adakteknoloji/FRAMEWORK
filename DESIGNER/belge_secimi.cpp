@@ -22,13 +22,13 @@ int OPEN_BELGE_SEC (QDialog * parent)
 BELGE_SECIMI::BELGE_SECIMI( int * secilen_id , QWidget *parent ) : SECIM_KERNELI(parent)
 {
     SET_WINDOW_SIZE(300,800);
-    SET_HEADERS(QStringList()<<"belge id"<<tr("Belge Adı"));
+    SET_HEADERS(QStringList()<<QObject::tr("document id").toASCII()<<QObject::tr("Document Name").toASCII());
 
     m_secilen_id = secilen_id;
 
     INIT_KERNEL(DB);
 
-    SET_PAGE_TITLE ( tr("BELGE SEÇİMİ"));
+    SET_PAGE_TITLE ( QObject::tr("DOCUMENT SELECTION"));
 
     QTableWidget * tableWidget = GET_TABLE_WIDGET();
 

@@ -33,13 +33,13 @@ SQL_VERITABANI_AYARLARI_BATCH::SQL_VERITABANI_AYARLARI_BATCH ( QWidget * parent 
 void SQL_VERITABANI_AYARLARI_BATCH::SETUP_FORM ()
 {
     SET_AUTO_EXIT_BATCH ( true );
-    SET_NAME_OF_RUN_BATCH_BUTTON ( "Kaydet" );
+    SET_NAME_OF_RUN_BATCH_BUTTON ( tr("Save") );
 
     SET_FIRST_FOCUS_WIDGET ( m_ui->push_button_program_degistir );
 
     REGISTER_BUTTON_WIDGET ( m_ui->widget );
 
-    SET_PAGE_TITLE    (tr("VERİTABANI AYARLARI - %1 / %2").arg(VERITABANI_ISMI()).arg(VERITABANI_TANIMI()));
+    SET_PAGE_TITLE    (tr("DADABASE SETTINGS - %1 / %2").arg(VERITABANI_ISMI()).arg(VERITABANI_TANIMI()));
     SET_SETTING_NAME  ("VERITABANI_AYARLARI");
     SET_HELP_PAGE     ("veritabani_ayarlari.html");
 
@@ -58,7 +58,7 @@ void SQL_VERITABANI_AYARLARI_BATCH::SETUP_FORM ()
         DB->COMMIT_TRANSACTION();
 
         m_program_id = -1;
-        m_ui->label_adi->setText("Program Şeçili Değil");
+        m_ui->label_adi->setText(tr("Not Selected Program"));//Program Seçili Değil
         return;
     }
 
@@ -94,7 +94,7 @@ int SQL_VERITABANI_AYARLARI_BATCH::CHECK_VAR ( QObject * object )
 int SQL_VERITABANI_AYARLARI_BATCH::CHECK_RUN ()
 {
     if ( m_program_id EQ -1 ) {
-        MSG_ERROR("Bir program seçilmesi gereklidir.",m_ui->push_button_program_degistir);
+        MSG_ERROR("A program must be selected.",m_ui->push_button_program_degistir); //Bir program seçilmesi gereklidir.
         return ADAK_FAIL;
     }
 
@@ -125,7 +125,7 @@ void SQL_VERITABANI_AYARLARI_BATCH::RUN_BATCH ()
 int SQL_VERITABANI_AYARLARI_BATCH::CHECK_EXIT ()
 {
     if ( m_program_id EQ -1 ) {
-        MSG_ERROR("Bir program seçilmesi gereklidir.",m_ui->push_button_program_degistir);
+        MSG_ERROR("A program must be selected.",m_ui->push_button_program_degistir);
         return ADAK_FAIL;
     }
 

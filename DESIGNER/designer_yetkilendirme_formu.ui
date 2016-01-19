@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>Kullanıcı Yetkileri</string>
+   <string>User Authority</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_3" rowstretch="1,1,50">
    <property name="sizeConstraint">
@@ -49,7 +49,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Kullanıcı Kodu </string>
+        <string>User Code:</string>
        </property>
       </widget>
      </item>
@@ -80,7 +80,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Kullanıcı Adı</string>
+        <string>User Name:</string>
        </property>
       </widget>
      </item>
@@ -161,7 +161,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Yetkilendirme yapabilir mi ?                                   </string>
+         <string>Does User give authorization?</string>
         </property>
        </widget>
       </item>
@@ -175,12 +175,12 @@
         </property>
         <item>
          <property name="text">
-          <string>Hayır</string>
+          <string>No</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Evet</string>
+          <string>Yes</string>
          </property>
         </item>
        </widget>
@@ -194,7 +194,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Kayıt ekleyebilir mi ?                                                </string>
+         <string>Add Registration?</string>
         </property>
        </widget>
       </item>
@@ -208,12 +208,12 @@
         </property>
         <item>
          <property name="text">
-          <string>Hayır</string>
+          <string>No</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Evet</string>
+          <string>Yes</string>
          </property>
         </item>
        </widget>
@@ -227,7 +227,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Bilgisayarlar formuna girebilir mi ?                       </string>
+         <string>Enter computer form?</string>
         </property>
        </widget>
       </item>
@@ -241,12 +241,12 @@
         </property>
         <item>
          <property name="text">
-          <string>Hayır</string>
+          <string>No</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Evet</string>
+          <string>Yes</string>
          </property>
         </item>
        </widget>
@@ -260,7 +260,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Kayıt güncelleyebilir mi ?                                        </string>
+         <string>Update Registration?</string>
         </property>
        </widget>
       </item>
@@ -274,12 +274,12 @@
         </property>
         <item>
          <property name="text">
-          <string>Hayır</string>
+          <string>No</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Evet</string>
+          <string>Yes</string>
          </property>
         </item>
        </widget>
@@ -293,7 +293,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Kullanıcılar formuna girebilir mi ?                          </string>
+         <string>Enter user form?</string>
         </property>
        </widget>
       </item>
@@ -307,12 +307,12 @@
         </property>
         <item>
          <property name="text">
-          <string>Hayır</string>
+          <string>No</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Evet</string>
+          <string>Yes</string>
          </property>
         </item>
        </widget>
@@ -326,7 +326,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Kayıt silebilir mi ?                                                      </string>
+         <string>Delete registration?                                      </string>
         </property>
        </widget>
       </item>
@@ -340,12 +340,12 @@
         </property>
         <item>
          <property name="text">
-          <string>Hayır</string>
+          <string>No</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Evet</string>
+          <string>Yes</string>
          </property>
         </item>
        </widget>
@@ -359,7 +359,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Firmalar formuna girebilir mi ?                               </string>
+         <string>Enter Companies form?</string>
         </property>
        </widget>
       </item>
@@ -373,12 +373,12 @@
         </property>
         <item>
          <property name="text">
-          <string>Hayır</string>
+          <string>No</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Evet</string>
+          <string>Yes</string>
          </property>
         </item>
        </widget>
@@ -392,7 +392,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Yönetim 007 bilgilerini görebilir mi ?</string>
+         <string>See Administration 007 information?</string>
         </property>
        </widget>
       </item>
@@ -406,12 +406,12 @@
         </property>
         <item>
          <property name="text">
-          <string>Hayır</string>
+          <string>No</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Evet</string>
+          <string>Yes</string>
          </property>
         </item>
        </widget>
@@ -425,7 +425,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Veritabanını güncelleyebilir mi ?</string>
+         <string>Update Database?</string>
         </property>
        </widget>
       </item>
@@ -439,12 +439,12 @@
         </property>
         <item>
          <property name="text">
-          <string>Hayır</string>
+          <string>No</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Evet</string>
+          <string>Yes</string>
          </property>
         </item>
        </widget>
@@ -458,7 +458,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Adak Std Veritabanını güncelleyebilir mi?</string>
+         <string>Update Adak STD database?</string>
         </property>
        </widget>
       </item>
@@ -472,12 +472,12 @@
         </property>
         <item>
          <property name="text">
-          <string>Hayır</string>
+          <string>No</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Evet</string>
+          <string>Yes</string>
          </property>
         </item>
        </widget>

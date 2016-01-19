@@ -111,7 +111,7 @@ bool TABLOLARI_YAZ (QWidget * parent )
         sql_query.PREPARE_SELECT("sql_tablolar","tablo_id ,tablo_adi");
         int tablo_sayisi = sql_query.SELECT("tablo_adi");
         if ( tablo_sayisi EQ 0 ) {
-            ADAK_ERROR(QObject::tr ("Tablo bulunamadı"),NULL,parent);
+            ADAK_ERROR(QObject::tr ("Table is not found."),NULL,parent);
             return false;
         }
         int virgul_sayisi = tablo_sayisi;

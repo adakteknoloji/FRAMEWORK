@@ -118,7 +118,7 @@ QString BELGE_STRUCT_GENERATOR::CREATE_TASARIM_HEADER()
 
     QString all_include_file = "";
 
-    all_include_file.append(QString("\n\n//---------%1 BELGESI ---------//\n\n").arg(upper_belge_adi));
+    all_include_file.append(QString(QObject::tr("\n\n//---------DOCUMENT OF %1 ---------//\n\n")).arg(upper_belge_adi));
 
     all_include_file.append(CREATE_DEFINE(upper_belge_adi,"HEADER",m_header_element_count));
     all_include_file.append(CREATE_DEFINE(upper_belge_adi,"LINE",m_line_element_count));

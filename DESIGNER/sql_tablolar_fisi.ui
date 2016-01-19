@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>Tablolar</string>
+   <string>Tables</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2" rowstretch="1,1,50,1" columnstretch="1,1,50">
    <property name="sizeConstraint">
@@ -44,7 +44,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Tablo Adı </string>
+        <string>Table Name</string>
        </property>
       </widget>
      </item>
@@ -67,7 +67,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Unique Alan ID Adı </string>
+        <string>Unique Field ID Name </string>
        </property>
       </widget>
      </item>
@@ -108,7 +108,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Açıklama </string>
+        <string>Description:</string>
        </property>
       </widget>
      </item>
@@ -145,7 +145,7 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset>
+      <iconset resource="designer_icons.qrc">
        <normaloff>:/designer_icons/designer_index_button.png</normaloff>:/designer_icons/designer_index_button.png</iconset>
      </property>
      <property name="iconSize">
@@ -181,13 +181,13 @@
       </sizepolicy>
      </property>
      <property name="toolTip">
-      <string>Header Dosyası Oluştur</string>
+      <string>Create Header File</string>
      </property>
      <property name="text">
       <string/>
      </property>
      <property name="icon">
-      <iconset>
+      <iconset resource="designer_icons.qrc">
        <normaloff>:/designer_icons/designer_header_olustur_icon.png</normaloff>:/designer_icons/designer_header_olustur_icon.png</iconset>
      </property>
      <property name="iconSize">

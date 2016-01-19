@@ -39,7 +39,7 @@
      <item>
       <widget class="QPushButton" name="push_button_program_degistir">
        <property name="text">
-        <string>Değiştir</string>
+        <string>Change</string>
        </property>
       </widget>
      </item>

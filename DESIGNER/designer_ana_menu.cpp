@@ -64,7 +64,7 @@ void OPEN_DESIGNER_ANA_MENU ()
         sql_query.SET_VALUE      ( ":kullanici_id", KULLANICI_ID() );
 
         if ( sql_query.SELECT() EQ 0 ) {
-            ADAK_ERROR(QObject::tr ( "Bu kullanıcı için yetkilendirme yapılmamış."),NULL,NULL);
+            ADAK_ERROR(QObject::tr ("No authorization for this user."),NULL,NULL);//Bu kullanıcı için yetkilendirme yapılmamış.
             exit(0);
         }
     }
@@ -107,27 +107,27 @@ void DESIGNER_ANA_MENU::SETUP_FORM()
 {
     struct MENU_STRUCT MENULER[] = {
 
-        { BOS_MENU_1,                "",0,"", "",0,"",0, MENU_SAYFADA },
-        { MENU_1,                    "",0,"", "",0,"",0, MENU_SAYFADA },
+            { BOS_MENU_1,                "",0,"", "",0,"",0, MENU_SAYFADA },
+            { MENU_1,                    "",0,"", "",0,"",0, MENU_SAYFADA },
             { MENU_SQL_DESIGNER,         tr ( "SQL DESIGNER" )  , MENU_1,":/designer_icons/designer_database.png", "",0,"",0 ,MENU_SAYFADA},
-            { MENU_BELGE_DESIGNER,       tr ( "BELGE DESIGNER" ), MENU_1,":/designer_icons/designer_reports.png", "",0,"",0 ,MENU_SAYFADA},
-        { MENU_2,                    "",0,"", "",0,"",0, MENU_SAYFADA },
-            { MENU_HEADER_OLUSTUR,       tr("HEADER OLUŞTUR"),MENU_2,":/designer_icons/designer_header_olustur_icon.png", "",0,"",0 ,MENU_SAYFADA},
-            { MENU_CIKIS,                tr("ÇIKIŞ"),         MENU_2,":/designer_icons/designer_exit_button.png", "",0,"",0 ,MENU_SAYFADA},
-        { BOS_MENU_2,                "",0,"", "",0,"",0, MENU_SAYFADA },
+            { MENU_BELGE_DESIGNER,       tr ( "DOCUMENT DESIGNER" ), MENU_1,":/designer_icons/designer_reports.png", "",0,"",0 ,MENU_SAYFADA},
+            { MENU_2,                    "",0,"", "",0,"",0, MENU_SAYFADA },
+            { MENU_HEADER_OLUSTUR,       tr ("CREATE HEADER"),MENU_2,":/designer_icons/designer_header_olustur_icon.png", "",0,"",0 ,MENU_SAYFADA},
+            { MENU_CIKIS,                tr ("EXIT"),         MENU_2,":/designer_icons/designer_exit_button.png", "",0,"",0 ,MENU_SAYFADA},
+            { BOS_MENU_2,                "",0,"", "",0,"",0, MENU_SAYFADA },
 
-        { MENU_YONETIM, "Yönetim", 0, "" , "", 0, "", 0, MENU_TOPMENUDE }  ,
-            { MENU_007_BILGILERI,         tr ( "007 Bilgileri" )           ,     MENU_YONETIM,"", "" , 0, "", 0, MENU_TOPMENUDE},
+            { MENU_YONETIM,              tr ("Administration"), 0, "" , "", 0, "", 0, MENU_TOPMENUDE }  ,
+            { MENU_007_BILGILERI,        tr ( "007 Informations" )           ,     MENU_YONETIM,"", "" , 0, "", 0, MENU_TOPMENUDE},
 
-        {MENU_SISTEM, "Sistem", 0, "" , "", 0, "", 0, MENU_TOPMENUDE },
-            { MENU_KULLANICILAR,          tr ( "Kullanıcılar" ),            MENU_SISTEM,"", "" , 0, "", 0, MENU_TOPMENUDE},
-            { MENU_BILGISAYARLAR,         tr ( "Bilgisayarlar" ),           MENU_SISTEM,"", "" , 0, "", 0, MENU_TOPMENUDE},
-            { MENU_VERITABANLARI,         tr ( "Veritabanları/Şirketler" ), MENU_SISTEM,"", "" , 0, "", 0, MENU_TOPMENUDE},
-            { MENU_VERITABANI_BILGILERI,  tr ( "Veritabanı Ayarları" )    , MENU_SISTEM,"", "" , 0, "", 0, MENU_TOPMENUDE},
-            { MENU_007_YONETIM,           tr ( "007 Yönetim" ),             MENU_SISTEM,"", "" , 0, "", 0, MENU_TOPMENUDE},
+            {MENU_SISTEM,                 tr ("System"), 0, "" , "", 0, "", 0, MENU_TOPMENUDE },
+            { MENU_KULLANICILAR,          tr ( "Users" ),            MENU_SISTEM,"", "" , 0, "", 0, MENU_TOPMENUDE},
+            { MENU_BILGISAYARLAR,         tr ( "Computers" ),           MENU_SISTEM,"", "" , 0, "", 0, MENU_TOPMENUDE},
+            { MENU_VERITABANLARI,         tr ( "Databases/Companies" ), MENU_SISTEM,"", "" , 0, "", 0, MENU_TOPMENUDE},
+            { MENU_VERITABANI_BILGILERI,  tr ( "Database Settings" )    , MENU_SISTEM,"", "" , 0, "", 0, MENU_TOPMENUDE},
+            { MENU_007_YONETIM,           tr ( "007 Administration" ),             MENU_SISTEM,"", "" , 0, "", 0, MENU_TOPMENUDE},
 
-        { MENU_YARDIM, "Yardım", 0, "" , "", 0, "", 0, MENU_TOPMENUDE },
-            {MENU_HAKKINDA, tr ( "Hakkında" ),     MENU_YARDIM,"", "" , 0, "", 0, MENU_TOPMENUDE },
+            { MENU_YARDIM,                tr ("Help"), 0, "" , "", 0, "", 0, MENU_TOPMENUDE },
+            {MENU_HAKKINDA,               tr ( "About" ),     MENU_YARDIM,"", "" , 0, "", 0, MENU_TOPMENUDE },
 
 
         { 0       , ""   , 0, "","",0,"",0,MENU_SAYFADA }
@@ -195,16 +195,16 @@ void DESIGNER_ANA_MENU::SLOT_HEADER_OLUSTUR()
     SQL_QUERY sql_query ( DB );
     sql_query.PREPARE_SELECT ( "sql_tablolar","tablo_id" );
     if ( sql_query.SELECT() EQ 0 ) {
-        MSG_WARNING(tr ( "Kayıtlı tablo olmadığından herhangi bir header dosyası yaratılmadı"),NULL);
+        MSG_WARNING(tr ( "Table is not registered in the system, header filehas not been created."),NULL);//Kayıtlı tablo olmadığından herhangi bir header dosyası yaratılmadı.
         return;
     }
     if ( HEADER_DOSYASI_YARAT ( this ) EQ true ) {
         OPEN_HEADER_DOSYASI_OLUSTUR ( -1 );
-        MSG_WARNING(tr  ( "Header dosyası başarıyla yaratıldı" ) , NULL);
+        MSG_WARNING(tr  ( "Header file has been successfull created. " ) , NULL);//Header dosyası başarıyla yaratıldı
         return;
     }
 
-    MSG_WARNING(tr ( "Dosya yaratılamadı" ) , NULL);
+    MSG_WARNING(tr ( "File has not been created." ) , NULL);//Dosya yaratılamadı.
 }
 
 /**************************************************************************************
@@ -271,7 +271,7 @@ void DESIGNER_ANA_MENU::KULLANICI_YETKILERINI_AYARLA ()
     sql_query.SET_VALUE ( ":kullanici_id", KULLANICI_ID() );
     if ( sql_query.SELECT() EQ 0 ) {
 
-        MSG_WARNING(tr ( "Bu kullanıcı için yetkilendirme yapılmamış." ) , NULL );
+        MSG_WARNING(tr ( "No authorization for this user." ) , NULL );//Bu kullanıcı için yetkilendirme yapılmamış.
         return;
     }
 

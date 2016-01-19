@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>INDEXLER</string>
+   <string>INDEXES</string>
   </property>
   <layout class="QGridLayout" name="gridLayout" rowstretch="5,50,5" columnstretch="50,10">
    <property name="sizeConstraint">
@@ -48,22 +48,22 @@
      </column>
      <column>
       <property name="text">
-       <string>Alan Adı 1</string>
+       <string>Field Name 1</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Alan Adı 2</string>
+       <string>Field Name 2</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Alan Adı 3</string>
+       <string>Field Name 3</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Alan Adı 4</string>
+       <string>Field Name 4</string>
       </property>
      </column>
     </widget>

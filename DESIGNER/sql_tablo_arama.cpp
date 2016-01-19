@@ -40,13 +40,13 @@ void SQL_TABLO_ARAMA::SETUP_FORM ()
 
     REGISTER_ARAMA_BUTTONS_WIDGET ( m_ui->widget );
 
-    SET_HEADERS ( QStringList() << tr("tablo_id") << tr("Tablo Adı")<<tr("Açıklama"));
+    SET_HEADERS ( QStringList() << tr("tablo_id") << tr("Table Name")<<tr("Description"));
 
     SET_SORTING ( false );
 
     SET_FIRST_FOCUS_WIDGET ( m_ui->line_edit_tablo_adi );
 
-    SET_PAGE_TITLE    (tr("SQL TABLO ARAMA"));
+    SET_PAGE_TITLE    (tr("SEARCH SQL TABLE "));
 
     SET_HELP_PAGE     ("sql_tablo_arama.html");
 
@@ -58,7 +58,7 @@ void SQL_TABLO_ARAMA::SETUP_FORM ()
 
     SET_ENTER_KEY_FOR_RUN_BATCH ( true );
 
-    SET_FIND_BUTTON_NAME ( "Bul" );
+    SET_FIND_BUTTON_NAME ( "Find" );
 
     m_ui->line_edit_tablo_adi->setMaxLength(50);
 }

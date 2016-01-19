@@ -89,7 +89,7 @@ p, li { white-space: pre-wrap; }
       </font>
      </property>
      <property name="text">
-      <string>ADAK DESİGNER</string>
+      <string>ADAK DESIGNER</string>
      </property>
      <property name="scaledContents">
       <bool>false</bool>

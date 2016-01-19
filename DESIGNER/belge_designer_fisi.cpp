@@ -73,12 +73,12 @@ void BELGE_DESIGNER_FISI::SETUP_FORM()
 
     line_edit_belge_adi->setMaxLength(30);
 
-    SET_PAGE_TITLE(tr("BELGE DESIGNER"));
+    SET_PAGE_TITLE(tr("DOCUMENT DESIGNER"));
 
     table_widget_degiskenler->setHorizontalHeaderLabels(QStringList()<<"row_id"<<"fis_id"   <<"order_column"
-                                                                     <<tr("Değişken Grubu") <<tr("Değişken Kodu") <<tr("Değişken Adı")
-                                                                     <<tr("Yazıtipi Boyutu(pt)") << tr( "Monospace mi ?" )<< tr( "Karakter Boyutu" )
-                                                                     <<tr("Değişken Align") <<tr("")<<tr("") );
+                                                                     <<tr("Group of Variable") <<tr("Variable Code") <<tr("Variable Name")
+                                                                     <<tr("Font Size(pt)") << tr( "Is Monospace ?" )<< tr( "Character Size" )
+                                                                     <<tr("Variable Align") <<tr("")<<tr("") );
 
     QHeaderView * header =  table_widget_degiskenler->horizontalHeader();
 
@@ -179,9 +179,9 @@ int BELGE_DESIGNER_FISI::GET_FIS_RECORD ( int record_id )
         QComboBox * combo_edit_align = ( QComboBox * ) table_widget_degiskenler->cellWidget( row_number, DEGISKEN_ALIGN_COLUMN);
         combo_edit_align->setCurrentIndex( combo_edit_align->findText(GET_BELGE_ALIGN_STR(query.VALUE(5).toInt())));
 
-        QString monospace_mi = "Hayır";
+        QString monospace_mi = tr("No");
         if ( query.VALUE( 7 ).toInt() EQ 1 ) {
-            monospace_mi = "Evet";
+            monospace_mi = tr("Yes");
         }
         QComboBox * combo_monospace_mi = ( QComboBox * ) table_widget_degiskenler->cellWidget( row_number, DEGISKEN_FONT_TYPE_COLUMN );
         combo_monospace_mi->setCurrentIndex( combo_monospace_mi->findText( monospace_mi ));
@@ -211,7 +211,7 @@ void BELGE_DESIGNER_FISI::SET_LINE_DEFAULTS ( int row_number )
     FILL_DEGISKEN_GRUBU_COMBOBOX( combo_box_grup );
     FILL_ALIGN_COMBOBOX( combo_edit_align );
 
-    combo_box_monospace_mi->addItems( QStringList() << tr("Evet") << tr( "Hayır") );
+    combo_box_monospace_mi->addItems( QStringList() << tr("Yes") << tr("No") );
 
     comma_edit_size->SET_PRECISION       ( 0    );
     comma_edit_size->VIRGULSUZ_CALIS     ( true );
@@ -233,7 +233,7 @@ int BELGE_DESIGNER_FISI::CHECK_FIS_FORM_VAR ( QObject * object )
 {
     if ( object EQ line_edit_belge_adi ) {
         if ( line_edit_belge_adi->text().size() > 30 ) {
-            MSG_ERROR(tr("Belge adı 30 karakterden daha uzun olamaz."),NULL);
+            MSG_ERROR(tr("Document name can not be longer than 30 characters."),NULL);//Belge adı 30 karakterden daha uzun olamaz.
             return ADAK_FAIL_UNDO;
         }
     }
@@ -247,7 +247,7 @@ int BELGE_DESIGNER_FISI::CHECK_FIS_FORM_VAR ( QObject * object )
 int BELGE_DESIGNER_FISI::CHECK_FIS_FORM_EMPTY()
 {
     if ( line_edit_belge_adi->text().isEmpty() EQ true ) {
-        MSG_ERROR(tr("Hata! Belge adı boş bırakılamaz."), line_edit_belge_adi );
+        MSG_ERROR(tr("Error! Document name can not be empty."), line_edit_belge_adi );//Hata! Belge adı boş bırakılamaz.
         return ADAK_FAIL;
     }
 
@@ -477,11 +477,11 @@ int BELGE_DESIGNER_FISI::CHECK_LINE_EMPTY(int row_number)
     QCommaEdit * comma_edit_size = (QCommaEdit *)table_widget_degiskenler->cellWidget(row_number,DEGISKEN_FONT_SIZE_COLUMN);
 
     if (line_edit_adi->text().isEmpty() EQ true) {
-        MSG_ERROR(tr("Değişken adı boş bırakılamaz."),line_edit_adi);
+        MSG_ERROR(tr("Variable name can not be empty."),line_edit_adi);//Değişken adı boş bırakılamaz.
         return ADAK_FAIL;
     }
     if (comma_edit_size->GET_INTEGER() < 1) {
-        MSG_ERROR(tr("Değişken boyutları 0pt dan büyük olmalı."),comma_edit_size);
+        MSG_ERROR(tr("Variable size must be greater than 0pt."),comma_edit_size);//Değişken boyutları 0pt dan büyük olmalı.
         return ADAK_FAIL;
     }
 
@@ -502,7 +502,7 @@ int BELGE_DESIGNER_FISI::CHECK_ADD_LINE(int record_id, int row_number)
     query.PREPARE_SELECT("blg_belgeler","belge_id","belge_adi = :belge_adi");
     query.SET_VALUE(":belge_adi",line_edit_adi->text());
     if (query.SELECT() NE 0) {
-        MSG_ERROR(tr("Değişken adı başka bir kayıtta kullanılmış."),line_edit_adi);
+        MSG_ERROR(tr("The variable name used in another record."),line_edit_adi);//Değişken adı başka bir kayıtta kullanılmış.
         return ADAK_FAIL;
     }
 
@@ -563,7 +563,7 @@ int BELGE_DESIGNER_FISI::CHECK_UPDATE_LINE ( int record_id, int row_number )
     query.SET_VALUE(":belge_id" ,record_id);
 
     if (query.SELECT() NE 0) {
-        MSG_ERROR(tr("Değişken adı başka bir kayıtta kullanılmış."),line_edit_adi);
+        MSG_ERROR(tr("The variable name used in another record."),line_edit_adi);//Değişken adı başka bir kayıtta kullanılmış.
         return ADAK_FAIL;
     }
 
@@ -669,6 +669,6 @@ void BELGE_DESIGNER_FISI::SAVER_BUTTON_CLICKED(QAbstractButton *button, int reco
 {
     if (button EQ push_button_header_olustur) {
         OPEN_HEADER_DOSYASI_OLUSTUR(record_id);
-        MSG_INFO(tr("Header dosyası oluşturuldu."),NULL);
+        MSG_INFO(tr("Header file was created."),NULL);//Header dosyası oluşturuldu.
     }
 }
