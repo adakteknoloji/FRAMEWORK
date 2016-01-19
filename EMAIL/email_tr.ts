@@ -254,13 +254,13 @@ Socket Hatasi : %1 %2 </oldsource>
 </source>
         <oldsource>HELLO server
 </oldsource>
-        <translation type="unfinished"></translation>
+        <translation>MERHABA server</translation>
     </message>
     <message>
         <location filename="email_sender.cpp" line="736"/>
         <source>These e-mail address are wrong.</source>
         <oldsource>Aşagıdaki e-mail adres(ler)i hatalıdır. </oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Aşagıdaki e-mail adres(ler)i hatalıdır.</translation>
     </message>
     <message>
         <location filename="email_sender.cpp" line="737"/>
@@ -268,34 +268,34 @@ Socket Hatasi : %1 %2 </oldsource>
 Incorrect E-Mail Addresses: </source>
         <oldsource>
 Hatalı E-Mail Adresleri: </oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Hatalı E-Posta Adresleri:</translation>
     </message>
     <message>
         <location filename="email_sender.cpp" line="744"/>
         <source>Do you want to send the message to current e-mail?</source>
         <oldsource>Geçerli olan e-maillere mesajı göndermek ister misiniz?</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Geçerli olan e-maillere mesajı göndermek ister misiniz?</translation>
     </message>
     <message>
         <location filename="email_sender.cpp" line="765"/>
         <source>No e-mail address will be sent.</source>
         <oldsource>Gönderilecek e-mail adresi bulunamadı.</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Gönderilecek e-mail adresi bulunamadı.</translation>
     </message>
     <message>
         <location filename="email_sender.cpp" line="821"/>
         <source>It below error(s) occured during sending e-mail.</source>
-        <translation type="unfinished"></translation>
+        <translation>E-mail gönderimi esnasında aşagıdaki hata(lar) alındı.</translation>
     </message>
     <message>
         <location filename="email_sender.cpp" line="835"/>
         <source>There was an error at e-mails when sending e-mail.</source>
-        <translation type="unfinished"></translation>
+        <translation>E-mail gönderimi esnasında aşagıdaki e-mail(ler)de hata oluştu.</translation>
     </message>
     <message>
         <location filename="email_sender.cpp" line="858"/>
         <source>There was an error can not be determined.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tespit edilemeyen hata oluştu.</translation>
     </message>
 </context>
 </TS>
