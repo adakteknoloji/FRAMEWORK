@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>390</width>
-    <height>357</height>
+    <width>583</width>
+    <height>425</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -39,24 +39,24 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>390</width>
-     <height>23</height>
+     <width>583</width>
+     <height>25</height>
     </rect>
    </property>
   </widget>
   <action name="action_hakkinda">
    <property name="text">
-    <string>Hakkında</string>
+    <string>About</string>
    </property>
   </action>
   <action name="action_cikis">
    <property name="text">
-    <string>Çıkış</string>
+    <string>Exit</string>
    </property>
   </action>
   <action name="actionYetk_lend_rme">
    <property name="text">
-    <string>Yetkılendırme</string>
+    <string>Authorization</string>
    </property>
   </action>
  </widget>
