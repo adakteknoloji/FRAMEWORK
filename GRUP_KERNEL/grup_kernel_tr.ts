@@ -255,50 +255,50 @@
     <message>
         <location filename="grup_secim_kernel.cpp" line="38"/>
         <source>Accounting-account-Groups</source>
-        <translation type="unfinished"></translation>
+        <translation>Muhasebe-Hesap-Grupları</translation>
     </message>
     <message>
         <location filename="grup_secim_kernel.cpp" line="39"/>
         <source>GROUP SELECTION</source>
         <oldsource>GRUP SEÇİMİ</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>GRUP SEÇİMİ</translation>
     </message>
     <message>
         <location filename="grup_secim_kernel.cpp" line="91"/>
         <location filename="grup_secim_kernel.cpp" line="97"/>
         <source>Group Code</source>
         <oldsource>Grup Kodu</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>Grup Kodu</translation>
     </message>
     <message>
         <location filename="grup_secim_kernel.cpp" line="91"/>
         <source>Sub-Group 
 Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt-grup Sayısı</translation>
     </message>
     <message>
         <location filename="grup_secim_kernel.cpp" line="92"/>
         <location filename="grup_secim_kernel.cpp" line="98"/>
         <source>Number of Records 
 In Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruptaki Kayıt Sayısı</translation>
     </message>
     <message>
         <location filename="grup_secim_kernel.cpp" line="97"/>
         <source>Sub Group 
 Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Alt Gruo Numarası</translation>
     </message>
     <message>
         <location filename="grup_secim_kernel.cpp" line="92"/>
         <location filename="grup_secim_kernel.cpp" line="98"/>
         <source>id</source>
-        <translation type="unfinished"></translation>
+        <translation>id</translation>
     </message>
     <message>
         <location filename="grup_secim_kernel.cpp" line="92"/>
         <source> </source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
