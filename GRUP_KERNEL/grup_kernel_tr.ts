@@ -306,7 +306,7 @@ Number</source>
     <message>
         <location filename="base_grup_kernel.cpp" line="95"/>
         <source>Entries are shown the desired program and the module ID must be set.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gösterilmesi istenen kayıtların program ve modul idsinin setlenmesi gerekir.</translation>
     </message>
 </context>
 <context>
@@ -314,22 +314,22 @@ Number</source>
     <message>
         <location filename="tree_kernel.cpp" line="95"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Yardım</translation>
     </message>
     <message>
         <location filename="tree_kernel.cpp" line="149"/>
         <source>Add Item</source>
-        <translation type="unfinished"></translation>
+        <translation>Kayıt ekle</translation>
     </message>
     <message>
         <location filename="tree_kernel.cpp" line="150"/>
         <source>Delete Item</source>
-        <translation type="unfinished"></translation>
+        <translation>Kayıt Sil</translation>
     </message>
     <message>
         <location filename="tree_kernel.cpp" line="151"/>
         <source>Update Item</source>
-        <translation type="unfinished"></translation>
+        <translation>Kayıt Güncelle</translation>
     </message>
 </context>
 <context>
@@ -337,7 +337,7 @@ Number</source>
     <message>
         <location filename="tree_secim_kernel.cpp" line="284"/>
         <source>Add Selected Row(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Seçili Satır(ları) Ekle</translation>
     </message>
 </context>
 </TS>
