@@ -281,7 +281,7 @@ void TREE_SECIM_KERNEL::SET_TREE_WIDGET_DEFAULTS()
 
     if (m_is_multi_row EQ true) {
         QToolButton * button = new QToolButton;
-        button->setText ( tr("Seçili Satır(lar)ı Ekle") );
+        button->setText ( tr("Add Selected Row(s)") );
         button->setIcon ( QIcon ( ":/kernel_icons/kernel_ekle_ikonu.png" ) );
         button->setToolButtonStyle( Qt::ToolButtonTextUnderIcon );
 

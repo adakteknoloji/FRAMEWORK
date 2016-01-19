@@ -40,10 +40,10 @@ GRUP_KERNEL::GRUP_KERNEL (int program_id , int module_id , QString p_win_title, 
 
     SET_RIGHT_ALIGN_COLUMNS ( QList<int>() << 2 << 3 << 4);
 
-    SET_COLUMN_HEADERS ( QStringList()<<tr ( "Grup Kodu")           <<tr ( "Grup İsmi" )
-                                      <<tr ( "Alt Grup Sayısı")     <<tr ( "Gruptaki Kayıt Sayısı")
-                                      <<tr ( "grup_id")             <<tr ( "grup_parent_id" )
-                                      <<tr ( "grup_son_seviye_mi ") <<tr ( "tam_grup_kodu" ) );
+    SET_COLUMN_HEADERS ( QStringList()<<tr ( "Group Code")           <<tr ( "Group Name" )
+                                      <<tr ( "Number of Sub Group ")     <<tr ( "Number of Record in Group")
+                                      <<tr ( "group_id")             <<tr ( "group_parent_id" )
+                                      <<tr ( "is_group_last_level ") <<tr ( "Full_group_code" ) );
 
     m_grp_kodu_column              = 0;
     m_grp_isim_column              = 1;
@@ -61,16 +61,16 @@ GRUP_KERNEL::GRUP_KERNEL (int program_id , int module_id , QString p_win_title, 
         SET_PAGE_TITLE( p_win_title );
     }
     else {
-        SET_PAGE_TITLE(tr("GRUPLAR"));
+        SET_PAGE_TITLE(tr("GROUPs"));
     }
 
     if( p_help_page.isEmpty() EQ true ) {
-        SET_HELP_PAGE( tr("gruplar") );
+        SET_HELP_PAGE( tr("groups") );
     }
     else {
         SET_HELP_PAGE( p_help_page );
     }
-    SET_SETTING_NAME    ( tr("GRUPLAR") );
+    SET_SETTING_NAME    ( tr("GROUPS") );
 
     INIT_GRUP_KERNEL( this , db );
 }
@@ -94,7 +94,7 @@ void GRUP_KERNEL::INIT_GRUP_KERNEL ( QWidget * , ADAK_SQL * db )
 
     INIT_KERNEL ( this, db );
 
-    SET_ACTION_MENU_TEXT ( "Alt Grup Ekle", "Grubu Güncelle", "Grubu Sil" );
+    SET_ACTION_MENU_TEXT ( tr("Add Sub-gruop"), tr("Update Group"), tr("Delete Group") );
 
     m_ui->tree_widget->hideColumn ( m_grp_id_column );
     m_ui->tree_widget->hideColumn ( m_grp_parent_id_column );
@@ -120,12 +120,12 @@ void GRUP_KERNEL::ADD_ITEM (QObject *button, QStringList column_datas )
 
     if ( button EQ m_ui->push_button_add_alt_grup OR button->metaObject()->className() EQ QAction::staticMetaObject.className()) {
         if (m_ui->tree_widget->topLevelItemCount() EQ 0) {
-            MSG_INFO("Açılmış olan ana grup bulunmamaktadır.Önce ana grup açmalısınız." , NULL);
+            MSG_INFO(tr("There are not opened main group. Firstly, you must open a group.") , NULL);//Açılmış olan ana grup bulunmamaktadır.Önce ana grup açmalısınız.
             return;
         }
 
         if (m_ui->tree_widget->currentItem() EQ NULL) {
-            MSG_INFO("Alt grup ekleyebilmek için önce ana grup seçmelisiniz." , NULL);
+            MSG_INFO(tr("You must select a main group for adding sub-group.") , NULL);//Alt grup ekleyebilmek için önce ana grup seçmelisiniz.
             return;
         }
 
@@ -258,11 +258,11 @@ int GRUP_KERNEL::CHECK_DELETE_ITEM (QStringList item)
     }
 
     if ( item.at(2).toInt() NE 0 ) {
-        MSG_ERROR(tr ( "Grubu silebilmek için,önce grubun alt gruplarını silmelisiniz!.."),NULL);
+        MSG_ERROR(tr ( "You must delete sub-group for deleting this group. "),NULL);//Grubu silebilmek için,önce grubun alt gruplarını silmelisiniz!..
         return ADAK_FAIL;
     }
 
-    ADAK_MSG_ENUM answer = MSG_YES_NO(tr ( "'%1 %2' grubu silinecek." ).arg(item.at(7)).arg(item.at(1)),NULL);
+    ADAK_MSG_ENUM answer = MSG_YES_NO(tr ( "Group will be deleted '%1 %2'" ).arg(item.at(7)).arg(item.at(1)),NULL);
 
     if ( answer EQ ADAK_NO OR answer EQ ADAK_CANCEL) {
          return ADAK_FAIL;
@@ -288,7 +288,7 @@ int GRUP_KERNEL::CHECK_DELETE_ITEM (QStringList item)
     }
 
     if ( item.at( 3 ).toInt() NE 0  ) {
-        MSG_ERROR(tr ( "Gruba kayıt yapılmış. Grubu silemezsiniz.." ),NULL);
+        MSG_ERROR(tr ( "It was recorded in the group. You can not delete the group..." ),NULL);//Gruba kayıt yapılmış. Grubu silemezsiniz..
         return ADAK_FAIL;
     }
 
@@ -345,7 +345,7 @@ void GRUP_KERNEL::DELETE_ITEM (QStringList item)
 
     if ( sql_query.SELECT() EQ 0 ) {
         m_db->CANCEL_TRANSACTION();
-        MSG_ERROR(tr ( "Grubun üst grubu bilgisi alınmaya çalışırken hata oluştu."),NULL);
+        MSG_ERROR(tr ("An error occurred while retrieving top group information for the group."),NULL);//Gruba ait üst grup bilgileri alınırken hata oluştu.
         return;
     }
 

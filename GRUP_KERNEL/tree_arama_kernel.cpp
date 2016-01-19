@@ -21,7 +21,7 @@ TREE_ARAMA_KERNEL::TREE_ARAMA_KERNEL ( QWidget* parent ) : BASE_EVENT_KERNEL ( p
 {
     m_kernel_button_text        = "";
 
-    p_name_of_run_search_button = "Ara";
+    p_name_of_run_search_button = "Search";
     p_icon_file_name            = ":/kernel_icons/kernel_run_icon.png";
     close_event_started         = false;
     p_run_search_on_enter       = false;

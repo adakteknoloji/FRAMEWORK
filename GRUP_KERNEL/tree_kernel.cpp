@@ -92,7 +92,7 @@ void TREE_KERNEL::REGISTER_HELP_BUTTON ( QAbstractButton * button )
 {
     button -> setSizePolicy( QSizePolicy::Fixed, QSizePolicy::Fixed);
 
-    button -> setText(tr("Yardım"));
+    button -> setText(tr("Help"));
     button -> setIcon(QIcon(":/kernel_icons/kernel_yardim_ikonu.png"));
     button -> setIconSize(QSize(24,32));
     button -> setToolTip("F1");
@@ -146,9 +146,9 @@ void TREE_KERNEL::SET_TREE_WIDGET_DEFAULTS()
     item_delete  = new QAction(this);
     item_update  = new QAction(this);
 
-    item_add->setText    ( "Add Item" );
-    item_delete->setText ( "Delete Item" );
-    item_update->setText ( "Update Item" );
+    item_add->setText    ( tr("Add Item") );
+    item_delete->setText ( tr("Delete Item") );
+    item_update->setText ( tr("Update Item") );
 
     m_tree_widget->addAction ( item_add );
     m_tree_widget->addAction ( item_delete );

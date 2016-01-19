@@ -77,10 +77,10 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>Grubu Sil</string>
+           <string>Delete Group</string>
           </property>
           <property name="icon">
-           <iconset>
+           <iconset resource="../KERNEL/kernel_icons.qrc">
             <normaloff>:/kernel_icons/kernel_sil_ikonu.png</normaloff>:/kernel_icons/kernel_sil_ikonu.png</iconset>
           </property>
          </widget>
@@ -88,10 +88,10 @@
         <item row="0" column="4">
          <widget class="QToolButton" name="toolButton_help_button">
           <property name="text">
-           <string>Yardim</string>
+           <string>Help</string>
           </property>
           <property name="icon">
-           <iconset>
+           <iconset resource="../KERNEL/kernel_icons.qrc">
             <normaloff>:/kernel_icons/kernel_yardim_ikonu.png</normaloff>:/kernel_icons/kernel_yardim_ikonu.png</iconset>
           </property>
           <property name="toolButtonStyle">
@@ -108,10 +108,10 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>Alt Grup Ekle</string>
+           <string>Add Sub-Group</string>
           </property>
           <property name="icon">
-           <iconset>
+           <iconset resource="../KERNEL/kernel_icons.qrc">
             <normaloff>:/kernel_icons/kernel_alt_grup_ekleme_ikonu.png</normaloff>:/kernel_icons/kernel_alt_grup_ekleme_ikonu.png</iconset>
           </property>
          </widget>
@@ -125,10 +125,10 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>Ana Grup Ekle</string>
+           <string>Add Main Group</string>
           </property>
           <property name="icon">
-           <iconset>
+           <iconset resource="../KERNEL/kernel_icons.qrc">
             <normaloff>:/kernel_icons/kernel_ana_grup_ekleme_ikonu.png</normaloff>:/kernel_icons/kernel_ana_grup_ekleme_ikonu.png</iconset>
           </property>
          </widget>

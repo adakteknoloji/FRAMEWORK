@@ -92,7 +92,8 @@ void BASE_GRUP_KERNEL::CREATE_SELECT_QUERY ( QString * table_name , QString * co
                                  .arg(m_program_id));
     }
     else {
-        ADAK_WARNING (qApp->tr("Gösterilmesi istenen kayitların program ve modul idsini setlenmesi gerekir."), NULL, NULL);
+        ADAK_WARNING (qApp->QObject::tr("Entries are shown the desired program and the module ID must be set."), NULL, NULL);
+        //Gösterilmesi istenen kayitların program ve modul idsini setlenmesi gerekir.
         return;
     }
 

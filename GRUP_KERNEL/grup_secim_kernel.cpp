@@ -35,8 +35,8 @@ GRUP_SECIM_KERNEL::GRUP_SECIM_KERNEL ( int program_id, int module_id, bool * ids
 
     m_ids_changed      = ids_changed;
 
-    SET_HELP_PAGE    ( tr("muhasebe-hesap-gruplari") );
-    SET_PAGE_TITLE   ( tr("GRUP SEÇİMİ") );
+    SET_HELP_PAGE    ( tr("Accounting-account-Groups") );
+    SET_PAGE_TITLE   ( tr("GROUP SELECTION") );
     SET_SETTING_NAME ( "GRUP_TREE_SECIMI" );    
 }
 
@@ -88,14 +88,14 @@ void GRUP_SECIM_KERNEL::INIT_GRUP_SECIM_KERNEL ( QWidget * , ADAK_SQL *db )
     int hide_column =  4;
 
     if ( m_is_multi_row EQ true ) {
-        SET_COLUMN_HEADERS ( QStringList()<<tr("")<<tr ( "Grup Kodu")<<tr ( "Grup İsmi" )<<tr ( "Alt Grup \nSayısı" )
-                                          <<tr( "Gruptaki \nKayıt Sayısı")<< tr ( "id")<<tr(" ") );
+        SET_COLUMN_HEADERS ( QStringList()<<tr("")<<tr ( "Group Code")<<tr ( "Group Name" )<<tr ( "Sub-Group \nNumber" )
+                                          <<tr( "Number of Records \nIn Group")<< tr ( "id")<<tr(" ") );
 
         hide_column = 5 ;
     }
     else {
-        SET_COLUMN_HEADERS ( QStringList()<<tr ( "Grup Kodu")<<tr ( "Grup İsmi" )<<tr ( "Alt Grup\nSayısı" )
-                                          <<tr ( "Gruptaki \nKayıt Sayısı")<< tr ( "id"));
+        SET_COLUMN_HEADERS ( QStringList()<<tr ( "Group Code")<<tr ( "Group Name" )<<tr ( "Sub Group \nNumber" )
+                                          <<tr ( "Number of Records \nIn Group")<< tr ( "id"));
     }
 
     if ( db NE NULL ) {

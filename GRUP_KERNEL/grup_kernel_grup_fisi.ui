@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>Alt Grup Ekleme</string>
+   <string>Add Sub-Group</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0" rowspan="2" colspan="4">
@@ -84,7 +84,7 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>Grup Kodu </string>
+      <string>Group Code:</string>
      </property>
     </widget>
    </item>
@@ -97,7 +97,7 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>Grup Adı</string>
+      <string>Group Name:</string>
      </property>
     </widget>
    </item>

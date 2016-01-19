@@ -52,13 +52,13 @@ void GRUP_KERNEL_GRUP_FISI::SETUP_FORM()
     AUTOSTART_FIS_KERNEL( m_grup_id );
 
     if ( m_islem_turu EQ ENUM_ANA_GRUP ) {
-        SET_PAGE_TITLE   ( tr ("ANA GRUPLAR" ) );
-        SET_HELP_PAGE    ( tr ("ana-gruplar") );
+        SET_PAGE_TITLE   ( tr ("MAIN GROUPS" ) );
+        SET_HELP_PAGE    ( tr ("main-groups") );
         SET_SETTING_NAME ( "ANA_GRUPLAR" );
     }
     else {
-        SET_PAGE_TITLE   ( tr ("ALT GRUPLAR" ) );
-        SET_HELP_PAGE    ( tr ("alt-gruplar") );
+        SET_PAGE_TITLE   ( tr ("SUB_GROUPS" ) );
+        SET_HELP_PAGE    ( tr ("sub-groups") );
         SET_SETTING_NAME ( "ALT_GRUPLAR" );
     }
 
@@ -72,7 +72,7 @@ void GRUP_KERNEL_GRUP_FISI::SETUP_FORM()
     line_edit_grup_kodu->setMaxLength   ( 15 );
 
     if ( grup_ekleme_db EQ NULL ) {
-        qDebug ( "Database null olarak setlenmis" );
+        qDebug ( tr("Database was setting null.") );//Database null olarak setlenmis.
         return;
     }
 
@@ -120,8 +120,8 @@ void GRUP_KERNEL_GRUP_FISI::SETUP_FORM()
     tablewidget_alt_gruplar->setColumnWidth ( TAM_GRUP_KODU_COLUMN            , 150 );
     tablewidget_alt_gruplar->setColumnWidth ( GRUP_ISMI_COLUMN                , 280 );
 
-    tablewidget_alt_gruplar->setHorizontalHeaderLabels ( QStringList()<<"row_id"<<"grup_id"<<"satir_order"<< tr("Ana Grup Kodu") << tr("Grup Kodu")
-                                                                      <<tr("Tam Grup Kodu")<<tr("Grup Adı")<<""<<"");
+    tablewidget_alt_gruplar->setHorizontalHeaderLabels ( QStringList()<<"row_id"<<"grup_id"<<"satir_order"<< tr("Main Group Code") << tr("Group Code")
+                                                                      <<tr("Full Group Code")<<tr("Group Name")<<""<<"");
 
     tablewidget_alt_gruplar->setSelectionMode ( QAbstractItemView::NoSelection );
     tablewidget_alt_gruplar->setFocus         ( Qt::OtherFocusReason );
@@ -266,8 +266,8 @@ int GRUP_KERNEL_GRUP_FISI::CHECK_FIS_FORM_VAR ( QObject * object )
         select_query.SET_VALUE      (":program_id"    , m_base_grup_kernel_ptr->GRP_GET_PROGRAM_ID());
 
         if ( select_query.SELECT() > 0 ) {
-            MSG_WARNING(tr ( "Aynı grup koduyla kayıtlı başka bir grup sistemde mevcuttur."
-                                                  "Lütfen grup kodunuzu değiştiriniz.."),NULL);
+            MSG_WARNING(tr ( "The same group code is registered in another group existing system."//Aynı grup koduyla kayıtlı başka bir grup sistemde mevcuttur.
+                                                  "Please change your group code..."),NULL);//Lütfen grup kodunuzu değiştiriniz..
             line_edit_grup_kodu->undo();
             return ADAK_FAIL;
         }
@@ -284,11 +284,11 @@ int GRUP_KERNEL_GRUP_FISI::CHECK_FIS_FORM_EMPTY()
 {
 
     if ( line_edit_grup_kodu->text().isEmpty() EQ true) {
-        MSG_WARNING(tr ( "Grup kodu boş bırakılamaz" ) ,NULL);
+        MSG_WARNING(tr ( "Group code can not be empty." ) ,NULL);//Grup kodu boş bırakılamaz
         return ADAK_FAIL;
     }
     if ( lineEdit_grup_adi->text().isEmpty() EQ true ) {
-        MSG_WARNING(tr ( "Grup ismi boş bırakılamaz" ) ,NULL);
+        MSG_WARNING(tr ( "Group name can not be empty." ) ,NULL);
         return ADAK_FAIL;
     }
 
@@ -501,7 +501,7 @@ int GRUP_KERNEL_GRUP_FISI::CHECK_FIS_RECORD_DELETE(int fis_id)
     int alt_grup_sayisi = query.SELECT();
 
     if ( alt_grup_sayisi NE 0 ) {
-        MSG_WARNING( tr( "Önce Alt Grupları Mevcut Silinemez" ), NULL );
+        MSG_WARNING( tr( "Group having subgroup. It must not delete!" ), NULL );//Alt gruplar mevcut. Silinemez!
         return ADAK_FAIL;
     }
 
@@ -692,11 +692,11 @@ int GRUP_KERNEL_GRUP_FISI::CHECK_LINE_EMPTY ( int row_number )
     QLineEdit * lineEdit_grup_adi  =  ( QLineEdit * ) tablewidget_alt_gruplar->cellWidget(row_number,GRUP_ISMI_COLUMN);
 
     if ( lineEdit_grup_kodu->text().isEmpty() EQ true ) {
-        MSG_WARNING(tr ( "Grup kodunu boş bırakamazsınız!.."), lineEdit_grup_kodu);
+        MSG_WARNING(tr ( "You can not be empty the group code!..."), lineEdit_grup_kodu);//Grup kodunu boş bırakamazsınız!..
         return ADAK_FAIL;
     }
     if ( lineEdit_grup_adi->text().isEmpty() EQ true) {
-         MSG_WARNING(tr ( "Grup ismini boş bırakamazsınız!.." ) , lineEdit_grup_adi );
+         MSG_WARNING(tr ( "You can not be empty the group name!..." ) , lineEdit_grup_adi );//Grup ismini boş bırakamazsınız!..
          return ADAK_FAIL;
     }
     return ADAK_OK;
@@ -749,7 +749,8 @@ int GRUP_KERNEL_GRUP_FISI::CHECK_ADD_LINE ( int fis_id, int row_number )
     select_query.SET_VALUE      (":"+m_base_grup_kernel_ptr->GET_GRUPLAR_PROGRAM_ID_COLUMN_NAME()    , m_base_grup_kernel_ptr->GRP_GET_PROGRAM_ID());
 
     if ( select_query.SELECT() > 0 ) {
-        MSG_WARNING(tr ( "Aynı grup koduna sahip,başka bir alt grup bulunmaktadır.Lütfen grup kodunuzu değiştiriniz!.."), lineEdit_grup_kodu );
+        MSG_WARNING(tr ( "The same group code is available another subgroup. Please change your Group code!..."), lineEdit_grup_kodu );
+        //Aynı grup koduna sahip,başka bir alt grup bulunmaktadır.Lütfen grup kodunuzu değiştiriniz!..
         return ADAK_FAIL;
     }
 
@@ -843,7 +844,7 @@ void GRUP_KERNEL_GRUP_FISI::ADD_LINE ( int fis_id, int row_number )
         select_query.SET_VALUE      ( ":grup_id", fis_id );
 
         if ( select_query.SELECT() EQ 0 ) {
-             MSG_WARNING(tr ( "Üst grup bilgileri alınırken hata oluştu" ) ,NULL);
+             MSG_WARNING(tr ( "An error occured while retrieving upper group information." ) ,NULL);//Üst grup bilgileri alınırken hata oluştu
              return;
         }
 
@@ -978,8 +979,8 @@ int GRUP_KERNEL_GRUP_FISI::CHECK_UPDATE_LINE ( int fis_id, int row_number )
     select_query.SET_VALUE      (":grup_id"       , row_id);
 
     if ( select_query.SELECT() > 0 ) {
-         MSG_WARNING(tr ( "Aynı grup koduna sahip, başka bir alt grup bulunmaktadır.Lütfen grup kodunuzu değiştiriniz!.."),NULL);
-         return ADAK_FAIL;
+         MSG_WARNING(tr ( "The same group code is available another subgroup. Please change your Group code!..."),NULL);
+         return ADAK_FAIL;//Aynı grup koduna sahip, başka bir alt grup bulunmaktadır.Lütfen grup kodunuzu değiştiriniz!..
     }
 
     return ADAK_OK;
@@ -1053,7 +1054,7 @@ int GRUP_KERNEL_GRUP_FISI::CHECK_DELETE_LINE ( int fis_id, int row_number )
     sql_query.SET_VALUE     (":grup_parent_id" , grup_id );
 
     if ( sql_query.SELECT() NE 0 ) {
-        MSG_WARNING(tr ( "Silmek istediğiniz grubun alt grupları var,önce onları silmelisiniz!.."),NULL);
+        MSG_WARNING(tr ( "There are sub-groups of the group you want to delete, you must delete them before! .."),NULL);//Silmek istediğiniz grubun alt grupları var,önce onları silmelisiniz!..
         return ADAK_FAIL;
     }
 
@@ -1064,7 +1065,7 @@ int GRUP_KERNEL_GRUP_FISI::CHECK_DELETE_LINE ( int fis_id, int row_number )
     if (sql_query.SELECT() NE 0 ) {
         sql_query.NEXT();
 
-        ADAK_MSG_ENUM answer = MSG_YES_NO(tr("'%1 %2' grubu silinecek.").arg(sql_query.VALUE(0).toString()).arg(sql_query.VALUE(1).toString()),NULL);
+        ADAK_MSG_ENUM answer = MSG_YES_NO(tr(" '%1 %2' groups will be deleted.").arg(sql_query.VALUE(0).toString()).arg(sql_query.VALUE(1).toString()),NULL);
 
         if (answer EQ ADAK_NO OR answer EQ ADAK_CANCEL) {
             return ADAK_FAIL;
@@ -1076,7 +1077,7 @@ int GRUP_KERNEL_GRUP_FISI::CHECK_DELETE_LINE ( int fis_id, int row_number )
     sql_query.SET_VALUE     (":grup_id", grup_id );
 
     if ( sql_query.SELECT() EQ 0 ) {
-        MSG_ERROR(tr ( "Grupta kayıtlı üye sayısı alınırken hata oluştu."),NULL);
+        MSG_ERROR(tr ( "An error occurred while retrieving the number of members registered in the group."),NULL);//Grupta kayıtlı üye sayısı alınırken hata oluştu.
         return ADAK_FAIL;
     }
     sql_query.NEXT();
@@ -1091,12 +1092,12 @@ int GRUP_KERNEL_GRUP_FISI::CHECK_DELETE_LINE ( int fis_id, int row_number )
     int parent_alt_grup_sayisi = sql_query.SELECT();
 
     if ( parent_alt_grup_sayisi EQ 0 ) {
-        MSG_ERROR(tr ( "Ana grubun alt grup sayısı alınırken hata oluştu."  ) ,NULL );
+        MSG_ERROR(tr ( "An error occured while retrieving the number of subgroups of the main group."  ) ,NULL );//Ana grubun alt grup sayısı alınırken hata oluştu.
         return ADAK_FAIL;
     }
 
     if ( parent_alt_grup_sayisi > 1 ) {
-        MSG_ERROR(tr ( "Grupta kayıt var. Grubu silemezsiniz." ) , NULL);
+        MSG_ERROR(tr ( "There are records in the group. You can not delete the group." ) , NULL);//Grupta kayıt var. Grubu silemezsiniz.
         return ADAK_FAIL;
     }
 
