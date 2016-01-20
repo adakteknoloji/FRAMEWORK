@@ -13,7 +13,8 @@
     <name>XYZ_ANA_MENU</name>
     <message>
         <location filename="xyz_ana_menu.ui" line="14"/>
-        <source>XYZ PROGRAMI</source>
+        <source>XYZ PROGRAM</source>
+        <oldsource>XYZ PROGRAMI</oldsource>
         <translation>XYZ Programı</translation>
     </message>
     <message>
@@ -46,19 +47,19 @@
     </message>
     <message>
         <location filename="xyz_ayarlar_batch.ui" line="28"/>
-        <source>Mali Yıl Başlangıcı : </source>
-        <translation type="unfinished"></translation>
+        <source>Start Financial Year:</source>
+        <translation>Mali Yıl Başlangıcı:</translation>
     </message>
     <message>
         <location filename="xyz_ayarlar_batch.ui" line="35"/>
-        <source>Mali Yıl Sonu  : </source>
-        <translation type="unfinished"></translation>
+        <source>Finish Financial Year:</source>
+        <translation>Mali Yıl Sonu:</translation>
     </message>
     <message>
         <location filename="xyz_ayarlar_batch.ui" line="42"/>
         <location filename="xyz_ayarlar_batch.ui" line="57"/>
         <source>Tarih Widgeti</source>
-        <translation type="unfinished"></translation>
+        <translation>Tarih Widgeti</translation>
     </message>
     <message>
         <location filename="xyz_ayarlar_batch.cpp" line="36"/>

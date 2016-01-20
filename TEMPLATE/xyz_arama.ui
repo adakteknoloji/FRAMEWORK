@@ -71,7 +71,7 @@
          <item row="0" column="0">
           <widget class="QLabel" name="label_baslangic_trh">
            <property name="text">
-            <string>Tarih Araligi         </string>
+            <string>Date Range:</string>
            </property>
           </widget>
          </item>
@@ -166,7 +166,7 @@
          <item row="0" column="0">
           <widget class="QLabel" name="label_fis_numarasi">
            <property name="text">
-            <string>    Fiş numarası    </string>
+            <string>Voucher Number</string>
            </property>
           </widget>
          </item>
@@ -239,7 +239,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>    Fiş Türü             </string>
+            <string>Voucher Type</string>
            </property>
           </widget>
          </item>
@@ -268,32 +268,32 @@
            </property>
            <item>
             <property name="text">
-             <string>Mahsup Fişi</string>
+             <string>Eliminations voucher</string>
             </property>
            </item>
            <item>
             <property name="text">
-             <string>Tahsil Fişi</string>
+             <string>Cash Voucher</string>
             </property>
            </item>
            <item>
             <property name="text">
-             <string>Tediye Fişi</string>
+             <string>Payment Voucher </string>
             </property>
            </item>
            <item>
             <property name="text">
-             <string>Açılış Fişi</string>
+             <string>Opening Voucher</string>
             </property>
            </item>
            <item>
             <property name="text">
-             <string>Kapanış Fişi</string>
+             <string>Closing Voucher</string>
             </property>
            </item>
            <item>
             <property name="text">
-             <string>Hepsi</string>
+             <string>All</string>
             </property>
            </item>
           </widget>

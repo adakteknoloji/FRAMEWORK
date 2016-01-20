@@ -38,7 +38,7 @@
      <item row="1" column="0">
       <widget class="QLabel" name="label">
        <property name="text">
-        <string>Fiş No</string>
+        <string>Voucher No</string>
        </property>
       </widget>
      </item>
@@ -54,14 +54,14 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>( Yeni Fiş için * yazınız )</string>
+        <string>( Write * for new voucher )</string>
        </property>
       </widget>
      </item>
      <item row="1" column="4">
       <widget class="QLabel" name="label_2">
        <property name="text">
-        <string>Fiş Türü</string>
+        <string>Voucher type</string>
        </property>
       </widget>
      </item>
@@ -84,7 +84,7 @@
      <item row="2" column="0">
       <widget class="QLabel" name="label_6">
        <property name="text">
-        <string>Fiş Tarihi</string>
+        <string>Voucher Date</string>
        </property>
       </widget>
      </item>
@@ -101,7 +101,7 @@
      <item row="3" column="0">
       <widget class="QLabel" name="label_5">
        <property name="text">
-        <string>Kasa Hesabı</string>
+        <string>Cash Facility</string>
        </property>
       </widget>
      </item>
@@ -114,7 +114,7 @@
      <item row="4" column="0">
       <widget class="QLabel" name="label_4">
        <property name="text">
-        <string>Açıklama</string>
+        <string>Statement</string>
        </property>
       </widget>
      </item>
@@ -252,7 +252,6 @@
   <tabstop>comboBox_kasa_hesap_kodu</tabstop>
   <tabstop>lineEdit_kasa_hesap_ismi</tabstop>
   <tabstop>textEdit_aciklama</tabstop>
-  <tabstop>tablewidget_fis_satirlari</tabstop>
   <tabstop>button_yazdir</tabstop>
   <tabstop>commaedit_toplam_borc</tabstop>
   <tabstop>commaedit_toplam_alacak</tabstop>
