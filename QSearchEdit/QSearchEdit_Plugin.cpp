@@ -33,7 +33,7 @@ QString QSearchEdit_Plugin::name() const
 
 QString QSearchEdit_Plugin::group() const
 {
-        return "Input Widgets";
+        return tr("Input Widgets");
 }
 
 QIcon QSearchEdit_Plugin::icon() const
@@ -43,7 +43,7 @@ QIcon QSearchEdit_Plugin::icon() const
 
 QString QSearchEdit_Plugin::toolTip() const
 {
-        return "Arama";
+        return tr("Search");
 }
 
 QString QSearchEdit_Plugin::whatsThis() const

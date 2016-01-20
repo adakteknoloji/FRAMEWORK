@@ -54,11 +54,11 @@ void XYZ_ANA_MENU::SETUP_FORM()
 {
     struct MENU_STRUCT MENULER[] = {
 
-        { MENU_DOSYA,                tr ("Dosya")            , 0,         "" , "" , 0, "", 0, MENU_TOPMENUDE }  ,
-            { MENU_CIKIS,            tr ( "Çıkış" )          , MENU_DOSYA,"" , "" , 0, "", 0, MENU_TOPMENUDE},
+        { MENU_DOSYA,                tr ("File")            , 0,         "" , "" , 0, "", 0, MENU_TOPMENUDE }  ,
+            { MENU_CIKIS,            tr ( "Exit" )          , MENU_DOSYA,"" , "" , 0, "", 0, MENU_TOPMENUDE},
 
-        { MENU_YARDIM,               tr ("Yardım")           , 0,         "" , "" , 0, "", 0, MENU_TOPMENUDE },
-            {MENU_HAKKINDA,          tr ( "Hakkında" )       , MENU_YARDIM,"", "" , 0, "", 0, MENU_TOPMENUDE },
+        { MENU_YARDIM,               tr ("Help")           , 0,         "" , "" , 0, "", 0, MENU_TOPMENUDE },
+            {MENU_HAKKINDA,          tr ( "About" )       , MENU_YARDIM,"", "" , 0, "", 0, MENU_TOPMENUDE },
 
         { 0       , ""   , 0, "","",0,"",0,MENU_SAYFADA }
     };

@@ -33,11 +33,11 @@ XYZ_AYARLAR_BATCH::XYZ_AYARLAR_BATCH ( QWidget * parent ) :  BATCH_KERNEL ( pare
 
 void XYZ_AYARLAR_BATCH::SETUP_FORM ()
 {
-    SET_NAME_OF_RUN_BATCH_BUTTON ( tr("Kaydet") );
+    SET_NAME_OF_RUN_BATCH_BUTTON ( tr("Save") );
     SET_FIRST_FOCUS_WIDGET ( adakDate_mali_yil_baslangic_tarihi );
     REGISTER_BUTTON_WIDGET ( widget_batch_buttons );
 
-    SET_PAGE_TITLE    (tr("AYARLAR EKRANI"));
+    SET_PAGE_TITLE    (tr("SETTING SCREEN"));
     SET_SETTING_NAME  ("XYZ_AYARLAR_BATCH");
     SET_HELP_PAGE     ("xyz_ayarlar.html");
 

@@ -43,7 +43,7 @@ QIcon QLimitedTextEdit_Plugin::icon() const
 
 QString QLimitedTextEdit_Plugin::toolTip() const
 {
-        return "QTextEdit e limit ekler";
+        return tr("It is add limit to QTextEdit.");//QTextEdit e limit ekler
 }
 
 QString QLimitedTextEdit_Plugin::whatsThis() const
