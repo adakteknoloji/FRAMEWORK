@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>SMS Gönder</string>
+   <string>Send SMS</string>
   </property>
   <layout class="QGridLayout" name="gridLayout" columnstretch="0,0,0,0,0,0">
    <property name="sizeConstraint">
@@ -32,7 +32,7 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>Kimden :</string>
+      <string>FROM:</string>
      </property>
     </widget>
    </item>
@@ -48,7 +48,7 @@
       </sizepolicy>
      </property>
      <property name="text">
-      <string>Gönderilecek Tel. No: +</string>
+      <string>Be Sent Phone No:</string>
      </property>
     </widget>
    </item>
@@ -127,7 +127,7 @@
       </size>
      </property>
      <property name="text">
-      <string>Mesaj</string>
+      <string>Message</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignHCenter|Qt::AlignTop</set>

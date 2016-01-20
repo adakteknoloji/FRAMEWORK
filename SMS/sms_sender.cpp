@@ -67,7 +67,7 @@ bool SMS_SENDER::SEND_SMS_HTTP_POST()
     network_reply->readAll();
 
     if ( network_reply->error() != QNetworkReply::NoError ) {
-        qDebug() << "Hata:" << network_reply->errorString();
+        qDebug() << QObject::tr("Error:") << network_reply->errorString();
         return false;
     }
 
@@ -98,7 +98,7 @@ bool SMS_SENDER::SEND_SMS_HTTP_GET()
     network_reply->readAll();
 
     if ( network_reply->error() != QNetworkReply::NoError ) {
-        qDebug() << "Hata:" << network_reply->errorString();
+        qDebug() << "Error:" << network_reply->errorString();
         return false;
     }
 

@@ -34,11 +34,11 @@ SMS_SENDER_GUI::SMS_SENDER_GUI(QString from, QString to, QString message, QWidge
 
 void SMS_SENDER_GUI::SETUP_FORM ()
 {
-    SET_PAGE_TITLE      ("SMS GÖNDER");
-    SET_HELP_PAGE       ("sms_gonder");
+    SET_PAGE_TITLE      (tr("SEND SMS"));
+    SET_HELP_PAGE       ("send_sms");
     SET_SETTING_NAME    ("sms_gonder");
 
-    SET_NAME_OF_RUN_BATCH_BUTTON(QString::fromUtf8("Gönder"));
+    SET_NAME_OF_RUN_BATCH_BUTTON(QString::fromUtf8(tr("Send")));
     SET_AUTO_EXIT_BATCH ( true );
     REGISTER_BUTTON_WIDGET (m_ui->widget_batch_buttons);
 
@@ -79,7 +79,7 @@ int SMS_SENDER_GUI::CHECK_RUN()
 {
     if ( m_ui->line_edit_to->text().isEmpty() EQ true ) {
         if ( m_ui->line_edit_to->isHidden() EQ false ) {
-            MSG_ERROR("Lütfen gönderilecek telefon bilgisini giriniz.",m_ui->line_edit_to);
+            MSG_ERROR(tr("Please enter the phone information to be sent."),m_ui->line_edit_to);//Lütfen gönderilecek telefon bilgisini giriniz.
             return ADAK_FAIL;
         }
     }
@@ -104,7 +104,7 @@ void SMS_SENDER_GUI::RUN_BATCH()
 
     query.PREPARE_SELECT("ynt_sms_sunucusu","sms_app_id,sms_kullanici_adi,sms_parola,sms_sunucusu");
     if ( query.SELECT() EQ 0 ) {
-        MSG_ERROR("SMS sunucu ayarları atanmamış.Önce yönetimden SMS sunucu ayarlarını atayınız.",NULL);
+        MSG_ERROR(tr("Unassigned SMS server setting. Before you assign the SMS server setting in administration."),NULL);//SMS sunucu ayarları atanmamış.Önce yönetimden SMS sunucu ayarlarını atayınız.
         return;
     }
     query.NEXT();
@@ -114,7 +114,7 @@ void SMS_SENDER_GUI::RUN_BATCH()
     if ( m_ui->line_edit_to->isHidden() EQ false ) {
         p_to_gsm_no      = m_ui->line_edit_ulke_kodu->text() + m_ui->line_edit_to->text();
         if ( sms_sender->SEND_SMS(p_from_gsm_no,p_to_gsm_no,message) EQ true ) {
-            MSG_INFO("Mesajınız gönderildi.",NULL);
+            MSG_INFO(tr("Your message sent."),NULL);
         }
     }
     else {
@@ -124,6 +124,6 @@ void SMS_SENDER_GUI::RUN_BATCH()
             sms_sender->SEND_SMS(p_from_gsm_no,telefon_numaralari.at(i),message);
         }
 
-        MSG_INFO("Mesajınız gönderildi.",NULL);
+        MSG_INFO(tr("Your message sent."),NULL);
     }
 }
