@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="tr_TR">
+<TS version="2.1" language="tr_TR">
 <context>
     <name>QObject</name>
     <message>
@@ -193,7 +193,7 @@
     <message>
         <location filename="tasarim_batch.ui" line="20"/>
         <source>Dialog</source>
-        <translation>Dyalog</translation>
+        <translation>Diyalog</translation>
     </message>
     <message>
         <location filename="tasarim_batch.ui" line="122"/>
@@ -610,7 +610,7 @@ Değişiklik yapılabilmesi için tasarımın kopyalanması gerekmektedir.</tran
     <message>
         <location filename="tasarim_design_widget.cpp" line="24"/>
         <source>Adak Document Design</source>
-        <translation type="unfinished"></translation>
+        <translation>Adak Belge Tasarım</translation>
     </message>
 </context>
 <context>
@@ -618,72 +618,73 @@ Değişiklik yapılabilmesi için tasarımın kopyalanması gerekmektedir.</tran
     <message>
         <location filename="tasarim_menu_batch.ui" line="20"/>
         <source>Dialog</source>
-        <translation type="unfinished">Dyalog</translation>
+        <translation>Diyalog</translation>
     </message>
     <message>
         <location filename="tasarim_menu_batch.ui" line="31"/>
-        <source>İmport</source>
-        <translation type="unfinished"></translation>
+        <source>Import</source>
+        <oldsource>İmport</oldsource>
+        <translation>İçe Aktar</translation>
     </message>
     <message>
         <location filename="tasarim_menu_batch.ui" line="38"/>
         <source>Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Dışa aktar</translation>
     </message>
     <message>
         <location filename="tasarim_menu_batch.ui" line="89"/>
         <source>DOCUMENT DESIGN</source>
-        <translation type="unfinished"></translation>
+        <translation>BELGE TASARIM</translation>
     </message>
     <message>
         <location filename="tasarim_menu_batch.cpp" line="45"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Kapat</translation>
     </message>
     <message>
         <location filename="tasarim_menu_batch.cpp" line="52"/>
         <source>DOCUMENT DESIGNER</source>
-        <translation type="unfinished"></translation>
+        <translation>BELGE TASARIMCI</translation>
     </message>
     <message>
         <location filename="tasarim_menu_batch.cpp" line="62"/>
         <source>Document_id</source>
-        <translation type="unfinished"></translation>
+        <translation>Belge_id</translation>
     </message>
     <message>
         <location filename="tasarim_menu_batch.cpp" line="62"/>
         <source>Documents</source>
-        <translation type="unfinished"></translation>
+        <translation>Belgeler</translation>
     </message>
     <message>
         <location filename="tasarim_menu_batch.cpp" line="119"/>
         <source>Design must be empty. Please try again select an empty design.</source>
-        <translation type="unfinished"></translation>
+        <translation>tasarımın boş olması gerekir. Lütfen boş bir tasarım seçip tekrar deneyin.</translation>
     </message>
     <message>
         <location filename="tasarim_menu_batch.cpp" line="187"/>
         <source>design_id</source>
-        <translation type="unfinished"></translation>
+        <translation>tasarım_id</translation>
     </message>
     <message>
         <location filename="tasarim_menu_batch.cpp" line="187"/>
         <source>Design Name</source>
-        <translation type="unfinished">Tasarım Adı</translation>
+        <translation>Tasarım Adı</translation>
     </message>
     <message>
         <location filename="tasarim_menu_batch.cpp" line="187"/>
         <source>Printer Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Yazıcı Tipi</translation>
     </message>
     <message>
         <location filename="tasarim_menu_batch.cpp" line="241"/>
         <source>&lt;&lt; Design New Document &gt;&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;&lt; Yeni Belge Tasarımı &gt;&gt;</translation>
     </message>
     <message>
         <location filename="tasarim_menu_batch.cpp" line="335"/>
         <source>The design wil be deleted. Continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Tasarım silinecek. Devam edilsin mi?</translation>
     </message>
 </context>
 <context>
@@ -691,48 +692,48 @@ Değişiklik yapılabilmesi için tasarımın kopyalanması gerekmektedir.</tran
     <message>
         <location filename="tasarim_yeni_tasarim_batch.ui" line="20"/>
         <source>Dialog</source>
-        <translation type="unfinished">Dyalog</translation>
+        <translation>Diyalog</translation>
     </message>
     <message>
         <location filename="tasarim_yeni_tasarim_batch.ui" line="50"/>
         <source>New Design Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni Tasarım Adı:</translation>
     </message>
     <message>
         <location filename="tasarim_yeni_tasarim_batch.ui" line="79"/>
         <source>Design to be copied:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopyalanacak Tasarım:</translation>
     </message>
     <message>
         <location filename="tasarim_yeni_tasarim_batch.ui" line="128"/>
         <source>Printer Type:</source>
-        <translation type="unfinished"></translation>
+        <translation>Yazıcı Tipi:</translation>
     </message>
     <message>
         <location filename="tasarim_yeni_tasarim_batch.cpp" line="37"/>
         <source>Create</source>
-        <translation type="unfinished"></translation>
+        <translation>Oluştur</translation>
     </message>
     <message>
         <location filename="tasarim_yeni_tasarim_batch.cpp" line="44"/>
         <source>NEW DESIGN</source>
-        <translation type="unfinished"></translation>
+        <translation>YENI TASARIM</translation>
     </message>
     <message>
         <location filename="tasarim_yeni_tasarim_batch.cpp" line="100"/>
         <source>You must enter the document name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Belge adını girmelisiniz.</translation>
     </message>
     <message>
         <location filename="tasarim_yeni_tasarim_batch.cpp" line="209"/>
         <source>Created</source>
-        <translation type="unfinished"></translation>
+        <translation>Yaratıldı</translation>
     </message>
     <message>
         <location filename="tasarim_yeni_tasarim_batch.cpp" line="62"/>
         <source> &lt;&lt; DON&apos;T COPY, I want to design from scratch. &gt;&gt;</source>
         <oldsource> &lt;&lt; KOPYALAMA , sıfırdan tasarlamak istiyorum &gt;&gt;</oldsource>
-        <translation type="unfinished"></translation>
+        <translation>&lt;&lt; KOPYALAMA, sıfırdan tasarlamak istiyorum.  &gt;&gt;</translation>
     </message>
 </context>
 </TS>

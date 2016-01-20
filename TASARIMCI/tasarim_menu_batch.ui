@@ -28,7 +28,7 @@
      <item row="0" column="0">
       <widget class="QPushButton" name="pushButton_import">
        <property name="text">
-        <string>İmport</string>
+        <string>Import</string>
        </property>
       </widget>
      </item>
