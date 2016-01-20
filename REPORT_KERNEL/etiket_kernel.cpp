@@ -199,7 +199,7 @@ void ETIKET_KERNEL::ETIKET_SABLONLARINI_OLUSTUR()
 {
     etiket_sablonlari etiket;
 
-    etiket.name                    = QObject::tr ( "Düz Köşeli Etiket - 52lik" );
+    etiket.name                    = QObject::tr ( "Straight Corners Sticker -  By 52" );//Düz Köşeli Etiket
     etiket.etiket_width            = 50.0;
     etiket.etiket_height           = 22.0;
     etiket.page_left_space         =  5.0;
@@ -211,7 +211,7 @@ void ETIKET_KERNEL::ETIKET_SABLONLARINI_OLUSTUR()
     etiket.icon_path               = "duz_52_50_22.jpg";
     p_sablonlar << etiket;
 
-    etiket.name                    = QObject::tr ( "Oval Köşeli Etiket - 65lik" );
+    etiket.name                    = QObject::tr ( "Rounded Corners Sticker - By 65" );//Oval Köşeli Etiket - 65lik
     etiket.etiket_width            = 38.1;
     etiket.etiket_height           = 21.2;
     etiket.page_left_space         =  5.0;

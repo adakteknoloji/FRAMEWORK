@@ -33,7 +33,7 @@ void DIREKT_YAZDIR ( QString printer_name,QString printer_document )
 
      view->print( &printer );
 
-     QMessageBox::warning ( qApp->activeWindow(), "Printer",  "Çıktı yazıcıya gönderildi.!" );
+     QMessageBox::warning ( qApp->activeWindow(), "Printer",  QObject::tr("File sent to printer!") );//Çıktı yazıcıya gönderildi.!
 }
 
 /**************************************************************************************
@@ -44,7 +44,8 @@ void OPEN_REPORT_SHOWER ( QString string_html, QWidget * parent, QPrinter::Orien
                         int     paper_type ,double user_defined_width,double user_defined_height )
 {
     if  ( string_html.isEmpty() EQ true ) {
-         QMessageBox::warning ( parent, parent->tr ( "Önizleme" ),parent->tr ( "Raporlanacak / gösterilecek bir kayit bulunamadı.!" ) );
+         QMessageBox::warning ( parent, parent->QObject::tr ( "Preview" ),parent->QObject::tr ( "A recording will be reported or displayed does not found!" ) );
+         //Raporlanacak / gösterilecek bir kayit bulunamadı.
          return;
     }
 
@@ -64,13 +65,13 @@ void OPEN_REPORT_SHOWER ( QString string_html, QWidget * parent, QPrinter::Orien
 
 REPORT_SHOWER::REPORT_SHOWER ( QString printer_document,int paper_type,double user_defined_width,double user_defined_height, QWidget * parent ) : BASE_KERNEL ( parent )
 {
-    SET_PAGE_TITLE       ("ÇIKTI ÖNİZLEME ");
+    SET_PAGE_TITLE       (tr("OUTPUT PREVIEW "));
     SET_HELP_PAGE        ("report_shower");
     SET_SETTING_NAME     ("REPORT_SHOWER");
 
     QSplashScreen * splash = CREATE_SPLASH_SCREEN();
     splash->show();
-    splash->showMessage ( ( QString ( "Rapor Önizlemesi Hazırlanıyor.Lütfen Bekleyiniz..." ) ),Qt::AlignCenter,Qt::white);
+    splash->showMessage ( ( QString ( tr("Report preview is preparing. Please wait...") ) ),Qt::AlignCenter,Qt::white);//Rapor Önizlemesi Hazırlanıyor.Lütfen Bekleyiniz...
     qApp->processEvents();
 
     QVBoxLayout *vertical_layout   = new QVBoxLayout();
@@ -81,15 +82,15 @@ REPORT_SHOWER::REPORT_SHOWER ( QString printer_document,int paper_type,double us
     m_user_defined_width           = user_defined_width;
     m_user_defined_height          = user_defined_height;
 
-    button_print_edit              = new QPushButton ( "Yazdır" );
+    button_print_edit              = new QPushButton ( tr("Print") );
     button_print_edit->setIconSize(QSize(32,32));
     button_print_edit->setIcon(QIcon(":/kernel_icons/kernel_yazdir_ikonu.png"));
 
-    button_email                   = new QPushButton ( "E-Maille Gönder" );
+    button_email                   = new QPushButton ( tr("Sending E-mail") );
     button_email->setIconSize(QSize(32,32));
     button_email->setIcon(QIcon(":/yonetim_icons/yonetim_mail.png"));
 
-    button_ihrac                   = new QPushButton ( "İhraç Et" );
+    button_ihrac                   = new QPushButton ( tr(" Export") );//İhraç
     button_ihrac->setIconSize(QSize(32,32));
     button_ihrac->setIcon(QIcon(":/kernel_icons/kernel_export_ikonu.png"));
 
@@ -185,7 +186,7 @@ void REPORT_SHOWER::SLOT_SEND_EMAIL()
         email_address = sql_query_yonetim.VALUE(0).toString();
     }
 
-    ADAK_EMAIL_SENDER ( email_address,( sql_query_yonetim.VALUE(1).toString() ),"",tr ( "Konu yok" ), printer_document );
+    ADAK_EMAIL_SENDER ( email_address,( sql_query_yonetim.VALUE(1).toString() ),"",tr ( "No Subject" ), printer_document );
 }
 
 /**************************************************************************************
@@ -201,10 +202,10 @@ void REPORT_SHOWER::SLOT_EXPORT_POPUP ()
     button_names << tr("OpenOffice Writer");
     button_icons << QIcon(":/kernel_icons/kernel_oo_writer_ikonu.png");
     button_enums << ENUM_KERNEL_OO_WRITER;
-    button_names << tr("Metin Belgesi");
+    button_names << tr("Text File");
     button_icons << QIcon(":/kernel_icons/kernel_text_ikonu.png");
     button_enums << ENUM_KERNEL_TXT;
-    button_names << tr("Html");
+    button_names << "Html";
     button_icons << QIcon(":/kernel_icons/kernel_html_ikonu.png");
     button_enums << ENUM_KERNEL_HTML;
 
@@ -214,7 +215,7 @@ void REPORT_SHOWER::SLOT_EXPORT_POPUP ()
     QVBoxLayout * box_layout = new QVBoxLayout;
     widget->setLayout(box_layout);
 
-    QLabel * label = new QLabel ("İhraç Et",widget);
+    QLabel * label = new QLabel (tr("Export"),widget);
     label->setAlignment ( Qt::AlignCenter );
     label->setStyleSheet("color:blue; font-weight : bold; font-size:14;");
     box_layout->addWidget( label );
@@ -255,23 +256,23 @@ void REPORT_SHOWER::SLOT_EXPORT_TO_FILE()
 
     switch ( sender()->objectName().toInt() ) {
         case ENUM_KERNEL_OO_WRITER:
-            save_type           = tr("ODF");
-            file_format         = tr(".odf");
+            save_type           = "ODF";
+            file_format         = ".odf";
             file_dialog_filter  = tr("Open Document Format (*.odf)");
-            file_dialog_header  = tr("Open Document Format - İhraç Et");
+            file_dialog_header  = tr("Open Document Format - Export");
         break;
         case ENUM_KERNEL_HTML:
-            save_type           = tr("HTML");
-            file_format         = tr(".html");
-            file_dialog_filter  = tr("Html Dosyası (*.html)");
-            file_dialog_header  = tr("HTML - İhraç Et");
+            save_type           = "HTML";
+            file_format         = ".html";
+            file_dialog_filter  = tr("Html File (*.html)");
+            file_dialog_header  = tr("HTML - Export");
         break;
         case ENUM_KERNEL_TXT:
         default:
-            save_type           = tr("plaintext");
-            file_format         = tr(".txt");
-            file_dialog_filter  = tr("Metin Belgesi (*.txt)");
-            file_dialog_header  = tr("Metin Belgesi - İhraç Et");
+            save_type           = "plaintext";
+            file_format         = ".txt";
+            file_dialog_filter  = tr("Text File (*.txt)");
+            file_dialog_header  = tr("Text File - Export");
         break;
     }
 

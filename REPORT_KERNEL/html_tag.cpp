@@ -59,35 +59,3 @@ QString HTML_TAG::GET_HTML_TAG()
     return result;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
