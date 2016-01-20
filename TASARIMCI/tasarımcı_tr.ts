@@ -421,22 +421,22 @@
     <message>
         <location filename="tasarim_batch_base.cpp" line="58"/>
         <source>Open Picture</source>
-        <translation type="unfinished"></translation>
+        <translation>Resim Aç</translation>
     </message>
     <message>
         <location filename="tasarim_batch_base.cpp" line="58"/>
         <source>Picture File (*.png *.jpg *.bmp)</source>
-        <translation type="unfinished"></translation>
+        <translation>Resim Dosyası (*.png *.jpg *.bmp)</translation>
     </message>
     <message>
         <location filename="tasarim_batch_base.cpp" line="111"/>
         <source>Add the Form </source>
-        <translation type="unfinished"></translation>
+        <translation>Forma Ekle</translation>
     </message>
     <message>
         <location filename="tasarim_batch_base.cpp" line="194"/>
         <source>&lt;b&gt;%1&lt;/b&gt; The variable will be deleted.Do you confirm?</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;%1&lt;/b&gt;  Değişkeni silinecektir. Onaylıyor musunuz?</translation>
     </message>
 </context>
 <context>
@@ -444,17 +444,17 @@
     <message>
         <location filename="tasarim_belge_batch.ui" line="20"/>
         <source>Dialog</source>
-        <translation type="unfinished">Dyalog</translation>
+        <translation>Diyalog</translation>
     </message>
     <message>
         <location filename="tasarim_belge_batch.ui" line="50"/>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <location filename="tasarim_belge_batch.ui" line="63"/>
         <source>Num of Lines to printed</source>
-        <translation type="unfinished"></translation>
+        <translation>Yazdırılacak Satır Sayısı</translation>
     </message>
     <message>
         <location filename="tasarim_belge_batch.ui" line="76"/>
@@ -462,146 +462,147 @@
         <location filename="tasarim_belge_batch.ui" line="322"/>
         <location filename="tasarim_belge_batch.ui" line="402"/>
         <source>Converts Number of format (OR: 1,000,234.50).</source>
-        <translation type="unfinished"></translation>
+        <translation>Sayı formatı (OR: 1,000,234.50). çevrilecektir. </translation>
     </message>
     <message>
         <location filename="tasarim_belge_batch.ui" line="97"/>
         <source>Num of Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopya Sayısı</translation>
     </message>
     <message>
         <location filename="tasarim_belge_batch.ui" line="110"/>
         <source>Printer Type </source>
-        <translation type="unfinished"></translation>
+        <translation>Yazıcı Tipi</translation>
     </message>
     <message>
         <location filename="tasarim_belge_batch.ui" line="147"/>
         <source>Document Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Belge Adı</translation>
     </message>
     <message>
         <location filename="tasarim_belge_batch.ui" line="154"/>
         <source>xxx_printer</source>
-        <translation type="unfinished"></translation>
+        <translation>xxx_yazıcı</translation>
     </message>
     <message>
         <location filename="tasarim_belge_batch.ui" line="180"/>
         <source>Document Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Belge Tipi</translation>
     </message>
     <message>
         <location filename="tasarim_belge_batch.ui" line="209"/>
         <source>Document Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Belge Boyutu</translation>
     </message>
     <message>
         <location filename="tasarim_belge_batch.ui" line="233"/>
         <source>Document Width</source>
-        <translation type="unfinished"></translation>
+        <translation>Belge Genişliği</translation>
     </message>
     <message>
         <location filename="tasarim_belge_batch.ui" line="246"/>
         <location filename="tasarim_belge_batch.ui" line="293"/>
         <location filename="tasarim_belge_batch.ui" line="343"/>
         <source>mm</source>
-        <translation type="unfinished">mm</translation>
+        <translation>mm</translation>
     </message>
     <message>
         <location filename="tasarim_belge_batch.ui" line="259"/>
         <source>Document Height</source>
-        <translation type="unfinished"></translation>
+        <translation>Belge Uzunluğu</translation>
     </message>
     <message>
         <location filename="tasarim_belge_batch.ui" line="272"/>
         <source>Converts Number of format (OR: 1,000,234.50) . </source>
-        <translation type="unfinished"></translation>
+        <translation>Sayı formatı (OR: 1,000,234.50). çevrilecektir.</translation>
     </message>
     <message>
         <location filename="tasarim_belge_batch.ui" line="306"/>
         <location filename="tasarim_belge_batch.ui" line="457"/>
         <source>Line Spacing</source>
-        <translation type="unfinished"></translation>
+        <translation>Satır Boşluğu</translation>
     </message>
     <message>
         <location filename="tasarim_belge_batch.ui" line="356"/>
         <source>Number of format (OR: 1,000,234.50) converts. </source>
-        <translation type="unfinished"></translation>
+        <translation>Sayı formatı (OR: 1,000,234.50). çevrilecektir.</translation>
     </message>
     <message>
         <location filename="tasarim_belge_batch.ui" line="389"/>
         <source>Document Line Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Belge Satır Sayısı</translation>
     </message>
     <message>
         <location filename="tasarim_belge_batch.ui" line="423"/>
         <source>Total number of characters on the line</source>
-        <translation type="unfinished"></translation>
+        <translation>Satırdaki karakter sayısı</translation>
     </message>
     <message>
         <location filename="tasarim_belge_batch.ui" line="436"/>
         <location filename="tasarim_belge_batch.ui" line="470"/>
         <source>Converts Number of format (OR: 1,000,234.50) .</source>
-        <translation type="unfinished"></translation>
+        <translation>Sayı formatı (OR: 1,000,234.50). çevrilecektir.</translation>
     </message>
     <message>
         <location filename="tasarim_belge_batch.cpp" line="47"/>
         <source>DOCUMENT PROPERTIES</source>
-        <translation type="unfinished"></translation>
+        <translation>BELGE AYARLARI</translation>
     </message>
     <message>
         <location filename="tasarim_belge_batch.cpp" line="48"/>
         <source>document_design</source>
-        <translation type="unfinished"></translation>
+        <translation>belge_tasarım</translation>
     </message>
     <message>
         <location filename="tasarim_belge_batch.cpp" line="202"/>
         <source>Document name can not be empty. </source>
-        <translation type="unfinished"></translation>
+        <translation>Belge adı boş bırakılamaz.</translation>
     </message>
     <message>
         <location filename="tasarim_belge_batch.cpp" line="207"/>
         <source>Number of copies field can not be empty. </source>
-        <translation type="unfinished"></translation>
+        <translation>Kopya sayısı alanı boş bırakılamaz.</translation>
     </message>
     <message>
         <location filename="tasarim_belge_batch.cpp" line="213"/>
         <source>Document width field can not be empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>belge genişliği alanı boş bırakılamaz.</translation>
     </message>
     <message>
         <location filename="tasarim_belge_batch.cpp" line="218"/>
         <source>Document height field can not be empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>Belge uzunluğu alanı boş bırakılamaz.</translation>
     </message>
     <message>
         <location filename="tasarim_belge_batch.cpp" line="223"/>
         <source>Number of line field can not be empty. </source>
-        <translation type="unfinished"></translation>
+        <translation>Satır sayısı alanı boş bırakılamaz.</translation>
     </message>
     <message>
         <location filename="tasarim_belge_batch.cpp" line="229"/>
         <source>The number of rows to be printed can not be empty space.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yazdırılacak alandaki satır sayısı boş bırakılamaz.</translation>
     </message>
     <message>
         <location filename="tasarim_belge_batch.cpp" line="233"/>
         <source>The total number of characters in line can not be empty.</source>
-        <translation type="unfinished"></translation>
+        <translation>Satırdaki toplam karakter sayısı boş bırakılamaz.</translation>
     </message>
     <message>
         <location filename="tasarim_belge_batch.cpp" line="237"/>
         <source>The number of lines can not be empty between rows.</source>
-        <translation type="unfinished"></translation>
+        <translation>Satırlar arası satır sayısı boş bırakılamaz.</translation>
     </message>
     <message>
         <location filename="tasarim_belge_batch.cpp" line="243"/>
         <source>The program of design are not modified. Copying design is necessary for made changes.</source>
-        <translation type="unfinished"></translation>
+        <translation>Programa ait tasarımlar üzerinde değişiklik yapılamaz.
+Değişiklik yapılabilmesi için tasarımın kopyalanması gerekmektedir.</translation>
     </message>
     <message>
         <location filename="tasarim_belge_batch.cpp" line="280"/>
         <source>The values updated.</source>
-        <translation type="unfinished"></translation>
+        <translation>Değerler güncellendi.</translation>
     </message>
 </context>
 <context>
