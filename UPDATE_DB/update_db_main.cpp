@@ -49,17 +49,17 @@ int main(int argc, char *argv[])
 
     if ( argc NE 7 ) {
         cout << endl << endl << endl ;
-        cout << QObject::tr("********************************     EKSİK VEYA YANLIŞ PARAMETRE GİRİLDİ!!!     ********************************") << endl;
+        cout << QObject::tr("********************************     PARAMETERS ARE ENTERED INCORRECT OR MISSING!!!     ********************************") << endl;
         cout << endl << endl ;
-        cout << QObject::tr("Sırasıyla : Database Name | Server | Database User | Sql Port Number | Sql Engine | INCLUDE_FILE_FULL_ADDRESS");
-        cout << endl << QObject::tr("şeklindeki parametreleri giriniz.") << endl;
+        cout << QObject::tr("Respectively : Database Name | Server | Database User | Sql Port Number | Sql Engine | INCLUDE_FILE_FULL_ADDRESS");
+        cout << endl << QObject::tr("enter the parameters in the form") << endl;//şeklindeki parametreleri giriniz.
         return 0;
     }
 
     adak_adi  = database_adi.mid(0,6);
 
     if ( adak_adi NE "adak_") {
-        cout << QObject::tr("Wrong Database Name. Veritabanı ismi adak_<firma_kodu> şeklinde olmalıdır.");
+        cout << QObject::tr("Wrong Database Name. Database name adak_<company code> must be maintained. ");//Veritabanı ismi adak_<firma_kodu> şeklinde olmalıdır.
         return 0;
     }
     firma_kodu = database_adi.mid(6);
@@ -69,14 +69,14 @@ int main(int argc, char *argv[])
         is_yonetim_db = 1;
     }
     string password;
-    cout << database_username.toStdString() <<QObject::tr(" için Database User Password : ") << endl;
+    cout << database_username.toStdString() <<QObject::tr(" for Database User Password : ") << endl;
     cin.unsetf(ios::skipws);
     cin >> password;
     if( cin.good()) {
         database_user_pass = QString( password.c_str());
     }
 
-    cout << QObject::tr("Girilen veritabanı ismi  : ") << database_adi.toStdString() << endl;
+    cout << QObject::tr(" Entered Database Name: ") << database_adi.toStdString() << endl;//Girilen veritabanı ismi
     cout << QObject::tr("Server                   : ") << sunucu.toStdString() << endl;
     cout << QObject::tr("Database User            : ") << database_username.toStdString() << endl;
     cout << QObject::tr("SQL Port Number          : ")<< sql_port_number.toStdString() << endl;
@@ -278,12 +278,12 @@ int main(int argc, char *argv[])
     }
 
     if ( db_conn->UPDATE_TABLES() EQ ADAK_FAIL ) {
-        cout << QObject::tr("Veritabanı güncelenirken hata oluştu");
+        cout << QObject::tr("Database error occurred while updating.");//Veritabanı güncelenirken hata oluştu
         return 0;
     }
 
     delete db_conn;
-    cout<<QObject::tr("Mission Completed.")<<endl;
+    cout<<QObject::tr("Transaction Completed.")<<endl;
     return 0;
 }
 
