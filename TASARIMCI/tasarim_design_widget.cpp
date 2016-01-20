@@ -21,7 +21,7 @@ TASARIM_DESIGN_WIDGET::TASARIM_DESIGN_WIDGET(double oran,QWidget * parent) : QWi
 
     m_oran = oran;
 
-    setWindowTitle(tr("Adak Belge Tasarimi"));
+    setWindowTitle(tr("Adak Document Design"));
 }
 
 /**************************************************************************************

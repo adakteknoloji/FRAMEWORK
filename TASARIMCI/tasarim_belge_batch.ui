@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>547</width>
-    <height>421</height>
+    <height>465</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -29,102 +29,8 @@
       <string/>
      </property>
      <layout class="QGridLayout" name="gridLayout_7">
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_2">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string>Belge Adı</string>
-        </property>
-       </widget>
-      </item>
       <item row="1" column="1">
        <widget class="QLineEdit" name="line_edit_tasarim_adi"/>
-      </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="label">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string>Kopya Sayısı</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1">
-       <widget class="QCommaEdit" name="comma_edit_copy_count">
-        <property name="maximumSize">
-         <size>
-          <width>60</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="whatsThis">
-         <string>Sayilari formatina(Or:1,000,234.50) donusturur. </string>
-        </property>
-        <property name="QCommaEdit" stdset="0">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>100</width>
-          <height>100</height>
-         </rect>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0">
-       <widget class="QLabel" name="label_8">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string>Yazdırılacak Satır Sayısı</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="1">
-       <widget class="QCommaEdit" name="comma_edit_row_count">
-        <property name="maximumSize">
-         <size>
-          <width>60</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="whatsThis">
-         <string>Sayilari formatina(Or:1,000,234.50) donusturur. </string>
-        </property>
-        <property name="QCommaEdit" stdset="0">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>100</width>
-          <height>100</height>
-         </rect>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_7">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="text">
-         <string>Belge Türü</string>
-        </property>
-       </widget>
       </item>
       <item row="0" column="1">
        <widget class="QLabel" name="label_belge_turu">
@@ -145,6 +51,53 @@
         </property>
        </widget>
       </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_8">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Num of Lines to printed</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QCommaEdit" name="comma_edit_copy_count">
+        <property name="maximumSize">
+         <size>
+          <width>60</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="whatsThis">
+         <string>Converts Number of format (OR: 1,000,234.50).</string>
+        </property>
+        <property name="QCommaEdit" stdset="0">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>100</width>
+          <height>100</height>
+         </rect>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Num of Copy</string>
+        </property>
+       </widget>
+      </item>
       <item row="5" column="0">
        <widget class="QLabel" name="label_11">
         <property name="sizePolicy">
@@ -154,10 +107,51 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Yazıcı Türü</string>
+         <string>Printer Type </string>
         </property>
         <property name="alignment">
          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QCommaEdit" name="comma_edit_row_count">
+        <property name="maximumSize">
+         <size>
+          <width>60</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="whatsThis">
+         <string>Converts Number of format (OR: 1,000,234.50).</string>
+        </property>
+        <property name="QCommaEdit" stdset="0">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>100</width>
+          <height>100</height>
+         </rect>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Document Name</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QLabel" name="label_yazici_turu">
+        <property name="text">
+         <string>xxx_printer</string>
         </property>
        </widget>
       </item>
@@ -174,10 +168,16 @@
         </property>
        </spacer>
       </item>
-      <item row="5" column="1">
-       <widget class="QLabel" name="label_yazici_turu">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_7">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="text">
-         <string>xxx_yazici</string>
+         <string>Document Type</string>
         </property>
        </widget>
       </item>
@@ -206,7 +206,7 @@
       </sizepolicy>
      </property>
      <property name="title">
-      <string>Belge Boyutları</string>
+      <string>Document Size</string>
      </property>
      <layout class="QGridLayout" name="gridLayout">
       <property name="margin">
@@ -230,28 +230,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>Belge Genişliği</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QCommaEdit" name="comma_edit_belge_genisligi">
-           <property name="maximumSize">
-            <size>
-             <width>60</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="whatsThis">
-            <string>Sayilari formatina(Or:1,000,234.50) donusturur. </string>
-           </property>
-           <property name="QCommaEdit" stdset="0">
-            <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>100</width>
-             <height>100</height>
-            </rect>
+            <string>Document Width</string>
            </property>
           </widget>
          </item>
@@ -277,7 +256,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>Belge Yüksekliği</string>
+            <string>Document Height</string>
            </property>
           </widget>
          </item>
@@ -290,7 +269,7 @@
             </size>
            </property>
            <property name="whatsThis">
-            <string>Sayilari formatina(Or:1,000,234.50) donusturur. </string>
+            <string>Converts Number of format (OR: 1,000,234.50) . </string>
            </property>
            <property name="QCommaEdit" stdset="0">
             <rect>
@@ -324,7 +303,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>Satırlar Arası Boşluk                    </string>
+            <string>Line Spacing</string>
            </property>
           </widget>
          </item>
@@ -340,7 +319,7 @@
             </size>
            </property>
            <property name="whatsThis">
-            <string>Sayilari formatina(Or:1,000,234.50) donusturur. </string>
+            <string>Converts Number of format (OR: 1,000,234.50).</string>
            </property>
            <property name="QCommaEdit" stdset="0">
             <rect>
@@ -365,6 +344,27 @@
            </property>
           </widget>
          </item>
+         <item row="0" column="1">
+          <widget class="QCommaEdit" name="comma_edit_belge_genisligi">
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="whatsThis">
+            <string>Number of format (OR: 1,000,234.50) converts. </string>
+           </property>
+           <property name="QCommaEdit" stdset="0">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>100</width>
+             <height>100</height>
+            </rect>
+           </property>
+          </widget>
+         </item>
         </layout>
        </widget>
       </item>
@@ -386,7 +386,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>Belge Satır Sayısı</string>
+            <string>Document Line Number</string>
            </property>
           </widget>
          </item>
@@ -399,7 +399,7 @@
             </size>
            </property>
            <property name="whatsThis">
-            <string>Sayilari formatina(Or:1,000,234.50) donusturur. </string>
+            <string>Converts Number of format (OR: 1,000,234.50).</string>
            </property>
            <property name="QCommaEdit" stdset="0">
             <rect>
@@ -420,7 +420,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>Satırdaki Toplam Karakter Sayısı</string>
+            <string>Total number of characters on the line</string>
            </property>
           </widget>
          </item>
@@ -433,7 +433,7 @@
             </size>
            </property>
            <property name="whatsThis">
-            <string>Sayilari formatina(Or:1,000,234.50) donusturur. </string>
+            <string>Converts Number of format (OR: 1,000,234.50) .</string>
            </property>
            <property name="QCommaEdit" stdset="0">
             <rect>
@@ -454,7 +454,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>Satırlar Arası Boşluk</string>
+            <string>Line Spacing</string>
            </property>
           </widget>
          </item>
@@ -467,7 +467,7 @@
             </size>
            </property>
            <property name="whatsThis">
-            <string>Sayilari formatina(Or:1,000,234.50) donusturur. </string>
+            <string>Converts Number of format (OR: 1,000,234.50) .</string>
            </property>
            <property name="QCommaEdit" stdset="0">
             <rect>

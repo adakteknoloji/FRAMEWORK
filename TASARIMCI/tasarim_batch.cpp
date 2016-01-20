@@ -90,7 +90,7 @@ void TASARIM_BATCH::SETUP_FORM ()
     GET_SAVED_VARIABLE_INFO( m_tasarim_id );
 
     SET_PAGE_TITLE( GET_TASARIM_ADI());
-    SET_HELP_PAGE ( tr("belge-tasarimcisi_tasarim-laser") );
+    SET_HELP_PAGE ( tr("document-designer_design-laser") );
 
     SET_FIRST_FOCUS_WIDGET(m_ui->pushButton_belge_ozellikleri );
 
@@ -184,7 +184,7 @@ int TASARIM_BATCH::CHECK_VAR(QObject * object)
     else if ( object EQ m_ui->doubleSpinBox_x OR object EQ m_ui->doubleSpinBox_y) {
 
         if (m_ui->doubleSpinBox_x->value() > m_belge_width OR m_ui->doubleSpinBox_y->value() > m_belge_height ) {
-            MSG_WARNING(tr("Vermiş olduğunuz belge boyutundan büyük değer giremezsiniz."),NULL);
+            MSG_WARNING(tr("You can not enter the document size you have given great value."),NULL);//Vermiş olduğunuz belge boyutundan büyük değer giremezsiniz.
             return ADAK_FAIL_UNDO;
         }
 
@@ -966,8 +966,8 @@ bool TASARIM_BATCH::eventFilter( QObject *p_obj, QEvent *p_event)
 int TASARIM_BATCH::CHECK_EXIT()
 {
     if ( m_design_changed EQ true ) {
-       int secim = MSG_YES_NO( "Tasarımda Değişiklikler yapıldı. Çıkmak istiyormusunuz ?", NULL );
-
+       int secim = MSG_YES_NO( tr("Changes were made to the design. Do you want to quit?"), NULL );
+//Tasarımda Değişiklikler yapıldı. Çıkmak istiyormusunuz ?
        if ( secim NE ADAK_YES ) {
            return ADAK_FAIL;
        }
@@ -1007,8 +1007,8 @@ void TASARIM_BATCH::SLOT_X_AND_Y_CHANGE( double p_value )
     Q_UNUSED( p_value );
 
     if (m_ui->doubleSpinBox_x->value() > m_belge_width OR m_ui->doubleSpinBox_y->value() > m_belge_height ) {
-        MSG_WARNING(tr("Vermiş olduğunuz belge boyutundan büyük değer giremezsiniz."),NULL);
-        return;
+        MSG_WARNING(tr("You can not enter the document size you have given great value."),NULL);
+        return;//Vermiş olduğunuz belge boyutundan büyük değer giremezsiniz.
     }
 
     CONSOLE_POS_SELECTED_LABEL();
@@ -1085,12 +1085,12 @@ void TASARIM_BATCH::SAVER_BUTTON_CLICKED(QAbstractButton * button)
     }
     else if ( button EQ m_ui->pushButton_onizleme_modu ) {
         if ( m_tasarimci_modu EQ DESIGNER_MODU ) {
-            m_ui->pushButton_onizleme_modu->setText( "Designer Modu");
+            m_ui->pushButton_onizleme_modu->setText( tr("Designer Mode"));
             m_ui->pushButton_onizleme_modu->setIcon( QPixmap(":/tasarimci_icons/ICONS/tasarimci_designer_modu.png"));
             m_tasarimci_modu = ONIZLEME_MODU;
         }
         else {
-            m_ui->pushButton_onizleme_modu->setText( "Önizleme Modu");
+            m_ui->pushButton_onizleme_modu->setText( tr("Preview Mode"));
             m_ui->pushButton_onizleme_modu->setIcon( QPixmap(":/tasarimci_icons/ICONS/tasarimci_onizleme_modu.png"));
             m_tasarimci_modu = DESIGNER_MODU;
         }
@@ -1158,7 +1158,7 @@ int TASARIM_BATCH::CHANGER_BUTTON_CLICKED (QAbstractButton *button)
 void TASARIM_BATCH::SLOT_RUN_BATCH()
 {
     RUN_BATCH();
-    MSG_INFO( "Yeni değerler kaydedildi.", NULL );
+    MSG_INFO( tr("New values were recorded."), NULL );//Yeni değerler kaydedildi.
 }
 
 /**************************************************************************************
@@ -1405,7 +1405,7 @@ void TASARIM_BATCH::SLOT_CHANGE_SOL_BOSLUK()
 void TASARIM_BATCH::SLOT_CHANGE_SOL_BOSLUK_USTEN_SATIR()
 {
     if (m_ui->doubleSpinBox_soldan_bosluk->value() > m_belge_toplam_karakter_sayisi OR m_ui->doubleSpinBox_satir_sayisi->value() > m_belge_satir_sayisi) {
-        MSG_WARNING(tr("Vermiş olduğunuz belge boyutundan büyük değer giremezsiniz."),NULL);
+        MSG_WARNING(tr("You can not enter the document size you have given great value."),NULL);//Vermiş olduğunuz belge boyutundan büyük değer giremezsiniz.
         return;
     }
 

@@ -33,11 +33,11 @@ TASARIM_BELGE_DEGISKENLERI_SECIMI::TASARIM_BELGE_DEGISKENLERI_SECIMI( QList< TAS
     SET_SORTING( false );
 
     SET_WINDOW_SIZE ( 400, 350 );
-    SET_HEADERS (QStringList() << "Degisken Id" << "Değişken Adı" );
+    SET_HEADERS (QStringList() << QObject::tr("Variable Id") << QObject::tr("Variable Name") );
 
-    SET_PAGE_TITLE    ( tr ( "DEĞİŞKEN SEÇİMİ" ) );
+    SET_PAGE_TITLE    ( QObject::tr( "VARIABLE SELECTION" ) );
     SET_SETTING_NAME  ( "DEGISKEN_SECIMI" );
-    SET_HELP_PAGE     ( tr("degisken_secimi") );
+    SET_HELP_PAGE     ( QObject::tr("variable_selection") );
 
     INIT_KERNEL ( DB );
 

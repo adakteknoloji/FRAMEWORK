@@ -34,14 +34,14 @@ TASARIM_YENI_TASARIM_BATCH::TASARIM_YENI_TASARIM_BATCH ( int p_belge_id, QWidget
 
 void TASARIM_YENI_TASARIM_BATCH::SETUP_FORM ()
 {
-    SET_NAME_OF_RUN_BATCH_BUTTON ( "Oluştur" );
+    SET_NAME_OF_RUN_BATCH_BUTTON ( tr("Create") );
     SET_AUTO_EXIT_BATCH ( true );
 
     SET_FIRST_FOCUS_WIDGET ( m_ui->widget_batch_buttons );
 
     REGISTER_BUTTON_WIDGET ( m_ui->widget_batch_buttons );
 
-    SET_PAGE_TITLE    (tr("YENİ TASARIM"));
+    SET_PAGE_TITLE    (tr("NEW DESIGN"));
     SET_SETTING_NAME  ("TASARIM_YENI_TASARIM_BATCH");
     SET_HELP_PAGE     ("belge-tasarimcisi_tasarim-yeni-tasarim");
 
@@ -59,7 +59,7 @@ void TASARIM_YENI_TASARIM_BATCH::SETUP_FORM ()
     }
     int current_index = 0;
     m_copy_belge_id_list << "-1";
-    belgeler << tr( " << KOPYALAMA , sıfırdan tasarlamak istiyorum >>" );
+    belgeler << tr( " << DON'T COPY, I want to design from scratch. >>" );//KOPYALAMA , sıfırdan tasarlamak istiyorum
     while ( query.NEXT() ) {
         if ( current_index EQ 0 ) {
             current_index = query.VALUE( 0 ).toInt();
@@ -97,7 +97,7 @@ int TASARIM_YENI_TASARIM_BATCH::CHECK_VAR ( QObject * object )
 int TASARIM_YENI_TASARIM_BATCH::CHECK_RUN ()
 {
     if ( m_ui->lineEdit_belge_adi->text().isEmpty() EQ true ) {
-        MSG_WARNING( tr( "Belge Adını girmelisiniz..." ), m_ui->lineEdit_belge_adi );
+        MSG_WARNING( tr( "You must enter the document name." ), m_ui->lineEdit_belge_adi );//Belge Adını girmelisiniz...
         return ADAK_FAIL;
     }
     return ADAK_OK;
@@ -206,7 +206,7 @@ void TASARIM_YENI_TASARIM_BATCH::RUN_BATCH ()
     G_YONETIM_DB->COMMIT_TRANSACTION();
 
 
-    MSG_INFO( tr( "Oluşturuldu" ), NULL );
+    MSG_INFO( tr( "Created" ), NULL );
     close();
 }
 

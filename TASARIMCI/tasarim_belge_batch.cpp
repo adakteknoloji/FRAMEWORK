@@ -44,8 +44,8 @@ void TASARIM_BELGE_BATCH::SETUP_FORM ()
 
     CLEAR_FORM_MEMBERS();
 
-    SET_PAGE_TITLE(tr("BELGE ÖZELLİKLERİ"));
-    SET_HELP_PAGE (tr("belge_tasarimi"));
+    SET_PAGE_TITLE(tr("DOCUMENT PROPERTIES"));
+    SET_HELP_PAGE (tr("document_design"));
     SET_AUTO_EXIT_BATCH ( true );
 
     m_ui->comma_edit_row_count->SET_PRECISION(0);
@@ -199,48 +199,49 @@ int TASARIM_BELGE_BATCH::CHECK_VAR (QObject * object)
 int TASARIM_BELGE_BATCH::CHECK_RUN ()
 {
     if (m_ui->line_edit_tasarim_adi->text().isEmpty() EQ true) {
-        MSG_WARNING(tr("Belge adı boş bırakılamaz."),m_ui->line_edit_tasarim_adi);
+        MSG_WARNING(tr("Document name can not be empty. "),m_ui->line_edit_tasarim_adi);//Belge adı boş bırakılamaz.
         return ADAK_FAIL;
     }
 
     if (m_ui->comma_edit_copy_count->GET_INTEGER() EQ 0) {
-        MSG_WARNING(tr("Kopya sayısı alanı boş bırakılamaz."),m_ui->comma_edit_copy_count);
+        MSG_WARNING(tr("Number of copies field can not be empty. "),m_ui->comma_edit_copy_count);//Kopya sayısı alanı boş bırakılamaz.
         return ADAK_FAIL;
     }
 
     if ( m_printer_type EQ LAZER_PRINTERS) {
         if (m_ui->comma_edit_belge_genisligi->GET_DOUBLE() EQ 0) {
-            MSG_WARNING(tr("Belge genişliği alanı boş bırakılamaz."),m_ui->comma_edit_belge_genisligi);
+            MSG_WARNING(tr("Document width field can not be empty."),m_ui->comma_edit_belge_genisligi);//Belge genişliği alanı boş bırakılamaz.
             return ADAK_FAIL;
         }
 
         if (m_ui->comma_edit_belge_yuksekligi->GET_DOUBLE() EQ 0) {
-            MSG_WARNING(tr("Belge yüksekliği alanı boş bırakılamaz."),m_ui->comma_edit_belge_yuksekligi);
+            MSG_WARNING(tr("Document height field can not be empty."),m_ui->comma_edit_belge_yuksekligi);//Belge yüksekliği alanı boş bırakılamaz.
             return ADAK_FAIL;
         }
 
         if (m_ui->comma_edit_row_count->GET_INTEGER() EQ 0) {
-            MSG_WARNING(tr("Satır sayısı boş bırakılamaz."),m_ui->comma_edit_row_count);
+            MSG_WARNING(tr("Number of line field can not be empty. "),m_ui->comma_edit_row_count);//Satır sayısı boş bırakılamaz.
             return ADAK_FAIL;
         }
     }
     else {
         if (m_ui->comma_edit_belge_satir_sayisi->GET_INTEGER() EQ 0) {
-            MSG_WARNING(tr("Yazdırılacak alandaki satır sayısı boş bırakılamaz."),m_ui->comma_edit_belge_satir_sayisi);
+            MSG_WARNING(tr("The number of rows to be printed can not be empty space."),m_ui->comma_edit_belge_satir_sayisi);//Yazdırılacak alandaki satır sayısı boş bırakılamaz.
             return ADAK_FAIL;
         }
         if (m_ui->comma_edit_satirdaki_toplam_karakter_sayisi->GET_INTEGER() EQ 0) {
-            MSG_WARNING(tr("Satırdaki toplam karakter sayısı boş bırakılamaz."),m_ui->comma_edit_satirdaki_toplam_karakter_sayisi);
+            MSG_WARNING(tr("The total number of characters in line can not be empty."),m_ui->comma_edit_satirdaki_toplam_karakter_sayisi);//Satırdaki toplam karakter sayısı boş bırakılamaz.
             return ADAK_FAIL;
         }
         if (m_ui->comma_edit_satirlar_arasi_satir_sayisi->GET_INTEGER() EQ 0) {
-            MSG_WARNING(tr("Satırlar arası satır sayısı boş bırakılamaz."),m_ui->comma_edit_satirlar_arasi_satir_sayisi);
+            MSG_WARNING(tr("The number of lines can not be empty between rows."),m_ui->comma_edit_satirlar_arasi_satir_sayisi);//Satırlar arası satır sayısı boş bırakılamaz.
             return ADAK_FAIL;
         }
     }
 
     if (GET_IS_TASARIM_READONLY() EQ true) {
-        MSG_ERROR(tr("Programa ait tasarımlar üzerinde değişiklik yapılamaz.\nDeğişiklik yapılabilmesi için tasarımın kopyalanması gereklidir."),NULL);
+        MSG_ERROR(tr("The program of design are not modified. Copying design is necessary for made changes."),NULL);
+        //Programa ait tasarımlar üzerinde değişiklik yapılamaz.\nDeğişiklik yapılabilmesi için tasarımın kopyalanması gereklidir.
         return ADAK_FAIL;
     }
     return ADAK_OK;
@@ -276,7 +277,7 @@ void TASARIM_BELGE_BATCH::RUN_BATCH()
     query.UPDATE();
     G_YONETIM_DB->COMMIT_TRANSACTION();
 
-    MSG_INFO( tr( "Değerler Güncellendi" ), NULL );
+    MSG_INFO( tr( "The values updated." ), NULL );
     close();
 }
 

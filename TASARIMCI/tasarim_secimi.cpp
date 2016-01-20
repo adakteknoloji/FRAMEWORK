@@ -28,9 +28,9 @@ TASARIM_SECIMI::TASARIM_SECIMI(int * secilen_id , int belge_id, QWidget *parent 
 
     SET_WINDOW_SIZE(400,300);
 
-    SET_PAGE_TITLE("TASARIM SEÇİMİ");
+    SET_PAGE_TITLE(QObject::tr("DESIGN SELECTION"));
 
-    SET_HEADERS(QStringList()<<"tasarim_id"<<"Tasarım Adı");
+    SET_HEADERS(QStringList()<<QObject::tr("tasarim_id")<<QObject::tr("Design Name"));
 
     INIT_KERNEL(G_YONETIM_DB);
 }

@@ -28,7 +28,7 @@ void FILL_DEGISKEN_GRUBU_COMBOBOX (QComboBox * combo_box)
 
 void FILL_ALIGN_COMBOBOX (QComboBox * combo_box)
 {
-    combo_box->addItems(QStringList() << "Sola Hizala" << "Ortala" << "Sağa Hizala" );
+    combo_box->addItems(QStringList() << QObject::tr("Align Left") << QObject::tr("Centered") << QObject::tr("Align Right") );
 }
 
 /**************************************************************************************
@@ -174,11 +174,11 @@ QString GET_BELGE_ALIGN_STR (int belge_align_enum)
 {
     switch(belge_align_enum) {
         case LEFT_ALIGN:
-            return "Sola Hizala";
+            return QObject::tr("Align Left");
         case RIGHT_ALIGN:
-            return "Sağa Hizala";
+            return QObject::tr("Align Right");
         case CENTER_ALIGN:
-            return "Ortala";
+            return QObject::tr("Centered");
         default:
             break;
     }
@@ -192,15 +192,15 @@ QString GET_BELGE_ALIGN_STR (int belge_align_enum)
 
 int GET_BELGE_ALIGN_ENUM (QString belge_align_str)
 {
-    if (belge_align_str EQ "Sola Hizala") {
+    if (belge_align_str EQ QObject::tr("Align Left")) {
         return LEFT_ALIGN;
     }
 
-    if (belge_align_str EQ "Sağa Hizala") {
+    if (belge_align_str EQ QObject::tr("Align Right")) {
         return RIGHT_ALIGN;
     }
 
-    if (belge_align_str EQ "Ortala") {
+    if (belge_align_str EQ QObject::tr("Centered")) {
         return CENTER_ALIGN;
     }
 
@@ -215,8 +215,8 @@ void FILL_PRINTER_TYPE_COMBOBOX (QComboBox * combo_box)
 {
     //Burdaki degisikler GET_PRINTER_TYPE_STR ve GET_PRINTER_TYPE_ENUM fonksiyonlarinada
     //yansitilmali
-    combo_box->addItems(QStringList() << "Lazer Yazıcılar"
-                                      << "Nokta Vuruşlu Yazıcılar" );
+    combo_box->addItems(QStringList() << QObject::tr("Laser Printers")
+                                      << QObject::tr("Dot Matrix Printers") );
     combo_box->setCurrentIndex(0);
 }
 
@@ -226,10 +226,10 @@ void FILL_PRINTER_TYPE_COMBOBOX (QComboBox * combo_box)
 
 int GET_PRINTER_TYPE_ENUM (QString printer_type_str)
 {
-    if (printer_type_str EQ "Lazer Yazıcılar" ) {
+    if (printer_type_str EQ QObject::tr("Laser Printers") ) {
         return LAZER_PRINTERS;
     }
-    if (printer_type_str EQ "Nokta Vuruşlu Yazıcılar" ) {
+    if (printer_type_str EQ QObject::tr("Dot Matrix Printers" )) {
         return DOT_MATRIX_PRINTER;
     }
     return -1;
@@ -243,9 +243,9 @@ QString GET_PRINTER_TYPE_STR (int printer_type_enum)
 {
     switch (printer_type_enum) {
         case LAZER_PRINTERS:
-            return "Lazer Yazıcılar";
+            return QObject::tr("Laser Printers");
         case DOT_MATRIX_PRINTER:
-            return "Nokta Vuruşlu Yazıcılar";
+            return QObject::tr("Dot Matrix Printers" );
         default:
             return "";
     }
@@ -257,7 +257,7 @@ QString GET_PRINTER_TYPE_STR (int printer_type_enum)
 
 void FILL_DOTMATRIX_FONT_COMBOBOX (QComboBox * combo_box)
 {
-    combo_box->addItems(QStringList() << "Küçük Yazıtipi"<< "Normal Yazıtipi" << "Büyük Yazıtipi" );
+    combo_box->addItems(QStringList() << QObject::tr("Small Font" )<< QObject::tr("Normal Font" ) << QObject::tr("Big Font") );
     combo_box->setCurrentIndex(1);
 }
 
@@ -267,13 +267,13 @@ void FILL_DOTMATRIX_FONT_COMBOBOX (QComboBox * combo_box)
 
 int GET_DOTMATRIX_FONT_ENUM(QString font_type_str)
 {
-    if (font_type_str EQ "Küçük Yazıtipi" ) {
+    if (font_type_str EQ QObject::tr("Small Font" ) ) {
         return DOTMATRIX_CONDENSED_FONT;
     }
-    else if (font_type_str EQ "Normal Yazıtipi" ) {
+    else if (font_type_str EQ QObject::tr("Normal Font" )) {
         return DOTMATRIX_NORMAL_FONT;
     }
-    else if (font_type_str EQ "Büyük Yazıtipi" ) {
+    else if (font_type_str EQ QObject::tr("Big Font") ) {
         return DOTMATRIX_LARGE_FONT;
     }
     return -1;
@@ -287,11 +287,11 @@ QString GET_DOTMATRIX_FONT_STR (int font_type_enum)
 {
     switch (font_type_enum) {
         case DOTMATRIX_CONDENSED_FONT:
-            return "Küçük Yazıtipi";
+            return QObject::tr("Small Font");
         case DOTMATRIX_NORMAL_FONT:
-            return "Normal Yazıtipi";
+            return QObject::tr("Normal Font");
         case DOTMATRIX_LARGE_FONT:
-            return "Büyük Yazıtipi";
+            return QObject::tr("Big Font");
          default:
             return "";
     }
@@ -435,5 +435,5 @@ void CREATE_CPP_CODE_SAVED_DESIGNS ( void )
 
     degiskenler_file.close();
 
-    ADAK_INFO ("e9_default_belge.h yeniden oluşturuldu.",NULL,NULL);
+    ADAK_INFO (QObject::tr("e9_default_belge.h was rebuilt."),NULL,NULL);//e9_default_belge.h yeniden oluşturuldu.
 }

@@ -42,14 +42,14 @@ TASARIM_MENU_BATCH::TASARIM_MENU_BATCH ( ADAK_BELGELER_STRUCT * p_belge_struct, 
 
 void TASARIM_MENU_BATCH::SETUP_FORM ()
 {
-    SET_NAME_OF_RUN_BATCH_BUTTON ( "Kapat" );
+    SET_NAME_OF_RUN_BATCH_BUTTON (tr("Close") );
     SET_AUTO_EXIT_BATCH ( true );
 
     SET_FIRST_FOCUS_WIDGET ( m_ui->tableWidget_tasarimlar );
 
     REGISTER_BUTTON_WIDGET ( m_ui->widget_run_batch_button );
 
-    SET_PAGE_TITLE    (tr("BELGE TASARIMCI"));
+    SET_PAGE_TITLE    (tr("DOCUMENT DESIGNER"));
     SET_SETTING_NAME  ("TASARIM_MENU_BATCH");
     SET_HELP_PAGE     ("yonetim-islemleri_belge-tasarimcisi");
 
@@ -59,7 +59,7 @@ void TASARIM_MENU_BATCH::SETUP_FORM ()
     m_ui->tableWidget_tasarimlar->setRowCount( m_belge_count );
     m_ui->tableWidget_tasarimlar->setColumnCount( 2 );
 
-    m_ui->tableWidget_tasarimlar->setHorizontalHeaderLabels( QStringList() << tr( "Belge_id" ) << tr( "Belgeler" ) );
+    m_ui->tableWidget_tasarimlar->setHorizontalHeaderLabels( QStringList() << tr( "Document_id" ) << tr( "Documents" ) );
 
     m_ui->tableWidget_tasarimlar->hideColumn( 0 );
 
@@ -116,7 +116,8 @@ int TASARIM_MENU_BATCH::CHECK_VAR ( QObject * object )
             query.SET_VALUE     (":tasarim_id", m_tasarim_id );
 
             if ( query.SELECT() NE 0 ) {
-                MSG_WARNING("Tasarımın boş olması gerekir. Lütfen boş bir tasarım seçip tekrar deneyin.", NULL );
+                MSG_WARNING(tr("Design must be empty. Please try again select an empty design."), NULL );
+                //Tasarımın boş olması gerekir. Lütfen boş bir tasarım seçip tekrar deneyin.
                 return ADAK_FAIL;
             }
 
@@ -183,7 +184,7 @@ void TASARIM_MENU_BATCH::FILL_ALT_MENU ( int p_belge_id )
 
     m_ui->tableWidget_alt_tasarimlar->hideColumn( 0 );
 
-    m_ui->tableWidget_alt_tasarimlar->setHorizontalHeaderLabels( QStringList() << tr( "tasarim_id" ) << tr( "Tasarım Adı" ) << tr("Yazici Tipi") << tr(""));
+    m_ui->tableWidget_alt_tasarimlar->setHorizontalHeaderLabels( QStringList() << tr( "design_id" ) << tr( "Design Name" ) << tr("Printer Type") << tr(""));
 
     m_ui->tableWidget_alt_tasarimlar->setColumnWidth( 1 , 300 );
     m_ui->tableWidget_alt_tasarimlar->setColumnWidth( 2 , 120 );
@@ -237,7 +238,7 @@ void TASARIM_MENU_BATCH::FILL_ALT_MENU ( int p_belge_id )
 
     current_row++;
 
-    QLabel * label_yeni_belge = new QLabel( "<< Yeni Belge Tasarla >>" );
+    QLabel * label_yeni_belge = new QLabel( tr("<< Design New Document >>") );
     label_yeni_belge->setStyleSheet( "color: rgb(0, 0, 255);");
     label_yeni_belge->setObjectName( QVariant( p_belge_id ).toString() );
 
@@ -331,7 +332,7 @@ void TASARIM_MENU_BATCH::SLOT_TASARIMI_SIL()
 
     int tasarim_id = delete_button->objectName().toInt();
 
-    int secim = MSG_YES_NO( "Tasarımı silinecek devam edilsin mi ?", NULL );
+    int secim = MSG_YES_NO( tr("The design wil be deleted. Continue?"), NULL );//Tasarımı silinecek devam edilsin mi
 
     if ( secim EQ ADAK_YES ) {
         SQL_QUERY query(G_YONETIM_DB);

@@ -33,25 +33,25 @@ void TASARIM_EXPORT::EXPORT_ROWS()
 
     SQL_QUERY query(G_YONETIM_DB);
 
-    row_title << "Id";
-    row_title << "Font Size";
-    row_title << "Align";
-    row_title << "PX";
-    row_title << "PY";
-    row_title << "Vertical Size";
-    row_title << "Horizontal Size";
-    row_title << "Text";
-    row_title << "Text Size";
-    row_title << "Visible";
-    row_title << "Grup";
-    row_title << "Monospace mi";
-    row_title << "Font";
-    row_title << "Bold";
-    row_title << "Under Line";
-    row_title << "İtalic";
-    row_title << "Strikeout";
-    row_title << "Satır";
-    row_title << "Soldan Boşluk";
+    row_title << QObject::tr("Id");
+    row_title << QObject::tr("Font Size");
+    row_title << QObject::tr("Align");
+    row_title << QObject::tr("PX");
+    row_title << QObject::tr("PY");
+    row_title << QObject::tr("Vertical Size");
+    row_title << QObject::tr("Horizontal Size");
+    row_title << QObject::tr("Text");
+    row_title << QObject::tr("Text Size");
+    row_title << QObject::tr("Visible");
+    row_title << QObject::tr("Group");
+    row_title << QObject::tr("Is Monospace");
+    row_title << QObject::tr("Font");
+    row_title << QObject::tr("Bold");
+    row_title << QObject::tr("Under Line");
+    row_title << QObject::tr("İtalic");
+    row_title << QObject::tr("Strikeout");
+    row_title << QObject::tr("Row");
+    row_title << QObject::tr("Left Space");
 
     SET_ROW_TITLE(row_title);
 

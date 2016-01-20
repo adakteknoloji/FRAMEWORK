@@ -55,7 +55,7 @@ void TASARIM_BATCH_BASE::SLOT_RESIM_EKLE_BUTTON_CLICKED()
 {
     m_design_widget->RESET_VARIABLE();
 
-    QString file_name = QFileDialog::getOpenFileName( NULL, tr("Resim Aç"), "", tr("Resim Dosyaları (*.png *.jpg *.bmp)"));
+    QString file_name = QFileDialog::getOpenFileName( NULL, tr("Open Picture"), "", tr("Picture File (*.png *.jpg *.bmp)"));
 
     if ( file_name.isEmpty() EQ true ) {
         return;
@@ -108,8 +108,8 @@ void TASARIM_BATCH_BASE::SLOT_TEXT_EKLE_BUTTON_CLICKED()
 
     line_edit->setMinimumWidth(350);
 
-    combobox_grup->addItem("Forma Ekle");
-    combobox_grup->addItem("Satıra Ekle");
+    combobox_grup->addItem(tr("Add the Form "));
+    combobox_grup->addItem("Add the Line");
 
     dialog->setLayout     (box_layout);
     box_layout->addWidget (label,         0, 0);
@@ -191,8 +191,8 @@ void TASARIM_BATCH_BASE::SLOT_SECILI_DEGISKENI_SIL()
 
     TASARIM_DEGISKENI *degisken = GET_LABEL_DEGISKEN( selected_label );
 
-    int secim = MSG_YES_NO( tr("<b>%1</b> Değişkeni Silinicektir. Onaylıyormusunuz ?").arg( GET_PIXMAP_FILE_NAME( degisken->GET_TEXT()) ), m_design_widget );
-
+    int secim = MSG_YES_NO( tr("<b>%1</b> The variable will be deleted.Do you confirm?").arg( GET_PIXMAP_FILE_NAME( degisken->GET_TEXT()) ), m_design_widget );
+//<b>%1</b> Değişkeni Silinicektir. Onaylıyormusunuz ?
     if ( secim EQ ADAK_YES ) {
 
         m_silinecek_degiskenler << degisken->GET_PRIMARY_ID();

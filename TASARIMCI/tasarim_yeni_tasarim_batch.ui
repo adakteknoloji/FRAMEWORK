@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>546</width>
-    <height>131</height>
+    <height>151</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -47,7 +47,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Yeni Tasarım Adı</string>
+         <string>New Design Name:</string>
         </property>
        </widget>
       </item>
@@ -76,7 +76,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Kopyalanacak Tasarım  </string>
+         <string>Design to be copied:</string>
         </property>
        </widget>
       </item>
@@ -125,7 +125,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Yazıcı Tipi</string>
+         <string>Printer Type:</string>
         </property>
        </widget>
       </item>

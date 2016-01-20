@@ -41,7 +41,7 @@
       <item row="0" column="0">
        <widget class="QLabel" name="label_tasarim_adi">
         <property name="text">
-         <string>Yeni Tasarım Adı</string>
+         <string>New Design Name</string>
         </property>
        </widget>
       </item>
@@ -70,7 +70,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Kopyalanacak Tasarım  </string>
+         <string>Design to be copied</string>
         </property>
        </widget>
       </item>
@@ -113,7 +113,7 @@
       <item row="2" column="0">
        <widget class="QLabel" name="label_yazici_tipi">
         <property name="text">
-         <string>Yazıcı Tipi</string>
+         <string>Printer Type</string>
         </property>
        </widget>
       </item>
