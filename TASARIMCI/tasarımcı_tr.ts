@@ -305,115 +305,115 @@
     <message>
         <location filename="tasarim_batch.ui" line="831"/>
         <source>Normal</source>
-        <translation type="unfinished">Normal</translation>
+        <translation>Normal</translation>
     </message>
     <message>
         <location filename="tasarim_batch.ui" line="838"/>
         <source>Large</source>
-        <translation type="unfinished">Büyük</translation>
+        <translation>Büyük</translation>
     </message>
     <message>
         <location filename="tasarim_batch.ui" line="845"/>
         <source>Condense</source>
-        <translation type="unfinished">Koyu</translation>
+        <translation>Koyu</translation>
     </message>
     <message>
         <location filename="tasarim_batch.ui" line="870"/>
         <source>Document Properties</source>
-        <translation type="unfinished">Belge Ayarları</translation>
+        <translation>Belge Ayarları</translation>
     </message>
     <message>
         <location filename="tasarim_batch.ui" line="901"/>
         <source>Select Info</source>
-        <translation type="unfinished">Bilgi Seç</translation>
+        <translation>Bilgi Seç</translation>
     </message>
     <message>
         <location filename="tasarim_batch.ui" line="914"/>
         <source>Ctrl+S, Ctrl+R</source>
-        <translation type="unfinished">Ctrl+S, Ctrl+R</translation>
+        <translation>Ctrl+S, Ctrl+R</translation>
     </message>
     <message>
         <location filename="tasarim_batch.ui" line="940"/>
         <source>Save</source>
-        <translation type="unfinished">Kaydet</translation>
+        <translation>Kaydet</translation>
     </message>
     <message>
         <location filename="tasarim_batch.ui" line="949"/>
         <source>Ctrl+S, Ctrl+S</source>
-        <translation type="unfinished">Ctrl+S, Ctrl+S</translation>
+        <translation>Ctrl+S, Ctrl+S</translation>
     </message>
     <message>
         <location filename="tasarim_batch.ui" line="956"/>
         <source>Add Article</source>
-        <translation type="unfinished">Yazı Ekle</translation>
+        <translation>Yazı Ekle</translation>
     </message>
     <message>
         <location filename="tasarim_batch.ui" line="969"/>
         <source>Add Picture</source>
-        <translation type="unfinished">Resim Ekle</translation>
+        <translation>Resim Ekle</translation>
     </message>
     <message>
         <location filename="tasarim_batch.ui" line="1001"/>
         <source>Print</source>
-        <translation type="unfinished">Yazdır</translation>
+        <translation>Yazdır</translation>
     </message>
     <message>
         <location filename="tasarim_batch.ui" line="1020"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Scale &lt;span style=&quot; font-weight:600;&quot;&gt;%&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ölçek &lt;span style=&quot; font-weight:600;&quot;&gt;%&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ölçek &lt;span style=&quot; font-weight:600;&quot;&gt;%&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="tasarim_batch.ui" line="1034"/>
         <source>25</source>
-        <translation type="unfinished"></translation>
+        <translation>25</translation>
     </message>
     <message>
         <location filename="tasarim_batch.ui" line="1039"/>
         <source>50</source>
-        <translation type="unfinished"></translation>
+        <translation>50</translation>
     </message>
     <message>
         <location filename="tasarim_batch.ui" line="1044"/>
         <source>75</source>
-        <translation type="unfinished"></translation>
+        <translation>75</translation>
     </message>
     <message>
         <location filename="tasarim_batch.ui" line="1049"/>
         <source>100</source>
-        <translation type="unfinished"></translation>
+        <translation>100</translation>
     </message>
     <message>
         <location filename="tasarim_batch.ui" line="1060"/>
         <location filename="tasarim_batch.cpp" line="1093"/>
         <source>Preview Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Önizleme Modu</translation>
     </message>
     <message>
         <location filename="tasarim_batch.cpp" line="93"/>
         <source>document-designer_design-laser</source>
-        <translation type="unfinished"></translation>
+        <translation>belge-tasarımcı_tasarım-lazer</translation>
     </message>
     <message>
         <location filename="tasarim_batch.cpp" line="187"/>
         <location filename="tasarim_batch.cpp" line="1010"/>
         <location filename="tasarim_batch.cpp" line="1408"/>
         <source>You can not enter the document size you have given great value.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vermiş olduğunuz belge boyutundan büyük bir değer giremezsiniz.</translation>
     </message>
     <message>
         <location filename="tasarim_batch.cpp" line="969"/>
         <source>Changes were made to the design. Do you want to quit?</source>
-        <translation type="unfinished"></translation>
+        <translation>Tasarımda değişiklikler yapıldı Çıkmak istiyor musunuz?</translation>
     </message>
     <message>
         <location filename="tasarim_batch.cpp" line="1088"/>
         <source>Designer Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Tasarımcı Modu</translation>
     </message>
     <message>
         <location filename="tasarim_batch.cpp" line="1161"/>
         <source>New values were recorded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni değerler kaydedildi.</translation>
     </message>
 </context>
 <context>
