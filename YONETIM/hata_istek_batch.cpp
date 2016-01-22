@@ -3,6 +3,7 @@
 #include "print.h"
 #include "email.h"
 #include "yonetim.h"
+#include <QObject>
 
 extern ADAK_SQL    * G_YONETIM_DB;
 extern QStringList    G_FORM_NAME;
@@ -97,8 +98,8 @@ int HATA_ISTEK_BATCH::CHECK_RUN ()
 
 void HATA_ISTEK_BATCH::RUN_BATCH ()
 {
-    QString from             = m_ui->line_edit_email->text();
-    QString subject          = tr("Bug/Request notification( " + ADAK_PROGRAM_LONGNAME(ADAK_DISPLAY_ID()) + " " + ADAK_PROGRAM_VERSION(ADAK_DISPLAY_ID()) + " )");
+    QString from      = m_ui->line_edit_email->text();
+    QString subject   = QObject::tr ("Bug/Request notification( " + ADAK_PROGRAM_LONGNAME(ADAK_DISPLAY_ID()) + " " + ADAK_PROGRAM_VERSION(ADAK_DISPLAY_ID()) + " )");
 
     EMAIL_SET_EMAIL_SERVER ("smtp.gmail.com", 587, STARTTLS );
     EMAIL_SET_USER_EMAIL_INFO ( "adakerror", "qaz123XSW", "Adak Error Sender", true  );

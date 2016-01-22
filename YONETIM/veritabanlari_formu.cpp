@@ -272,7 +272,7 @@ int VERITABANLARI_FORMU::ADD_RECORD ()
 
     int veritabani_id         = sql_query.INSERT();
 
-    QString log_detaylari = tr("Database ID: ") + QVariant ( veritabani_id ).toString() + tr(" # Database Name: ") + m_ui->lineEdit_veritabani_kodu->text();
+    QString log_detaylari = tr("Database ID: ") + QVariant ( veritabani_id ).toString() + tr(" # Database Name: ") + m_ui->lineEdit_veritabani_kodu->text()
                            + tr(" # Database Description: ") + m_ui->lineEdit_veritabani_adi->text();
 
     YONETIM_007_KAYIT ( LOG_VERITABANLARI, LOG_VERITABANI_YARATMA, log_detaylari );

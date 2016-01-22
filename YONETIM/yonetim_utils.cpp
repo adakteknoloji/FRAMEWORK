@@ -206,10 +206,10 @@ void CHECK_VERSION_UPGRADES (QString program_version_column_name , QString progr
 
     splash->finish(NULL);
 
-    ADAK_WARNING(QObject::tr("Version of programme is upgrade.\n")
-                QObject::tr("Please check User Authority for new properties. \n")//Yeni özellikler için lütfen Kullanıcı Yetkileri ' ni kontrol ediniz.
-                QObject::tr("You can set User Authorization in the User's Screen.\n\n")//Kullanıcı Yetkileri ' ni Kullanıcılar Ekranı ' ndan ayarlayabilirsiniz.
-                QObject::tr("You can use Management Actions -> E9 repair for resolving some errors.")//Bazı hataları gidermek için Yönetim İşlemleri->E9 Onar ' ı kullanabilirsiniz.
+    ADAK_WARNING(QObject::tr("Version of programme is upgrade.\n")+
+                QObject::tr("Please check User Authority for new properties. \n")+
+                QObject::tr("You can set User Authorization in the User's Screen.\n\n")+
+                QObject::tr("You can use Management Actions -> E9 repair for resolving some errors.")
                 ,NULL,NULL);
 
     DB->COMMIT_TRANSACTION();
@@ -399,10 +399,10 @@ void SISTEM_ITEM_CLICKED(int menu_item, QWidget *parent, void    (*F_PROGRAM_KUL
             break;
 
         case MENU_SIS_OTOMATIK_SIFRE_URET:{
-                ADAK_INFO( QObject::tr("SQL User Password<br><br> ")
-                      "<b>%1</b><br><br>"
+                ADAK_INFO( QObject::tr("SQL User Password<br><br> ")+
+                      "<b>%1</b><br><br>"+
                       QObject::tr("Attention: Assign the password that the user you created in database.").arg( SQL_DEFAULT_PASSWORD() ), NULL, NULL );
-            break;//Dikkat!Bu Şifreyi Veritabanında oluşturduğunuz kullanıcıya atayın.
+            break;
         }
         case MENU_SIS_HAKKIMIZDA :{
             OPEN_YONETIM_HAKKIMIZDA( parent );

@@ -46,7 +46,7 @@ QString REPORT_KERNEL::CREATE_HTML_PAGES()
 {
     QSplashScreen * splash = CREATE_SPLASH_SCREEN();
     splash->show();
-    splash->showMessage ( ( QString ( tr("Report is preparing. Please wait...") ) ),Qt::AlignCenter,Qt::white );//Rapor Hazırlanıyor.Lütfen Bekleyiniz...
+    splash->showMessage ( QString ( QObject::tr("Report is preparing. Please wait...") ) ,Qt::AlignCenter,Qt::white );//Rapor Hazırlanıyor.Lütfen Bekleyiniz...
     qApp->processEvents();
 
     QString header_string;
