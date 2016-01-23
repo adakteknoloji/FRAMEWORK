@@ -381,7 +381,7 @@ int SQL_TABLOLAR_FISI::ADD_FIS_RECORD()
 int SQL_TABLOLAR_FISI::CHECK_FIS_RECORD_UPDATE ( int p_tablo_id )
 {
     if ( KAYIT_GUNCELLEME_YETKISI_VAR_MI( KULLANICI_ID() ) EQ 0 ) {
-        MSG_ERROR(tr(This user has no authority to update records."),m_ui->lineEdit_tablo_adi);//Bu kullanıcının kayıt güncelleme yetkisi yok
+        MSG_ERROR(tr("This user has no authority to update records."),m_ui->lineEdit_tablo_adi);//Bu kullanıcının kayıt güncelleme yetkisi yok
         return ADAK_FAIL;
     }
 
