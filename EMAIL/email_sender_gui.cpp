@@ -75,7 +75,7 @@ void EMAIL_SENDER_GUI::SETUP_FORM ()
         m_ui->combobox_baglanti_guvenligi->setCurrentIndex( baglanti_guvenligi );
     }
     else {
-        MSG_ERROR(tr ("Mail server did not define.It needs to be defined from 'System-Mail Server' menu."),NULL);
+        MSG_ERROR(tr ("Mail server is not defined. It needs to be defined from 'System-Mail Server' menu."),NULL);
         //Posta Sunucusu Tanımlanmamış.'Sistem->Posta Sunucusu' menüsünden tanımlanması gerekli.
         close();
     }
@@ -90,7 +90,7 @@ void EMAIL_SENDER_GUI::SETUP_FORM ()
              m_ui->line_edit_kullanici_adi->setText ( sql_query.VALUE(2).toString() );
         }
         else {
-           MSG_ERROR(tr ( "Your E-Mail address or E-Mail User name did not define. It needs to be defined from 'System-Users' menu."),NULL);
+           MSG_ERROR(tr ( "Your E-Mail address or E-Mail User is undefined. It needs to be defined from 'System-Users' menu."),NULL);
            //E-Posta adresiniz veya E-Posta Kullanıcı İsminiz tanımlanmamış.'Sistem->Kullanıcılar' menüsünden tanımlanması gerekli.
            close();
         }
@@ -114,7 +114,7 @@ int EMAIL_SENDER_GUI::CHECK_VAR ( QObject * object )
 
     if ( m_ui->line_edit_from->text().isEmpty() EQ false ) {
         if ( m_ui->line_edit_from->text().contains("@") EQ false OR m_ui->line_edit_from->text().contains ( "." ) EQ false ) {
-            MSG_ERROR(tr("Sender e-mail address entered as invalid address.... ")  ,NULL);//Gönderen olarak girilen e-mail adresi geçersiz
+            MSG_ERROR(tr("Sender e-mail address entered is invalid")  ,NULL);//Gönderen olarak girilen e-mail adresi geçersiz
             return ADAK_FAIL;
         }
 
@@ -122,7 +122,7 @@ int EMAIL_SENDER_GUI::CHECK_VAR ( QObject * object )
 
     if ( m_ui->line_edit_to->text().isEmpty() EQ false ) {
         if ( m_ui->line_edit_to->text().contains("@") EQ false OR m_ui->line_edit_to->text().contains ( "." ) EQ false ) {
-            MSG_ERROR(tr("Recipient e-mail address entered as invalid address.. ") ,NULL);//Alıcı olarak girilen e-mail adresi geçersiz
+            MSG_ERROR(tr("Recipient e-mail address entered is invalid") ,NULL);//Alıcı olarak girilen e-mail adresi geçersiz
             return ADAK_FAIL;
         }
     }

@@ -195,7 +195,7 @@ void DESIGNER_ANA_MENU::SLOT_HEADER_OLUSTUR()
     SQL_QUERY sql_query ( DB );
     sql_query.PREPARE_SELECT ( "sql_tablolar","tablo_id" );
     if ( sql_query.SELECT() EQ 0 ) {
-        MSG_WARNING(tr ( "Table is not registered in the system, header filehas not been created."),NULL);//Kayıtlı tablo olmadığından herhangi bir header dosyası yaratılmadı.
+        MSG_WARNING(tr ( "Table is not registered in the system, header file has not been created."),NULL);//Kayıtlı tablo olmadığından herhangi bir header dosyası yaratılmadı.
         return;
     }
     if ( HEADER_DOSYASI_YARAT ( this ) EQ true ) {
@@ -487,7 +487,7 @@ void BELGE_VERITABANINI_ONAR()
     if ( DESIGNER_DB->CONNECT_TO_SERVER(true) EQ ADAK_FAIL ) {
 
         DB->CANCEL_TRANSACTION();
-        MSG_WARNING(  tr("Veritabi Tespit edilemedi"), NULL );
+        MSG_WARNING(  tr("Can not connect to the database"), NULL );
         return;
     }
 
@@ -578,7 +578,7 @@ void BELGE_VERITABANINI_ONAR()
 
     DESIGNER_DB->COMMIT_TRANSACTION();
 
-    MSG_WARNING( tr("Designer Onarildi"), NULL );
+    MSG_WARNING( tr("Database has been repaired"), NULL );
 }
 
 */

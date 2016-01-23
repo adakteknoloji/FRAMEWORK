@@ -255,11 +255,11 @@ int SQL_TABLOLAR_FISI::CHECK_FIS_FORM_VAR ( QObject * p_object )
     if ( p_object EQ m_ui->lineEdit_tablo_adi ) {
         QRegExp non_word_char("(\\W+)");
         if ( m_ui->lineEdit_tablo_adi->text().contains(non_word_char) EQ true ) {
-            MSG_ERROR(tr("Table name does not contain outside letters, numbers and \"_\"."),m_ui->lineEdit_tablo_adi);//Tablo ismi harf, rakam veya \"_\" dışında bir karakter içeremez
+            MSG_ERROR(tr("Table name can contain only letters, numbers and \"_\"."),m_ui->lineEdit_tablo_adi);//Tablo ismi harf, rakam veya \"_\" dışında bir karakter içeremez
             return ADAK_FAIL;
         }
         if ( m_ui->lineEdit_tablo_adi->text().size() > 27 ) { // _id ile alan adi 27 haneyi gecmemeli
-            MSG_ERROR(tr("Table name can not longer than 27 characters."),m_ui->lineEdit_tablo_adi);//Tablo ismi 27 haneyi geçemez
+            MSG_ERROR(tr("Table name can not be longer than 27 characters."),m_ui->lineEdit_tablo_adi);//Tablo ismi 27 haneyi geçemez
             return ADAK_FAIL;
         }
         if ( m_ui->lineEdit_alan_adi->text().isEmpty() EQ false ) {
@@ -281,7 +281,7 @@ int SQL_TABLOLAR_FISI::CHECK_FIS_FORM_VAR ( QObject * p_object )
     }
     else if ( p_object EQ m_ui->lineEdit_alan_adi ) {
         if ( m_ui->lineEdit_alan_adi->text().size() > 30 ) {
-            MSG_ERROR(tr("Uniqu field name can not longer than 30 characters."),m_ui->lineEdit_alan_adi);//Uniqe alan adi 30 haneyi geçemez
+            MSG_ERROR(tr("Unique field name can not be longer than 30 characters."),m_ui->lineEdit_alan_adi);//Uniqe alan adi 30 haneyi geçemez
             return ADAK_FAIL;
         }
     }
@@ -296,11 +296,11 @@ int SQL_TABLOLAR_FISI::CHECK_FIS_FORM_VAR ( QObject * p_object )
 int SQL_TABLOLAR_FISI::CHECK_FIS_FORM_EMPTY()
 {
     if ( m_ui->lineEdit_tablo_adi->text().isEmpty() EQ true ) {
-        MSG_ERROR(tr("Table name can not be empty."),m_ui->lineEdit_tablo_adi);//Tablo ismi boş bırakılamaz
+        MSG_ERROR(tr("Table name must not be empty."),m_ui->lineEdit_tablo_adi);//Tablo ismi boş bırakılamaz
         return ADAK_FAIL;
     }
     if ( m_ui->lineEdit_alan_adi->text().isEmpty() EQ true ) {
-        MSG_ERROR(tr ("The Column name which in UNIQUE ID can not be empty. "),m_ui->lineEdit_alan_adi);//UNIQUE ID olan kolonun adı boş bırakılamaz
+        MSG_ERROR(tr ("The Column name which in UNIQUE ID must not be empty. "),m_ui->lineEdit_alan_adi);//UNIQUE ID olan kolonun adı boş bırakılamaz
         return ADAK_FAIL;
     }
     return ADAK_OK;
@@ -314,14 +314,14 @@ int SQL_TABLOLAR_FISI::CHECK_FIS_FORM_EMPTY()
 int SQL_TABLOLAR_FISI::CHECK_FIS_RECORD_ADD()
 {
     if ( KAYIT_EKLEME_YETKISI_VAR_MI ( KULLANICI_ID() ) EQ 0 ) {
-        MSG_ERROR(tr("This user has no authority for add record. "),m_ui->lineEdit_tablo_adi);//Bu kullanıcının kayıt ekleme yetkisi yok
+        MSG_ERROR(tr("This user has no authority to add records. "),m_ui->lineEdit_tablo_adi);//Bu kullanıcının kayıt ekleme yetkisi yok
         return ADAK_FAIL;
     }
     SQL_QUERY sql_query ( DB );
     sql_query.PREPARE_SELECT("sql_tablolar","tablo_id","tablo_adi = :tablo_adi");
     sql_query.SET_VALUE ( ":tablo_adi", m_ui->lineEdit_tablo_adi->text());
     if ( sql_query.SELECT() > 0 ) {
-        MSG_ERROR(tr("The table name used for another table. "),m_ui->lineEdit_tablo_adi);//Bu isimle bir tablo sistemde mevcut
+        MSG_ERROR(tr("This table name is used for another table."),m_ui->lineEdit_tablo_adi);//Bu isimle bir tablo sistemde mevcut
         return ADAK_FAIL;
     }
     return ADAK_OK;
@@ -381,7 +381,7 @@ int SQL_TABLOLAR_FISI::ADD_FIS_RECORD()
 int SQL_TABLOLAR_FISI::CHECK_FIS_RECORD_UPDATE ( int p_tablo_id )
 {
     if ( KAYIT_GUNCELLEME_YETKISI_VAR_MI( KULLANICI_ID() ) EQ 0 ) {
-        MSG_ERROR(tr("The user has no authority for update registration."),m_ui->lineEdit_tablo_adi);//Bu kullanıcının kayıt güncelleme yetkisi yok
+        MSG_ERROR(tr(This user has no authority to update records."),m_ui->lineEdit_tablo_adi);//Bu kullanıcının kayıt güncelleme yetkisi yok
         return ADAK_FAIL;
     }
 
@@ -393,7 +393,7 @@ int SQL_TABLOLAR_FISI::CHECK_FIS_RECORD_UPDATE ( int p_tablo_id )
     if ( sql_query.SELECT() > 0 ) {
         sql_query.NEXT();
         if ( p_tablo_id NE sql_query.VALUE(0).toInt() ) {
-            MSG_ERROR(tr("The table name used for another table."),m_ui->lineEdit_tablo_adi);//Bu isimle bir tablo sistemde mevcut
+            MSG_ERROR(tr("This table name is used for another table."),m_ui->lineEdit_tablo_adi);//Bu isimle bir tablo sistemde mevcut
             return ADAK_FAIL;
         }
     }
@@ -433,11 +433,11 @@ int SQL_TABLOLAR_FISI::CHECK_FIS_RECORD_DELETE ( int p_tablo_id )
     Q_UNUSED ( p_tablo_id );
 
     if ( KAYIT_SILME_YETKISI_VAR_MI( KULLANICI_ID() ) EQ 0 ) {
-        MSG_ERROR(tr("This user has no authority for delete registration."),m_ui->lineEdit_tablo_adi);//Bu kullanıcının kayıt silme yetkisi yok"
+        MSG_ERROR(tr("This user has no authority to delete records."),m_ui->lineEdit_tablo_adi);//Bu kullanıcının kayıt silme yetkisi yok"
         return ADAK_FAIL;
     }
 
-    ADAK_MSG_ENUM answer = MSG_YES_NO_CANCEL(tr("Table is deleted with all field definitions!"),m_ui->lineEdit_tablo_adi);//Tablo tüm alan tanımlarıyla beraber silinecektir!
+    ADAK_MSG_ENUM answer = MSG_YES_NO_CANCEL(tr("Table will be deleted with all field definitions!"),m_ui->lineEdit_tablo_adi);//Tablo tüm alan tanımlarıyla beraber silinecektir!
 
     if ( answer EQ ADAK_NO OR answer EQ ADAK_CANCEL ) {
         return ADAK_FAIL;
@@ -584,22 +584,22 @@ int SQL_TABLOLAR_FISI::CHECK_LINE_VAR ( int p_row_number, QObject * p_object )
     if ( p_object EQ alan_adi_lineEdit ) {
         QRegExp non_word_char("(\\W+)");
         if ( alan_adi_lineEdit->text().contains(non_word_char) EQ true ) {
-            MSG_ERROR(tr("Field name does not contain outside letters, numbers and \"_\". "),alan_adi_lineEdit);//Alan adı harf, rakam veya \"_\" dışında bir karakter içeremez
+            MSG_ERROR(tr("Field name must contain only letters, numbers and \"_\". "),alan_adi_lineEdit);//Alan adı harf, rakam veya \"_\" dışında bir karakter içeremez
             return ADAK_FAIL;
         }
         if ( alan_adi_lineEdit->text().size() > 30 ) {
-            MSG_ERROR(tr("Field name does not longer than 30 characters."),alan_adi_lineEdit);//Alan adı 30 haneyi geçemez
+            MSG_ERROR(tr("Field name can not be longer than 30 characters."),alan_adi_lineEdit);//Alan adı 30 haneyi geçemez
             return ADAK_FAIL;
         }
         if ( dizi_mi_checkbox->isChecked() EQ true AND alan_adi_lineEdit->text().size() > 24 ) {
-            MSG_ERROR(tr("Array field name does not longer than 24 characters."),alan_adi_lineEdit);//Dizi alan adı 24 haneyi geçemez
+            MSG_ERROR(tr("Array field name can not be longer than 24 characters."),alan_adi_lineEdit);//Dizi alan adı 24 haneyi geçemez
             return ADAK_FAIL;
         }
     }
     else if ( p_object EQ commaEdit_alan_boyutu ) {
 
         if ( commaEdit_alan_boyutu->GET_INTEGER() > 9999 ) {
-            MSG_ERROR(tr("Field size does not bigger than 4 digits."),commaEdit_alan_boyutu);//Alan boyutu 4 haneden fazla olamaz
+            MSG_ERROR(tr("Field size can not be more than 4 digits."),commaEdit_alan_boyutu);//Alan boyutu 4 haneden fazla olamaz
             return ADAK_FAIL;
         }
 
@@ -612,7 +612,7 @@ int SQL_TABLOLAR_FISI::CHECK_LINE_VAR ( int p_row_number, QObject * p_object )
     }
     else if ( p_object EQ dizi_boyutu_commaEdit ) {
         if ( dizi_boyutu_commaEdit->GET_INTEGER()> 9999 ) {
-            MSG_ERROR(tr("Array size does not bigger than 4 digits."),dizi_boyutu_commaEdit);//Dizi boyutu 4 haneden fazla olamaz
+            MSG_ERROR(tr("Array size can not be more than 4 digits."),dizi_boyutu_commaEdit);//Dizi boyutu 4 haneden fazla olamaz
             return ADAK_FAIL;
         }
     }
@@ -649,7 +649,7 @@ int SQL_TABLOLAR_FISI::CHECK_LINE_EMPTY ( int p_row_number )
     }
 
     if ( alan_adi_lineEdit->text().isEmpty() EQ true ) {
-        MSG_ERROR(tr ("Field name has not be empty."),alan_adi_lineEdit);//Alan adı boş bırakılamaz
+        MSG_ERROR(tr ("Field name must not be empty."),alan_adi_lineEdit);//Alan adı boş bırakılamaz
         return ADAK_FAIL;
     }
 
@@ -757,7 +757,7 @@ int SQL_TABLOLAR_FISI::CHECK_UPDATE_LINE ( int p_tablo_id, int p_row_number )
     }
     sql_query.NEXT();
     if ( sql_query.VALUE(0).toInt() NE row_id ) {
-        MSG_ERROR(tr("The field name used for another field in this table."),alan_adi_lineEdit);
+        MSG_ERROR(tr("This field name used for another field in this table."),alan_adi_lineEdit);
         return ADAK_FAIL;
     }
     return ADAK_OK;
@@ -841,7 +841,7 @@ int SQL_TABLOLAR_FISI::CHECK_DELETE_LINE ( int p_tablo_id, int p_row_number )
     QLineEdit * cell_lineEdit       = ( QLineEdit * ) m_ui->tablewidget_tablo_satirlari->cellWidget( p_row_number, ALAN_ADI_COLUMN );
     QString     alan_adi            = cell_lineEdit->text();
 
-    int return_value = MSG_YES_NO ( QString ( "Domain name '% 1' that line will be deleted, are you sure?" ).arg(alan_adi), NULL );
+    int return_value = MSG_YES_NO ( QString ( "The line with Field Name '% 1' will be deleted, are you sure?" ).arg(alan_adi), NULL );
     //Alan adı '%1' olan satır silinecektir, emin misiniz?
     if ( return_value EQ ADAK_NO ) {
         return ADAK_FAIL;
@@ -901,7 +901,7 @@ void SQL_TABLOLAR_FISI::SAVER_BUTTON_CLICKED( QAbstractButton * p_button, int p_
         SQL_QUERY sql_query ( DB );
         sql_query.PREPARE_SELECT( "sql_tablolar","tablo_id");
         if ( sql_query.SELECT() EQ 0 ) {
-            MSG_ERROR(tr("Header file was not created, because no registered table."),m_ui->lineEdit_tablo_adi);//Kayıtlı tablo olmadığından herhangi bir header dosyası yaratılmadı
+            MSG_ERROR(tr("Header file hasn't been created, because no registered table."),m_ui->lineEdit_tablo_adi);//Kayıtlı tablo olmadığından herhangi bir header dosyası yaratılmadı
             return;
         }
         if ( HEADER_DOSYASI_YARAT(this) EQ true ) {

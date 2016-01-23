@@ -94,7 +94,7 @@ int SQL_VERITABANI_AYARLARI_BATCH::CHECK_VAR ( QObject * object )
 int SQL_VERITABANI_AYARLARI_BATCH::CHECK_RUN ()
 {
     if ( m_program_id EQ -1 ) {
-        MSG_ERROR("A program must be selected.",m_ui->push_button_program_degistir); //Bir program seçilmesi gereklidir.
+        MSG_ERROR(tr("A program must be selected."),m_ui->push_button_program_degistir); //Bir program seçilmesi gereklidir.
         return ADAK_FAIL;
     }
 
@@ -125,7 +125,7 @@ void SQL_VERITABANI_AYARLARI_BATCH::RUN_BATCH ()
 int SQL_VERITABANI_AYARLARI_BATCH::CHECK_EXIT ()
 {
     if ( m_program_id EQ -1 ) {
-        MSG_ERROR("A program must be selected.",m_ui->push_button_program_degistir);
+        MSG_ERROR(tr("A program must be selected."),m_ui->push_button_program_degistir);
         return ADAK_FAIL;
     }
 

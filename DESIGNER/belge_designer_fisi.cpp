@@ -247,7 +247,7 @@ int BELGE_DESIGNER_FISI::CHECK_FIS_FORM_VAR ( QObject * object )
 int BELGE_DESIGNER_FISI::CHECK_FIS_FORM_EMPTY()
 {
     if ( line_edit_belge_adi->text().isEmpty() EQ true ) {
-        MSG_ERROR(tr("Error! Document name can not be empty."), line_edit_belge_adi );//Hata! Belge adı boş bırakılamaz.
+        MSG_ERROR(tr("Document name can not be empty."), line_edit_belge_adi );//Hata! Belge adı boş bırakılamaz.
         return ADAK_FAIL;
     }
 
@@ -669,6 +669,6 @@ void BELGE_DESIGNER_FISI::SAVER_BUTTON_CLICKED(QAbstractButton *button, int reco
 {
     if (button EQ push_button_header_olustur) {
         OPEN_HEADER_DOSYASI_OLUSTUR(record_id);
-        MSG_INFO(tr("Header file was created."),NULL);//Header dosyası oluşturuldu.
+        MSG_INFO(tr("Header file has been created."),NULL);//Header dosyası oluşturuldu.
     }
 }
