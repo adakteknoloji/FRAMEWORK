@@ -69,7 +69,7 @@ void SQL_DDL::ADD_VALUES_TO_QUEUE(const QString &column_values)
 
         if ( m_multiple_insert_query.isEmpty() EQ false ) {
             if ( EXEC(m_multiple_insert_query) EQ false ) {
-                qDebug(QString("SQL Hatası:" + m_multiple_insert_query).toUtf8().data());
+                qDebug (QString("SQL Error:" + m_multiple_insert_query).toUtf8().data());
                 exit(88);
             }
         }
@@ -93,8 +93,8 @@ void SQL_DDL::COMMIT_MULTIPLE_INSERT()
 
         if ( m_multiple_insert_query.isEmpty() EQ false ) {
             if ( EXEC(m_multiple_insert_query) EQ false ) {
-                qDebug(QString("SQL Hatası:" + m_multiple_insert_query).toUtf8().data());
-                exit(88);
+                qDebug (QString("SQL Error:" + m_multiple_insert_query).toUtf8().data());
+                exit(99);
             }
         }
     }

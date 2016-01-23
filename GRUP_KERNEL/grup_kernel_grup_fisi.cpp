@@ -72,7 +72,7 @@ void GRUP_KERNEL_GRUP_FISI::SETUP_FORM()
     line_edit_grup_kodu->setMaxLength   ( 15 );
 
     if ( grup_ekleme_db EQ NULL ) {
-        qDebug ( tr("Database was setting null.") );//Database null olarak setlenmis.
+        qDebug ("Database is null");//Database null olarak setlenmis.
         return;
     }
 

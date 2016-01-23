@@ -49,17 +49,17 @@ int main(int argc, char *argv[])
 
     if ( argc NE 7 ) {
         cout << endl << endl << endl ;
-        cout << QObject::tr("********************************     PARAMETERS ARE ENTERED INCORRECT OR MISSING!!!     ********************************") << endl;
+        cout << "********************************     PARAMETERS ARE ENTERED INCORRECT OR MISSING!!!     ********************************" << endl;
         cout << endl << endl ;
-        cout << QObject::tr("Respectively : Database Name | Server | Database User | Sql Port Number | Sql Engine | INCLUDE_FILE_FULL_ADDRESS");
-        cout << endl << QObject::tr("enter the parameters in the form") << endl;//şeklindeki parametreleri giriniz.
+        cout << "Respectively : Database Name | Server | Database User | Sql Port Number | Sql Engine | INCLUDE_FILE_FULL_ADDRESS";
+        cout << endl << "enter the parameters in the form" << endl;//şeklindeki parametreleri giriniz.
         return 0;
     }
 
     adak_adi  = database_adi.mid(0,6);
 
     if ( adak_adi NE "adak_") {
-        cout << QObject::tr("Wrong Database Name. Database name adak_<company code> must be maintained. ");//Veritabanı ismi adak_<firma_kodu> şeklinde olmalıdır.
+        cout << "Wrong Database Name. Database name adak_<company code> must be maintained.";//Veritabanı ismi adak_<firma_kodu> şeklinde olmalıdır.
         return 0;
     }
     firma_kodu = database_adi.mid(6);
@@ -69,23 +69,23 @@ int main(int argc, char *argv[])
         is_yonetim_db = 1;
     }
     string password;
-    cout << database_username.toStdString() <<QObject::tr(" for Database User Password : ") << endl;
+    cout << database_username.toStdString() <<" for Database User Password : " << endl;
     cin.unsetf(ios::skipws);
     cin >> password;
     if( cin.good()) {
         database_user_pass = QString( password.c_str());
     }
 
-    cout << QObject::tr(" Entered Database Name: ") << database_adi.toStdString() << endl;//Girilen veritabanı ismi
-    cout << QObject::tr("Server                   : ") << sunucu.toStdString() << endl;
-    cout << QObject::tr("Database User            : ") << database_username.toStdString() << endl;
-    cout << QObject::tr("SQL Port Number          : ")<< sql_port_number.toStdString() << endl;
-    cout << QObject::tr("SQL Driver               : ") << argv[5] << endl;
-    cout << QObject::tr("Include File  :" )<< full_file_path.toStdString() << endl << endl;
+    cout << " Entered Database Name: " << database_adi.toStdString() << endl;//Girilen veritabanı ismi
+    cout << "Server                   : " << sunucu.toStdString() << endl;
+    cout << "Database User            : " << database_username.toStdString() << endl;
+    cout << "SQL Port Number          : "<< sql_port_number.toStdString() << endl;
+    cout << "SQL Driver               : " << argv[5] << endl;
+    cout << "Include File  :" << full_file_path.toStdString() << endl << endl;
 
     QFile * file = new QFile ( full_file_path );
     if ( file->open(QIODevice::ReadOnly|QIODevice::Text) EQ false) {
-        cout << QObject::tr("File is not read.");
+        cout << "File is not readable.";
         return 0;
     }
     QTextStream * in = new QTextStream(file);
@@ -273,17 +273,17 @@ int main(int argc, char *argv[])
     SET_SQL_PASSWORD(database_user_pass);
 
     if ( db_conn->CONNECT_TO_DATABASE(false) EQ ADAK_FAIL ) {
-        cout <<  database_adi.toStdString() + QObject::tr(" Database not found.");
+        cout <<  database_adi.toStdString() + " Database not found.";
         return 0;
     }
 
     if ( db_conn->UPDATE_TABLES() EQ ADAK_FAIL ) {
-        cout << QObject::tr("Database error occurred while updating.");//Veritabanı güncelenirken hata oluştu
+        cout << "Database error occurred while updating.";//Veritabanı güncelenirken hata oluştu
         return 0;
     }
 
     delete db_conn;
-    cout<<QObject::tr("Transaction Completed.")<<endl;
+    cout<<"Transaction Completed."<<endl;
     return 0;
 }
 

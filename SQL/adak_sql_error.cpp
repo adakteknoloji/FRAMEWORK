@@ -86,7 +86,7 @@ void ADAK_SQL_ERROR ( QSqlDatabase database ,         int         error_type,
         }
         case CREATION_ERROR :
         {
-            error_type_text = tQObject::tr("CREATION ERROR");
+            error_type_text = QObject::tr("CREATION ERROR");
             switch (error_in_function ) {
                 case ERROR_IN_CONSTRUCTOR :
                 {
@@ -315,18 +315,18 @@ void ADAK_SQL_CONSOLE_ERROR   ( const QString& hostname    ,    const QString& d
                                  const QString& error_text ,     const QString& aciklama,   const QString& hatali_query )
 {
     cerr << "************************************************************************************"  << endl;
-    cerr << QObject::tr("Used Database           :") << db_name.toStdString()                          << endl;
-    cerr << QObject::tr("Server                  :") << hostname.toStdString()                         << endl;
-    cerr << QObject::tr("SQL Engine              :") << driver_name.toStdString()                      << endl;
-    cerr << QObject::tr("Operating System        :") << os.toStdString()                               << endl;
-    cerr << QObject::tr("Error Message           :") << error_text.toStdString()                       << endl;
-    cerr << QObject::tr("Error Type              :") << error_type.toStdString()                       << endl;
-    cerr << QObject::tr("Error No                :") << error_number                                   << endl;
-    cerr << QObject::tr("Comment                 :") << aciklama.toStdString()                         << endl;
+    cerr << QObject::tr("Used Database           :").toStdString() << db_name.toStdString()                          << endl;
+    cerr << QObject::tr("Server                  :").toStdString() << hostname.toStdString()                         << endl;
+    cerr << QObject::tr("SQL Engine              :").toStdString() << driver_name.toStdString()                      << endl;
+    cerr << QObject::tr("Operating System        :").toStdString() << os.toStdString()                               << endl;
+    cerr << QObject::tr("Error Message           :").toStdString() << error_text.toStdString()                       << endl;
+    cerr << QObject::tr("Error Type              :").toStdString() << error_type.toStdString()                       << endl;
+    cerr << QObject::tr("Error No                :").toStdString() << error_number                                   << endl;
+    cerr << QObject::tr("Comment                 :").toStdString() << aciklama.toStdString()                         << endl;
     if ( hatali_query NE NULL ) {
-        cerr << QObject::tr("Incorrect Query         :")  << hatali_query.toStdString()                << endl;
+        cerr << QObject::tr("Incorrect Query         :").toStdString()  << hatali_query.toStdString()                << endl;
     }
-    cerr << QObject::tr("Error Date              :")  << QDate::currentDate().toString().toStdString() << endl;
-    cerr << QObject::tr("Error Time              :")  << QTime::currentTime().toString().toStdString() << endl;
+    cerr << QObject::tr("Error Date              :").toStdString()  << QDate::currentDate().toString().toStdString() << endl;
+    cerr << QObject::tr("Error Time              :").toStdString()  << QTime::currentTime().toString().toStdString() << endl;
     cerr << "*************************************************************************************" << endl;
 }

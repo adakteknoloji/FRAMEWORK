@@ -54,11 +54,9 @@ LOGIN_BATCH::LOGIN_BATCH ( USER_LOGIN_INFO_STRUCT * user_informations,bool * all
 void LOGIN_BATCH::SETUP_FORM ()
 {
     SET_ENTER_KEY_FOR_RUN_BATCH  ( true );
-    // translate SET_NAME_OF_RUN_BATCH_BUTTON ( tr ( "Giriş" ) );
     SET_NAME_OF_RUN_BATCH_BUTTON ( tr ( "Enter" ) );
     REGISTER_BUTTON_WIDGET       ( m_ui->widget_batch_buttons );
 
-    // translate SET_PAGE_TITLE( ADAK_PROGRAM_SHORTNAME( ADAK_DISPLAY_ID() ) + tr(" Giriş Ekranı V") + ADAK_PROGRAM_VERSION(ADAK_DISPLAY_ID()));
     SET_PAGE_TITLE( ADAK_PROGRAM_SHORTNAME( ADAK_DISPLAY_ID() ) + tr("Login Screen V") + ADAK_PROGRAM_VERSION(ADAK_DISPLAY_ID()));
     SET_SETTING_NAME    ( "LOGIN_BATCH");
     SET_AUTO_EXIT_BATCH ( true );
@@ -179,7 +177,7 @@ int LOGIN_BATCH::CHECK_VAR(QObject * object)
     }
     else if ( object EQ m_ui->line_edit_kullanici_kodu) {
 
-        if ( m_ui->line_edit_kullanici_kodu->text().toLower() EQ QObject::tr( "Administrator") ) {
+        if ( m_ui->line_edit_kullanici_kodu->text().toLower() EQ QObject::tr( "administrator") ) {
             m_ui->line_edit_kullanici_kodu->setText( tr("administrator") );
         }
 
@@ -302,7 +300,7 @@ void LOGIN_BATCH::RUN_BATCH()
                                               GET_SQL_DB_DRIVER_ENUM( m_user_info->sql_motoru ) );
 
             if( DB->CONNECT_TO_DATABASE( false ) EQ ADAK_FAIL ) {
-                 MSG_WARNING( tr("No Database!"), NULL );
+                MSG_WARNING( tr("No Database!"), NULL );
                 return;
             }
         }

@@ -102,7 +102,7 @@ SEKME_MENU_KERNEL * GET_PARENT_SEKME_MENU_KERNEL (QWidget * parent)
 {
     for ( ; ; ) {
         if ( parent EQ NULL ) {
-            qDebug(QObject::tr("Parent window is not found. "));
+            qDebug("Parent window is not found. ");
         }
 
         if ( G_SEKME_MENU_KERNEL.contains( parent ) EQ true ) {
@@ -495,8 +495,8 @@ void BASE_KERNEL::SHOW_NO_HELP_DIALOG ()
     screen_layout->addWidget( m_lineEdit_email_adres, 7, 1, 1, 3 );
 
 
-    QLabel * label_note = new QLabel ( tr("Note: If you deliver this error message to Adak technology,\n")//Not: Eğer bu hata mesajını Adak Teknoloji'ye iletirseniz en kısa sürede
-                                       tr("help pages will be prepared as soon as possible."));//yardım sayfası hazırlanacaktır.
+    QLabel * label_note = new QLabel ( tr("Note: If you deliver this error message to Adak technology,\n"
+                                          "help pages will be prepared as soon as possible."));//yardım sayfası hazırlanacaktır.
     label_note->setStyleSheet("font:bold;");
     screen_layout->addWidget(label_note,8,0,1,3);
 

@@ -155,7 +155,7 @@ void FORM_KERNEL::AUTOSTART_FORM_KERNEL ( int record_id )
     }
 
     if (p_record_mode EQ SINGLE_RECORD_MODE) {
-        qDebug(tr("******WARNING: SINGLE RECORD MODE is active, AUTOSTART be not used. *******"));//UYARI: SINGLE RECORD MODE AKTIFKEN AUTOSTART KULLANILAMAZ.
+        qDebug("******WARNING: SINGLE RECORD MODE is active, AUTOSTART be not used. *******");//UYARI: SINGLE RECORD MODE AKTIFKEN AUTOSTART KULLANILAMAZ.
         return;
     }
 
@@ -885,7 +885,7 @@ void FORM_KERNEL::UPDATE_BUTTON_STATUS()
 {
     if ( m_register_button_widget_called EQ false ) {
         MSG_WARNING( QObject::tr( "Widget is not set for Navigator" ), NULL );//Navigator için Widget Setlenmedi
-        qDebug( tr("not call REGISTER_BUTTONS_WIDGET Method" ));
+        qDebug("not call REGISTER_BUTTONS_WIDGET Method");
         exit(0);
     }
     if ( m_is_readonly_mode_on EQ true ) {

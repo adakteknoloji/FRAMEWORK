@@ -36,7 +36,7 @@ FILE * DOT_MATRIX::OPEN_PRINTER_FILE()
     #endif
 
     if (!m_printer_pipe) {
-        cout << QObject::tr("printer not found").toASCII() << endl;
+        cout << "printer not found" << endl;
     }
     return m_printer_pipe;
 }
@@ -51,7 +51,7 @@ void DOT_MATRIX::WRITE_PRINTER(QString p_line_str)
     //! PIPE KAPATILMAYINCAYA KADAR YAZICIYA GONDERMEZ
 
     if ( m_printer_name == "none"){
-        cerr << QObject::tr("Printer name is not set.").toASCII() << endl;
+        cerr << "Printer name is not set." << endl;
         return;
     }
 
@@ -67,12 +67,12 @@ void DOT_MATRIX::FINISH_PRINTER()
 {
     #ifdef MSVC
         if (_pclose (m_printer_pipe) != 0) {
-              fprintf (stderr, QObject::tr("Printer connection has been lost.\n").toASCII());
+              fprintf (stderr, ("Printer connection has been lost.\n");
         }
     #else
         if (pclose (m_printer_pipe) != 0) {
 
-              fprintf (stderr, QObject::tr("Printer connection has been lost.\n").toASCII());
+              fprintf (stderr, "Printer connection has been lost.\n");
         }
     #endif
 }

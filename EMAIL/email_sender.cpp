@@ -319,7 +319,7 @@ void EMAIL_SENDER::READY_TO_READ()
              p_socket->setProtocol ( QSsl::TlsV1 );
              p_socket->startClientEncryption();
         }
-        *p_t << QObject::tr("HELLO server\r\n");
+        *p_t << "HELLO server\r\n";
         p_t->flush();
 
         if ( p_protocol EQ STARTTLS AND starttls EQ false ) {
@@ -334,13 +334,13 @@ void EMAIL_SENDER::READY_TO_READ()
         }
     }
     else if ( p_state EQ Stls OR response_text EQ "530" ) {
-        *p_t << tr("STARTTLS\r\n";)
+        *p_t << "STARTTLS\r\n";
         p_t->flush();
         p_state = Init;
         starttls = true;
     }
     else if ( p_state EQ Auth && response_text[0] EQ '2' ) {
-        *p_t << tr("AUTH LOGIN\r\n");
+        *p_t << "AUTH LOGIN\r\n";
         p_t->flush();
         p_state = User;
     }
@@ -363,7 +363,7 @@ void EMAIL_SENDER::READY_TO_READ()
         p_state = Rcpt;
     }
     else if ( p_state EQ Rcpt && response_text[0] EQ '2' ) {
-        QString string_to = tr("RCPT TO: <")+p_gonderilen_listesi.last()+">\r\n";
+        QString string_to = "RCPT TO: <"+p_gonderilen_listesi.last()+">\r\n";
         *p_t << string_to;
         p_t->flush();
         p_gonderilen_listesi.pop_back();
@@ -372,7 +372,7 @@ void EMAIL_SENDER::READY_TO_READ()
         }
     }
     else if ( p_state EQ Data && response_text[0] EQ '2' ) {
-        *p_t << tr("DATA\r\n");
+        *p_t << "DATA\r\n";
         p_t->flush();
         p_state = Body;
     }
@@ -387,7 +387,7 @@ void EMAIL_SENDER::READY_TO_READ()
         p_state = Quit;
     }
     else if ( p_state EQ Quit && response_text[0] EQ '2' ) {
-        *p_t << tr("QUIT\r\n");
+        *p_t << "QUIT\r\n";
         p_state = Close;
         p_splash_screen->finish ( NULL );
         if ( g_gonderilen_listesi.contains(p_gonderilen_str) EQ false ) {
@@ -521,12 +521,12 @@ void EMAIL_SENDER::SEND_EMAIL ( const QString &from,const QString &gonderenin_ge
 
     QStringList from_str = p_from.split ( "@" );
 
-    p_header  = QString ( tr("Message-ID: <%1@%2>") ).arg ( CREATE_MESSAGE_ID ( from_str.at(0) ) ).arg ( from_str.at(1) ) +
-                QString ( tr("\nDate: %1")).arg(date_header_str) +
+    p_header  = QString ( "Message-ID: <%1@%2>" ).arg ( CREATE_MESSAGE_ID ( from_str.at(0) ) ).arg ( from_str.at(1) ) +
+                QString ( "\nDate: %1").arg(date_header_str) +
                 QString ( "\nFrom: =?utf-8?Q?%1?=  <" ).arg(CREATE_QUOTED_PRINTABLE_STRING(p_sender_name ) )       + p_from    +">"  +
-                QString ( tr("\nUser-Agent: Adak/1.0 AdakEmailSender/1.0")) +
-                QString ( tr("\nTo: " ))                + p_gonderilen_str  +
-                QString ( tr("\nSubject: ") )           + quotable_subject +"\n" + p_mime_string +
+                QString ( "\nUser-Agent: Adak/1.0 AdakEmailSender/1.0") +
+                QString ( "\nTo: ")                + p_gonderilen_str  +
+                QString ( "\nSubject: " )           + quotable_subject +"\n" + p_mime_string +
                 QString ( "\n\n"        );
 
     p_message = "<pre>" + body + "</pre>" + "\n";
@@ -818,7 +818,7 @@ void SEND_MAIL ( const QString from,const QString gonderenin_gercek_adi, const Q
     }
 
     if ( g_hata_listesi.isEmpty() EQ false ) {
-        QString message = QObject::tr("It below error(s) occured during sending e-mail.");//E-mail gönderimi esnasında aşagıdaki hata(lar) alındı.
+        QString message = QObject::tr("The below error(s) occured during sending e-mail.");//E-mail gönderimi esnasında aşagıdaki hata(lar) alındı.
 
         for ( int i = 0 ; i < g_hata_listesi.size() ; i++ ) {
             message.append("\n" + g_hata_listesi.at(i));

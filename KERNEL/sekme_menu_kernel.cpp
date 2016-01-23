@@ -81,8 +81,8 @@ SEKME_MENU_KERNEL::SEKME_MENU_KERNEL( int program_id , QWidget *parent ) : QMain
 
     G_SEKME_MENU_KERNEL  << this;
 
-    SET_MENU_BOTTOM_TEXT (tr("This program created by <b>Adak Technology</b>, anyone can download from <b>http://www.adak.com.tr</b>.<br>  ")
-              tr("There is no restriction in the program."));
+    SET_MENU_BOTTOM_TEXT (tr("This program created by <b>Adak Technology</b>, anyone can download from <b>http://www.adak.com.tr</b>.<br>  "
+              "There is no restriction in the program."));
     //Bu program <b>ADAK Teknoloji</b> tarafından üretilmiştir , isteyen herkes <b>http://www.adak.com.tr</b> ' dan indirebilir.<br>
     //Programda hiç bir kısıt yoktur.</b>.
 }
@@ -186,7 +186,7 @@ void SEKME_MENU_KERNEL::FILL_MENU_STRUCT(int parent_index, int parent_enum_id)
             }
         }
         else {
-            qDebug(tr("The maximum number of column must be 2 at tab kernel menu.Given the column values may be 1 or 2."));//Sekme menu kernel da max column 2 olmalidir.Verilen column degerleri 1 yada 2 olabilir
+            qDebug("The maximum number of column must be 2 at tab kernel menu.Given the column values may be 1 or 2.");//Sekme menu kernel da max column 2 olmalidir.Verilen column degerleri 1 yada 2 olabilir
             abort();
         }
 
@@ -629,7 +629,7 @@ void SEKME_MENU_KERNEL::ADD_CHILD_DIALOG(QWidget * widget, QWidget * parent,  SC
 
     for ( ; ; ) {
         if ( widget_parent EQ NULL ) {
-            qDebug(tr("Child's parent could not be determined."));//Child parenti tespit edilemedi!!!!
+            qDebug("Child's parent could not be determined.");//Child parenti tespit edilemedi!!!!
             return;
         }
 

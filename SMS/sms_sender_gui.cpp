@@ -38,7 +38,7 @@ void SMS_SENDER_GUI::SETUP_FORM ()
     SET_HELP_PAGE       ("send_sms");
     SET_SETTING_NAME    ("sms_gonder");
 
-    SET_NAME_OF_RUN_BATCH_BUTTON(QString::fromUtf8(tr("Send")));
+    SET_NAME_OF_RUN_BATCH_BUTTON(tr("Send"));
     SET_AUTO_EXIT_BATCH ( true );
     REGISTER_BUTTON_WIDGET (m_ui->widget_batch_buttons);
 
