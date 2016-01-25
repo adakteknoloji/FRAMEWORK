@@ -22,7 +22,8 @@ int OPEN_BELGE_SEC (QDialog * parent)
 BELGE_SECIMI::BELGE_SECIMI( int * secilen_id , QWidget *parent ) : SECIM_KERNELI(parent)
 {
     SET_WINDOW_SIZE(300,800);
-    SET_HEADERS(QStringList()<<tr("document id")<<tr("Document Name"));
+    QStringList headers <<QObject::tr("document id")<<QObject::tr("Document Name");
+    SET_HEADERS(headers);
 
     m_secilen_id = secilen_id;
 

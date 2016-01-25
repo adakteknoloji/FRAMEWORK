@@ -127,9 +127,8 @@ p, li { white-space: pre-wrap; }
         <translation>HATA - Yardım Sayfası Bulunamadı.</translation>
     </message>
     <message>
-        <location filename="KERNEL/base_kernel.cpp" line="499"/>
         <source>help pages will be prepared as soon as possible.</source>
-        <translation>Yardım sayfası en kısa sürede hazırlanacaktır.</translation>
+        <translation type="obsolete">Yardım sayfası en kısa sürede hazırlanacaktır.</translation>
     </message>
     <message>
         <location filename="KERNEL/base_kernel.cpp" line="508"/>
@@ -166,10 +165,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="KERNEL/base_kernel.cpp" line="498"/>
         <source>Note: If you deliver this error message to Adak technology,
-</source>
-        <oldsource>Not: Eğer bu hata mesajını Adak Teknoloji&apos;ye iletirseniz en kısa sürede
+help pages will be prepared as soon as possible.</source>
+        <oldsource>Note: If you deliver this error message to Adak technology,
 </oldsource>
-        <translation>Not: Eğer bu hata mesajını Adak Teknoloji&apos;ye bildirirseniz,</translation>
+        <translation type="unfinished">Not: Eğer bu hata mesajını Adak Teknoloji&apos;ye bildirirseniz,</translation>
     </message>
     <message>
         <location filename="KERNEL/base_kernel.cpp" line="591"/>
@@ -273,8 +272,9 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="DESIGNER/belge_designer_fisi.cpp" line="250"/>
-        <source>Error! Document name can not be empty.</source>
-        <translation>Hata! Belge adı boş bırakılamaz.</translation>
+        <source>Document name can not be empty.</source>
+        <oldsource>Error! Document name can not be empty.</oldsource>
+        <translation type="unfinished">Hata! Belge adı boş bırakılamaz.</translation>
     </message>
     <message>
         <location filename="DESIGNER/belge_designer_fisi.cpp" line="480"/>
@@ -300,9 +300,20 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="DESIGNER/belge_designer_fisi.cpp" line="672"/>
-        <source>Header file was created.</source>
-        <oldsource>Header dosyası oluşturuldu.</oldsource>
-        <translation>Header dosyası oluşturuldu.</translation>
+        <source>Header file has been created.</source>
+        <oldsource>Header file was created.</oldsource>
+        <translation type="unfinished">Header dosyası oluşturuldu.</translation>
+    </message>
+</context>
+<context>
+    <name>BELGE_SECIMI</name>
+    <message>
+        <source>document id</source>
+        <translation type="obsolete">belge id</translation>
+    </message>
+    <message>
+        <source>Document Name</source>
+        <translation type="obsolete">Belge Adı</translation>
     </message>
 </context>
 <context>
@@ -644,9 +655,9 @@ Kopyala</translation>
     </message>
     <message>
         <location filename="DESIGNER/designer_ana_menu.cpp" line="198"/>
-        <source>Table is not registered in the system, header filehas not been created.</source>
-        <oldsource>Kayıtlı tablo olmadığından herhangi bir header dosyası yaratılmadı</oldsource>
-        <translation>Kayıtlı tablo olmadığından herhangi bir header dosyası yaratılmadı.</translation>
+        <source>Table is not registered in the system, header file has not been created.</source>
+        <oldsource>Table is not registered in the system, header filehas not been created.</oldsource>
+        <translation type="unfinished">Kayıtlı tablo olmadığından herhangi bir header dosyası yaratılmadı.</translation>
     </message>
 </context>
 <context>
@@ -813,9 +824,8 @@ p, li { white-space: pre-wrap; }
         <translation>POSTA KIMDEN: &lt;</translation>
     </message>
     <message>
-        <location filename="EMAIL/email_sender.cpp" line="366"/>
         <source>RCPT TO: &lt;</source>
-        <translation>RCPT TO: &lt;</translation>
+        <translation type="obsolete">RCPT TO: &lt;</translation>
     </message>
     <message>
         <source>DATA
@@ -833,57 +843,28 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">ÇIKIŞ</translation>
     </message>
     <message>
-        <location filename="EMAIL/email_sender.cpp" line="337"/>
-        <source>STARTTLS
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="EMAIL/email_sender.cpp" line="343"/>
-        <source>AUTH LOGIN
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="EMAIL/email_sender.cpp" line="375"/>
-        <source>DATA
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="EMAIL/email_sender.cpp" line="390"/>
-        <source>QUIT
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="EMAIL/email_sender.cpp" line="524"/>
         <source>Message-ID: &lt;%1@%2&gt;</source>
-        <translation>Mesaj ID: &lt;%1@%2&gt;</translation>
+        <translation type="obsolete">Mesaj ID: &lt;%1@%2&gt;</translation>
     </message>
     <message>
-        <location filename="EMAIL/email_sender.cpp" line="525"/>
         <source>
 Date: %1</source>
-        <translation>Tarih:%1</translation>
+        <translation type="obsolete">Tarih:%1</translation>
     </message>
     <message>
-        <location filename="EMAIL/email_sender.cpp" line="527"/>
         <source>
 User-Agent: Adak/1.0 AdakEmailSender/1.0</source>
-        <translation>Kullanıcı-Distribütör: Adak/1.0 AdakEmailSender/1.0</translation>
+        <translation type="obsolete">Kullanıcı-Distribütör: Adak/1.0 AdakEmailSender/1.0</translation>
     </message>
     <message>
-        <location filename="EMAIL/email_sender.cpp" line="528"/>
         <source>
 To: </source>
-        <translation>Kime:</translation>
+        <translation type="obsolete">Kime:</translation>
     </message>
     <message>
-        <location filename="EMAIL/email_sender.cpp" line="529"/>
         <source>
 Subject: </source>
-        <translation>Konu:</translation>
+        <translation type="obsolete">Konu:</translation>
     </message>
     <message>
         <location filename="EMAIL/email_sender.cpp" line="553"/>
@@ -1020,24 +1001,27 @@ Socket Hatasi : %1 %2 </oldsource>
     </message>
     <message>
         <location filename="EMAIL/email_sender_gui.cpp" line="78"/>
-        <source>Mail server did not define.It needs to be defined from &apos;System-Mail Server&apos; menu.</source>
-        <oldsource>Posta Sunucusu Tanımlanmamış.&apos;Sistem-&gt;Posta Sunucusu&apos; menüsünden tanımlanması gerekli.</oldsource>
-        <translation>Posta Sunucusu Tanımlanmamış.&apos;Sistem-&gt;Posta Sunucusu&apos; menüsünden tanımlanması gerekli.</translation>
+        <source>Mail server is not defined. It needs to be defined from &apos;System-Mail Server&apos; menu.</source>
+        <oldsource>Mail server did not define.It needs to be defined from &apos;System-Mail Server&apos; menu.</oldsource>
+        <translation type="unfinished">Posta Sunucusu Tanımlanmamış.&apos;Sistem-&gt;Posta Sunucusu&apos; menüsünden tanımlanması gerekli.</translation>
     </message>
     <message>
         <location filename="EMAIL/email_sender_gui.cpp" line="93"/>
-        <source>Your E-Mail address or E-Mail User name did not define. It needs to be defined from &apos;System-Users&apos; menu.</source>
-        <translation>E-Posta adresiniz veya E-Posta Kullanıcı isminiz tanımlanmamış.&apos;Sistem-&gt;Kullanıcılar&apos; menüsünden tanımlanması gerekli.</translation>
+        <source>Your E-Mail address or E-Mail User is undefined. It needs to be defined from &apos;System-Users&apos; menu.</source>
+        <oldsource>Your E-Mail address or E-Mail User name did not define. It needs to be defined from &apos;System-Users&apos; menu.</oldsource>
+        <translation type="unfinished">E-Posta adresiniz veya E-Posta Kullanıcı isminiz tanımlanmamış.&apos;Sistem-&gt;Kullanıcılar&apos; menüsünden tanımlanması gerekli.</translation>
     </message>
     <message>
         <location filename="EMAIL/email_sender_gui.cpp" line="117"/>
-        <source>Sender e-mail address entered as invalid address.... </source>
-        <translation>Gönderen olarak girilen e-posta adresi geçersiz...</translation>
+        <source>Sender e-mail address entered is invalid</source>
+        <oldsource>Sender e-mail address entered as invalid address.... </oldsource>
+        <translation type="unfinished">Gönderen olarak girilen e-posta adresi geçersiz...</translation>
     </message>
     <message>
         <location filename="EMAIL/email_sender_gui.cpp" line="125"/>
-        <source>Recipient e-mail address entered as invalid address.. </source>
-        <translation>Alıcı olarak girilen e-posta adresi geçersiz..</translation>
+        <source>Recipient e-mail address entered is invalid</source>
+        <oldsource>Recipient e-mail address entered as invalid address.. </oldsource>
+        <translation type="unfinished">Alıcı olarak girilen e-posta adresi geçersiz..</translation>
     </message>
     <message>
         <location filename="EMAIL/email_sender_gui.cpp" line="178"/>
@@ -1105,10 +1089,9 @@ Socket Hatasi : %1 %2 </oldsource>
 <context>
     <name>FORM_KERNEL</name>
     <message>
-        <location filename="KERNEL/form_kernel.cpp" line="158"/>
         <source>******WARNING: SINGLE RECORD MODE is active, AUTOSTART be not used. *******</source>
         <oldsource>******UYARI: SINGLE RECORD MODE AKTIFKEN AUTOSTART KULLANILAMAZ.*******</oldsource>
-        <translation>******UYARI: SINGLE RECORD MODE AKTIFKEN AUTOSTART KULLANILAMAZ. *******</translation>
+        <translation type="obsolete">******UYARI: SINGLE RECORD MODE AKTIFKEN AUTOSTART KULLANILAMAZ. *******</translation>
     </message>
     <message>
         <location filename="KERNEL/form_kernel.cpp" line="192"/>
@@ -1176,9 +1159,8 @@ Socket Hatasi : %1 %2 </oldsource>
         <translation>Kayıtta değişiklikler yapıldı. Kaydetmek istiyor musunuz?</translation>
     </message>
     <message>
-        <location filename="KERNEL/form_kernel.cpp" line="888"/>
         <source>not call REGISTER_BUTTONS_WIDGET Method</source>
-        <translation>REGISTER_BUTTONS_WIDGET metodu çağrılamıyor</translation>
+        <translation type="obsolete">REGISTER_BUTTONS_WIDGET metodu çağrılamıyor</translation>
     </message>
     <message>
         <location filename="KERNEL/form_kernel.cpp" line="1064"/>
@@ -1361,10 +1343,9 @@ Socket Hatasi : %1 %2 </oldsource>
         <translation>alt-gruplar</translation>
     </message>
     <message>
-        <location filename="GRUP_KERNEL/grup_kernel_grup_fisi.cpp" line="75"/>
         <source>Database was setting null.</source>
         <oldsource>Database null olarak setlenmis</oldsource>
-        <translation>Database null olarak setlenmis.</translation>
+        <translation type="obsolete">Database null olarak setlenmis.</translation>
     </message>
     <message>
         <location filename="GRUP_KERNEL/grup_kernel_grup_fisi.cpp" line="123"/>
@@ -2044,60 +2025,60 @@ p, li { white-space: pre-wrap; }
         <translation>Bilgisayar Adı</translation>
     </message>
     <message>
-        <location filename="LOGIN/login_batch.cpp" line="461"/>
+        <location filename="LOGIN/login_batch.cpp" line="459"/>
         <source>IP/Adress        : &lt;b&gt;%1&lt;/b&gt;&lt;br&gt;Port: &lt;b&gt;%2&lt;/b&gt;&lt;br&gt;SQL Engine: &lt;b&gt;%3&lt;/b&gt;&lt;br&gt;</source>
         <oldsource>IP/Adres        : &lt;b&gt;%1&lt;/b&gt;&lt;br&gt;Port: &lt;b&gt;%2&lt;/b&gt;&lt;br&gt;SQL Motoru: &lt;b&gt;%3&lt;/b&gt;&lt;br&gt;</oldsource>
         <translation>IP/Adres        : &lt;b&gt;%1&lt;/b&gt;&lt;br&gt;Port: &lt;b&gt;%2&lt;/b&gt;&lt;br&gt;SQL Motoru: &lt;b&gt;%3&lt;/b&gt;&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="LOGIN/login_batch.cpp" line="464"/>
+        <location filename="LOGIN/login_batch.cpp" line="462"/>
         <source>SQL Engine      : &lt;b&gt;SQLite&lt;/b&gt;&lt;br&gt;</source>
         <oldsource>SQL Motoru      : &lt;b&gt;SQLite&lt;/b&gt;&lt;br&gt;</oldsource>
         <translation>SQL Motoru      : &lt;b&gt;SQLite&lt;/b&gt;&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="LOGIN/login_batch.cpp" line="58"/>
+        <location filename="LOGIN/login_batch.cpp" line="57"/>
         <source>Enter</source>
         <translation>Giriş</translation>
     </message>
     <message>
-        <location filename="LOGIN/login_batch.cpp" line="62"/>
+        <location filename="LOGIN/login_batch.cpp" line="60"/>
         <source>Login Screen V</source>
         <translation>Giriş Ekranı V</translation>
     </message>
     <message>
-        <location filename="LOGIN/login_batch.cpp" line="159"/>
-        <location filename="LOGIN/login_batch.cpp" line="405"/>
-        <location filename="LOGIN/login_batch.cpp" line="450"/>
+        <location filename="LOGIN/login_batch.cpp" line="157"/>
+        <location filename="LOGIN/login_batch.cpp" line="403"/>
+        <location filename="LOGIN/login_batch.cpp" line="448"/>
         <source>New Server</source>
         <translation>Yeni Sunucu</translation>
     </message>
     <message>
-        <location filename="LOGIN/login_batch.cpp" line="183"/>
-        <location filename="LOGIN/login_batch.cpp" line="231"/>
+        <location filename="LOGIN/login_batch.cpp" line="181"/>
+        <location filename="LOGIN/login_batch.cpp" line="229"/>
         <source>administrator</source>
         <translation>yönetici</translation>
     </message>
     <message>
-        <location filename="LOGIN/login_batch.cpp" line="228"/>
-        <location filename="LOGIN/login_batch.cpp" line="237"/>
+        <location filename="LOGIN/login_batch.cpp" line="226"/>
+        <location filename="LOGIN/login_batch.cpp" line="235"/>
         <source>User code has not been entered</source>
         <translation>Kullanıcı kodu girilmemiş.</translation>
     </message>
     <message>
-        <location filename="LOGIN/login_batch.cpp" line="232"/>
+        <location filename="LOGIN/login_batch.cpp" line="230"/>
         <source>&apos;administrator&apos; is a specific user code for the system. Please enter a different user code.</source>
         <translation>&apos;yönetici&apos; sistem için özel bir kullanıcı kodudur.Lütfen farklı bir kullanıcı kodu giriniz.</translation>
     </message>
     <message>
-        <location filename="LOGIN/login_batch.cpp" line="283"/>
-        <location filename="LOGIN/login_batch.cpp" line="311"/>
+        <location filename="LOGIN/login_batch.cpp" line="281"/>
+        <location filename="LOGIN/login_batch.cpp" line="309"/>
         <source>No tables in the database. Are tables created?</source>
         <translation>Veritabanında tablo yok. Oluşturulsun mu?</translation>
     </message>
     <message>
-        <location filename="LOGIN/login_batch.cpp" line="293"/>
-        <location filename="LOGIN/login_batch.cpp" line="305"/>
+        <location filename="LOGIN/login_batch.cpp" line="291"/>
+        <location filename="LOGIN/login_batch.cpp" line="303"/>
         <source>No Database!</source>
         <translation>Veritabanı Yok!</translation>
     </message>
@@ -2227,18 +2208,18 @@ p, li { white-space: pre-wrap; }
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:18pt; font-weight:600;&quot;&gt;Program has a new version.&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:18pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:18pt; font-weight:600; font-style:italic;&quot;&gt;Please UPDATE !.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <oldsource>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:600;&quot;&gt;Programın yeni sürümü çıkmıştır.&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:18pt; font-weight:600;&quot;&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; font-style:italic;&quot;&gt;Lütfen GÜNCELLEYİN !.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</oldsource>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:18pt; font-weight:600;&quot;&gt;Program has a new version.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:18pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:18pt; font-weight:600; font-style:italic;&quot;&gt;Please UPDATE !.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</oldsource>
+        <translation type="unfinished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -2248,8 +2229,9 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="LOGIN/programi_guncellestirin_batch.ui" line="132"/>
-        <source>Not Updated</source>
-        <translation>Hayır Güncelleme</translation>
+        <source>Don&apos;t Update</source>
+        <oldsource>Not Updated</oldsource>
+        <translation type="unfinished">Hayır Güncelleme</translation>
     </message>
     <message>
         <location filename="LOGIN/programi_guncellestirin_batch.ui" line="174"/>
@@ -2358,34 +2340,30 @@ Widget:%1</translation>
         <translation>Adsız değişken</translation>
     </message>
     <message>
-        <location filename="BELGE_KERNEL/dot_matrix.cpp" line="70"/>
-        <location filename="BELGE_KERNEL/dot_matrix.cpp" line="75"/>
         <source>Printer connection has been lost.
 </source>
-        <translation>Yazıcı bağlantısı kesildi.</translation>
+        <translation type="obsolete">Yazıcı bağlantısı kesildi.</translation>
     </message>
     <message>
-        <location filename="BELGE_KERNEL/dot_matrix.cpp" line="39"/>
         <source>printer not found</source>
-        <translation>yazıcı bulunamadı</translation>
+        <translation type="obsolete">yazıcı bulunamadı</translation>
     </message>
     <message>
-        <location filename="BELGE_KERNEL/dot_matrix.cpp" line="54"/>
         <source>Printer name is not set.</source>
-        <translation>Yazıcı adı setlenmemiş.</translation>
+        <translation type="obsolete">Yazıcı adı setlenmemiş.</translation>
     </message>
     <message>
         <location filename="DESIGNER/belge_secimi.cpp" line="25"/>
         <source>document id</source>
-        <translation>belge id</translation>
+        <translation type="unfinished">belge id</translation>
     </message>
     <message>
         <location filename="DESIGNER/belge_secimi.cpp" line="25"/>
         <source>Document Name</source>
-        <translation>Belge Adı</translation>
+        <translation type="unfinished">Belge Adı</translation>
     </message>
     <message>
-        <location filename="DESIGNER/belge_secimi.cpp" line="31"/>
+        <location filename="DESIGNER/belge_secimi.cpp" line="32"/>
         <source>DOCUMENT SELECTION</source>
         <translation>BELGE SEÇİMİ</translation>
     </message>
@@ -2480,12 +2458,6 @@ Widget:%1</translation>
         <translation type="unfinished">Tanımlı Değil</translation>
     </message>
     <message>
-        <location filename="EMAIL/email_sender.cpp" line="322"/>
-        <source>HELLO server
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="EMAIL/email_sender.cpp" line="736"/>
         <source>These e-mail address are wrong.</source>
         <oldsource>Aşagıdaki e-mail adres(ler)i hatalıdır. </oldsource>
@@ -2513,8 +2485,9 @@ Hatalı E-Mail Adresleri: </oldsource>
     </message>
     <message>
         <location filename="EMAIL/email_sender.cpp" line="821"/>
-        <source>It below error(s) occured during sending e-mail.</source>
-        <translation>E-mail gönderimi esnasında aşagıdaki hata(lar) alındı.</translation>
+        <source>The below error(s) occured during sending e-mail.</source>
+        <oldsource>It below error(s) occured during sending e-mail.</oldsource>
+        <translation type="unfinished">E-mail gönderimi esnasında aşagıdaki hata(lar) alındı.</translation>
     </message>
     <message>
         <location filename="EMAIL/email_sender.cpp" line="835"/>
@@ -2538,10 +2511,9 @@ Hatalı E-Mail Adresleri: </oldsource>
         <translation>Navigator için Widget ayarlanmadı</translation>
     </message>
     <message>
-        <location filename="KERNEL/base_kernel.cpp" line="105"/>
         <source>Parent window is not found. </source>
         <oldsource>Parent penceresi bulunamadi.</oldsource>
-        <translation>Parent sayfası bulunamadı.</translation>
+        <translation type="obsolete">Parent sayfası bulunamadı.</translation>
     </message>
     <message>
         <location filename="KERNEL/kernel_private_utils.cpp" line="51"/>
@@ -2762,39 +2734,59 @@ Hatalı E-Mail Adresleri: </oldsource>
         <translation>Veritabanında tablo yok.</translation>
     </message>
     <message>
-        <location filename="LOGIN/first_login.cpp" line="33"/>
+        <location filename="LOGIN/first_login.cpp" line="28"/>
         <source>C01</source>
         <translation>C01</translation>
     </message>
     <message>
-        <location filename="LOGIN/first_login.cpp" line="34"/>
+        <location filename="LOGIN/first_login.cpp" line="29"/>
         <source>C01 Computer</source>
         <translation>C01 Computer</translation>
     </message>
     <message>
-        <location filename="LOGIN/first_login.cpp" line="35"/>
+        <location filename="LOGIN/first_login.cpp" line="30"/>
         <source>U01</source>
         <translation>U01</translation>
     </message>
     <message>
-        <location filename="LOGIN/first_login.cpp" line="36"/>
+        <location filename="LOGIN/first_login.cpp" line="31"/>
         <source>U01 User</source>
         <translation>U01 User</translation>
     </message>
     <message>
-        <location filename="LOGIN/first_login.cpp" line="41"/>
+        <location filename="LOGIN/first_login.cpp" line="36"/>
         <source>Local Disk</source>
         <translation>Yerel Disk</translation>
     </message>
     <message>
-        <location filename="LOGIN/first_login.cpp" line="49"/>
+        <location filename="LOGIN/first_login.cpp" line="40"/>
         <source>%1 Database</source>
         <translation>%1 Veritabanı</translation>
     </message>
     <message>
-        <location filename="LOGIN/sql_sunucu_secimi.cpp" line="36"/>
+        <location filename="LOGIN/first_login.cpp" line="63"/>
+        <source>Tables needed do not exist in database!
+Will create tables and a new user according to the information you gave.
+
+ Will do;
+Create database : %1 - %2 .
+Create %3 : user and give it all the permissions.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="LOGIN/sql_sunucu_secimi.cpp" line="34"/>
+        <source>Servers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="LOGIN/sql_sunucu_secimi.cpp" line="37"/>
         <source>SERVER SELECTION</source>
         <translation>SUNUCU SEÇİMİ</translation>
+    </message>
+    <message>
+        <location filename="LOGIN/sql_sunucu_secimi.cpp" line="71"/>
+        <source>Unable to connect. Select another server or add a new server.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="LOGIN/veritabani_secimi.cpp" line="41"/>
@@ -2819,12 +2811,16 @@ Hatalı E-Mail Adresleri: </oldsource>
         <translation>Veritabanı Tanımı</translation>
     </message>
     <message>
-        <location filename="LOGIN/login_batch.cpp" line="182"/>
         <source>Administrator</source>
-        <translation>Yönetici</translation>
+        <translation type="obsolete">Yönetici</translation>
     </message>
     <message>
-        <location filename="LOGIN/login_batch.cpp" line="459"/>
+        <location filename="LOGIN/login_batch.cpp" line="180"/>
+        <source>administrator</source>
+        <translation type="unfinished">yönetici</translation>
+    </message>
+    <message>
+        <location filename="LOGIN/login_batch.cpp" line="457"/>
         <source>Connected Server</source>
         <translation>Sunucuya Bağlandı</translation>
     </message>
@@ -2844,9 +2840,8 @@ Hatalı E-Mail Adresleri: </oldsource>
         <translation>Veritabanı adı numara,harf veya &apos;_&apos; işareti dışında karakter içermemelidir. </translation>
     </message>
     <message>
-        <location filename="ODS_IO/adak_exporter.cpp" line="280"/>
         <source>Adak Import</source>
-        <translation>Adak içe aktar</translation>
+        <translation type="obsolete">Adak içe aktar</translation>
     </message>
     <message>
         <location filename="REPORT_KERNEL/etiket_kernel.cpp" line="202"/>
@@ -3003,6 +2998,11 @@ Hatalı E-Mail Adresleri: </oldsource>
         <location filename="SQL/adak_sql_error.cpp" line="250"/>
         <source>An error was returned from the unknown function.</source>
         <translation>Bilinmeyen bir fonksiyondan hata döndürüldü.</translation>
+    </message>
+    <message>
+        <location filename="SQL/adak_sql_error.cpp" line="89"/>
+        <source>CREATION ERROR</source>
+        <translation type="unfinished">OLUŞTURMA HATASI</translation>
     </message>
     <message>
         <location filename="SQL/adak_sql_error.cpp" line="98"/>
@@ -3365,79 +3365,64 @@ Hatalı E-Mail Adresleri: </oldsource>
         <translation>e9_default_belge.h yeniden oluşturuldu.</translation>
     </message>
     <message>
-        <location filename="UPDATE_DB/update_db_main.cpp" line="52"/>
         <source>********************************     PARAMETERS ARE ENTERED INCORRECT OR MISSING!!!     ********************************</source>
-        <translation>********************************     EKSİK YA DA HATALI PARAMETRE GİRİLMİŞ!!!     ********************************</translation>
+        <translation type="obsolete">********************************     EKSİK YA DA HATALI PARAMETRE GİRİLMİŞ!!!     ********************************</translation>
     </message>
     <message>
-        <location filename="UPDATE_DB/update_db_main.cpp" line="54"/>
         <source>Respectively : Database Name | Server | Database User | Sql Port Number | Sql Engine | INCLUDE_FILE_FULL_ADDRESS</source>
-        <translation>Sırasıyla :Veritabanı Adı | Sunucu | Veritabanı Kullanıcı | Sql Port Numarası | Sql Motoru | DAHİL_DOSYA_TAM_ADRESİ </translation>
+        <translation type="obsolete">Sırasıyla :Veritabanı Adı | Sunucu | Veritabanı Kullanıcı | Sql Port Numarası | Sql Motoru | DAHİL_DOSYA_TAM_ADRESİ </translation>
     </message>
     <message>
-        <location filename="UPDATE_DB/update_db_main.cpp" line="55"/>
         <source>enter the parameters in the form</source>
-        <translation>şeklindeki parametreleri giriniz</translation>
+        <translation type="obsolete">şeklindeki parametreleri giriniz</translation>
     </message>
     <message>
-        <location filename="UPDATE_DB/update_db_main.cpp" line="62"/>
         <source>Wrong Database Name. Database name adak_&lt;company code&gt; must be maintained. </source>
-        <translation>Hatalı Veritabanı Adı.Veritabanı ismi adak_&lt;firma_kodu&gt; şeklinde olmalıdır. </translation>
+        <translation type="obsolete">Hatalı Veritabanı Adı.Veritabanı ismi adak_&lt;firma_kodu&gt; şeklinde olmalıdır. </translation>
     </message>
     <message>
-        <location filename="UPDATE_DB/update_db_main.cpp" line="72"/>
         <source> for Database User Password : </source>
-        <translation>Veritabanı Kullanıcısı için Şifre:</translation>
+        <translation type="obsolete">Veritabanı Kullanıcısı için Şifre:</translation>
     </message>
     <message>
-        <location filename="UPDATE_DB/update_db_main.cpp" line="79"/>
         <source> Entered Database Name: </source>
-        <translation>Girilen Veritabani Adı:</translation>
+        <translation type="obsolete">Girilen Veritabani Adı:</translation>
     </message>
     <message>
-        <location filename="UPDATE_DB/update_db_main.cpp" line="80"/>
         <source>Server                   : </source>
-        <translation>Sunucu:</translation>
+        <translation type="obsolete">Sunucu:</translation>
     </message>
     <message>
-        <location filename="UPDATE_DB/update_db_main.cpp" line="81"/>
         <source>Database User            : </source>
-        <translation>Veritabanı Kullanıcısı:</translation>
+        <translation type="obsolete">Veritabanı Kullanıcısı:</translation>
     </message>
     <message>
-        <location filename="UPDATE_DB/update_db_main.cpp" line="82"/>
         <source>SQL Port Number          : </source>
-        <translation>SQL Port Numarası:</translation>
+        <translation type="obsolete">SQL Port Numarası:</translation>
     </message>
     <message>
-        <location filename="UPDATE_DB/update_db_main.cpp" line="83"/>
         <source>SQL Driver               : </source>
-        <translation>SQL Sürücü:</translation>
+        <translation type="obsolete">SQL Sürücü:</translation>
     </message>
     <message>
-        <location filename="UPDATE_DB/update_db_main.cpp" line="84"/>
         <source>Include File  :</source>
-        <translation>İçe aktarılacak Dosya:</translation>
+        <translation type="obsolete">İçe aktarılacak Dosya:</translation>
     </message>
     <message>
-        <location filename="UPDATE_DB/update_db_main.cpp" line="88"/>
         <source>File is not read.</source>
-        <translation>Dosya okunamadı.</translation>
+        <translation type="obsolete">Dosya okunamadı.</translation>
     </message>
     <message>
-        <location filename="UPDATE_DB/update_db_main.cpp" line="276"/>
         <source> Database not found.</source>
-        <translation>Veritabanı bulunamadı.</translation>
+        <translation type="obsolete">Veritabanı bulunamadı.</translation>
     </message>
     <message>
-        <location filename="UPDATE_DB/update_db_main.cpp" line="281"/>
         <source>Database error occurred while updating.</source>
-        <translation>Veritabanı güncelenirken hata oluştu.</translation>
+        <translation type="obsolete">Veritabanı güncelenirken hata oluştu.</translation>
     </message>
     <message>
-        <location filename="UPDATE_DB/update_db_main.cpp" line="286"/>
         <source>Transaction Completed.</source>
-        <translation>İşlem Tamam.</translation>
+        <translation type="obsolete">İşlem Tamam.</translation>
     </message>
     <message>
         <location filename="UTILS/adak_image.cpp" line="56"/>
@@ -4006,19 +3991,17 @@ Hatalı E-Mail Adresleri: </oldsource>
     <name>SEKME_MENU_KERNEL</name>
     <message>
         <location filename="KERNEL/sekme_menu_kernel.cpp" line="84"/>
-        <source>This program created by &lt;b&gt;Adak Technology&lt;/b&gt;, anyone can download from &lt;b&gt;http://www.adak.com.tr&lt;/b&gt;.&lt;br&gt;  </source>
-        <oldsource>Bu program &lt;b&gt;ADAK Teknoloji&lt;/b&gt; tarafından üretilmiştir , isteyen herkes &lt;b&gt;http://www.adak.com.tr&lt;/b&gt; &apos; dan indirebilir.&lt;br&gt;</oldsource>
-        <translation>Bu program &lt;b&gt; Adak Teknoloji &lt;/b&gt; tarafından üretilmiştir, isteyen herkes &lt;b&gt;http://www.adak.com.tr &lt;/b&gt; adresinden indirebilir.&lt;br&gt;</translation>
+        <source>This program created by &lt;b&gt;Adak Technology&lt;/b&gt;, anyone can download from &lt;b&gt;http://www.adak.com.tr&lt;/b&gt;.&lt;br&gt;  There is no restriction in the program.</source>
+        <oldsource>This program created by &lt;b&gt;Adak Technology&lt;/b&gt;, anyone can download from &lt;b&gt;http://www.adak.com.tr&lt;/b&gt;.&lt;br&gt;  </oldsource>
+        <translation type="unfinished">Bu program &lt;b&gt; Adak Teknoloji &lt;/b&gt; tarafından üretilmiştir, isteyen herkes &lt;b&gt;http://www.adak.com.tr &lt;/b&gt; adresinden indirebilir.&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="KERNEL/sekme_menu_kernel.cpp" line="85"/>
         <source>There is no restriction in the program.</source>
-        <translation>Programda hiç bir kısıtlama yoktur.</translation>
+        <translation type="obsolete">Programda hiç bir kısıtlama yoktur.</translation>
     </message>
     <message>
-        <location filename="KERNEL/sekme_menu_kernel.cpp" line="189"/>
         <source>The maximum number of column must be 2 at tab kernel menu.Given the column values may be 1 or 2.</source>
-        <translation>Sekme menu kernel da max column 2 olmalidir.Verilen column degerleri 1 yada 2 olabilir.</translation>
+        <translation type="obsolete">Sekme menu kernel da max column 2 olmalidir.Verilen column degerleri 1 yada 2 olabilir.</translation>
     </message>
     <message>
         <location filename="KERNEL/sekme_menu_kernel.cpp" line="209"/>
@@ -4041,9 +4024,8 @@ Hatalı E-Mail Adresleri: </oldsource>
         <translation>%1 kod numarasına sahip bir menü bulunamadı.</translation>
     </message>
     <message>
-        <location filename="KERNEL/sekme_menu_kernel.cpp" line="632"/>
         <source>Child&apos;s parent could not be determined.</source>
-        <translation>Child!a ait bir parent tespit edilemedi.</translation>
+        <translation type="obsolete">Child!a ait bir parent tespit edilemedi.</translation>
     </message>
     <message>
         <location filename="KERNEL/sekme_menu_kernel.cpp" line="1053"/>
@@ -4320,15 +4302,15 @@ Hatalı E-Mail Adresleri: </oldsource>
     </message>
     <message>
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="258"/>
-        <source>Table name does not contain outside letters, numbers and &quot;_&quot;.</source>
-        <oldsource>Tablo ismi harf, rakam veya &quot;_&quot; dışında bir karakter içeremez</oldsource>
-        <translation>Tablo ismi harf, rakam veya \&quot;_\&quot; dışında bir karakter içeremez.</translation>
+        <source>Table name can contain only letters, numbers and &quot;_&quot;.</source>
+        <oldsource>Table name does not contain outside letters, numbers and &quot;_&quot;.</oldsource>
+        <translation type="unfinished">Tablo ismi harf, rakam veya \&quot;_\&quot; dışında bir karakter içeremez.</translation>
     </message>
     <message>
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="303"/>
-        <source>The Column name which in UNIQUE ID can not be empty. </source>
-        <oldsource>UNIQUE ID olan kolonun adı boş bırakılamaz</oldsource>
-        <translation>UNIQU ID kolonunun adı boş bırakılamaz.</translation>
+        <source>The Column name which in UNIQUE ID must not be empty. </source>
+        <oldsource>The Column name which in UNIQUE ID can not be empty. </oldsource>
+        <translation type="unfinished">UNIQU ID kolonunun adı boş bırakılamaz.</translation>
     </message>
     <message>
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="356"/>
@@ -4384,73 +4366,82 @@ Hatalı E-Mail Adresleri: </oldsource>
     </message>
     <message>
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="262"/>
-        <source>Table name can not longer than 27 characters.</source>
-        <translation>Tablo ismi 27 haneyi geçemez.</translation>
+        <source>Table name can not be longer than 27 characters.</source>
+        <oldsource>Table name can not longer than 27 characters.</oldsource>
+        <translation type="unfinished">Tablo ismi 27 haneyi geçemez.</translation>
     </message>
     <message>
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="284"/>
-        <source>Uniqu field name can not longer than 30 characters.</source>
-        <translation>Uniqe alan adi 30 haneyi geçemez.</translation>
+        <source>Unique field name can not be longer than 30 characters.</source>
+        <oldsource>Uniqu field name can not longer than 30 characters.</oldsource>
+        <translation type="unfinished">Uniqe alan adi 30 haneyi geçemez.</translation>
     </message>
     <message>
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="299"/>
-        <source>Table name can not be empty.</source>
-        <translation>Tablo ismi boş bırakılamaz.</translation>
+        <source>Table name must not be empty.</source>
+        <oldsource>Table name can not be empty.</oldsource>
+        <translation type="unfinished">Tablo ismi boş bırakılamaz.</translation>
     </message>
     <message>
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="317"/>
-        <source>This user has no authority for add record. </source>
-        <translation>Bu kullanıcının kayıt ekleme yetkisi yoktur.</translation>
+        <source>This user has no authority to add records. </source>
+        <oldsource>This user has no authority for add record. </oldsource>
+        <translation type="unfinished">Bu kullanıcının kayıt ekleme yetkisi yoktur.</translation>
     </message>
     <message>
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="324"/>
-        <source>The table name used for another table. </source>
-        <translation>Bu isimde bir tablo sistemde mevcut. </translation>
+        <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="396"/>
+        <source>This table name is used for another table.</source>
+        <oldsource>The table name used for another table. </oldsource>
+        <translation type="unfinished">Bu isimde bir tablo sistemde mevcut. </translation>
     </message>
     <message>
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="384"/>
-        <source>The user has no authority for update registration.</source>
-        <translation>Bu kullanıcının kayıt güncelleme yetkisi yoktur.</translation>
-    </message>
-    <message>
-        <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="396"/>
-        <source>The table name used for another table.</source>
-        <translation>Bu isimde bir tablo sistemde bulunmaktadır.</translation>
+        <source>This user has no authority to update records.</source>
+        <oldsource>The user has no authority for update registration.</oldsource>
+        <translation type="unfinished">Bu kullanıcının kayıt güncelleme yetkisi yoktur.</translation>
     </message>
     <message>
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="436"/>
-        <source>This user has no authority for delete registration.</source>
-        <translation>Bu kullanıcının kayıt silme yetkisi bulunmamaktadır.</translation>
+        <source>This user has no authority to delete records.</source>
+        <oldsource>This user has no authority for delete registration.</oldsource>
+        <translation type="unfinished">Bu kullanıcının kayıt silme yetkisi bulunmamaktadır.</translation>
     </message>
     <message>
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="440"/>
-        <source>Table is deleted with all field definitions!</source>
-        <translation>Tablo tüm alan tanımlamaları ile birlikte silinecektir!</translation>
+        <source>Table will be deleted with all field definitions!</source>
+        <oldsource>Table is deleted with all field definitions!</oldsource>
+        <translation type="unfinished">Tablo tüm alan tanımlamaları ile birlikte silinecektir!</translation>
     </message>
     <message>
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="587"/>
-        <source>Field name does not contain outside letters, numbers and &quot;_&quot;. </source>
-        <translation>Alan adı harf, rakam veya \&quot;_\&quot; dışındanda bir karakter içeremez.</translation>
+        <source>Field name must contain only letters, numbers and &quot;_&quot;. </source>
+        <oldsource>Field name does not contain outside letters, numbers and &quot;_&quot;. </oldsource>
+        <translation type="unfinished">Alan adı harf, rakam veya \&quot;_\&quot; dışındanda bir karakter içeremez.</translation>
     </message>
     <message>
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="591"/>
-        <source>Field name does not longer than 30 characters.</source>
-        <translation>Alan adı 30 haneyi geçemez.</translation>
+        <source>Field name can not be longer than 30 characters.</source>
+        <oldsource>Field name does not longer than 30 characters.</oldsource>
+        <translation type="unfinished">Alan adı 30 haneyi geçemez.</translation>
     </message>
     <message>
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="595"/>
-        <source>Array field name does not longer than 24 characters.</source>
-        <translation>Dizi alan adı 24 haneyi geçemez.</translation>
+        <source>Array field name can not be longer than 24 characters.</source>
+        <oldsource>Array field name does not longer than 24 characters.</oldsource>
+        <translation type="unfinished">Dizi alan adı 24 haneyi geçemez.</translation>
     </message>
     <message>
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="602"/>
-        <source>Field size does not bigger than 4 digits.</source>
-        <translation>Alan boyutu 4 haneden fazla olamaz.</translation>
+        <source>Field size can not be more than 4 digits.</source>
+        <oldsource>Field size does not bigger than 4 digits.</oldsource>
+        <translation type="unfinished">Alan boyutu 4 haneden fazla olamaz.</translation>
     </message>
     <message>
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="615"/>
-        <source>Array size does not bigger than 4 digits.</source>
-        <translation>Dizi boyutu 4 haneden fazla olamaz.</translation>
+        <source>Array size can not be more than 4 digits.</source>
+        <oldsource>Array size does not bigger than 4 digits.</oldsource>
+        <translation type="unfinished">Dizi boyutu 4 haneden fazla olamaz.</translation>
     </message>
     <message>
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="646"/>
@@ -4459,8 +4450,9 @@ Hatalı E-Mail Adresleri: </oldsource>
     </message>
     <message>
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="652"/>
-        <source>Field name has not be empty.</source>
-        <translation>Alan adı boş bırakılamaz.</translation>
+        <source>Field name must not be empty.</source>
+        <oldsource>Field name has not be empty.</oldsource>
+        <translation type="unfinished">Alan adı boş bırakılamaz.</translation>
     </message>
     <message>
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="658"/>
@@ -4474,7 +4466,6 @@ Hatalı E-Mail Adresleri: </oldsource>
     </message>
     <message>
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="686"/>
-        <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="760"/>
         <source>The field name used for another field in this table.</source>
         <oldsource>The field name used for another field in this table..</oldsource>
         <translation>Bu isimde bir alan tabloda bulunmaktadır.</translation>
@@ -4483,6 +4474,11 @@ Hatalı E-Mail Adresleri: </oldsource>
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="742"/>
         <source>This user has no authority for Update registration.</source>
         <translation>Bu kullanıcının kayıt güncelleme yetkisi bulunmamaktadır.</translation>
+    </message>
+    <message>
+        <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="760"/>
+        <source>This field name used for another field in this table.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="837"/>
@@ -4501,9 +4497,9 @@ Hatalı E-Mail Adresleri: </oldsource>
     </message>
     <message>
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="904"/>
-        <source>Header file was not created, because no registered table.</source>
-        <oldsource>Kayıtlı tablo olmadığından herhangi bir header dosyası yaratılmadı</oldsource>
-        <translation>Kayıtlı tablo bulunmadığı için header dosyası yaratılamadı.</translation>
+        <source>Header file hasn&apos;t been created, because no registered table.</source>
+        <oldsource>Header file was not created, because no registered table.</oldsource>
+        <translation type="unfinished">Kayıtlı tablo bulunmadığı için header dosyası yaratılamadı.</translation>
     </message>
 </context>
 <context>
@@ -4578,6 +4574,12 @@ Hatalı E-Mail Adresleri: </oldsource>
         <location filename="DESIGNER/sql_veritabani_ayarlari_batch.cpp" line="61"/>
         <source>Not Selected Program</source>
         <translation>Program Seçili Değil</translation>
+    </message>
+    <message>
+        <location filename="DESIGNER/sql_veritabani_ayarlari_batch.cpp" line="97"/>
+        <location filename="DESIGNER/sql_veritabani_ayarlari_batch.cpp" line="128"/>
+        <source>A program must be selected.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5897,9 +5899,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>tQObject</name>
     <message>
-        <location filename="SQL/adak_sql_error.cpp" line="89"/>
         <source>CREATION ERROR</source>
-        <translation>OLUŞTURMA HATASI</translation>
+        <translation type="obsolete">OLUŞTURMA HATASI</translation>
     </message>
 </context>
 </TS>

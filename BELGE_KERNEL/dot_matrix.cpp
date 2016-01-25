@@ -67,11 +67,10 @@ void DOT_MATRIX::FINISH_PRINTER()
 {
     #ifdef MSVC
         if (_pclose (m_printer_pipe) != 0) {
-              fprintf (stderr, ("Printer connection has been lost.\n");
+              fprintf (stderr, "Printer connection has been lost.\n");
         }
     #else
         if (pclose (m_printer_pipe) != 0) {
-
               fprintf (stderr, "Printer connection has been lost.\n");
         }
     #endif

@@ -31,7 +31,8 @@ SQL_SUNUCU_SECIMI::SQL_SUNUCU_SECIMI( QString * secilen_sunucu ,QWidget * parent
 
     SET_WINDOW_SIZE ( 300, 800 );
 
-    SET_HEADERS (QStringList() << tr("Sunucular") );
+    QStringList headers << QObject::tr("Servers");
+    SET_HEADERS (headers)
 
     SET_PAGE_TITLE    ( QObject::tr ( "SERVER SELECTION" ) );
     SET_SETTING_NAME  ( "SUNUCU_SECIMI" );
@@ -67,7 +68,7 @@ void SQL_SUNUCU_SECIMI::FILL_TABLE()
         current_row = ADD_NEW_ROW();
         table_widget->item(current_row,0)->setText( sunucu_str.at(i) );
     }
-    MSG_ERROR(tr("Unable to connect. Select another server or add a new server."),NULL);
+    MSG_ERROR(QObject::tr("Unable to connect. Select another server or add a new server."),NULL);
 }
 
 /**************************************************************************************
