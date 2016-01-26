@@ -31,8 +31,9 @@ SQL_SUNUCU_SECIMI::SQL_SUNUCU_SECIMI( QString * secilen_sunucu ,QWidget * parent
 
     SET_WINDOW_SIZE ( 300, 800 );
 
-    QStringList headers << QObject::tr("Servers");
-    SET_HEADERS (headers)
+    QStringList headers;
+    headers << QObject::tr("Servers");
+    SET_HEADERS (headers);
 
     SET_PAGE_TITLE    ( QObject::tr ( "SERVER SELECTION" ) );
     SET_SETTING_NAME  ( "SUNUCU_SECIMI" );

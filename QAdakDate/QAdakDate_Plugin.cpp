@@ -69,7 +69,7 @@ QString QAdakDate_Plugin::domXml() const
             "  </rect>\n"
             " </property>\n"
             " <property name=\"whatsThis\" >\n"
-            "  <string>Tarih Widgeti</string>\n"
+            "  <string>Date Widget</string>\n"
             " </property>\n"
             "</widget>\n";
 

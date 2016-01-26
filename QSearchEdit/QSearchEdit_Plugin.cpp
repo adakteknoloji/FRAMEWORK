@@ -68,7 +68,7 @@ QString QSearchEdit_Plugin::domXml() const
             "  </rect>\n"
             " </property>\n"
             " <property name=\"whatsThis\" >\n"
-            "  <string>Arama widget. "
+            "  <string>Search Widget"
             "</string>\n"
             " </property>\n"
             "</widget>\n";
