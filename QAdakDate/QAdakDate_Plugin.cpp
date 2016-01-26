@@ -59,20 +59,7 @@ bool QAdakDate_Plugin::isContainer() const
 
 QString QAdakDate_Plugin::domXml() const
 {
-    return "<widget class=\"QAdakDate\" name=\"adakDate\">\n"
-            " <property name=\"QAdakDate\">\n"
-            "  <rect>\n"
-            "   <x>0</x>\n"
-            "   <y>0</y>\n"
-            "   <width>100</width>\n"
-            "   <height>100</height>\n"
-            "  </rect>\n"
-            " </property>\n"
-            " <property name=\"whatsThis\" >\n"
-            "  <string>Date Widget</string>\n"
-            " </property>\n"
-            "</widget>\n";
-
+    return "<widget class=\"QAdakDate\" name=\"adakDate\"></widget>";
 }
 
 QString QAdakDate_Plugin::includeFile() const

@@ -2206,29 +2206,6 @@ Widget:%1</translation>
     </message>
 </context>
 <context>
-    <name>QCommaEdit_Plugin</name>
-    <message>
-        <location filename="QCommaEdit/QCommaEdit_Plugin.cpp" line="38"/>
-        <source>Input Widgets</source>
-        <translation>Giriş Widget&apos;ları</translation>
-    </message>
-    <message>
-        <location filename="QCommaEdit/QCommaEdit_Plugin.cpp" line="48"/>
-        <source>Take numbers and write them comma seperated </source>
-        <oldsource>Number takes as a comma and write. </oldsource>
-        <translation type="unfinished">Sayıları virgüllü olarak alır ve yazar.</translation>
-    </message>
-</context>
-<context>
-    <name>QLimitedTextEdit_Plugin</name>
-    <message>
-        <location filename="QLimitedTextEdit/QLimitedTextEdit_Plugin.cpp" line="46"/>
-        <source>It is add limit to QTextEdit.</source>
-        <oldsource>QTextEdit e limit ekler</oldsource>
-        <translation>QTextEdit e limit ekler.</translation>
-    </message>
-</context>
-<context>
     <name>QObject</name>
     <message>
         <location filename="BELGE_KERNEL/belge_kernel.cpp" line="180"/>
@@ -2241,17 +2218,17 @@ Widget:%1</translation>
         <translation>Adsız değişken</translation>
     </message>
     <message>
-        <location filename="DESIGNER/belge_secimi.cpp" line="25"/>
-        <source>document id</source>
-        <translation>belge id</translation>
-    </message>
-    <message>
-        <location filename="DESIGNER/belge_secimi.cpp" line="25"/>
+        <location filename="DESIGNER/belge_secimi.cpp" line="26"/>
         <source>Document Name</source>
         <translation>Belge Adı</translation>
     </message>
     <message>
-        <location filename="DESIGNER/belge_secimi.cpp" line="32"/>
+        <location filename="DESIGNER/belge_secimi.cpp" line="26"/>
+        <source>Document Id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="DESIGNER/belge_secimi.cpp" line="33"/>
         <source>DOCUMENT SELECTION</source>
         <translation>BELGE SEÇİMİ</translation>
     </message>
@@ -2655,17 +2632,17 @@ Veritabanı oluştur : %1 - %2 .
 %3 kullanıcı oluştur ve tüm izinleri ver.</translation>
     </message>
     <message>
-        <location filename="LOGIN/sql_sunucu_secimi.cpp" line="34"/>
+        <location filename="LOGIN/sql_sunucu_secimi.cpp" line="35"/>
         <source>Servers</source>
         <translation>Sunucular</translation>
     </message>
     <message>
-        <location filename="LOGIN/sql_sunucu_secimi.cpp" line="37"/>
+        <location filename="LOGIN/sql_sunucu_secimi.cpp" line="38"/>
         <source>SERVER SELECTION</source>
         <translation>SUNUCU SEÇİMİ</translation>
     </message>
     <message>
-        <location filename="LOGIN/sql_sunucu_secimi.cpp" line="71"/>
+        <location filename="LOGIN/sql_sunucu_secimi.cpp" line="72"/>
         <source>Unable to connect. Select another server or add a new server.</source>
         <translation>Bağlantı başarısız. Başka bir sunucu seçin veya yeni bir sunucu ekleyin.</translation>
     </message>
@@ -3681,19 +3658,6 @@ Veritabanı oluştur : %1 - %2 .
         <location filename="REPORT_KERNEL/report_kernel.cpp" line="49"/>
         <source>Report is preparing. Please wait...</source>
         <translation>Rapor hazırlanıyor. Lütfen bekleyiniz...</translation>
-    </message>
-</context>
-<context>
-    <name>QSearchEdit_Plugin</name>
-    <message>
-        <location filename="QSearchEdit/QSearchEdit_Plugin.cpp" line="36"/>
-        <source>Input Widgets</source>
-        <translation>Girilen Widget&apos;lar</translation>
-    </message>
-    <message>
-        <location filename="QSearchEdit/QSearchEdit_Plugin.cpp" line="46"/>
-        <source>Search</source>
-        <translation>Arama</translation>
     </message>
 </context>
 <context>

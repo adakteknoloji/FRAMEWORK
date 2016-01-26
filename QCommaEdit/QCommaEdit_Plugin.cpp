@@ -35,7 +35,7 @@ QString QCommaEdit_Plugin::name() const
 
 QString QCommaEdit_Plugin::group() const
 {
-        return tr("Input Widgets");
+        return "Input Widgets";
 }
 
 QIcon QCommaEdit_Plugin::icon() const
@@ -45,7 +45,7 @@ QIcon QCommaEdit_Plugin::icon() const
 
 QString QCommaEdit_Plugin::toolTip() const
 {
-        return tr("Take numbers and write them comma seperated ");//Sayilari virgullu olarak alir, yazar
+        return "";
 }
 
 QString QCommaEdit_Plugin::whatsThis() const
@@ -60,21 +60,7 @@ bool QCommaEdit_Plugin::isContainer() const
 
 QString QCommaEdit_Plugin::domXml() const
 {
-     return "<widget class=\"QCommaEdit\" name=\"commaEdit\">\n"
-            " <property name=\"QCommaEdit\">\n"
-            "  <rect>\n"
-            "   <x>0</x>\n"
-            "   <y>0</y>\n"
-            "   <width>100</width>\n"
-            "   <height>100</height>\n"
-            "  </rect>\n"
-            " </property>\n"
-            " <property name=\"whatsThis\" >\n"
-            "  <string>Write numbers comma seperated (Ex:1,000,234.50)"
-            "</string>\n"
-            " </property>\n"
-            "</widget>\n";
-
+    return "<widget class=\"QCommaEdit\" name=\"commaEdit\"></widget>";
 }
 
 QString QCommaEdit_Plugin::includeFile() const

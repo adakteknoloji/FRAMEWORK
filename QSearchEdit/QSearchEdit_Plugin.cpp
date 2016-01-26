@@ -33,7 +33,7 @@ QString QSearchEdit_Plugin::name() const
 
 QString QSearchEdit_Plugin::group() const
 {
-        return tr("Input Widgets");
+        return "Input Widgets";
 }
 
 QIcon QSearchEdit_Plugin::icon() const
@@ -43,7 +43,7 @@ QIcon QSearchEdit_Plugin::icon() const
 
 QString QSearchEdit_Plugin::toolTip() const
 {
-        return tr("Search");
+        return "Search";
 }
 
 QString QSearchEdit_Plugin::whatsThis() const
@@ -58,20 +58,7 @@ bool QSearchEdit_Plugin::isContainer() const
 
 QString QSearchEdit_Plugin::domXml() const
 {
-     return "<widget class=\"QSearchEdit\" name=\"searchEdit\">\n"
-            " <property name=\"QSearchEdit\">\n"
-            "  <rect>\n"
-            "   <x>0</x>\n"
-            "   <y>0</y>\n"
-            "   <width>100</width>\n"
-            "   <height>100</height>\n"
-            "  </rect>\n"
-            " </property>\n"
-            " <property name=\"whatsThis\" >\n"
-            "  <string>Search Widget"
-            "</string>\n"
-            " </property>\n"
-            "</widget>\n";
+     return "<widget class=\"QSearchEdit\" name=\"searchEdit\"></widget>";
 
 }
 
