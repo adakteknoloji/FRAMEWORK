@@ -45,7 +45,7 @@ QIcon QCommaEdit_Plugin::icon() const
 
 QString QCommaEdit_Plugin::toolTip() const
 {
-        return tr("Number takes as a comma and write. ");//Sayilari virgullu olarak alir, yazar
+        return tr("Take numbers and write them comma seperated ");//Sayilari virgullu olarak alir, yazar
 }
 
 QString QCommaEdit_Plugin::whatsThis() const
@@ -70,7 +70,7 @@ QString QCommaEdit_Plugin::domXml() const
             "  </rect>\n"
             " </property>\n"
             " <property name=\"whatsThis\" >\n"
-            "  <string>Sayilari formatina(Or:1,000,234.50) donusturur. "
+            "  <string>Write numbers comma seperated (Ex:1,000,234.50)"
             "</string>\n"
             " </property>\n"
             "</widget>\n";

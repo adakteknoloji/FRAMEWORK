@@ -44,7 +44,7 @@ QIcon QAdakDate_Plugin::icon() const
 
 QString QAdakDate_Plugin::toolTip() const
 {
-    return "Tarih";
+    return "Date";
 }
 
 QString QAdakDate_Plugin::whatsThis() const
