@@ -185,7 +185,7 @@ int BILGISAYARLAR_FORMU::CHECK_VAR ( QObject * p_object )
 
     if ( p_object EQ m_ui->lineEdit_bilgisayar_kodu ) {
         if ( m_ui->lineEdit_bilgisayar_kodu->text().count() > 10 ) {
-            MSG_ERROR(tr ( "Computer code canm not be more than 10 characters.") , NULL);
+            MSG_ERROR(tr ( "Computer code can not be more than 10 characters.") , NULL);
             return ADAK_FAIL;//Bilgisayar kodu 10 karakterden fazla olamaz.
         }
     }
