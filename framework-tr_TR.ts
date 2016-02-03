@@ -90,7 +90,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="KERNEL/base_event_kernel.cpp" line="175"/>
         <source>Use TextEdit.It is necessary to QLimitedTextEdit instead of TextEdit is limiting use.</source>
-        <translation>TextEdit yerine QLimitedTextEdit kullanilarak limitlenmesi gerekmektedir.</translation>
+        <translation>TextEdit yerine QLimitedTextEdit kullanilarak limitlenmesi gerekiyor.</translation>
     </message>
 </context>
 <context>
@@ -117,7 +117,7 @@ p, li { white-space: pre-wrap; }
         <location filename="KERNEL/base_kernel.cpp" line="457"/>
         <location filename="KERNEL/base_kernel.cpp" line="594"/>
         <source>Page can be Found at: </source>
-        <translation>Bulunamayan Sayfa:</translation>
+        <translation>Bu Sayfa Bulunamadı:</translation>
     </message>
     <message>
         <location filename="KERNEL/base_kernel.cpp" line="479"/>
@@ -148,7 +148,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="KERNEL/base_kernel.cpp" line="670"/>
         <source>Forgot open TRANSACTION, you must end! ..</source>
-        <translation>Açık TRANSACTION unuttunuz , sonlandırmanız gerekmektedir!..</translation>
+        <translation>Açık TRANSACTION unuttunuz , sonlandırmanız gerekiyor!..</translation>
     </message>
     <message>
         <location filename="KERNEL/base_kernel.cpp" line="470"/>
@@ -269,23 +269,23 @@ yardım sayfası en kısa sürede hazırlanacaktır.</translation>
         <location filename="DESIGNER/belge_designer_fisi.cpp" line="250"/>
         <source>Document name can not be empty.</source>
         <oldsource>Error! Document name can not be empty.</oldsource>
-        <translation>Belge adı boş bırakılamaz.</translation>
+        <translation>Belge adı boş bırakılmamalıdır.</translation>
     </message>
     <message>
         <location filename="DESIGNER/belge_designer_fisi.cpp" line="480"/>
         <source>Variable name can not be empty.</source>
-        <translation>Değişken adı boş bırakılamaz.</translation>
+        <translation>Değişken adı boş bırakılmamalıdır.</translation>
     </message>
     <message>
         <location filename="DESIGNER/belge_designer_fisi.cpp" line="484"/>
         <source>Variable size must be greater than 0pt.</source>
-        <translation>Değişken boyutları 0pt dan büyük olmalı.</translation>
+        <translation>Değişken boyutları 0pt dan büyük olmalıdır.</translation>
     </message>
     <message>
         <location filename="DESIGNER/belge_designer_fisi.cpp" line="505"/>
         <location filename="DESIGNER/belge_designer_fisi.cpp" line="566"/>
         <source>The variable name used in another record.</source>
-        <translation>Değişken adı başka bir kayıtta kullanılmış.</translation>
+        <translation>Bu değişken adı başka bir kayıtta kullanılmış.</translation>
     </message>
     <message>
         <location filename="DESIGNER/belge_designer_fisi.cpp" line="236"/>
@@ -306,7 +306,7 @@ yardım sayfası en kısa sürede hazırlanacaktır.</translation>
         <location filename="YONETIM/bilgisayarlar_formu.ui" line="26"/>
         <location filename="YONETIM/bilgisayarlar_formu.cpp" line="54"/>
         <source>COMPUTERS</source>
-        <translation></translation>
+        <translation>BİLGİSAYARLAR</translation>
     </message>
     <message>
         <location filename="YONETIM/bilgisayarlar_formu.ui" line="62"/>
@@ -316,7 +316,7 @@ yardım sayfası en kısa sürede hazırlanacaktır.</translation>
     <message>
         <location filename="YONETIM/bilgisayarlar_formu.ui" line="87"/>
         <source>Enter a code for computer</source>
-        <translation>Bilgisayar için bir kod giriniz</translation>
+        <translation>Bu bilgisayar için bir kod girmelisiniz</translation>
     </message>
     <message>
         <location filename="YONETIM/bilgisayarlar_formu.ui" line="100"/>
@@ -326,7 +326,7 @@ yardım sayfası en kısa sürede hazırlanacaktır.</translation>
     <message>
         <location filename="YONETIM/bilgisayarlar_formu.ui" line="128"/>
         <source>Enter a name for the Computer</source>
-        <translation>Bilgisayar için bir ad giriniz</translation>
+        <translation>Bu bilgisayar için bir ad girmelisiniz</translation>
     </message>
     <message>
         <location filename="YONETIM/bilgisayarlar_formu.ui" line="150"/>
@@ -340,7 +340,7 @@ yardım sayfası en kısa sürede hazırlanacaktır.</translation>
         <location filename="YONETIM/bilgisayarlar_formu.ui" line="267"/>
         <source>Copy Dongle IP</source>
         <oldsource>Dongle IP Kopyala</oldsource>
-        <translation>Dongle IP Kopyala</translation>
+        <translation>Dongle IP&apos;yi kopyala</translation>
     </message>
     <message>
         <location filename="YONETIM/bilgisayarlar_formu.ui" line="302"/>
@@ -348,7 +348,7 @@ yardım sayfası en kısa sürede hazırlanacaktır.</translation>
 
 The Ethernet MAC address of each computer in the world for a single number in a sequence. Is unique for each Ethernet card.</source>
         <oldsource>Mac adresi her bilgisayar etherneti için dünyada tek olan bir sayı dizisidir. Her bir ethernet kartı için eşsizdir.</oldsource>
-        <translation>Mac adresi her bilgisayar etherneti için dünyada tek olan bir sayı dizisidir. Her bir ethernet kartı için eşsizdir.</translation>
+        <translation>Mac adresi her bilgisayar için dünyada tek olan bir sayı dizisidir. Her bir ethernet kartı için eşsizdir.</translation>
     </message>
     <message>
         <location filename="YONETIM/bilgisayarlar_formu.ui" line="307"/>
@@ -441,7 +441,7 @@ Kopyala</translation>
         <location filename="YONETIM/bilgisayarlar_formu.cpp" line="226"/>
         <location filename="YONETIM/bilgisayarlar_formu.cpp" line="230"/>
         <source>Computer code has not been entered.</source>
-        <translation>B,ilgisayar kodu girilmemiş.</translation>
+        <translation>Bilgisayar kodu girilmemiş.</translation>
     </message>
     <message>
         <location filename="YONETIM/bilgisayarlar_formu.cpp" line="261"/>
@@ -460,7 +460,7 @@ Kopyala</translation>
         <location filename="YONETIM/bilgisayarlar_formu.cpp" line="315"/>
         <source>This dongle is registered in the system</source>
         <oldsource>The dongle is registered in the system</oldsource>
-        <translation>Bu dongle sistemde kayıtlı</translation>
+        <translation>Bu dongle sistemde kayıtlıdır</translation>
     </message>
     <message>
         <location filename="YONETIM/bilgisayarlar_formu.cpp" line="348"/>
@@ -502,7 +502,7 @@ Kopyala</translation>
         <location filename="YONETIM/bilgisayarlar_formu.cpp" line="652"/>
         <source> # MAC Address : </source>
         <oldsource> # MAC Adresi : </oldsource>
-        <translation>MAC adresi:</translation>
+        <translation>MAC Adresi:</translation>
     </message>
     <message>
         <location filename="YONETIM/bilgisayarlar_formu.cpp" line="588"/>
@@ -514,7 +514,7 @@ Kopyala</translation>
         <location filename="YONETIM/bilgisayarlar_formu.cpp" line="810"/>
         <source>On the no. %n line of the selected user is already available</source>
         <translation>
-            <numerusform>Seçilen kullanıcı %n nolu satırda zaten mevcut</numerusform>
+            <numerusform>Seçilen kullanıcı %n nolu satırda mevcuttur</numerusform>
         </translation>
     </message>
     <message>
@@ -529,7 +529,7 @@ Kopyala</translation>
         <location filename="YONETIM/bilgisayarlar_formu.cpp" line="498"/>
         <source>This MAC address registered in a computer present in the system</source>
         <oldsource>Bu mac adresi ile kayıtlı başka bir bilgisayar sistemde mevcut</oldsource>
-        <translation>Bu mac adresi ile kayıtlı bir bilgisayar sistemde mevcuts</translation>
+        <translation>Bu mac adresi ile kayıtlı bir bilgisayar sistemde mevcut</translation>
     </message>
 </context>
 <context>
@@ -558,7 +558,7 @@ Kopyala</translation>
         <location filename="DESIGNER/designer_ana_menu.cpp" line="113"/>
         <source>DOCUMENT DESIGNER</source>
         <oldsource>BELGE DESIGNER</oldsource>
-        <translation>BELGE TASARIMCISI</translation>
+        <translation>BELGE TASARIMI</translation>
     </message>
     <message>
         <location filename="DESIGNER/designer_ana_menu.cpp" line="115"/>
@@ -579,7 +579,7 @@ Kopyala</translation>
     <message>
         <location filename="DESIGNER/designer_ana_menu.cpp" line="120"/>
         <source>007 Informations</source>
-        <translation>007Bilgileri </translation>
+        <translation>007 Bilgileri </translation>
     </message>
     <message>
         <location filename="DESIGNER/designer_ana_menu.cpp" line="122"/>
@@ -790,8 +790,8 @@ p, li { white-space: pre-wrap; }
 Socket Error : %1 %2 </source>
         <oldsource>Posta Sunucusuna Bağlanılamadı. ( STARTTLS/NOSSL ) 
 Socket Hatasi : %1 %2 </oldsource>
-        <translation>Posta sunucuile bağlantı kurulamadı. ( STARTTLS/NOSSL ) 
-Socket Hata : %1 %2</translation>
+        <translation>Posta sunucusuna bağlanılamadı.( STARTTLS/NOSSL ) 
+Soket Hata : %1 %2</translation>
     </message>
     <message>
         <location filename="EMAIL/email_sender.cpp" line="568"/>
@@ -824,7 +824,7 @@ Socket Hatasi : %1 %2 </oldsource>
         <location filename="EMAIL/email_sender_gui.ui" line="29"/>
         <source>From:</source>
         <oldsource>From::</oldsource>
-        <translation>Kİmden:</translation>
+        <translation>Kimden:</translation>
     </message>
     <message>
         <location filename="EMAIL/email_sender_gui.ui" line="50"/>
@@ -885,12 +885,12 @@ Socket Hatasi : %1 %2 </oldsource>
     <message>
         <location filename="EMAIL/email_sender_gui.ui" line="222"/>
         <source>Use User Name and Password</source>
-        <translation>Kullanıcı Adı Ve Şifre Kullanılsın</translation>
+        <translation>Kullanıcı Adı ve Şifre Kullanılsın</translation>
     </message>
     <message>
         <location filename="EMAIL/email_sender_gui.ui" line="241"/>
         <source>E-Mail User Name:</source>
-        <translation>E-Posta Kullanıcı Adı:</translation>
+        <translation>E-Posta Kullanıcısı Adı:</translation>
     </message>
     <message>
         <location filename="EMAIL/email_sender_gui.ui" line="255"/>
@@ -921,13 +921,13 @@ Socket Hatasi : %1 %2 </oldsource>
         <location filename="EMAIL/email_sender_gui.cpp" line="78"/>
         <source>Mail server is not defined. It needs to be defined from &apos;System-Mail Server&apos; menu.</source>
         <oldsource>Mail server did not define.It needs to be defined from &apos;System-Mail Server&apos; menu.</oldsource>
-        <translation>Posta Sunucusu tanımlı değil.&apos;Sistem-&gt;Posta Sunucusu&apos; menüsü kullanılarak tanımlanması gerekmektedir.</translation>
+        <translation>Posta Sunucusu tanımlanmamış.&apos;Sistem-&gt;Posta Sunucusu&apos; menüsünü kullanarak tanımlamalısınız.</translation>
     </message>
     <message>
         <location filename="EMAIL/email_sender_gui.cpp" line="93"/>
         <source>Your E-Mail address or E-Mail User is undefined. It needs to be defined from &apos;System-Users&apos; menu.</source>
         <oldsource>Your E-Mail address or E-Mail User name did not define. It needs to be defined from &apos;System-Users&apos; menu.</oldsource>
-        <translation>E-Posta adresiniz veya E-Posta Kullanıcı isminiz tanımlı değil.&apos;Sistem-&gt;Kullanıcılar&apos; menüsü kullanılarak tanımlanması gerekmektedir.</translation>
+        <translation>E-Posta adresiniz veya E-Posta kullanıcı isminiz tanımlanmamış.&apos;Sistem-&gt;Kullanıcılar&apos; menüsünü kullanarak tanımlamalısınız.</translation>
     </message>
     <message>
         <location filename="EMAIL/email_sender_gui.cpp" line="117"/>
@@ -958,7 +958,7 @@ Socket Hatasi : %1 %2 </oldsource>
     <message>
         <location filename="ODS_IO/export_kernel.cpp" line="28"/>
         <source>EXPORT</source>
-        <translation>İHRAÇ ET</translation>
+        <translation>DIŞA AKTAR</translation>
     </message>
     <message>
         <location filename="ODS_IO/export_kernel.cpp" line="74"/>
@@ -973,7 +973,7 @@ Socket Hatasi : %1 %2 </oldsource>
     <message>
         <location filename="ODS_IO/export_kernel.cpp" line="87"/>
         <source>Transferred Information.</source>
-        <translation>Bilgi Transferi.</translation>
+        <translation>Taşınmış Bilgi.</translation>
     </message>
 </context>
 <context>
@@ -1064,7 +1064,7 @@ Socket Hatasi : %1 %2 </oldsource>
     <message>
         <location filename="KERNEL/form_kernel.cpp" line="480"/>
         <source>Recording will be deleted. Do you want to continue?</source>
-        <translation>Kayıt silinecektir. Devam etmek istiyor musunuz?</translation>
+        <translation>Kayıt silinecek. Devam etmek istiyor musunuz?</translation>
     </message>
     <message>
         <location filename="KERNEL/form_kernel.cpp" line="800"/>
@@ -1161,7 +1161,7 @@ Socket Hatasi : %1 %2 </oldsource>
     <message>
         <location filename="GRUP_KERNEL/grup_kernel.cpp" line="123"/>
         <source>There are not opened main group. Firstly, you must open a group.</source>
-        <translation>Açılmış olan ana grup bulunmamaktadır.Önce ana grup açmalısınız.</translation>
+        <translation>Açık ana grup bulunmamaktadır.Önce ana grubu açmalısınız.</translation>
     </message>
     <message>
         <location filename="GRUP_KERNEL/grup_kernel.cpp" line="128"/>
@@ -1176,12 +1176,12 @@ Socket Hatasi : %1 %2 </oldsource>
     <message>
         <location filename="GRUP_KERNEL/grup_kernel.cpp" line="291"/>
         <source>It was recorded in the group. You can not delete the group...</source>
-        <translation>Gruba kayıt yapılmış. Grubu silemezsiniz...</translation>
+        <translation>Grupta kayıt bulunmaktadır. Grubu silemezsiniz...</translation>
     </message>
     <message>
         <location filename="GRUP_KERNEL/grup_kernel.cpp" line="348"/>
         <source>An error occurred while retrieving top group information for the group.</source>
-        <translation>Gruba ait üst grup bilgileri alınırken hata oluştu.</translation>
+        <translation>Bu gruba ait üst grup bilgileri alınırken hata oluştu.</translation>
     </message>
     <message>
         <location filename="GRUP_KERNEL/grup_kernel.cpp" line="45"/>
@@ -1193,7 +1193,7 @@ Socket Hatasi : %1 %2 </oldsource>
         <location filename="GRUP_KERNEL/grup_kernel.cpp" line="64"/>
         <source>GROUPs</source>
         <oldsource>GRUPLAR</oldsource>
-        <translation>GRUP(LAR)</translation>
+        <translation>GRUPLAR</translation>
     </message>
     <message>
         <location filename="GRUP_KERNEL/grup_kernel.cpp" line="68"/>
@@ -1205,7 +1205,7 @@ Socket Hatasi : %1 %2 </oldsource>
         <location filename="GRUP_KERNEL/grup_kernel.cpp" line="265"/>
         <source>Group will be deleted &apos;%1 %2&apos;</source>
         <oldsource>&apos;%1 %2&apos; grubu silinecek.</oldsource>
-        <translation>&apos;%1 %2&apos; grupları silinecektir</translation>
+        <translation>&apos;%1 %2&apos; grupları silinecek</translation>
     </message>
 </context>
 <context>
@@ -1277,12 +1277,12 @@ Socket Hatasi : %1 %2 </oldsource>
         <location filename="GRUP_KERNEL/grup_kernel_grup_fisi.cpp" line="269"/>
         <source>The same group code is registered in another group existing system.Please change your group code...</source>
         <oldsource>Aynı grup koduyla kayıtlı başka bir grup sistemde mevcuttur.Lütfen grup kodunuzu değiştiriniz..</oldsource>
-        <translation>Lütfen grup kodunuzu değiştiriniz..Aynı grup koduyla kayıtlı başka bir grup sistemde mevcuttur...</translation>
+        <translation>Aynı grup kodu başka bir grup için kullanılmaktadır.Lütfen grup kodunuzu  değiştiriniz...</translation>
     </message>
     <message>
         <location filename="GRUP_KERNEL/grup_kernel_grup_fisi.cpp" line="287"/>
         <source>Group code can not be empty.</source>
-        <translation>Gruo kodu boş bırakılamaz.</translation>
+        <translation>Grup kodu boş bırakılamaz.</translation>
     </message>
     <message>
         <location filename="GRUP_KERNEL/grup_kernel_grup_fisi.cpp" line="291"/>
@@ -1292,17 +1292,17 @@ Socket Hatasi : %1 %2 </oldsource>
     <message>
         <location filename="GRUP_KERNEL/grup_kernel_grup_fisi.cpp" line="504"/>
         <source>Group having subgroup. It must not delete!</source>
-        <translation>Alt gruplar mevcut. Silinemez!</translation>
+        <translation>Seçilen grup alt gruplara sahip, silinemez!</translation>
     </message>
     <message>
         <location filename="GRUP_KERNEL/grup_kernel_grup_fisi.cpp" line="695"/>
         <source>You can not be empty the group code!...</source>
-        <translation>Grup kodunu boş bırakamazsınız!...</translation>
+        <translation>Grup kodunu boş bırakmamalısınız!...</translation>
     </message>
     <message>
         <location filename="GRUP_KERNEL/grup_kernel_grup_fisi.cpp" line="699"/>
         <source>You can not be empty the group name!...</source>
-        <translation>Grup adını boş bırakamazsınız!...</translation>
+        <translation>Grup adını boş bırakmamalısınız!...</translation>
     </message>
     <message>
         <location filename="GRUP_KERNEL/grup_kernel_grup_fisi.cpp" line="752"/>
@@ -1333,12 +1333,12 @@ Socket Hatasi : %1 %2 </oldsource>
     <message>
         <location filename="GRUP_KERNEL/grup_kernel_grup_fisi.cpp" line="1095"/>
         <source>An error occured while retrieving the number of subgroups of the main group.</source>
-        <translation>Ana grubun altt grup sayısı alınırken hata oluştu.</translation>
+        <translation>Ana grubun alt grup sayısı alınırken hata oluştu.</translation>
     </message>
     <message>
         <location filename="GRUP_KERNEL/grup_kernel_grup_fisi.cpp" line="1100"/>
         <source>There are records in the group. You can not delete the group.</source>
-        <translation>Grupta kayıt(lar) var Grubu silemezsiniz.</translation>
+        <translation>Grupta kayıt(lar) varken grubu silemezsiniz.</translation>
     </message>
 </context>
 <context>
@@ -1365,7 +1365,8 @@ Socket Hatasi : %1 %2 </oldsource>
         <location filename="GRUP_KERNEL/grup_secim_kernel.cpp" line="91"/>
         <source>Sub-Group 
 Number</source>
-        <translation>Alt-grup Sayısı</translation>
+        <translation>Alt-Grup
+Numarası</translation>
     </message>
     <message>
         <location filename="GRUP_KERNEL/grup_secim_kernel.cpp" line="91"/>
@@ -1395,7 +1396,7 @@ Number</source>
     <message>
         <location filename="GRUP_KERNEL/grup_secim_kernel.cpp" line="92"/>
         <source> </source>
-        <translation></translation>
+        <translation> </translation>
     </message>
 </context>
 <context>
@@ -1404,7 +1405,7 @@ Number</source>
         <location filename="YONETIM/hata_istek_batch.ui" line="20"/>
         <location filename="YONETIM/hata_istek_batch.cpp" line="38"/>
         <source>BUG/REQUEST FORM</source>
-        <translation>HATA/İSTEKFORMU</translation>
+        <translation>HATA/İSTEK FORMU</translation>
     </message>
     <message>
         <location filename="YONETIM/hata_istek_batch.ui" line="43"/>
@@ -1438,7 +1439,7 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;Size &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:600;&quot;&gt;geridönüş&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt; yapabilmemiz için lütfen &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:600;&quot;&gt;e-posta&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;adresinizi yazınız.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;Size &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:600;&quot;&gt;geri dönüş&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt; yapabilmemiz için lütfen &lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt; font-weight:600;&quot;&gt;e-posta&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;adresinizi yazınız.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="YONETIM/hata_istek_batch.ui" line="124"/>
@@ -1501,7 +1502,7 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;Önizleme(&lt;/span&gt;&lt;a name=&quot;result_box&quot;&gt;&lt;/a&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;I&lt;/span&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;f&lt;/span&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;
-Eğer bilgilerin yerleri önizlemede yanlışsa,  bilgilerin alınacağı dosyadan buradaki sıraya göre düzeltilmesi gereklidir..&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+Eğer bilgilerin yerleri önizlemede yanlışsa, bilgilerin alınacağı dosyadan buradaki sıraya göre düzeltilmesi gereklidir..&lt;/span&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:10pt;&quot;&gt;)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="ODS_IO/import_kernel.cpp" line="62"/>
@@ -1523,7 +1524,7 @@ Eğer bilgilerin yerleri önizlemede yanlışsa,  bilgilerin alınacağı dosyad
     <message>
         <location filename="ODS_IO/import_kernel.cpp" line="35"/>
         <source>Import</source>
-        <translation>içe aktar</translation>
+        <translation>İçe aktar</translation>
     </message>
     <message>
         <location filename="ODS_IO/import_kernel.cpp" line="42"/>
@@ -1538,7 +1539,7 @@ Eğer bilgilerin yerleri önizlemede yanlışsa,  bilgilerin alınacağı dosyad
     <message>
         <location filename="ODS_IO/import_kernel.cpp" line="144"/>
         <source>No data will be saved</source>
-        <translation>kaydedilecek veri yok</translation>
+        <translation>Kaydedilecek veri yok</translation>
     </message>
     <message>
         <location filename="ODS_IO/import_kernel.cpp" line="148"/>
@@ -1569,7 +1570,7 @@ Eğer bilgilerin yerleri önizlemede yanlışsa,  bilgilerin alınacağı dosyad
     <message>
         <location filename="ODS_IO/import_kernel.cpp" line="274"/>
         <source>In number %1 line, %2 Required fields were left blank</source>
-        <translation>%1 nolu satırda %2 zorunlu alanı boş bırakılmış</translation>
+        <translation>%1 nolu satırda %2 zorunlu alan boş bırakılmış</translation>
     </message>
 </context>
 <context>
@@ -1657,7 +1658,7 @@ Eğer bilgilerin yerleri önizlemede yanlışsa,  bilgilerin alınacağı dosyad
     <message>
         <location filename="YONETIM/kullanicilar_formu.ui" line="536"/>
         <source>Wired Network Mac</source>
-        <translation>KAblolu Ağ Mac</translation>
+        <translation>Kablolu Ağ Mac</translation>
     </message>
     <message>
         <location filename="YONETIM/kullanicilar_formu.ui" line="541"/>
@@ -1690,7 +1691,7 @@ Eğer bilgilerin yerleri önizlemede yanlışsa,  bilgilerin alınacağı dosyad
 Please do not leave blank.</source>
         <oldsource>Email bilgisi, hata bildirimleri ve rapor gönderimi için gereklidir.
 Lütfen boş bırakmayınız.</oldsource>
-        <translation>hata ve istek bildirimlerinin gönderilebilmesi için e-posta bilgisi gereklidir. 
+        <translation>Hata ve istek bildirimlerinin gönderilebilmesi için e-posta bilgisi gereklidir. 
 Lütfen boş bırakmayınız.</translation>
     </message>
     <message>
@@ -1723,7 +1724,7 @@ Lütfen boş bırakmayınız.</translation>
         <location filename="YONETIM/kullanicilar_formu.cpp" line="346"/>
         <location filename="YONETIM/kullanicilar_formu.cpp" line="425"/>
         <source>There are registered users in the system with this code.</source>
-        <translation>Bu kodla kayıtlı kullanıcı sistemde mevcut.</translation>
+        <translation>Bu kodla kayıtlı kullanıcı sistemde bulunmaktadır.</translation>
     </message>
     <message>
         <location filename="YONETIM/kullanicilar_formu.cpp" line="437"/>
@@ -1751,7 +1752,7 @@ Lütfen boş bırakmayınız.</translation>
     <message>
         <location filename="YONETIM/kullanicilar_formu.cpp" line="526"/>
         <source>Admin user can not be deleted!</source>
-        <translation>Yönetici kullanıcısı silinemez!</translation>
+        <translation>Yönetici olan kullanıcı silinemez!</translation>
     </message>
     <message>
         <location filename="YONETIM/kullanicilar_formu.cpp" line="531"/>
@@ -1839,7 +1840,7 @@ Select a new database.</source>
         <oldsource>Seçili kullanıcının bu veritabanında çalışma izni yok.
 Yeni veritabanı seçiniz.</oldsource>
         <translation>Seçili kullanıcının bu veritabanında çalışma izni yok. 
-Yeni veritabanı seçiniz.</translation>
+Yeni bir veritabanı seçiniz.</translation>
     </message>
     <message>
         <location filename="YONETIM/kullanici_degistir_batch.cpp" line="173"/>
@@ -1905,7 +1906,7 @@ p, li { white-space: pre-wrap; }
         <location filename="LOGIN/login_batch.ui" line="426"/>
         <source>Updates the database If the selection is made when login programme.</source>
         <oldsource>Seçim yapılırsa programa giriş esnasında veritabanını güncelleştirir</oldsource>
-        <translation>Updates the database If the selection is made when login programme. </translation>
+        <translation>Programa giriş sırasında seçim yapıldı ise veritabanı güncellenir.</translation>
     </message>
     <message>
         <location filename="LOGIN/login_batch.ui" line="432"/>
@@ -2013,7 +2014,7 @@ p, li { white-space: pre-wrap; }
         <location filename="YONETIM/posta_sunucusu_formu.ui" line="26"/>
         <location filename="YONETIM/posta_sunucusu_formu.cpp" line="44"/>
         <source>MAIL SERVER</source>
-        <translation>Posta Sunucusu</translation>
+        <translation>POSTA SUNUCUSU</translation>
     </message>
     <message>
         <location filename="YONETIM/posta_sunucusu_formu.ui" line="74"/>
@@ -2123,7 +2124,7 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Ubuntu&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:18pt; font-weight:600;&quot;&gt;Program yeni bir sürüme sahiptir.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:18pt; font-weight:600;&quot;&gt;Programın yeni bir sürümü mevcut.&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans Serif&apos;; font-size:18pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans Serif&apos;; font-size:18pt; font-weight:600; font-style:italic;&quot;&gt;Lütfen GÜNCELLEYİNİZ!.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -2136,7 +2137,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="LOGIN/programi_guncellestirin_batch.ui" line="174"/>
         <source>Update</source>
-        <translation>Evet Güncelle</translation>
+        <translation>Güncelle</translation>
     </message>
     <message>
         <location filename="LOGIN/programi_guncellestirin_batch.cpp" line="45"/>
@@ -2155,7 +2156,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="QAdakDate/QAdakDate.cpp" line="155"/>
         <source>Your entered date is not in the financial year. Please enter a new date! </source>
-        <translation>Girmiş olduğunuz tarih mali yıl içinde değil, lütfen yeni bir tarih girin.!</translation>
+        <translation>Girmiş olduğunuz tarih mali yıl içinde değildir, lütfen yeni bir tarih girin.!</translation>
     </message>
 </context>
 <context>
@@ -2225,7 +2226,7 @@ Widget:%1</translation>
     <message>
         <location filename="DESIGNER/belge_secimi.cpp" line="26"/>
         <source>Document Id</source>
-        <translation type="unfinished"></translation>
+        <translation>Döküman Id</translation>
     </message>
     <message>
         <location filename="DESIGNER/belge_secimi.cpp" line="33"/>
@@ -2303,7 +2304,7 @@ Widget:%1</translation>
     <message>
         <location filename="DESIGNER/sql_struct_generator.cpp" line="114"/>
         <source>Table is not found.</source>
-        <translation>Tablo Bulunamadı.</translation>
+        <translation>Tablo bulunamadı.</translation>
     </message>
     <message>
         <location filename="EMAIL/email_sender.cpp" line="22"/>
@@ -2355,7 +2356,7 @@ Hatalı E-Mail Adresleri: </oldsource>
     <message>
         <location filename="EMAIL/email_sender.cpp" line="858"/>
         <source>There was an error can not be determined.</source>
-        <translation>Tespit edilemeyen hata oluştu.</translation>
+        <translation>Tespit edilemeyen bir hata oluştu.</translation>
     </message>
     <message>
         <location filename="GRUP_KERNEL/base_grup_kernel.cpp" line="95"/>
@@ -2452,7 +2453,7 @@ Hatalı E-Mail Adresleri: </oldsource>
     <message>
         <location filename="LOGIN/adak_sql_error_dialog.cpp" line="62"/>
         <source>Failed query       :&amp;nbsp;</source>
-        <translation>Başarısız Sorgu       :&amp;nbsp;</translation>
+        <translation>Sorgu başarısız       :&amp;nbsp;</translation>
     </message>
     <message>
         <location filename="LOGIN/adak_sql_error_dialog.cpp" line="126"/>
@@ -2470,19 +2471,19 @@ Hatalı E-Mail Adresleri: </oldsource>
         <location filename="LOGIN/program_start.cpp" line="620"/>
         <source>This computer is not registered in the system.
 %1</source>
-        <translation>Bu Bilgisayar sisteme kayıtlı değil.
+        <translation>Bu bilgisayar sisteme kayıtlı değil.
 %1</translation>
     </message>
     <message>
         <location filename="LOGIN/program_start.cpp" line="307"/>
         <source>This coded user not found</source>
-        <translation>Bu kodlu kullanıcı bulunamadı</translation>
+        <translation>Bu koda sahip kullanıcı bulunamadı</translation>
     </message>
     <message>
         <location filename="LOGIN/program_start.cpp" line="327"/>
         <location filename="LOGIN/program_start.cpp" line="663"/>
         <source>This user is not registered on the computer.</source>
-        <translation>Kullanıcı bilgisayara kayıtlı değil.</translation>
+        <translation>Bu kullanıcı bilgisayara kayıtlı değil.</translation>
     </message>
     <message>
         <location filename="LOGIN/program_start.cpp" line="410"/>
@@ -2526,7 +2527,7 @@ Hatalı E-Mail Adresleri: </oldsource>
         <source>Unknown DONGLE/ it is not suitable DONGLE ! 
 
  Dongle IP : </source>
-        <translation>DONGLE bulunamadı / UYGUN bir dongle değil ! \n\n Dongle IP :</translation>
+        <translation>Bilinmeyen DONGLE / uygun bir DONGLE değil ! \n\n Dongle IP :</translation>
     </message>
     <message>
         <location filename="LOGIN/program_start.cpp" line="614"/>
@@ -2547,7 +2548,7 @@ Hatalı E-Mail Adresleri: </oldsource>
     <message>
         <location filename="LOGIN/program_start.cpp" line="724"/>
         <source>IP/Address        : &lt;b&gt;%1&lt;/b&gt;&lt;br&gt;Port: &lt;b&gt;%2&lt;/b&gt;&lt;br&gt;SQL Engine: &lt;b&gt;%3&lt;/b&gt;&lt;br&gt;</source>
-        <translation>IP/Adres        : &lt;b&gt;%1&lt;/b&gt;&lt;br&gt;Port: &lt;b&gt;%2&lt;/b&gt;&lt;br&gt;SQL Motor: &lt;b&gt;%3&lt;/b&gt;&lt;br&gt;</translation>
+        <translation>IP/Adres        : &lt;b&gt;%1&lt;/b&gt;&lt;br&gt;Port: &lt;b&gt;%2&lt;/b&gt;&lt;br&gt;SQL Motoru: &lt;b&gt;%3&lt;/b&gt;&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="LOGIN/program_start.cpp" line="727"/>
@@ -2594,7 +2595,7 @@ Hatalı E-Mail Adresleri: </oldsource>
     <message>
         <location filename="LOGIN/first_login.cpp" line="29"/>
         <source>C01 Computer</source>
-        <translation>C01 Computer</translation>
+        <translation>C01 Bilgisayar</translation>
     </message>
     <message>
         <location filename="LOGIN/first_login.cpp" line="30"/>
@@ -2604,7 +2605,7 @@ Hatalı E-Mail Adresleri: </oldsource>
     <message>
         <location filename="LOGIN/first_login.cpp" line="31"/>
         <source>U01 User</source>
-        <translation>U01 User</translation>
+        <translation>U01 Kullanıcı</translation>
     </message>
     <message>
         <location filename="LOGIN/first_login.cpp" line="36"/>
@@ -2625,7 +2626,7 @@ Will create tables and a new user according to the information you gave.
 Create database : %1 - %2 .
 Create %3 : user and give it all the permissions.</source>
         <translation>İstenen tablolar veritabanında mevcut değil.
-TAblolar oluşturulacak ve girdiğiniz bilgilere göre yeni bir kullanıcı oluşturulacak.
+Tablolar oluşturulacak ve girdiğiniz bilgilere göre yeni bir kullanıcı oluşturulacak.
 
 Yapılacaklar;
 Veritabanı oluştur : %1 - %2 .
@@ -2681,7 +2682,7 @@ Veritabanı oluştur : %1 - %2 .
     <message>
         <location filename="LOGIN/yonetici_izni_batch.cpp" line="82"/>
         <source>You entered the wrong administrator password.Please check.</source>
-        <translation>Yönetici şifresini yanlış girdiniz. Kontrol ediniz.</translation>
+        <translation>Yönetici şifresini yanlış girdiniz. Lütfen kontrol ediniz.</translation>
     </message>
     <message>
         <location filename="LOGIN/programi_guncellestirin_batch.cpp" line="43"/>
@@ -2701,7 +2702,7 @@ Veritabanı oluştur : %1 - %2 .
     <message>
         <location filename="REPORT_KERNEL/etiket_kernel.cpp" line="214"/>
         <source>Rounded Corners Sticker - By 65</source>
-        <translation>oval Köşeli Etiket - 65&apos;lik</translation>
+        <translation>Oval Köşeli Etiket - 65&apos;lik</translation>
     </message>
     <message>
         <location filename="REPORT_KERNEL/report_shower.cpp" line="36"/>
@@ -2926,7 +2927,7 @@ Veritabanı oluştur : %1 - %2 .
     <message>
         <location filename="SQL/adak_sql_error.cpp" line="231"/>
         <source>VALUE() Error. Query NEXT() forgotten or x is wrong in VALUE(x).</source>
-        <translation>VALUE()&apos;da hata. Ya NEXT() unutulmus ya da VALUE(x) teki x yanlis.</translation>
+        <translation>VALUE() hatası. Ya NEXT() unutulmus ya da VALUE(x) teki x yanlis.</translation>
     </message>
     <message>
         <location filename="SQL/adak_sql_error.cpp" line="236"/>
@@ -3007,7 +3008,7 @@ Veritabanı oluştur : %1 - %2 .
     <message>
         <location filename="SQL/adak_sql_error.cpp" line="265"/>
         <source>Supported: PostgreSQL, MySQL, SQLite, Microsoft SQL , ORACLE.</source>
-        <translation>Desteklenenler: PostgreSQL, MySQL, SQLite, Microsoft SQL , ORACLE.</translation>
+        <translation>Desteklenenler: PostgreSQL, MySQL, SQLite, Microsoft SQL ve ORACLE.</translation>
     </message>
     <message>
         <location filename="SQL/adak_sql_error.cpp" line="221"/>
@@ -3487,7 +3488,7 @@ Veritabanı oluştur : %1 - %2 .
     <message>
         <location filename="UTILS/yaziyla_yaz.cpp" line="37"/>
         <source>Cent</source>
-        <translation>KR</translation>
+        <translation>Kr</translation>
     </message>
     <message>
         <location filename="UTILS/yaziyla_yaz.cpp" line="170"/>
@@ -3498,7 +3499,7 @@ Veritabanı oluştur : %1 - %2 .
         <location filename="YONETIM/yonetim_utils.cpp" line="79"/>
         <source>NOT REGISTERED # MAC: </source>
         <oldsource>KAYITLI DEGIL # MAC: </oldsource>
-        <translation>KAYITLI DEĞİL #MAC:</translation>
+        <translation> #MAC KAYITLI DEĞİL:</translation>
     </message>
     <message>
         <location filename="YONETIM/yonetim_utils.cpp" line="79"/>
@@ -3546,7 +3547,8 @@ Veritabanı oluştur : %1 - %2 .
         <oldsource>You can set User Authorization in the User&apos;s Screen
 
 </oldsource>
-        <translation>Kullanıcı Yetkileri &apos; ni Kullanıcılar Ekranı &apos; ndan ayarlayabilirsiniz.</translation>
+        <translation>Kullanıcı Yetkileri &apos; ni Kullanıcılar Ekranı &apos; ndan ayarlayabilirsiniz.
+</translation>
     </message>
     <message>
         <location filename="YONETIM/yonetim_utils.cpp" line="212"/>
@@ -3637,7 +3639,7 @@ Veritabanı oluştur : %1 - %2 .
     <message>
         <location filename="YONETIM/kullanici_degistir_batch.cpp" line="99"/>
         <source>The user is not registered on the computer.</source>
-        <translation>kullanıcı bilgisayarda kayıtlı değil.</translation>
+        <translation>Bu kullanıcı bilgisayarda kayıtlı değil.</translation>
     </message>
     <message>
         <location filename="YONETIM/veritabanlari_formu.cpp" line="257"/>
@@ -3665,7 +3667,7 @@ Veritabanı oluştur : %1 - %2 .
     <message>
         <location filename="REPORT_KERNEL/report_shower.cpp" line="202"/>
         <source>OpenOffice Writer</source>
-        <translation>Open Office yazım</translation>
+        <translation>Open Office yazıcı</translation>
     </message>
     <message>
         <location filename="REPORT_KERNEL/report_shower.cpp" line="68"/>
@@ -3675,7 +3677,7 @@ Veritabanı oluştur : %1 - %2 .
     <message>
         <location filename="REPORT_KERNEL/report_shower.cpp" line="74"/>
         <source>Report preview is preparing. Please wait...</source>
-        <translation>Rapor Önizlemesi Hazırlanıyor. Lütfen Bekleyiniz...</translation>
+        <translation>Rapor önizlemesi hazırlanıyor. Lütfen bekleyiniz...</translation>
     </message>
     <message>
         <location filename="REPORT_KERNEL/report_shower.cpp" line="85"/>
@@ -3690,7 +3692,7 @@ Veritabanı oluştur : %1 - %2 .
     <message>
         <location filename="REPORT_KERNEL/report_shower.cpp" line="93"/>
         <source> Export</source>
-        <translation>İhraç Et</translation>
+        <translation>Dışa aktar</translation>
     </message>
     <message>
         <location filename="REPORT_KERNEL/report_shower.cpp" line="189"/>
@@ -3705,7 +3707,7 @@ Veritabanı oluştur : %1 - %2 .
     <message>
         <location filename="REPORT_KERNEL/report_shower.cpp" line="218"/>
         <source>Export</source>
-        <translation>İhraç Et</translation>
+        <translation>Dışa aktar</translation>
     </message>
     <message>
         <location filename="REPORT_KERNEL/report_shower.cpp" line="261"/>
@@ -3715,7 +3717,7 @@ Veritabanı oluştur : %1 - %2 .
     <message>
         <location filename="REPORT_KERNEL/report_shower.cpp" line="262"/>
         <source>Open Document Format - Export</source>
-        <translation>Open Document Format- İhraç Et</translation>
+        <translation>Open Document Format- Dışa aktar</translation>
     </message>
     <message>
         <location filename="REPORT_KERNEL/report_shower.cpp" line="267"/>
@@ -3725,7 +3727,7 @@ Veritabanı oluştur : %1 - %2 .
     <message>
         <location filename="REPORT_KERNEL/report_shower.cpp" line="268"/>
         <source>HTML - Export</source>
-        <translation>HTML -  İhraç Et</translation>
+        <translation>HTML - Dışa aktar</translation>
     </message>
     <message>
         <location filename="REPORT_KERNEL/report_shower.cpp" line="274"/>
@@ -3735,7 +3737,7 @@ Veritabanı oluştur : %1 - %2 .
     <message>
         <location filename="REPORT_KERNEL/report_shower.cpp" line="275"/>
         <source>Text File - Export</source>
-        <translation>Metin Dosyası</translation>
+        <translation>Metin Dosyası - Dışa aktar</translation>
     </message>
 </context>
 <context>
@@ -3750,7 +3752,7 @@ Veritabanı oluştur : %1 - %2 .
         <location filename="KERNEL/secim_kerneli.cpp" line="20"/>
         <source>... SELECTION</source>
         <oldsource>... SECIMI</oldsource>
-        <translation>... SELECTION</translation>
+        <translation>... SEÇİMİ</translation>
     </message>
 </context>
 <context>
@@ -3769,7 +3771,7 @@ Veritabanı oluştur : %1 - %2 .
     <message>
         <location filename="KERNEL/sekme_menu_kernel.cpp" line="272"/>
         <source>Open Screen</source>
-        <translation></translation>
+        <translation>Ekranı Aç</translation>
     </message>
     <message>
         <location filename="KERNEL/sekme_menu_kernel.cpp" line="274"/>
@@ -3913,7 +3915,7 @@ Veritabanı oluştur : %1 - %2 .
     <message>
         <location filename="SMS/sms_sender_gui.cpp" line="107"/>
         <source>Unassigned SMS server setting. Before you assign the SMS server setting in administration.</source>
-        <translation>SMS sunucu ayarları atanmamış. Önce yönetimden SMS sunucu ayarlarınızı atayınız.</translation>
+        <translation>SMS sunucu ayarları atanmamış. Önce yönetimden SMS sunucu ayarlarınızı atamalısınız.</translation>
     </message>
     <message>
         <location filename="SMS/sms_sender_gui.cpp" line="117"/>
@@ -3932,7 +3934,7 @@ Veritabanı oluştur : %1 - %2 .
     <message>
         <location filename="YONETIM/sms_sunucusu_formu.ui" line="37"/>
         <source>SMS Server:</source>
-        <translation>SMS Sunucu:</translation>
+        <translation>SMS Sunucusu:</translation>
     </message>
     <message>
         <location filename="YONETIM/sms_sunucusu_formu.ui" line="53"/>
@@ -3943,7 +3945,7 @@ Veritabanı oluştur : %1 - %2 .
         <location filename="YONETIM/sms_sunucusu_formu.ui" line="69"/>
         <source>SMS Server ID:</source>
         <oldsource>SMS Server ID</oldsource>
-        <translation>SMS Sunucu ID:</translation>
+        <translation>SMS Sunucusu ID:</translation>
     </message>
     <message>
         <location filename="YONETIM/sms_sunucusu_formu.ui" line="85"/>
@@ -3960,7 +3962,7 @@ Veritabanı oluştur : %1 - %2 .
         <location filename="YONETIM/sms_sunucusu_formu.cpp" line="43"/>
         <source>SMS SERVER</source>
         <oldsource>SMS SUNUCUSU</oldsource>
-        <translation>SMS SUNUCU</translation>
+        <translation>SMS SUNUCUSU</translation>
     </message>
 </context>
 <context>
@@ -4122,7 +4124,7 @@ Veritabanı oluştur : %1 - %2 .
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="262"/>
         <source>Table name can not be longer than 27 characters.</source>
         <oldsource>Table name can not longer than 27 characters.</oldsource>
-        <translation>Tablo ismi 27 karakterden uzun olamaz.</translation>
+        <translation>Tablo adı 27 karakterden uzun olamaz.</translation>
     </message>
     <message>
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="284"/>
@@ -4159,7 +4161,7 @@ Veritabanı oluştur : %1 - %2 .
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="436"/>
         <source>This user has no authority to delete records.</source>
         <oldsource>This user has no authority for delete registration.</oldsource>
-        <translation>Bu kullanıcı kayıtları silme yetkisine sahip değil.</translation>
+        <translation>Bu kullanıcı kayıt silme yetkisine sahip değil.</translation>
     </message>
     <message>
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="440"/>
@@ -4200,7 +4202,7 @@ Veritabanı oluştur : %1 - %2 .
     <message>
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="646"/>
         <source>Array size must be greater than 1 </source>
-        <translation>Dizi boyutu 1 den büyük olmalıdır</translation>
+        <translation>Dizi boyutu 1 basamaktan büyük olmalıdır</translation>
     </message>
     <message>
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="652"/>
@@ -4211,7 +4213,7 @@ Veritabanı oluştur : %1 - %2 .
     <message>
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="658"/>
         <source>Field length must be entered for a field of type TEXT.</source>
-        <translation>TEXT tipinde bir alan için alan uzunlluğu girilmek zorundadır.</translation>
+        <translation>TEXT tipinde bir alan için alan uzunluğu girilmek zorundadır.</translation>
     </message>
     <message>
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="673"/>
@@ -4222,12 +4224,12 @@ Veritabanı oluştur : %1 - %2 .
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="686"/>
         <source>The field name used for another field in this table.</source>
         <oldsource>The field name used for another field in this table..</oldsource>
-        <translation>Bu isimde bir alan tabloda bulunmaktadır.</translation>
+        <translation>Bu isimde bir alan tabloda mevcut.</translation>
     </message>
     <message>
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="742"/>
         <source>This user has no authority for Update registration.</source>
-        <translation>Bu kullanıcının kayıt güncelleme yetkisi bulunmamaktadır.</translation>
+        <translation>Bu kullanıcının kayıt güncelleme yetkisi yoktur.</translation>
     </message>
     <message>
         <location filename="DESIGNER/sql_tablolar_fisi.cpp" line="760"/>
@@ -4288,7 +4290,7 @@ Veritabanı oluştur : %1 - %2 .
         <location filename="DESIGNER/sql_tablo_arama.cpp" line="49"/>
         <source>SEARCH SQL TABLE </source>
         <oldsource>SQL TABLO ARAMA</oldsource>
-        <translation>TABLO SQL ARAMA</translation>
+        <translation>SQL TABLO ARAMA</translation>
     </message>
 </context>
 <context>
@@ -4376,7 +4378,7 @@ Veritabanı oluştur : %1 - %2 .
         <location filename="TASARIMCI/tasarim_batch.ui" line="301"/>
         <location filename="TASARIMCI/tasarim_batch.ui" line="769"/>
         <source>Characters</source>
-        <translation>karakter</translation>
+        <translation>Karakter</translation>
     </message>
     <message>
         <location filename="TASARIMCI/tasarim_batch.ui" line="322"/>
@@ -4391,7 +4393,7 @@ Veritabanı oluştur : %1 - %2 .
     <message>
         <location filename="TASARIMCI/tasarim_batch.ui" line="374"/>
         <source>Font</source>
-        <translation>yazıtipi</translation>
+        <translation>Yazıtipi</translation>
     </message>
     <message>
         <location filename="TASARIMCI/tasarim_batch.ui" line="387"/>
@@ -4443,7 +4445,7 @@ Veritabanı oluştur : %1 - %2 .
         <location filename="TASARIMCI/tasarim_batch.ui" line="790"/>
         <location filename="TASARIMCI/tasarim_batch.ui" line="815"/>
         <source>Line</source>
-        <translation>satır</translation>
+        <translation>Satır</translation>
     </message>
     <message>
         <location filename="TASARIMCI/tasarim_batch.ui" line="824"/>
@@ -4551,7 +4553,7 @@ Veritabanı oluştur : %1 - %2 .
     <message>
         <location filename="TASARIMCI/tasarim_batch.cpp" line="969"/>
         <source>Changes were made to the design. Do you want to quit?</source>
-        <translation>Tasarımda değişiklikler yapıldı Çıkmak istiyor musunuz?</translation>
+        <translation>Tasarımda değişiklikler yapıldı. Çıkmak istiyor musunuz?</translation>
     </message>
     <message>
         <location filename="TASARIMCI/tasarim_batch.cpp" line="1088"/>
@@ -4569,7 +4571,7 @@ Veritabanı oluştur : %1 - %2 .
     <message>
         <location filename="TASARIMCI/tasarim_batch_base.cpp" line="58"/>
         <source>Open Picture</source>
-        <translation>Resim Aç</translation>
+        <translation>Resmi Aç</translation>
     </message>
     <message>
         <location filename="TASARIMCI/tasarim_batch_base.cpp" line="58"/>
@@ -4584,7 +4586,7 @@ Veritabanı oluştur : %1 - %2 .
     <message>
         <location filename="TASARIMCI/tasarim_batch_base.cpp" line="194"/>
         <source>&lt;b&gt;%1&lt;/b&gt; The variable will be deleted.Do you confirm?</source>
-        <translation>&lt;b&gt;%1&lt;/b&gt;  Değişkeni silinecektir. Onaylıyor musunuz?</translation>
+        <translation>&lt;b&gt;%1&lt;/b&gt;  Değişken silinecektir. Onaylıyor musunuz?</translation>
     </message>
 </context>
 <context>
@@ -4714,7 +4716,7 @@ Veritabanı oluştur : %1 - %2 .
     <message>
         <location filename="TASARIMCI/tasarim_belge_batch.cpp" line="213"/>
         <source>Document width field can not be empty.</source>
-        <translation>belge genişliği alanı boş bırakılamaz.</translation>
+        <translation>Belge genişliği alanı boş bırakılamaz.</translation>
     </message>
     <message>
         <location filename="TASARIMCI/tasarim_belge_batch.cpp" line="218"/>
@@ -4739,7 +4741,7 @@ Veritabanı oluştur : %1 - %2 .
     <message>
         <location filename="TASARIMCI/tasarim_belge_batch.cpp" line="237"/>
         <source>The number of lines can not be empty between rows.</source>
-        <translation>Satırlar arası satır sayısı boş bırakılamaz.</translation>
+        <translation>Diziler arası satır sayısı boş bırakılamaz.</translation>
     </message>
     <message>
         <location filename="TASARIMCI/tasarim_belge_batch.cpp" line="243"/>
@@ -4758,7 +4760,7 @@ Değişiklik yapılabilmesi için tasarımın kopyalanması gerekmektedir.</tran
     <message>
         <location filename="TASARIMCI/tasarim_design_widget.cpp" line="24"/>
         <source>Adak Document Design</source>
-        <translation>Adak Belge Tasarım</translation>
+        <translation>Adak Belge Tasarımı</translation>
     </message>
 </context>
 <context>
@@ -4782,7 +4784,7 @@ Değişiklik yapılabilmesi için tasarımın kopyalanması gerekmektedir.</tran
     <message>
         <location filename="TASARIMCI/tasarim_menu_batch.ui" line="89"/>
         <source>DOCUMENT DESIGN</source>
-        <translation>BELGE TASARIM</translation>
+        <translation>BELGE TASARIMI</translation>
     </message>
     <message>
         <location filename="TASARIMCI/tasarim_menu_batch.cpp" line="45"/>
@@ -4807,7 +4809,7 @@ Değişiklik yapılabilmesi için tasarımın kopyalanması gerekmektedir.</tran
     <message>
         <location filename="TASARIMCI/tasarim_menu_batch.cpp" line="119"/>
         <source>Design must be empty. Please try again select an empty design.</source>
-        <translation>tasarımın boş olması gerekir. Lütfen boş bir tasarım seçip tekrar deneyin.</translation>
+        <translation>Tasarım boş olmalı. Lütfen boş bir tasarım seçip tekrar deneyin.</translation>
     </message>
     <message>
         <location filename="TASARIMCI/tasarim_menu_batch.cpp" line="187"/>
@@ -5001,7 +5003,7 @@ Değişiklik yapılabilmesi için tasarımın kopyalanması gerekmektedir.</tran
     <message>
         <location filename="YONETIM/veritabanlari_formu.cpp" line="170"/>
         <source>Database name does not contain characters other than number letter and &apos;_&apos;.</source>
-        <translation>Veritabanı ismi rakam,harf veya \&apos;_\&apos; dışında karakter içeremez.</translation>
+        <translation>Veritabanı ismi rakam,harf veya \&apos;_\&apos; içerebilir.</translation>
     </message>
     <message>
         <location filename="YONETIM/veritabanlari_formu.cpp" line="182"/>
@@ -5016,7 +5018,7 @@ Değişiklik yapılabilmesi için tasarımın kopyalanması gerekmektedir.</tran
     <message>
         <location filename="YONETIM/veritabanlari_formu.cpp" line="212"/>
         <source>Database Definition has not been entered.</source>
-        <translation>Veritabanı Tanımı girilmemiş.</translation>
+        <translation>Veritabanı tanımı girilmemiş.</translation>
     </message>
     <message>
         <location filename="YONETIM/veritabanlari_formu.cpp" line="230"/>
@@ -5051,7 +5053,7 @@ Değişiklik yapılabilmesi için tasarımın kopyalanması gerekmektedir.</tran
         <location filename="YONETIM/veritabanlari_formu.cpp" line="304"/>
         <source>Program&apos;s database could not create.</source>
         <oldsource>Programın veritabanı yaratılamadı</oldsource>
-        <translation>Programın veritabanı yaratılamadı.</translation>
+        <translation>Programa ait veritabanı yaratılamadı.</translation>
     </message>
     <message>
         <location filename="YONETIM/veritabanlari_formu.cpp" line="275"/>
@@ -5076,7 +5078,7 @@ Değişiklik yapılabilmesi için tasarımın kopyalanması gerekmektedir.</tran
     <message>
         <location filename="YONETIM/veritabanlari_formu.cpp" line="344"/>
         <source>Do you approve of the changes made?</source>
-        <translation>Yapılan Değişiklikleri onaylıyor musunuz?</translation>
+        <translation>Yapılan değişiklikleri onaylıyor musunuz?</translation>
     </message>
     <message>
         <location filename="YONETIM/veritabanlari_formu.cpp" line="369"/>
@@ -5107,7 +5109,7 @@ Değişiklik yapılabilmesi için tasarımın kopyalanması gerekmektedir.</tran
         <location filename="YONETIM/veritabanlari_formu.cpp" line="448"/>
         <source>This operation will lead to deletion of the selected database and lose all related data.Do you want to continue?</source>
         <oldsource>Bu işlem seçili veritabanının silinmesine ve ilgili verilerin tamamen kaybolmasına neden olacaktır. Devam etmek istiyor musunuz?</oldsource>
-        <translation>Bıu işlem seçili veritabanının silinmesine ve ilgili verilerin tamamen kaybolmasına neden olacaktır. Devam etmek istiyor musunuz?</translation>
+        <translation>Bu işlem seçili veritabanının silinmesine ve ilgili verilerin tamamen kaybolmasına neden olacaktır. Devam etmek istiyor musunuz?</translation>
     </message>
 </context>
 <context>
@@ -5292,7 +5294,7 @@ p, li { white-space: pre-wrap; }
         <location filename="LOGIN/yeni_sunucu_tanimlama_batch.ui" line="247"/>
         <source>SQL Password</source>
         <oldsource>SQL Şifresi</oldsource>
-        <translation>SQL Şifre</translation>
+        <translation>SQL Şifresi</translation>
     </message>
     <message>
         <location filename="LOGIN/yeni_sunucu_tanimlama_batch.ui" line="278"/>
@@ -5389,7 +5391,7 @@ p, li { white-space: pre-wrap; }
 </source>
         <oldsource>Sql motoru port bilgisi boş bırakılamaz
 </oldsource>
-        <translation>Sql motoru port bilgisi boş bırakılamaz\n</translation>
+        <translation>Sql motoruna ait port bilgisi boş bırakılamaz\n</translation>
     </message>
     <message>
         <location filename="LOGIN/yeni_sunucu_tanimlama_batch.cpp" line="203"/>
@@ -5409,22 +5411,22 @@ Hata:%1</translation>
     <message>
         <location filename="LOGIN/yeni_sunucu_tanimlama_batch.cpp" line="463"/>
         <source> In Postgres Server</source>
-        <translation>Postgres Server&apos;da</translation>
+        <translation>Postgres Sunucu&apos;da</translation>
     </message>
     <message>
         <location filename="LOGIN/yeni_sunucu_tanimlama_batch.cpp" line="467"/>
         <source>In Mysql Server </source>
-        <translation>Mysql Server&apos;da</translation>
+        <translation>Mysql Sunucu&apos;da</translation>
     </message>
     <message>
         <location filename="LOGIN/yeni_sunucu_tanimlama_batch.cpp" line="471"/>
         <source>In MSsql Server</source>
-        <translation>MSSql Server&apos;da</translation>
+        <translation>MSSql Sunucu&apos;da</translation>
     </message>
     <message>
         <location filename="LOGIN/yeni_sunucu_tanimlama_batch.cpp" line="475"/>
         <source>In Oracle Server</source>
-        <translation>Oracle Server&apos;da</translation>
+        <translation>Oracle Sunucu&apos;da</translation>
     </message>
     <message>
         <location filename="LOGIN/yeni_sunucu_tanimlama_batch.cpp" line="480"/>
@@ -5566,13 +5568,13 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="YONETIM/yonetim_007_arama.cpp" line="115"/>
         <source>Last date could not be dated the first date.</source>
-        <translation>İlk tarih son tarihten büyük olamaz. </translation>
+        <translation>Son tarih ilk tarihten küçük olamaz. </translation>
     </message>
     <message>
         <location filename="YONETIM/yonetim_007_arama.cpp" line="80"/>
         <source>ADMINISTRATION 007 / LOG INFORMATION</source>
         <oldsource>ADMINISTRATION 007 / LOG BİLGİLERİ</oldsource>
-        <translation>YÖNETİM 007</translation>
+        <translation>YÖNETİM 007 /LOG BİLGİLERİ</translation>
     </message>
 </context>
 <context>
