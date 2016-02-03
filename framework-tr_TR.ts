@@ -428,8 +428,9 @@ Kopyala</translation>
     </message>
     <message>
         <location filename="YONETIM/bilgisayarlar_formu.cpp" line="188"/>
-        <source>Computer code canm not be more than 10 characters.</source>
-        <translation>Bilgisayar kodu 10 karakterden fazla olamaz.</translation>
+        <source>Computer code can not be more than 10 characters.</source>
+        <oldsource>Computer code canm not be more than 10 characters.</oldsource>
+        <translation type="unfinished">Bilgisayar kodu 10 karakterden fazla olamaz.</translation>
     </message>
     <message>
         <location filename="YONETIM/bilgisayarlar_formu.cpp" line="194"/>
@@ -3213,8 +3214,9 @@ Veritabanı oluştur : %1 - %2 .
     </message>
     <message>
         <location filename="UTILS/adak_image.cpp" line="56"/>
-        <source>Image Files - Max. 512kb (*.png *.xpm *.jpg *.jpeg *.svg *.gif *.ico  *.tiff</source>
-        <translation>Resim Dosyaları - Max. 512kb (*.png *.xpm *.jpg *.jpeg *.svg *.gif *.ico  *.tiff) </translation>
+        <source>Image Files - Max. 512kb (*.png *.xpm *.jpg *.jpeg *.svg *.gif *.ico  *.tiff)</source>
+        <oldsource>Image Files - Max. 512kb (*.png *.xpm *.jpg *.jpeg *.svg *.gif *.ico  *.tiff</oldsource>
+        <translation type="unfinished">Resim Dosyaları - Max. 512kb (*.png *.xpm *.jpg *.jpeg *.svg *.gif *.ico  *.tiff) </translation>
     </message>
     <message>
         <location filename="UTILS/adak_image.cpp" line="80"/>
@@ -3777,6 +3779,11 @@ Veritabanı oluştur : %1 - %2 .
         <location filename="KERNEL/sekme_menu_kernel.cpp" line="274"/>
         <source>Menu code</source>
         <translation>Menü Kodu</translation>
+    </message>
+    <message>
+        <location filename="KERNEL/sekme_menu_kernel.cpp" line="276"/>
+        <source>Bring</source>
+        <translation type="unfinished">Getir</translation>
     </message>
     <message>
         <location filename="KERNEL/sekme_menu_kernel.cpp" line="295"/>
