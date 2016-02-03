@@ -273,7 +273,7 @@ void SEKME_MENU_KERNEL::OPEN_EKRANI_AC_DIALOG()
 
     QLabel * label         = new QLabel(tr("Menu code") );
     QLineEdit * line_edit  = new QLineEdit;
-    QPushButton * button   = new QPushButton("Bring");
+    QPushButton * button   = new QPushButton(tr("Bring"));
 
     QAction * action = new QAction(this);
 
