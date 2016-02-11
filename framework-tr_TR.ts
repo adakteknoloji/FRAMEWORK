@@ -430,7 +430,7 @@ Kopyala</translation>
         <location filename="YONETIM/bilgisayarlar_formu.cpp" line="188"/>
         <source>Computer code can not be more than 10 characters.</source>
         <oldsource>Computer code canm not be more than 10 characters.</oldsource>
-        <translation type="unfinished">Bilgisayar kodu 10 karakterden fazla olamaz.</translation>
+        <translation>Bilgisayar kodu 10 karakterden fazla olamaz.</translation>
     </message>
     <message>
         <location filename="YONETIM/bilgisayarlar_formu.cpp" line="194"/>
@@ -2948,12 +2948,12 @@ Veritabanı oluştur : %1 - %2 .
     <message>
         <location filename="SQL/adak_sql_error.cpp" line="125"/>
         <source>An error was returned from the START_TRANSACTION() function.</source>
-        <translation>START_TRANSACTION() fonksiyonundan hata döndürüldü.</translation>
+        <translation>START_TRANSACTION() fonksiyonundan hata döndü.</translation>
     </message>
     <message>
         <location filename="SQL/adak_sql_error.cpp" line="131"/>
         <source>An error was returned from the COMMIT_TRANSACTION() function.</source>
-        <translation>COMMIT_TRANSACTION() fonksiyonundan hata döndürüldü.</translation>
+        <translation>COMMIT_TRANSACTION() fonksiyonundan hata döndü.</translation>
     </message>
     <message>
         <location filename="SQL/adak_sql_error.cpp" line="137"/>
@@ -3216,7 +3216,7 @@ Veritabanı oluştur : %1 - %2 .
         <location filename="UTILS/adak_image.cpp" line="56"/>
         <source>Image Files - Max. 512kb (*.png *.xpm *.jpg *.jpeg *.svg *.gif *.ico  *.tiff)</source>
         <oldsource>Image Files - Max. 512kb (*.png *.xpm *.jpg *.jpeg *.svg *.gif *.ico  *.tiff</oldsource>
-        <translation type="unfinished">Resim Dosyaları - Max. 512kb (*.png *.xpm *.jpg *.jpeg *.svg *.gif *.ico  *.tiff) </translation>
+        <translation>Resim Dosyaları - Max. 512kb (*.png *.xpm *.jpg *.jpeg *.svg *.gif *.ico  *.tiff) </translation>
     </message>
     <message>
         <location filename="UTILS/adak_image.cpp" line="80"/>
@@ -3783,7 +3783,7 @@ Veritabanı oluştur : %1 - %2 .
     <message>
         <location filename="KERNEL/sekme_menu_kernel.cpp" line="276"/>
         <source>Bring</source>
-        <translation type="unfinished">Getir</translation>
+        <translation>Getir</translation>
     </message>
     <message>
         <location filename="KERNEL/sekme_menu_kernel.cpp" line="295"/>
