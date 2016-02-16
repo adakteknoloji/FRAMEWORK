@@ -860,8 +860,9 @@ Socket Hatasi : %1 %2 </oldsource>
     </message>
     <message>
         <location filename="EMAIL/email_sender_gui.ui" line="194"/>
-        <source>NOPE</source>
-        <translation>YOK</translation>
+        <source>NONE</source>
+        <oldsource>NOPE</oldsource>
+        <translation type="unfinished">YOK</translation>
     </message>
     <message>
         <location filename="EMAIL/email_sender_gui.ui" line="199"/>
@@ -2029,8 +2030,9 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="YONETIM/posta_sunucusu_formu.ui" line="124"/>
-        <source>NOT</source>
-        <translation>YOK</translation>
+        <source>NONE</source>
+        <oldsource>NOT</oldsource>
+        <translation type="unfinished">YOK</translation>
     </message>
     <message>
         <location filename="YONETIM/posta_sunucusu_formu.ui" line="129"/>

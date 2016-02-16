@@ -68,7 +68,7 @@ void YENI_SUNUCU_TANIMLAMA_BATCH::SETUP_FORM ()
         m_ui->tool_button_kayitli_profili_sil->setVisible( false );
     }
 
-    if( m_user_info->secili_sql_profili EQ "Yerel Disk" ) {
+    if( m_user_info->secili_sql_profili EQ QObject::tr("Local Disk") ) {
         m_ui->tool_button_kayitli_profili_sil->setVisible( false );
     }
 

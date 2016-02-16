@@ -1331,7 +1331,7 @@ bool FIRST_LOGINE_GIRECEK_MI(USER_LOGIN_INFO_STRUCT *P_USER_INFO)
         SET_SQL_MOTORU( "NONE" );
 
         P_USER_INFO->sql_motoru         = "NONE";
-        P_USER_INFO->secili_sql_profili = "Yerel Disk";
+        P_USER_INFO->secili_sql_profili = QObject::tr("Locak Disk");
         P_USER_INFO->veritabani_kodu    = "";
 
         QString yonetim_db_name = SQL_DBNAME_ONEK() + "adak_yonetim";
