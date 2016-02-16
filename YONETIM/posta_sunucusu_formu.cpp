@@ -53,7 +53,7 @@ void POSTA_SUNUCUSU_FORMU::SETUP_FORM ()
         sql_query.PREPARE_INSERT ( "ynt_posta_sunucusu","posta_sunucu_id","email_sunucusu,email_port,email_baglanti_guvenligi");
         sql_query.SET_VALUE(":email_sunucusu","Tanımlı Değil");
         sql_query.SET_VALUE(":email_port",25);
-        sql_query.SET_VALUE(":email_baglanti_guvenligi","YOK");
+        sql_query.SET_VALUE(":email_baglanti_guvenligi","NONE");
         sql_query.INSERT();
         G_YONETIM_DB->COMMIT_TRANSACTION();
     }
