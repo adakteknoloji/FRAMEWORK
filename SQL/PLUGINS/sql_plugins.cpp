@@ -22,8 +22,6 @@ static QString g_database_sid = "XE";
 ADAK_SQL * CREATE_ADAK_SQL_CONNECTION ( QList<ADAK_SQL_STRUCT *> adak_sql_struct , QString db_name , DB_DRIVER db_driver )
 {
     switch ( db_driver ) {
-        case SQLITE:
-            return (new SQLITE_PLUGIN     (adak_sql_struct , db_name ));
         case PSQL  :
             return (new POSTGRESSQL_PLUGIN(adak_sql_struct , db_name ));
         case MYSQL :
@@ -34,8 +32,9 @@ ADAK_SQL * CREATE_ADAK_SQL_CONNECTION ( QList<ADAK_SQL_STRUCT *> adak_sql_struct
             return (new ORACLE_PLUGIN     (adak_sql_struct , db_name ));
         case ODBC  :
             return (new ODBC_PLUGIN       (adak_sql_struct , db_name ));
+        case SQLITE:
         default    :
-            return NULL;
+            return (new SQLITE_PLUGIN     (adak_sql_struct , db_name ));
     }
 }
 
