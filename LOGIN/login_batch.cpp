@@ -314,7 +314,7 @@ void LOGIN_BATCH::RUN_BATCH()
 
     }
 
-    m_user_info->kullanici_kodu    = m_ui->line_edit_kullanici_kodu->text();
+    m_user_info->kullanici_kodu   = m_ui->line_edit_kullanici_kodu->text();
     m_user_info->kullanici_sifre  = m_ui->line_edit_kullanici_sifre->text();
 
     *m_all_informations_completed = true;
@@ -350,7 +350,7 @@ void LOGIN_BATCH::KULLANICI_SIFRESI_DEGISTIR ()
 
 void LOGIN_BATCH::SET_WIDGETS_MAX_LENGTH()
 {
-    m_ui->line_edit_kullanici_kodu  ->setMaxLength          (10);
+    m_ui->line_edit_kullanici_kodu->setMaxLength          (10);
     m_ui->line_edit_kullanici_sifre->setMaxLength          (50);
 
 }
