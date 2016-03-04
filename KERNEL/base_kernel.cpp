@@ -388,7 +388,8 @@ void BASE_KERNEL::YARDIM_BUTTON_CLICKED(QString yardim_sayfasi)
     }
 
     if (url.contains("http") EQ false) {
-        url.prepend( "http://www.adak.com.tr/" );
+        //url.prepend( "http://www.adak.com.tr/" );
+        url.prepend( "http://utafs.com/" );
     }
 
     if (IS_ADAK_HELP_URL_VALID (url) EQ false) {
