@@ -797,7 +797,7 @@ int FORM_KERNEL::UNSAVED_RECORD_WARNING()
         return KERNEL_NO;
     }
 
-    ADAK_MSG_ENUM answer = MSG_YES_NO_CANCEL(tr ( "Changes are made to the registry. Do you want to save?"),NULL);//Kayıtta değişiklikler yapıldı.Kayıt etmek istiyor musunuz?
+    ADAK_MSG_ENUM answer = MSG_YES_NO_CANCEL(tr ( "Changes are made to the record. Do you want to save?"),NULL);//Kayıtta değişiklikler yapıldı.Kayıt etmek istiyor musunuz?
 
     switch ( answer ) {
         case ADAK_YES :
