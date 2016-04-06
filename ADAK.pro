@@ -48,25 +48,6 @@ OBJECTS          +=     ODS_IO/$$OBJDIR/adak_exporter.$$OBJ_ext \
                         ODS_IO/$$OBJDIR/moc_export_kernel.$$OBJ_ext \
                         ODS_IO/$$OBJDIR/moc_import_kernel.$$OBJ_ext \
                         ODS_IO/$$OBJDIR/qrc_ods_io.$$OBJ_ext \
-                        ZLIB/$$OBJDIR/adler32.$$OBJ_ext \
-                        ZLIB/$$OBJDIR/crc32.$$OBJ_ext \
-                        ZLIB/$$OBJDIR/deflate.$$OBJ_ext \
-                        ZLIB/$$OBJDIR/gzlib.$$OBJ_ext \
-                        ZLIB/$$OBJDIR/gzwrite.$$OBJ_ext \
-                        ZLIB/$$OBJDIR/inffast.$$OBJ_ext \
-                        ZLIB/$$OBJDIR/inflate.$$OBJ_ext \
-                        ZLIB/$$OBJDIR/inftrees.$$OBJ_ext \
-                        ZLIB/$$OBJDIR/ioapi.$$OBJ_ext \
-                        ZLIB/$$OBJDIR/trees.$$OBJ_ext \
-                        ZLIB/$$OBJDIR/unzip.$$OBJ_ext \
-                        ZLIB/$$OBJDIR/zip.$$OBJ_ext \
-                        ZLIB/$$OBJDIR/zutil.$$OBJ_ext
-
-
-win32 {
-    OBJECTS          += ZLIB/$$OBJDIR/iowin32.$$OBJ_ext
-}
-
 
 # ADAK_STD_OBJECTS
 OBJECTS          +=     ADAK_STD/$$OBJDIR/adak_std.$$OBJ_ext 
