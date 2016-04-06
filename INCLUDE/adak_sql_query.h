@@ -163,8 +163,6 @@ class SQL_QUERY : private QSqlQuery
 
         void             ADD_MULTI                        (QString column_id_name, QList<QVariant> values, ADAK_QUERY_SPLITTER_TYPES splitter );
 
-        int              m_current_sql_operation;
-
         QStringList      m_bind_values_names;
         QList<QVariant>  m_bind_values;
 

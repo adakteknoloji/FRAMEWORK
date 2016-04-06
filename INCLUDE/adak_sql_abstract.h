@@ -24,7 +24,7 @@ class ADAK_SQL_ABSTRACT
 {
 public:
                 ADAK_SQL_ABSTRACT                        ( QList<ADAK_SQL_STRUCT *> adak_sql_struct ,QString db_name );
-                ~ADAK_SQL_ABSTRACT                       ( );
+    virtual     ~ADAK_SQL_ABSTRACT                       ( );
 
     virtual int         CONNECT_TO_DATABASE               ( bool show_error_screen );
     virtual int         DISCONNECT_TO_DATABASE            ( );
