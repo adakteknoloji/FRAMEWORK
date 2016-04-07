@@ -396,21 +396,23 @@ void BASE_KERNEL::YARDIM_BUTTON_CLICKED(QString yardim_sayfasi)
         return;
     }
 
-    QDialog  * online_help = new QDialog(this);
-    online_help->setModal(false);
-    online_help->setMinimumWidth(500);
-    online_help->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+    QDesktopServices::openUrl(url);
 
-    QVBoxLayout * layout = new QVBoxLayout();
-    online_help->setLayout(layout);
+//    QDialog  * online_help = new QDialog(this);
+//    online_help->setModal(false);
+//    online_help->setMinimumWidth(500);
+//    online_help->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 
-    QWebView * help = new QWebView();
-    help->setUrl(url);
-    layout->addWidget(help);
+//    QVBoxLayout * layout = new QVBoxLayout();
+//    online_help->setLayout(layout);
 
-    online_help->setWindowTitle ( url );
-    online_help->adjustSize();
-    online_help->show();
+//    QWebView * help = new QWebView();
+//    help->setUrl(url);
+//    layout->addWidget(help);
+
+//    online_help->setWindowTitle ( url );
+//    online_help->adjustSize();
+//    online_help->show();
 
 }
 
