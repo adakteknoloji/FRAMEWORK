@@ -91,7 +91,7 @@ void YENI_SUNUCU_TANIMLAMA_BATCH::SETUP_FORM ()
 
     SET_PAGE_TITLE   (tr("NEW SERVER DEFINITION"));
     SET_SETTING_NAME ("YENİ_SUNUCU_TANIMLAMA");
-    SET_HELP_PAGE    ("yeni-sunucu-tanimlama");
+    SET_HELP_PAGE    ("preparing-and-running-tests/login-screen/new-server");
 
     m_ui->combobox_sql_motoru->addItems(GET_SQL_DRIVER_LIST());
 

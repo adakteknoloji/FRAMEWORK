@@ -60,7 +60,7 @@ void LOGIN_BATCH::SETUP_FORM ()
     SET_PAGE_TITLE( ADAK_PROGRAM_SHORTNAME( ADAK_DISPLAY_ID() ) + tr("Login Screen V") + ADAK_PROGRAM_VERSION(ADAK_DISPLAY_ID()));
     SET_SETTING_NAME    ( "LOGIN_BATCH");
     SET_AUTO_EXIT_BATCH ( true );
-    SET_HELP_PAGE       ( "E9_giris");
+    SET_HELP_PAGE       ( "preparing-and-running-tests/login-screen");
 
     SET_FIRST_FOCUS_WIDGET( m_ui->line_edit_kullanici_kodu );
 
@@ -132,7 +132,7 @@ void LOGIN_BATCH::SETUP_FORM ()
             QStringList program_info = program_list.at(index_of_program).split("-",QString::SkipEmptyParts,Qt::CaseInsensitive);
             if ( program_info.size() EQ 3 ) {
                 if ( ADAK_PROGRAM_VERSION(ADAK_DISPLAY_ID()) < program_info.at(1) ) {
-                    OPEN_PROGRAMI_GUNCELLESTIRIN_BATCH(program_info.at(2),program_info.at(1),NULL);
+                    //OPEN_PROGRAMI_GUNCELLESTIRIN_BATCH(program_info.at(2),program_info.at(1),NULL);
                 }
             }
         }
