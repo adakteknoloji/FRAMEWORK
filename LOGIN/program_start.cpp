@@ -866,7 +866,7 @@ int LOGIN( USER_LOGIN_INFO_STRUCT *P_USER_INFO)
 
             if ( sql_query.SELECT() NE 0 ) {
                 if (G_YONETIM_DB->GET_SQL_DRIVER_ENUM () NE SQLITE) {
-                    ADAK_INFO(QObject::tr ("Attention!. \"administration\" password is not assigned. You should assign \"administrator\" password for avoid security problems."), NULL,NULL);
+                    ADAK_INFO(QObject::tr ("Attention!. \"Admin\" password is not assigned. You should assign \"Admin\" password for avoid security problems."), NULL,NULL);
                 }
             }
         }

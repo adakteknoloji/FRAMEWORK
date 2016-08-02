@@ -79,7 +79,7 @@ int YONETICI_IZNI_BATCH::CHECK_RUN ()
     sql_query.SET_VALUE ( ":parola", QString( hash.toHex() ) );
 
     if ( sql_query.SELECT() EQ 0 ) {
-        MSG_INFO(QObject::tr ( "You entered the wrong administrator password.Please check.") , m_ui->line_edit_yonetici_sifre );
+        MSG_INFO(QObject::tr ( "You entered the wrong Admin password.Please check.") , m_ui->line_edit_yonetici_sifre );
         return ADAK_FAIL;
     }
 

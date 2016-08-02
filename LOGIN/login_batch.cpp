@@ -177,8 +177,8 @@ int LOGIN_BATCH::CHECK_VAR(QObject * object)
     }
     else if ( object EQ m_ui->line_edit_kullanici_kodu) {
 
-        if ( m_ui->line_edit_kullanici_kodu->text().toLower() EQ QObject::tr( "administrator") ) {
-            m_ui->line_edit_kullanici_kodu->setText( tr("administrator") );
+        if ( m_ui->line_edit_kullanici_kodu->text() EQ "Admin" ) {
+            m_ui->line_edit_kullanici_kodu->setText( "Admin" );
         }
 
         if ( m_user_info->is_first_login EQ false ) {
@@ -226,8 +226,8 @@ int LOGIN_BATCH::CHECK_RUN()
            MSG_ERROR(tr("User code has not been entered") , m_ui->line_edit_kullanici_kodu );
            return ADAK_FAIL;
         }
-        if ( m_ui->line_edit_kullanici_kodu->text() EQ tr("administrator") ) {
-            MSG_ERROR(tr("'administrator' is a specific user code for the system. Please enter a different user code."), m_ui->line_edit_kullanici_kodu );
+        if ( m_ui->line_edit_kullanici_kodu->text() EQ "Admin" ) {
+            MSG_ERROR(tr("'Admin' is a specific user code for the system. Please enter a different user code."), m_ui->line_edit_kullanici_kodu );
             return ADAK_FAIL;
         }
     }
