@@ -167,9 +167,9 @@ void CHECK_VERSION_UPGRADES (QString program_version_column_name , QString progr
 
     VERITABANLARINI_GUNCELLE();
 
-    QSplashScreen * splash = CREATE_SPLASH_SCREEN();
-    splash->show();
-    splash->showMessage((QString(QObject::tr("Upgrading Programme. Please wait..."))), Qt::AlignCenter, Qt::white );//Programınızın versiyonu yükseltiliyor. Lütfen Bekleyiniz...
+//    QSplashScreen * splash = CREATE_SPLASH_SCREEN();
+//    splash->show();
+//    splash->showMessage((QString(QObject::tr("Upgrading Programme. Please wait..."))), Qt::AlignCenter, Qt::white );//Programınızın versiyonu yükseltiliyor. Lütfen Bekleyiniz...
 
     double current_program_version = program_version_in_db;
 
@@ -204,13 +204,13 @@ void CHECK_VERSION_UPGRADES (QString program_version_column_name , QString progr
 
     query.UPDATE();
 
-    splash->finish(NULL);
+//    splash->finish(NULL);
 
-    ADAK_WARNING(QObject::tr("Version of programme is upgrade.\n")+
-                QObject::tr("Please check User Authority for new properties. \n")+
-                QObject::tr("You can set User Authorization in the User's Screen.\n\n")+
-                QObject::tr("You can use Management Actions -> E9 repair for resolving some errors.")
-                ,NULL,NULL);
+//    ADAK_WARNING(QObject::tr("Version of programme is upgrade.\n")+
+//                QObject::tr("Please check User Authority for new properties. \n")+
+//                QObject::tr("You can set User Authorization in the User's Screen.\n\n")+
+//                QObject::tr("You can use Management Actions -> E9 repair for resolving some errors.")
+//                ,NULL,NULL);
 
     DB->COMMIT_TRANSACTION();
 }
