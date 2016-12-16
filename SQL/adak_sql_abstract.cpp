@@ -436,7 +436,7 @@ QString ADAK_SQL_ABSTRACT::GET_COLUMN_TYPE_NAME ( COLUMN_TYPE p_column_type, int
 }
 
 /**************************************************************************************
-                   ADAK_SQL_ABSTRACT::GET_COLUMN_TYPE_NAME
+                   ADAK_SQL_ABSTRACT::REMOVE_CONNECT
 ***************************************************************************************/
 
 void ADAK_SQL_ABSTRACT::REMOVE_CONNECT(QString connection_name)
@@ -451,7 +451,8 @@ void ADAK_SQL_ABSTRACT::REMOVE_CONNECT(QString connection_name)
         QSqlDatabase::database(connection_name).close();
     }
 
-    QSqlDatabase::removeDatabase(connection_name);
+    db = QSqlDatabase();
+    db.removeDatabase(connection_name);
 }
 
 /**************************************************************************************

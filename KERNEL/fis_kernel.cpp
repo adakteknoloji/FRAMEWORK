@@ -2274,7 +2274,7 @@ void FIS_KERNEL::LINE_SAVER_BUTTON_CLICKED ( QAbstractButton * button, int row_i
 
 void FIS_KERNEL::LINE_BUTTONS_SLOT_FUNCTION ( QObject * button_obj,QList<int> * button_columns,int slot_type)
 {
-    if(button_obj EQ NULL) {
+    if (button_obj EQ NULL) {
         return;
     }
 

@@ -102,62 +102,62 @@ p, li { white-space: pre-wrap; }
         <translation>HATA!..  &lt;&lt;&lt;&lt;&lt;  Bu ekrana isim verilmemiş.&gt;&gt;&gt;&gt;&gt;  HATA !..</translation>
     </message>
     <message>
-        <location filename="KERNEL/base_kernel.cpp" line="449"/>
+        <location filename="KERNEL/base_kernel.cpp" line="452"/>
         <source>Program Name: </source>
         <oldsource>Program Adı: </oldsource>
         <translation>Program Adı:</translation>
     </message>
     <message>
-        <location filename="KERNEL/base_kernel.cpp" line="454"/>
+        <location filename="KERNEL/base_kernel.cpp" line="457"/>
         <source>Your E-Mail Address :</source>
         <oldsource>E-Posta Adresiniz :</oldsource>
         <translation>E-Posta Adresiniz:</translation>
     </message>
     <message>
-        <location filename="KERNEL/base_kernel.cpp" line="457"/>
-        <location filename="KERNEL/base_kernel.cpp" line="594"/>
+        <location filename="KERNEL/base_kernel.cpp" line="460"/>
+        <location filename="KERNEL/base_kernel.cpp" line="597"/>
         <source>Page can be Found at: </source>
         <translation>Bu Sayfa Bulunamadı:</translation>
     </message>
     <message>
-        <location filename="KERNEL/base_kernel.cpp" line="479"/>
+        <location filename="KERNEL/base_kernel.cpp" line="482"/>
         <source>ERROR - Help page not found.</source>
         <translation>HATA - Yardım Sayfası Bulunamadı.</translation>
     </message>
     <message>
-        <location filename="KERNEL/base_kernel.cpp" line="508"/>
+        <location filename="KERNEL/base_kernel.cpp" line="511"/>
         <source>ERROR</source>
         <translation>HATA</translation>
     </message>
     <message>
-        <location filename="KERNEL/base_kernel.cpp" line="526"/>
+        <location filename="KERNEL/base_kernel.cpp" line="529"/>
         <source>Please write your E-mail address!</source>
         <translation>Lütfen E-posta adresinizi yazınız!</translation>
     </message>
     <message>
-        <location filename="KERNEL/base_kernel.cpp" line="589"/>
+        <location filename="KERNEL/base_kernel.cpp" line="592"/>
         <source>Help page is not found.</source>
         <oldsource>Help page is non found.</oldsource>
         <translation>Yardım sayfası bulunamadı.</translation>
     </message>
     <message>
-        <location filename="KERNEL/base_kernel.cpp" line="598"/>
+        <location filename="KERNEL/base_kernel.cpp" line="601"/>
         <source>Your message has been sent.</source>
         <translation>Mesajınız Gönderildi.</translation>
     </message>
     <message>
-        <location filename="KERNEL/base_kernel.cpp" line="670"/>
+        <location filename="KERNEL/base_kernel.cpp" line="673"/>
         <source>Forgot open TRANSACTION, you must end! ..</source>
         <translation>Açık TRANSACTION unuttunuz , sonlandırmanız gerekiyor!..</translation>
     </message>
     <message>
-        <location filename="KERNEL/base_kernel.cpp" line="470"/>
+        <location filename="KERNEL/base_kernel.cpp" line="473"/>
         <source>Report Adak Technology.</source>
         <oldsource>Adak Teknoloji &apos; ye Bildir.</oldsource>
         <translation>Adak Teknoloji&apos;ye bildir.</translation>
     </message>
     <message>
-        <location filename="KERNEL/base_kernel.cpp" line="498"/>
+        <location filename="KERNEL/base_kernel.cpp" line="501"/>
         <source>Note: If you deliver this error message to Adak technology,
 help pages will be prepared as soon as possible.</source>
         <oldsource>Note: If you deliver this error message to Adak technology,
@@ -166,19 +166,19 @@ help pages will be prepared as soon as possible.</source>
 yardım sayfası en kısa sürede hazırlanacaktır.</translation>
     </message>
     <message>
-        <location filename="KERNEL/base_kernel.cpp" line="591"/>
+        <location filename="KERNEL/base_kernel.cpp" line="594"/>
         <source>Program Name      : </source>
         <oldsource>Program Adı      : </oldsource>
         <translation>Program Adı         :</translation>
     </message>
     <message>
-        <location filename="KERNEL/base_kernel.cpp" line="592"/>
+        <location filename="KERNEL/base_kernel.cpp" line="595"/>
         <source>Opareting System  : </source>
         <oldsource>Isletim Sistemi  : </oldsource>
         <translation>İşletim Sistemi     :</translation>
     </message>
     <message>
-        <location filename="KERNEL/base_kernel.cpp" line="593"/>
+        <location filename="KERNEL/base_kernel.cpp" line="596"/>
         <source>E-Mail Address   : </source>
         <oldsource>E-Posta Adresi   : </oldsource>
         <translation>E-Posta Adresi   :</translation>
@@ -862,7 +862,7 @@ Socket Hatasi : %1 %2 </oldsource>
         <location filename="EMAIL/email_sender_gui.ui" line="194"/>
         <source>NONE</source>
         <oldsource>NOPE</oldsource>
-        <translation type="unfinished">YOK</translation>
+        <translation>YOK</translation>
     </message>
     <message>
         <location filename="EMAIL/email_sender_gui.ui" line="199"/>
@@ -1070,7 +1070,8 @@ Socket Hatasi : %1 %2 </oldsource>
     </message>
     <message>
         <location filename="KERNEL/form_kernel.cpp" line="800"/>
-        <source>Changes are made to the registry. Do you want to save?</source>
+        <source>Changes are made to the record. Do you want to save?</source>
+        <oldsource>Changes are made to the registry. Do you want to save?</oldsource>
         <translation>Kayıtta değişiklikler yapıldı. Kaydetmek istiyor musunuz?</translation>
     </message>
     <message>
@@ -1957,12 +1958,6 @@ p, li { white-space: pre-wrap; }
         <translation>Yeni Sunucu</translation>
     </message>
     <message>
-        <location filename="LOGIN/login_batch.cpp" line="181"/>
-        <location filename="LOGIN/login_batch.cpp" line="229"/>
-        <source>administrator</source>
-        <translation>yönetici</translation>
-    </message>
-    <message>
         <location filename="LOGIN/login_batch.cpp" line="226"/>
         <location filename="LOGIN/login_batch.cpp" line="235"/>
         <source>User code has not been entered</source>
@@ -1970,8 +1965,9 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="LOGIN/login_batch.cpp" line="230"/>
-        <source>&apos;administrator&apos; is a specific user code for the system. Please enter a different user code.</source>
-        <translation>&apos;yönetici&apos; sistem için özel bir kullanıcı kodudur.Lütfen farklı bir kullanıcı kodu giriniz.</translation>
+        <source>&apos;Admin&apos; is a specific user code for the system. Please enter a different user code.</source>
+        <oldsource>&apos;administrator&apos; is a specific user code for the system. Please enter a different user code.</oldsource>
+        <translation>&apos;Admin&apos; sistem için özel bir kullanıcı kodudur.Lütfen farklı bir kullanıcı kodu giriniz.</translation>
     </message>
     <message>
         <location filename="LOGIN/login_batch.cpp" line="281"/>
@@ -2032,7 +2028,7 @@ p, li { white-space: pre-wrap; }
         <location filename="YONETIM/posta_sunucusu_formu.ui" line="124"/>
         <source>NONE</source>
         <oldsource>NOT</oldsource>
-        <translation type="unfinished">YOK</translation>
+        <translation>YOK</translation>
     </message>
     <message>
         <location filename="YONETIM/posta_sunucusu_formu.ui" line="129"/>
@@ -2566,8 +2562,9 @@ Hatalı E-Mail Adresleri: </oldsource>
     </message>
     <message>
         <location filename="LOGIN/program_start.cpp" line="869"/>
-        <source>Attention!. &quot;administration&quot; password is not assigned. You should assign &quot;administrator&quot; password for avoid security problems.</source>
-        <translation>Dikkat! &quot;yönetici&quot; şifresi atanmamış. Güvenlik sorunları ile karşılaşmamak için şifre atamalısınız.  </translation>
+        <source>Attention!. &quot;Admin&quot; password is not assigned. You should assign &quot;Admin&quot; password for avoid security problems.</source>
+        <oldsource>Attention!. &quot;administration&quot; password is not assigned. You should assign &quot;administrator&quot; password for avoid security problems.</oldsource>
+        <translation>Dikkat! &quot;Admin&quot; şifresi atanmamış. Güvenlik sorunları ile karşılaşmamak için şifre atamalısınız.  </translation>
     </message>
     <message>
         <location filename="LOGIN/program_start.cpp" line="1097"/>
@@ -2578,6 +2575,11 @@ Hatalı E-Mail Adresleri: </oldsource>
         <location filename="LOGIN/program_start.cpp" line="1261"/>
         <source>The program is preparing for first usage. Please wait...</source>
         <translation>Program ilk kullanım için hazırlanıyor. Lütfen bekleyiniz...</translation>
+    </message>
+    <message>
+        <location filename="LOGIN/program_start.cpp" line="1334"/>
+        <source>Locak Disk</source>
+        <translation>Yerel Disk</translation>
     </message>
     <message>
         <location filename="LOGIN/program_start.cpp" line="1406"/>
@@ -2612,6 +2614,7 @@ Hatalı E-Mail Adresleri: </oldsource>
     </message>
     <message>
         <location filename="LOGIN/first_login.cpp" line="36"/>
+        <location filename="LOGIN/yeni_sunucu_tanimlama_batch.cpp" line="71"/>
         <source>Local Disk</source>
         <translation>Yerel Disk</translation>
     </message>
@@ -2673,19 +2676,15 @@ Veritabanı oluştur : %1 - %2 .
         <translation>Veritabanı Tanımı</translation>
     </message>
     <message>
-        <location filename="LOGIN/login_batch.cpp" line="180"/>
-        <source>administrator</source>
-        <translation>yönetici</translation>
-    </message>
-    <message>
         <location filename="LOGIN/login_batch.cpp" line="457"/>
         <source>Connected Server</source>
         <translation>Sunucuya Bağlandı</translation>
     </message>
     <message>
         <location filename="LOGIN/yonetici_izni_batch.cpp" line="82"/>
-        <source>You entered the wrong administrator password.Please check.</source>
-        <translation>Yönetici şifresini yanlış girdiniz. Lütfen kontrol ediniz.</translation>
+        <source>You entered the wrong Admin password.Please check.</source>
+        <oldsource>You entered the wrong administrator password.Please check.</oldsource>
+        <translation>&apos;Admin&apos; şifresini yanlış girdiniz. Lütfen kontrol ediniz.</translation>
     </message>
     <message>
         <location filename="LOGIN/programi_guncellestirin_batch.cpp" line="43"/>
@@ -3525,40 +3524,6 @@ Veritabanı oluştur : %1 - %2 .
         <location filename="YONETIM/yonetim_utils.cpp" line="164"/>
         <source>Version of this program is smaller than the version of the database. Update the program, otherwise the data will be corrupted.</source>
         <translation>Bu programın versiyonu, veritabanının versiyonundan daha küçüktür. Programı güncelleyin, aksi takdirde verileriniz bozulabilir.</translation>
-    </message>
-    <message>
-        <location filename="YONETIM/yonetim_utils.cpp" line="172"/>
-        <source>Upgrading Programme. Please wait...</source>
-        <translation>Programınızın versiyonu yükseltiliyor. Lütfen Bekleyiniz...</translation>
-    </message>
-    <message>
-        <location filename="YONETIM/yonetim_utils.cpp" line="209"/>
-        <source>Version of programme is upgrade.
-</source>
-        <translation>Program versiyonu güncellendi.</translation>
-    </message>
-    <message>
-        <location filename="YONETIM/yonetim_utils.cpp" line="210"/>
-        <source>Please check User Authority for new properties. 
-</source>
-        <translation>Yeni özellikler için lütfen Kullanıcı Yetkileri &apos; ni kontrol ediniz.</translation>
-    </message>
-    <message>
-        <location filename="YONETIM/yonetim_utils.cpp" line="211"/>
-        <source>You can set User Authorization in the User&apos;s Screen.
-
-</source>
-        <oldsource>You can set User Authorization in the User&apos;s Screen
-
-</oldsource>
-        <translation>Kullanıcı Yetkileri &apos; ni Kullanıcılar Ekranı &apos; ndan ayarlayabilirsiniz.
-</translation>
-    </message>
-    <message>
-        <location filename="YONETIM/yonetim_utils.cpp" line="212"/>
-        <source>You can use Management Actions -&gt; E9 repair for resolving some errors.</source>
-        <oldsource>You can use Management Actions -&gt; E9 repair for resolving some errors</oldsource>
-        <translation>Bazı hataları gidermek için Yönetim İşlemleri-&gt;E9 Onar &apos; ı kullanabilirsiniz.</translation>
     </message>
     <message>
         <location filename="YONETIM/yonetim_utils.cpp" line="292"/>
