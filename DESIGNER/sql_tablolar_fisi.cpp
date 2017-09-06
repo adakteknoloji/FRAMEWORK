@@ -841,7 +841,7 @@ int SQL_TABLOLAR_FISI::CHECK_DELETE_LINE ( int p_tablo_id, int p_row_number )
     QLineEdit * cell_lineEdit       = ( QLineEdit * ) m_ui->tablewidget_tablo_satirlari->cellWidget( p_row_number, ALAN_ADI_COLUMN );
     QString     alan_adi            = cell_lineEdit->text();
 
-    int return_value = MSG_YES_NO ( QString ( "The line with Field Name '% 1' will be deleted, are you sure?" ).arg(alan_adi), NULL );
+    int return_value = MSG_YES_NO ( QString ( "The line with Field Name '%1' will be deleted, are you sure?" ).arg(alan_adi), NULL );
     //Alan adı '%1' olan satır silinecektir, emin misiniz?
     if ( return_value EQ ADAK_NO ) {
         return ADAK_FAIL;
