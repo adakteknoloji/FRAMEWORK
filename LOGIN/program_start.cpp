@@ -35,8 +35,9 @@ typedef void (* P_KULLANICI_TAM_YETKI_FONKSIYONU)();
 //Bunlar burda doldurup ise yaramadigi zaman direk temizlenmeli.
 static QList<P_KULLANICI_TAM_YETKI_FONKSIYONU> G_TAM_YETKILENDIRME_FONKSIYONLARI;
 
-extern ADAK_SQL *G_YONETIM_DB;
-extern ADAK_SQL *DB;
+extern ADAK_SQL * G_YONETIM_DB;
+extern ADAK_SQL * DB;
+extern bool       g_auto_login_flag;
 
 bool        m_first_db_process = false;
 int         m_veritabani_sayisi = 0;
@@ -101,6 +102,9 @@ int START_PROGRAM(int argc, char *argv[], USER_LOGIN_INFO_STRUCT *P_USER_INFO, Q
 {
     SET_USER_LOGIN_STATUS( USER_ON_INIT );
 
+    if (g_auto_login_flag EQ true) {
+        P_USER_INFO->is_auto_login = true;
+    }
     if( P_USER_INFO->is_auto_login EQ true ) {
         SET_USER_LOGIN_STATUS( USER_LOGINNED );
         m_first_db_process = true;

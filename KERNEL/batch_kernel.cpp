@@ -254,10 +254,16 @@ bool BATCH_KERNEL::eventFilter ( QObject *obj, QEvent *event )
         }
         // run_bacth_button focus eklendi cunku run_batch cagrilmadan once focuslanmasi gerekiyor
         // boylece adakdate yapilan degisikligi daha once yapmis oluyor..
-        if (  ( keyEvent->key() EQ Qt::Key_Enter OR keyEvent->key() EQ Qt::Key_Return) AND p_run_batch_on_enter ) {
-            run_batch_button->setFocus();
-            SLOT_RUN_BATCH_BUTTON();
-            return true;
+        if ( keyEvent->key() EQ Qt::Key_Enter OR keyEvent->key() EQ Qt::Key_Return) {
+            if (p_run_batch_on_enter EQ true) {
+                run_batch_button->setFocus();
+                SLOT_RUN_BATCH_BUTTON();
+                return true;
+            }
+            else {
+                focusNextChild();
+                return true;
+            }
         }
     }
 

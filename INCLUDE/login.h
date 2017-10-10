@@ -9,6 +9,7 @@ class QDialog;
 struct ADAK_SQL_STRUCT;
 struct USER_LOGIN_INFO_STRUCT;
 
+bool   SET_AUTO_LOGIN           (bool p_auto_login);
 int     VERITABANI_SEC          ( int kullanici_id , QString * veritabani_kodu , QString * veritabani_tanimi, QDialog * parent );
 int     VERITABANLARINI_GUNCELLE( );
 
