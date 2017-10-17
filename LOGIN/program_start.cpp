@@ -799,8 +799,10 @@ int LOGIN( USER_LOGIN_INFO_STRUCT *P_USER_INFO)
             break;
         }
         else {
+            if (DB EQ NULL) {
+                exit (1);
+            }
             if ( DB->SQL_TABLES_EXISTS("") EQ false ) {
-
                 yonetici_izni_alindi = YONETICI_IZNI_AL();
                 break;
             }
