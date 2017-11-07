@@ -1,6 +1,7 @@
 #include <QStringList>
 #include <QVariant>
 #include <QByteArray>
+#include <QDebug>
 #include "adak_utils.h"
 
 static const QString            DELIMITER  = QString('\x03');
@@ -52,6 +53,8 @@ void UNPACK_INT_ARRAY ( const QString& array_string , int * int_array, int array
 
 
     QStringList     values = UNPACK_ARRAY (array_string);
+
+    qDebug() << "values.size() : " << values.size();
 
     if (values.size() > 0) { // Empty field
         for (int i=0; i < values.size(); i++) {
@@ -180,22 +183,11 @@ QByteArray  PACK_STRING_ARRAY ( QString * str_array, int array_size )
     QString      array_string;
     QString      onceki;
 
-    if (str_array[0].size() EQ 0) {
-        array_string = DUPLICATOR;
-    }
-    else {
-        array_string = str_array[0];
-    }
+    array_string = str_array[0];
     onceki        = str_array[0];
 
     for (int i = 1; i < array_size; i++) {
-        if (onceki EQ str_array[i]) {
-            array_string += DUPLICATOR;
-            continue;
-        }
-        if (QString (array_string[array_string.size()-1]) NE DUPLICATOR) {
-            array_string += DELIMITER;
-        }
+        array_string += DELIMITER;
         array_string += str_array[i];
         onceki        = str_array[i];
     }
