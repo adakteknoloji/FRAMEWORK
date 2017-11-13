@@ -1,7 +1,6 @@
 #include <QStringList>
 #include <QVariant>
 #include <QByteArray>
-#include <QDebug>
 #include "adak_utils.h"
 
 static const QString            DELIMITER  = QString('\x03');
@@ -53,8 +52,6 @@ void UNPACK_INT_ARRAY ( const QString& array_string , int * int_array, int array
 
 
     QStringList     values = UNPACK_ARRAY (array_string);
-
-    qDebug() << "values.size() : " << values.size();
 
     if (values.size() > 0) { // Empty field
         for (int i=0; i < values.size(); i++) {
