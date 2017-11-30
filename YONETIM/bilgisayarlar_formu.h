@@ -1,7 +1,7 @@
 #ifndef BILGISAYARLAR_FORMU_H
 #define BILGISAYARLAR_FORMU_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include <QLabel>
 #include <QLineEdit>
 #include <QTreeWidget>

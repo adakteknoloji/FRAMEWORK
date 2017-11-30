@@ -1,7 +1,7 @@
 #ifndef GRUP_KERNEL_H
 #define GRUP_KERNEL_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include <tree_kernel.h>
 #include "base_grup_kernel.h"
 

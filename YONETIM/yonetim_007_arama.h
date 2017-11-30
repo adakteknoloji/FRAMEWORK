@@ -1,7 +1,7 @@
 #ifndef YONETIM_007_ARAMA_H
 #define YONETIM_007_ARAMA_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include "arama_kernel.h"
 
 

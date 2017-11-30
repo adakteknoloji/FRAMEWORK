@@ -1,4 +1,4 @@
-#include <QtGui>
+#include <QtWidgets>
 #include <QHBoxLayout>
 #include "adak_defines.h"
 #include "QSearchEdit.h"

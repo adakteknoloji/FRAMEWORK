@@ -5,6 +5,7 @@
 #include <QSqlQuery>
 #include <QDate>
 #include <QTime>
+#include <QObject>
 
 #include "adak_defines.h"
 #include "adak_utils.h"

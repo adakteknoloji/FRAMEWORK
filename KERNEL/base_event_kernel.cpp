@@ -1,7 +1,7 @@
 #include <QDesktopServices>
 #include <QFile>
 #include <QUrl>
-#include <QWebView>
+#include <QWebEngineView>
 #include <QLabel>
 #include <QCalendarWidget>
 

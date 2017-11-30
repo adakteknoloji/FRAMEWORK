@@ -92,7 +92,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QWebView" name="web_view_body" native="true">
+        <widget class="QWebEngineView" name="web_view_body" native="true">
          <property name="url" stdset="0">
           <url>
            <string>about:blank</string>
@@ -274,9 +274,9 @@
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
-   <class>QWebView</class>
+   <class>QWebEngineView</class>
    <extends>QWidget</extends>
-   <header>QtWebKit/QWebView</header>
+   <header>QWebEngineView</header>
   </customwidget>
  </customwidgets>
  <tabstops>

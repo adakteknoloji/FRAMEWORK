@@ -603,7 +603,7 @@ int SQL_TABLOLAR_FISI::CHECK_LINE_VAR ( int p_row_number, QObject * p_object )
             return ADAK_FAIL;
         }
 
-        if ( GET_ADAK_SQL_ENUM ( comboBox_alan_tipi->currentText() ) EQ TEXT ) {
+        if ( GET_ADAK_SQL_ENUM ( comboBox_alan_tipi->currentText() ) EQ ADAK_SQL_TEXT ) {
             if ( commaEdit_alan_boyutu->GET_INTEGER() EQ 0) {
                 MSG_ERROR(tr("Field length must be entered for an area in the TEXT type."),commaEdit_alan_boyutu);//TEXT tipinde bir alan için alan uzunluğu yazılmak zorundadır
                 return ADAK_FAIL;
@@ -653,7 +653,7 @@ int SQL_TABLOLAR_FISI::CHECK_LINE_EMPTY ( int p_row_number )
         return ADAK_FAIL;
     }
 
-    if ( GET_ADAK_SQL_ENUM ( comboBox_alan_tipi->currentText() ) EQ TEXT ) {
+    if ( GET_ADAK_SQL_ENUM ( comboBox_alan_tipi->currentText() ) EQ ADAK_SQL_TEXT ) {
         if ( commaEdit_alan_boyutu->GET_INTEGER () < 1 ) {
             MSG_ERROR(tr("Field length must be entered for a field of type TEXT."),commaEdit_alan_boyutu);//TEXT tipinde bir alan için alan uzunluğu girilmek zorundadır
             return ADAK_FAIL;
@@ -841,7 +841,7 @@ int SQL_TABLOLAR_FISI::CHECK_DELETE_LINE ( int p_tablo_id, int p_row_number )
     QLineEdit * cell_lineEdit       = ( QLineEdit * ) m_ui->tablewidget_tablo_satirlari->cellWidget( p_row_number, ALAN_ADI_COLUMN );
     QString     alan_adi            = cell_lineEdit->text();
 
-    int return_value = MSG_YES_NO ( QString ( "The line with Field Name '% 1' will be deleted, are you sure?" ).arg(alan_adi), NULL );
+    int return_value = MSG_YES_NO ( QString ( "The line with Field Name '%1' will be deleted, are you sure?" ).arg(alan_adi), NULL );
     //Alan adı '%1' olan satır silinecektir, emin misiniz?
     if ( return_value EQ ADAK_NO ) {
         return ADAK_FAIL;

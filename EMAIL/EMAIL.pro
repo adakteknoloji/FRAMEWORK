@@ -1,6 +1,7 @@
 include (../INCLUDE/adak.pri)
+qtHaveModule(webview)
 
-QT          += sql network webkit
+QT        += xml sql network widgets printsupport uiplugin webenginewidgets
 
 TARGET       = EMAIL
 TEMPLATE     = lib

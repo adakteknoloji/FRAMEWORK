@@ -2,7 +2,7 @@
 #define REPORT_SHOWER_H
 
 #include <QPushButton>
-#include <QWebView>
+#include <QWebEngineView>
 #include <QDialog>
 #include <QPrinter>
 
@@ -31,7 +31,7 @@ private:
     QPushButton *       button_email;
     QPushButton *       button_ihrac;
 
-    QWebView *          preview_view;
+    QWebEngineView *    preview_view;
     QString             printer_document;
 
     int                 m_paper_type;

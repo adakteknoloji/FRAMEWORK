@@ -20,7 +20,7 @@ QStringList GET_MAC_ADDRESS()
 {
     QStringList      text_mac_address;
 
-    #ifndef WIN32
+    //#ifndef WIN32
         QList<QNetworkInterface> my_interface = QNetworkInterface::allInterfaces();
         for ( int i = 0 ; i < my_interface.size() ; i++ ) {
             if ( text_mac_address.contains( my_interface.at(i).hardwareAddress()) == false &&
@@ -29,8 +29,8 @@ QStringList GET_MAC_ADDRESS()
                 text_mac_address << my_interface.at(i).hardwareAddress();
             }
         }
-    #endif
-
+    //#endif
+/*
     #ifdef WIN32
         PIP_ADAPTER_INFO pAdapter            = NULL;
         PIP_ADAPTER_INFO pAdapterInfo;
@@ -71,6 +71,6 @@ QStringList GET_MAC_ADDRESS()
             FREE(pAdapterInfo);
         }
     #endif
-
+*/
     return text_mac_address;;
 }

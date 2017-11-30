@@ -67,7 +67,8 @@ QString QSearchEdit_Plugin::includeFile() const
         return "QSearchEdit.h";
 }
 
-
-Q_EXPORT_PLUGIN2(QSearchEdit_Plugin, QSearchEdit_Plugin)
+/* 5.8 MACRO GECISI 09.02.2017 BURAK*/
+Q_PLUGIN_METADATA("com.adak.framework.QSearchEdit_Plugin")
+//Q_EXPORT_PLUGIN2(QSearchEdit_Plugin, QSearchEdit_Plugin)
 
 

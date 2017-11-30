@@ -79,7 +79,8 @@ void BELGE_KERNEL::INIT_REPORT ()
         QString *line_str = new QString();
         m_line_print_txt.append(line_str);
     }
-    m_print_txt.setInsertInOrder(true);
+    /* ###BURAK### ATLANDI, SORUN CIKARSA YERINE 5.8'E UYGUN FONKSIYON YAZILACAK 09_02_2017*/
+    //m_print_txt.setInsertInOrder(true);
 }
 
 /**************************************************************************************
@@ -165,8 +166,9 @@ void BELGE_KERNEL::START_PRINT ()
                 QStringList code_list = code->split("\\t");
                 for (int j = 0; j < data_list.size(); ++j) {
                     if (data_list.at(j).isEmpty() EQ false ) {
-                        printer.WRITE_PRINTER(code_list.at(j).toAscii());
-                        printer.WRITE_PRINTER(data_list.at(j).toAscii());
+					/* ### BURAK ### .toAscii() 5.8'de .toLatin1'e çekilmiş olduğundan değiştirildi 09.02.2017*/
+                        printer.WRITE_PRINTER(code_list.at(j).toLatin1());
+                        printer.WRITE_PRINTER(data_list.at(j).toLatin1());
                     }
                 }
 

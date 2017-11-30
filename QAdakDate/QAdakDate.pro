@@ -1,8 +1,10 @@
 include (../INCLUDE/adak.pri)
 
+QT        += xml sql network widgets printsupport uiplugin webenginewidgets
+
 TARGET      = $$qtLibraryTarget(QAdakDate)
 
-CONFIG      += designer plugin
+CONFIG      += plugin
 
 TEMPLATE    = lib
 

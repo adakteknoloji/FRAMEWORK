@@ -1,4 +1,4 @@
-#include <QtGui/QApplication>
+#include <QApplication>
 #include <QTextCodec>
 #include <email.h>
 #include <email_sender.h>

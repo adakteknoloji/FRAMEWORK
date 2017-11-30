@@ -3,7 +3,7 @@
 
 #include <QLineEdit>
 #include <QLocale>
-#include <QtDesigner/QDesignerExportWidget>
+#include <QDesignerExportWidget>
 
 //Deger girelen tum formlarda lineedit yerine commaedit kullanilmalidir
 //Boylikle -(eksi) deger girilmesi durumunuda kontrol altina aliriz.

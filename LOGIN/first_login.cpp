@@ -10,8 +10,9 @@
 #include "yardim_hatirlatma_dialog.h"
 #include "login_enum.h"
 
-extern ADAK_SQL *G_YONETIM_DB;
-extern ADAK_SQL *DB;
+extern ADAK_SQL * G_YONETIM_DB;
+extern ADAK_SQL * DB;
+extern bool       g_auto_login_flag;
 
 /***********************************************************
                      FIRST_LOGIN
@@ -163,7 +164,9 @@ int FIRST_LOGIN( USER_LOGIN_INFO_STRUCT * P_USER_LOGIN_INFO, bool p_ilk_kurulum 
 
     KULLANICI_TAM_YETKILENDIR( P_USER_LOGIN_INFO->kullanici_id );
 
-    SHOW_YARDIM_HATIRLATMA_DIALOG();
+    if (g_auto_login_flag EQ false) {
+        SHOW_YARDIM_HATIRLATMA_DIALOG();
+    }
 
     G_YONETIM_DB->COMMIT_TRANSACTION();
 

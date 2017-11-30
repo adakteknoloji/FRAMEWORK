@@ -22,8 +22,11 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));
-    QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
+    /* ### BURAK ### Bu iki fonksiyon bug oluşturmaları sebebiyle 5.8'den silinmiş. Sorun çıkarsa yerlerine
+     * aynı işi gören fonksiyonlar yazılacak 09.02.2017 */
+
+//    QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));
+//    QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
 
     a.addLibraryPath( a.applicationDirPath() );
     a.addLibraryPath( a.applicationDirPath() + "/plugins" );

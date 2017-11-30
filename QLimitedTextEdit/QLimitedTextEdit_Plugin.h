@@ -1,7 +1,7 @@
 #ifndef QLimitedTextEdit_Plugin_H
 #define QLimitedTextEdit_Plugin_H
 
-#include <QDesignerCustomWidgetInterface>
+#include <QtUiPlugin/QDesignerCustomWidgetInterface>
 
 class QLimitedTextEdit_Plugin : public QObject, public QDesignerCustomWidgetInterface
 {
@@ -25,5 +25,9 @@ public:
 private:
         bool initialized;
 };
+
+/* 5.8 MACRO GECISI 09.02.2017 BURAK*/
+#define QLimitedTextEdit_Plugin_iid "com.adak.framework.QLimitedTextEdit_Plugin"
+Q_DECLARE_INTERFACE (QLimitedTextEdit_Plugin, QLimitedTextEdit_Plugin_iid)
 
 #endif // QLimitedTextEdit_Plugin_H

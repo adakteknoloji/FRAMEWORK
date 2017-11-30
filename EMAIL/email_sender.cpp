@@ -316,7 +316,7 @@ void EMAIL_SENDER::READY_TO_READ()
 
     if ( p_state EQ Init && response_text[0] EQ '2'  ) {
         if ( starttls EQ true ) {
-             p_socket->setProtocol ( QSsl::TlsV1 );
+             p_socket->setProtocol ( QSsl::TlsV1_2 );
              p_socket->startClientEncryption();
         }
         *p_t << "HELLO server\r\n";
@@ -555,7 +555,7 @@ void EMAIL_SENDER::SEND_EMAIL ( const QString &from,const QString &gonderenin_ge
     }
     else {
         if ( p_protocol EQ TLSV1 ) {
-             p_socket->setProtocol ( QSsl::TlsV1 );
+             p_socket->setProtocol ( QSsl::TlsV1_2 );
         }
         else if ( p_protocol EQ SSLV2 ) {
             p_socket->setProtocol ( QSsl::SslV2 );

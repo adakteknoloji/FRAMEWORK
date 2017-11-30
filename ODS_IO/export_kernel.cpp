@@ -1,4 +1,4 @@
-#include <QFileDialog>
+#include <QtWidgets/QFileDialog>
 
 #include "adak_exporter.h"
 

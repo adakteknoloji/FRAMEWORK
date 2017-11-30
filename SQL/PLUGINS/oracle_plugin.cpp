@@ -141,12 +141,12 @@ QString ORACLE_PLUGIN::CREATE_COLUMN_SQL( QString const& column_name,
     QString column_sentence = column_name;
 
     if ( is_array EQ true ) {
-        column_sentence += " " + GET_COLUMN_TYPE_NAME ( TEXT, 1 );
+        column_sentence += " " + GET_COLUMN_TYPE_NAME ( ADAK_SQL_TEXT, 1 );
         return column_sentence;
     }
 
     switch (column_type) {
-        case INTEGER :
+        case ADAK_SQL_INTEGER :
         default      :
 
             column_sentence += " " + GET_COLUMN_TYPE_NAME ( column_type ) + " ";
@@ -157,12 +157,12 @@ QString ORACLE_PLUGIN::CREATE_COLUMN_SQL( QString const& column_name,
             }
             break;
 
-        case TEXT:
+        case ADAK_SQL_TEXT:
             column_sentence += " " + GET_COLUMN_TYPE_NAME ( column_type ) + "(" + QVariant(length).toString() + ")";
             break;
 
-        case REAL:
-        case BLOB:
+        case ADAK_SQL_REAL:
+        case ADAK_SQL_BLOB:
             column_sentence += " " + GET_COLUMN_TYPE_NAME ( column_type ) + " ";
             break;
     }
@@ -209,19 +209,19 @@ QString ORACLE_PLUGIN::ADD_ONE_COLUMN_SQL ( int column_number, TABLE_STRUCT curr
     QString add_column_sentence  = QString("ALTER TABLE %1 ADD %2 ").arg(table_name).arg(column_name);
 
     if ( current_column.is_array EQ true ) {
-        add_column_sentence += " " + GET_COLUMN_TYPE_NAME ( TEXT , 1 ) + " ";
+        add_column_sentence += " " + GET_COLUMN_TYPE_NAME ( ADAK_SQL_TEXT , 1 ) + " ";
         return add_column_sentence;
     }
 
     switch ( current_column.type ) {
-        case INTEGER :
-        case REAL    :
-        case BLOB    :
+        case ADAK_SQL_INTEGER :
+        case ADAK_SQL_REAL    :
+        case ADAK_SQL_BLOB    :
         default      :
             add_column_sentence += " " + GET_COLUMN_TYPE_NAME ( current_column.type ) + " ";
             break;
 
-        case TEXT:
+        case ADAK_SQL_TEXT:
             add_column_sentence += " " + GET_COLUMN_TYPE_NAME ( current_column.type ) + "(" + QVariant ( current_column.length ).toString() + ") ";
             break;
     }
@@ -254,17 +254,17 @@ QString ORACLE_PLUGIN::CREATE_AUTO_INC_ID_COLUMN_FOR_ORACLE ( const QString &tab
 QString ORACLE_PLUGIN::GET_COLUMN_TYPE_NAME ( COLUMN_TYPE p_column_type, int is_array )
 {
     switch ( p_column_type ) {
-        case INTEGER :
+        case ADAK_SQL_INTEGER :
         default      :
             return "NUMBER(10,0)";
-        case TEXT:
+        case ADAK_SQL_TEXT:
             if ( is_array EQ 1 ) {
                  return "BLOB";
 	    }
             return "NVARCHAR2";
-        case REAL:
+        case ADAK_SQL_REAL:
             return "NUMBER(10,2)";
-        case BLOB:
+        case ADAK_SQL_BLOB:
             return "BLOB";
     }
     return "";

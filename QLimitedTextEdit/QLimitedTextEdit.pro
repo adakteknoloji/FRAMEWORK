@@ -1,8 +1,10 @@
 include (../INCLUDE/adak.pri)
 
+QT        += xml sql network widgets printsupport uiplugin webenginewidgets
+
 TARGET      = $$qtLibraryTarget(QLimitedTextEdit)
 
-CONFIG      += designer plugin
+CONFIG      += plugin
 
 TEMPLATE    = lib
 

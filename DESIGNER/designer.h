@@ -3,6 +3,7 @@
 
 #include <QString>
 #include <QDate>
+#include <QWidget>
 
 struct GLOBAL_VARS {
     QString versiyon;

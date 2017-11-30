@@ -490,9 +490,9 @@ QString ADAK_SQL_ABSTRACT::CREATE_ONE_TABLE_SQL ( int table_number, ADAK_SQL_STR
 
     for ( int i = 0; i < column_count; i++ ) {
         COLUMN_STRUCT    current_column       = current_table.columns[i];
-        INDEX_TYPE column_index_type          = NONE;
+        INDEX_TYPE column_index_type          = ADAK_SQL_NONE;
         if ( QString::compare( current_table.indexes[0].columns[0], current_column.name ) EQ 0 ) {
-            column_index_type = PRIMARY;
+            column_index_type = ADAK_SQL_PRIMARY;
         }
         QString   create_column_sql    = CREATE_COLUMN_SQL ( current_column.name,
                                                                      current_column.type,
@@ -618,7 +618,7 @@ QString ADAK_SQL_ABSTRACT::CREATE_INSERT_QUERY (QString *table_name, QString *id
 }
 
 /**************************************************************************************
-                   ADAK_SQL_ABSTRACT::DROP_ALL_TABLES_SQL
+                   ADAK_SQL_ABSTRACT::CREATE_UPDATE_QUERY
 ***************************************************************************************/
 
 QString ADAK_SQL_ABSTRACT::CREATE_UPDATE_QUERY (QString *table_name, QString *id_column_name, QString *update_column_names, QString *update_column_values, QString *where_condition)

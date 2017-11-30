@@ -1,7 +1,7 @@
 #ifndef SIFRE_DEGISTIRME_BATCH_H
 #define SIFRE_DEGISTIRME_BATCH_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include "batch_kernel.h"
 
 namespace Ui {

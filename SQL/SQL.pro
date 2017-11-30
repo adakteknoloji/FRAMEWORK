@@ -1,6 +1,6 @@
 include (../INCLUDE/adak.pri)
 
-QT      += sql
+QT        += xml sql network widgets printsupport uiplugin webenginewidgets
 QT      -= gui
 
 TARGET   = ADAK_SQL

@@ -16,6 +16,7 @@
 #include "yonetim.h"
 #include "report_shower.h"
 #include "email.h"
+#include <QWebEngineCallback>
 
 extern ADAK_SQL *      G_YONETIM_DB;
 
@@ -28,10 +29,10 @@ void DIREKT_YAZDIR ( QString printer_name,QString printer_document )
      QPrinter printer ( QPrinter::HighResolution );
      printer.setPrinterName ( printer_name );
 
-     QWebView * view = new QWebView;
+     QWebEngineView * view = new QWebEngineView;
      view->setHtml( printer_document );
-
-     view->print( &printer );
+     const QWebEngineCallback<bool> callback;
+     view->page()->print( &printer, callback );
 
      QMessageBox::warning ( qApp->activeWindow(), "Printer",  QObject::tr("File sent to printer!") );//Çıktı yazıcıya gönderildi.!
 }
@@ -76,7 +77,8 @@ REPORT_SHOWER::REPORT_SHOWER ( QString printer_document,int paper_type,double us
 
     QVBoxLayout *vertical_layout   = new QVBoxLayout();
     QHBoxLayout *horizontal_layout = new QHBoxLayout();
-    preview_view                   = new QWebView;
+    preview_view                   = new QWebEngineView;
+//    callback                       = new QWebEngineCallback<bool>();
 
     m_paper_type                   = paper_type;
     m_user_defined_width           = user_defined_width;
@@ -166,7 +168,8 @@ void REPORT_SHOWER::SLOT_PRINT_PREVIEW()
 
 void REPORT_SHOWER::SLOT_PAINT_REQUESTED ( QPrinter *printer )
 {
-    preview_view->print ( printer );
+    const QWebEngineCallback<bool> callback;
+    preview_view->page()->print ( printer, callback );
 }
 
 /**************************************************************************************

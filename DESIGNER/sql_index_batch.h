@@ -1,7 +1,7 @@
 #ifndef SQL_INDEX_BATCH_H
 #define SQL_INDEX_BATCH_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include "batch_kernel.h"
 
 

@@ -49,8 +49,8 @@ enum ADAK_PROGRAM_ENUM {
     YONETIM_libADAK    =  0,
     ADAK_DESIGNER      =  1,
     E9_PROGRAMI        =  2,
-    GANYAN_PROGRAMI    =  3,
-    AATS               =  4,
+    TULPAR             =  3,
+    uTAFS              =  4,
     TEST_PROGRAMI      = 99
 };
 

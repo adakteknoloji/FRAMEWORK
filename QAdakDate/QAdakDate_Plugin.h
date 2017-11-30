@@ -1,7 +1,7 @@
 #ifndef QAdakDate_Plugin_H
 #define QAdakDate_Plugin_H
 
-#include <QDesignerCustomWidgetInterface>
+#include <QtUiPlugin/QDesignerCustomWidgetInterface>
 
 class QAdakDate_Plugin : public QObject, public QDesignerCustomWidgetInterface
 {
@@ -25,5 +25,9 @@ public:
 private:
         bool        initialized;
 };
+
+/* 5.8 MACRO GECISI 09.02.2017 BURAK*/
+#define QQAdakDate_Plugin_Plugin_iid "com.adak.framework.QAdakDate_Plugin"
+Q_DECLARE_INTERFACE (QAdakDate_Plugin, QQAdakDate_Plugin_Plugin_iid)
 
 #endif // QAdakDate_Plugin_H

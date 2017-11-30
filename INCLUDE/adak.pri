@@ -7,7 +7,7 @@ SO_ext   = so
 win32 {
     OBJDIR = MINGW
     DEFINES += MINGW
-    win32-msvc2005|win32-msvc2008 { 
+    win32-msvc2005|win32-msvc2008|win32-msvc2010|win32-msvc2013|win32-msvc2015|win32-msvc2017 { 
         OBJDIR = MSVC
         DEFINES -= MINGW
         DEFINES += MSVC

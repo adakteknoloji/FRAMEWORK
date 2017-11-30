@@ -1,6 +1,6 @@
 include (../INCLUDE/adak.pri)
 
-QT          += sql network webkit xml
+QT        += gui xml sql network widgets printsupport uiplugin webenginewidgets
 
 TARGET       = KERNEL
 TEMPLATE     = lib
@@ -10,7 +10,7 @@ DEPENDPATH  += .
 
 RESOURCES += kernel_icons.qrc
 
-INCLUDEPATH += include ../INCLUDE
+INCLUDEPATH += . ../INCLUDE
 
 HEADERS     += ../INCLUDE/fis_kernel.h \
                ../INCLUDE/form_kernel.h \

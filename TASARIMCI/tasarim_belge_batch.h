@@ -1,7 +1,7 @@
 #ifndef TASARIM_BELGE_BATCH_H
 #define TASARIM_BELGE_BATCH_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include "batch_kernel.h"
 #include "belge_struct.h"
 #include "tasarim_utils.h"

@@ -1,7 +1,7 @@
 #ifndef POSTA_SUNUCUSU_FORMU_H
 #define POSTA_SUNUCUSU_FORMU_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include <form_kernel.h>
 
 namespace Ui {

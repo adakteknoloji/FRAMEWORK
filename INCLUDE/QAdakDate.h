@@ -1,16 +1,14 @@
 #ifndef QAdakDate_H
 #define QAdakDate_H
 
-#include <QtDesigner/QDesignerExportWidget>
+#include <QDesignerExportWidget>
 #include <QWidget>
-#include <QDate>
-
 #include <QDate>
 #include <QHBoxLayout>
 #include <QToolButton>
 #include <QLineEdit>
-#include <QKeyEvent>
 #include <QCalendarWidget>
+#include <QKeyEvent>
 
 #ifdef WIN32
 class QAdakDate : public QWidget

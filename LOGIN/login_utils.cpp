@@ -11,7 +11,18 @@ static QList<ADAK_SQL_STRUCT * > G_YONETIM_DB_STRUCTS;
 
 static int g_kullanicinin_calisabilecegi_veritabani_sayisi;
 
+bool       g_auto_login_flag = false;
+
 extern ADAK_SQL * G_YONETIM_DB;
+
+/***********************************************************
+                     SET_AUTO_LOGIN
+************************************************************/
+
+void SET_AUTO_LOGIN (bool p_auto_login)
+{
+    g_auto_login_flag = p_auto_login;
+}
 
 /***********************************************************
                      GET_PROGRAM_DB_STRUCTS

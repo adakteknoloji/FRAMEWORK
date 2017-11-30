@@ -1,9 +1,9 @@
 #ifndef ADAK_SQL_QUERY_H
 #define ADAK_SQL_QUERY_H
 
-#include <QSqlQuery>
 #include <QStringList>
 #include <QVariant>
+#include <QSqlQuery>
 #include <QSqlRecord>
 
 class ADAK_SQL;

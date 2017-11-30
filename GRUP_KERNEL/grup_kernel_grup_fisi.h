@@ -1,7 +1,7 @@
 #ifndef GRUP_KERNEL_GRUP_FISI_H
 #define GRUP_KERNEL_GRUP_FISI_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include <fis_kernel.h>
 #include "base_grup_kernel.h"
 #include "ui_grup_kernel_grup_fisi.h"

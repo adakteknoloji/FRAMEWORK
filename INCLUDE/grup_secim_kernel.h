@@ -1,7 +1,7 @@
 #ifndef GRUP_SECIM_KERNEL_H
 #define GRUP_SECIM_KERNEL_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include <tree_secim_kernel.h>
 #include <QToolButton>
 #include "base_grup_kernel.h"

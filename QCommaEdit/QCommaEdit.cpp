@@ -1,7 +1,8 @@
-#include <QtGui>
+#include <QtWidgets>
 #include <QHBoxLayout>
 #include "adak_utils.h"
 #include "QCommaEdit.h"
+#include <QMessageBox>
 
 /*******************************************************/
 /*               QCommaEdit::QCommaEdit                */

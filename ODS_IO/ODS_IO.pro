@@ -1,9 +1,7 @@
 include (../INCLUDE/adak.pri)
 
-QT += sql \
-    network \
-    webkit \
-    xml
+QT        += xml sql network widgets printsupport uiplugin webenginewidgets
+
 TARGET = ODS_IO
 TEMPLATE = lib
 CONFIG += static

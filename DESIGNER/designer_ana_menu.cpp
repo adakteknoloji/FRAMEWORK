@@ -417,17 +417,17 @@ void STRUCTURDAN_VERITABANINI_YARAT ()
             sql_onar.SET_VALUE(":alan_adi", struct_ptr->tables[i].columns[j].name );
             sql_onar.SET_VALUE(":veritabanindaki_adi", struct_ptr->tables[i].columns[j].name);
 
-            if ( struct_ptr->tables[i].columns[j].type EQ INTEGER ) {
-                sql_onar.SET_VALUE(":alan_tipi","INTEGER");
+            if ( struct_ptr->tables[i].columns[j].type EQ ADAK_SQL_INTEGER ) {
+                sql_onar.SET_VALUE(":alan_tipi","ADAK_SQL_INTEGER");
             }
-            else if ( struct_ptr->tables[i].columns[j].type EQ TEXT ) {
-                sql_onar.SET_VALUE(":alan_tipi","TEXT");
+            else if ( struct_ptr->tables[i].columns[j].type EQ ADAK_SQL_TEXT ) {
+                sql_onar.SET_VALUE(":alan_tipi","ADAK_SQL_TEXT");
             }
-            else if ( struct_ptr->tables[i].columns[j].type EQ REAL ) {
-                sql_onar.SET_VALUE(":alan_tipi","REAL");
+            else if ( struct_ptr->tables[i].columns[j].type EQ ADAK_SQL_REAL ) {
+                sql_onar.SET_VALUE(":alan_tipi","ADAK_SQL_REAL");
             }
-            else if ( struct_ptr->tables[i].columns[j].type EQ BLOB ) {
-                sql_onar.SET_VALUE(":alan_tipi","BLOB");
+            else if ( struct_ptr->tables[i].columns[j].type EQ ADAK_SQL_BLOB ) {
+                sql_onar.SET_VALUE(":alan_tipi","ADAK_SQL_BLOB");
             }
 
             sql_onar.SET_VALUE(":uzunluk", struct_ptr->tables[i].columns[j].length);

@@ -1,7 +1,7 @@
 #ifndef QCommaEdit_Plugin_H
 #define QCommaEdit_Plugin_H
 
-#include <QDesignerCustomWidgetInterface>
+#include <QtUiPlugin/QDesignerCustomWidgetInterface>
 
 class QCommaEdit_Plugin : public QObject, public QDesignerCustomWidgetInterface
     {
@@ -25,5 +25,9 @@ public:
 private:
         bool initialized;
     };
+
+/* 5.8 MACRO GECISI 09.02.2017 BURAK*/
+#define QCommaEdit_Plugin_iid "com.adak.framework.QCommaEdit_Plugin"
+Q_DECLARE_INTERFACE (QCommaEdit_Plugin, QCommaEdit_Plugin_iid)
 
 #endif // QCommaEdit_Plugin_H

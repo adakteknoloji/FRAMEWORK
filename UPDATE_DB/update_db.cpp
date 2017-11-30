@@ -39,19 +39,19 @@ int FIND_LAST_INDEX ( int first_index, QString current_string )
 
 COLUMN_TYPE GET_COLUMN_TYPE ( QString column_type )
 {
-    if ( column_type EQ "INTEGER") {
-        return INTEGER;
+    if ( column_type EQ "ADAK_SQL_INTEGER") {
+        return ADAK_SQL_INTEGER;
     }
-    else if ( column_type EQ "TEXT" ) {
-        return TEXT;
+    else if ( column_type EQ "ADAK_SQL_TEXT" ) {
+        return ADAK_SQL_TEXT;
     }
-    else if ( column_type EQ "REAL" ) {
-        return REAL;
+    else if ( column_type EQ "ADAK_SQL_REAL" ) {
+        return ADAK_SQL_REAL;
     }
-    else if ( column_type EQ "BLOB" ) {
-        return BLOB;
+    else if ( column_type EQ "ADAK_SQL_BLOB" ) {
+        return ADAK_SQL_BLOB;
     }
-    return INTEGER;
+    return ADAK_SQL_INTEGER;
 }
 
 /*************************************/
@@ -60,17 +60,17 @@ COLUMN_TYPE GET_COLUMN_TYPE ( QString column_type )
 
 INDEX_TYPE  GET_INDEX_TYPE  ( QString index_type )
 {
-    if ( index_type EQ "NONE" ) {
-        return NONE;
+    if ( index_type EQ "ADAK_SQL_NONE" ) {
+        return ADAK_SQL_NONE;
     }
-    else if ( index_type EQ "PRIMARY" ) {
-        return PRIMARY;
+    else if ( index_type EQ "ADAK_SQL_PRIMARY" ) {
+        return ADAK_SQL_PRIMARY;
     }
-    else if ( index_type EQ "UNIQUE" ) {
-        return UNIQUE;
+    else if ( index_type EQ "ADAK_SQL_UNIQUE" ) {
+        return ADAK_SQL_UNIQUE;
     }
-    else if ( index_type EQ "INDEX" ) {
-        return INDEX;
+    else if ( index_type EQ "ADAK_SQL_INDEX" ) {
+        return ADAK_SQL_INDEX;
     }
-    return NONE;
+    return ADAK_SQL_NONE;
 }

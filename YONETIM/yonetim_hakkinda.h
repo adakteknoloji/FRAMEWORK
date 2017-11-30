@@ -1,7 +1,7 @@
 #ifndef YONETIM_HAKKINDA
 #define YONETIM_HAKKINDA
 
-#include <QtGui/QDialog>
+#include <QDialog>
 
 class QString;
 class QWidget;

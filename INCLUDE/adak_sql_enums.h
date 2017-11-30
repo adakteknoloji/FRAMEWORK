@@ -3,18 +3,18 @@
 
 
 enum COLUMN_TYPE {
-    INTEGER,
-    TEXT,
-    REAL,
-    BLOB
+    ADAK_SQL_INTEGER,
+    ADAK_SQL_TEXT,
+    ADAK_SQL_REAL,
+    ADAK_SQL_BLOB
 };
 
 
 enum INDEX_TYPE {
-     NONE,
-     PRIMARY,
-     UNIQUE,
-     INDEX
+     ADAK_SQL_NONE,
+     ADAK_SQL_PRIMARY,
+     ADAK_SQL_UNIQUE,
+     ADAK_SQL_INDEX
 };
 
 enum SQL_QUERY_TYPE {

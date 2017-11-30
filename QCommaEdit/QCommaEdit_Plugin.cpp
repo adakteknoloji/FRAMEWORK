@@ -68,7 +68,8 @@ QString QCommaEdit_Plugin::includeFile() const
         return "QCommaEdit.h";
 }
 
-
-Q_EXPORT_PLUGIN2(QCommaEdit_Plugin, QCommaEdit_Plugin)
+/* 5.8 MACRO GECISI 09.02.2017 BURAK*/
+Q_PLUGIN_METADATA ("com.adak.framework.QCommaEdit_Plugin")
+//Q_EXPORT_PLUGIN2(QCommaEdit_Plugin, QCommaEdit_Plugin)
 
 

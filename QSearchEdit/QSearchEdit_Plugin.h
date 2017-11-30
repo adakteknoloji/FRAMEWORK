@@ -1,7 +1,7 @@
 #ifndef QSearchEdit_Plugin_H
 #define QSearchEdit_Plugin_H
 
-#include <QDesignerCustomWidgetInterface>
+#include <QtUiPlugin/QDesignerCustomWidgetInterface>
 
 class QSearchEdit_Plugin : public QObject, public QDesignerCustomWidgetInterface
 {
@@ -25,5 +25,9 @@ public:
 private:
         bool        initialized;
 };
+
+/* 5.8 MACRO GECISI 09.02.2017 BURAK*/
+#define QSearchEdit_Plugin_iid "com.adak.framework.QSearchEdit_Plugin"
+Q_DECLARE_INTERFACE (QSearchEdit_Plugin, QSearchEdit_Plugin_iid)
 
 #endif // QSearchEdit_Plugin_H

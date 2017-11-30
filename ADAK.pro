@@ -4,7 +4,7 @@ TARGET     = ADAK
 TEMPLATE   = lib
 CONFIG    += static
 
-QT        += sql network webkit
+QT        += xml sql network widgets printsupport uiplugin webenginewidgets
 
 # UTILS_OBJECTS
 OBJECTS       +=        UTILS/$$OBJDIR/base_sql.$$OBJ_ext \

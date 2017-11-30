@@ -1,7 +1,7 @@
 #ifndef SMS_SENDER_GUI_H
 #define SMS_SENDER_GUI_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include "batch_kernel.h"
 #include "ui_sms_sender_gui.h"
 

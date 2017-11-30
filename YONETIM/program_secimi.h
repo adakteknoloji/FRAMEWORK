@@ -1,8 +1,8 @@
 #ifndef PROGRAM_SECIMI_H
 #define PROGRAM_SECIMI_H
 
-#include <QtGui/QDialog>
-#include <QtGui/QTableWidget>
+#include <QDialog>
+#include <QTableWidget>
 #include "secim_kerneli.h"
 
 

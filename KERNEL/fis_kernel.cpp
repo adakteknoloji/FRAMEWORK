@@ -1,10 +1,10 @@
 #include <QToolButton>
 #include <QTableWidgetItem>
 #include <QHeaderView>
-#include <QKeyEvent>
 #include <QObject>
-#include <QtGui>
+#include <QAction>
 #include <QCloseEvent>
+#include <QKeyEvent>
 #include "fis_kernel.h"
 #include "adak_sql_query.h"
 #include "adak_utils.h"
@@ -105,8 +105,8 @@ void FIS_KERNEL::INIT_KERNEL ()
     p_table_widget->setSelectionMode ( QAbstractItemView::NoSelection );
     p_table_widget->setFocus         ( Qt::OtherFocusReason );
 
-    p_table_widget->horizontalHeader()->setClickable  (false);
-    p_table_widget->verticalHeader  ()->setClickable  (false);
+    p_table_widget->horizontalHeader()->setSectionsClickable(false);
+    p_table_widget->verticalHeader  ()->setSectionsClickable(false);
 
     FORM_KERNEL::INIT_KERNEL();
 }

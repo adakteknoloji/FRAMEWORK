@@ -105,18 +105,18 @@ QString ODBC_PLUGIN::CREATE_COLUMN_SQL (       QString const& column_name,
     QString column_sentence = column_name;
 
     if ( is_array EQ true ) {
-        column_sentence += " " + GET_COLUMN_TYPE_NAME ( TEXT, 1 ) + " ";
+        column_sentence += " " + GET_COLUMN_TYPE_NAME ( ADAK_SQL_TEXT, 1 ) + " ";
         return column_sentence;
     }
 
     switch ( column_type ) {
-        case INTEGER    :
-        case REAL       :
-        case BLOB       :
+        case ADAK_SQL_INTEGER    :
+        case ADAK_SQL_REAL       :
+        case ADAK_SQL_BLOB       :
             column_sentence += " " + GET_COLUMN_TYPE_NAME ( column_type );
             break;
 
-        case TEXT:
+        case ADAK_SQL_TEXT:
             column_sentence += " " + GET_COLUMN_TYPE_NAME ( column_type ) + "(" + QVariant(length).toString() + ")";
             break;
     }
@@ -125,7 +125,7 @@ QString ODBC_PLUGIN::CREATE_COLUMN_SQL (       QString const& column_name,
         column_sentence += " NOT NULL";
     }
 
-    if (column_type EQ TEXT ) {
+    if (column_type EQ ADAK_SQL_TEXT ) {
         return column_sentence;
     }
 
@@ -134,12 +134,12 @@ QString ODBC_PLUGIN::CREATE_COLUMN_SQL (       QString const& column_name,
     }
 
     switch ( index_type ) {
-        case PRIMARY:
+        case ADAK_SQL_PRIMARY:
             column_sentence += " PRIMARY KEY";
             break;
-        case UNIQUE:
-        case INDEX:
-        case NONE:
+        case ADAK_SQL_UNIQUE:
+        case ADAK_SQL_INDEX:
+        case ADAK_SQL_NONE:
         default:
             break;
     }
@@ -186,18 +186,18 @@ QString ODBC_PLUGIN::ADD_ONE_COLUMN_SQL ( int column_number, TABLE_STRUCT curren
     QString add_column_sentence  = QString("ALTER TABLE %1  ADD COLUMN %2 ").arg(table_name).arg(column_name);
 
     if ( current_column.is_array EQ true ) {
-        add_column_sentence += " " + GET_COLUMN_TYPE_NAME ( TEXT, 1 ) + " ";
+        add_column_sentence += " " + GET_COLUMN_TYPE_NAME ( ADAK_SQL_TEXT, 1 ) + " ";
         return add_column_sentence;
     }
 
     switch ( current_column.type ) {
-        case INTEGER    :
-        case REAL       :
-        case BLOB       :
+        case ADAK_SQL_INTEGER    :
+        case ADAK_SQL_REAL       :
+        case ADAK_SQL_BLOB       :
         default         :
             add_column_sentence += " " + GET_COLUMN_TYPE_NAME ( current_column.type ) + " ";
             break;
-        case TEXT:
+        case ADAK_SQL_TEXT:
             add_column_sentence += " " + GET_COLUMN_TYPE_NAME ( current_column.type ) + "(" + QVariant(current_column.length).toString() + ") ";
             break;
     }
@@ -215,17 +215,17 @@ QString ODBC_PLUGIN::ADD_ONE_COLUMN_SQL ( int column_number, TABLE_STRUCT curren
 QString ODBC_PLUGIN::GET_COLUMN_TYPE_NAME ( COLUMN_TYPE p_column_type, int is_array )
 {
     switch ( p_column_type ) {
-        case INTEGER :
+        case ADAK_SQL_INTEGER :
         default      :
             return "INTEGER";
-        case TEXT:
+        case ADAK_SQL_TEXT:
             if ( is_array EQ 1 ) {
                 return "BLOB";
             }
             return "VARCHAR";
-        case REAL:
+        case ADAK_SQL_REAL:
             return "REAL";
-        case BLOB:
+        case ADAK_SQL_BLOB:
             return "BLOB";
     }
     return "";

@@ -1,7 +1,7 @@
 #ifndef ADAK_SQL_ERROR_DIALOG_H
 #define ADAK_SQL_ERROR_DIALOG_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 
 namespace Ui {
     class ADAK_SQL_ERROR_DIALOG;

@@ -8,12 +8,12 @@ DIZINLER="UTILS SQL ADAK_STD QCommaEdit QSearchEdit QLimitedTextEdit QAdakDate O
 
 for dizin in $DIZINLER
 do
-	echo -e "\n\n$dizin DERLENIYOR\n\n"
+	echo "\n\n$dizin DERLENIYOR\n\n"
 	cd $dizin
 	qmake
 	make -j 8
 	cd ..
-	echo -e "\n\n$dizin DERLENDI\n\n"
+	echo "\n\n$dizin DERLENDI\n\n"
 done
 
 
@@ -23,10 +23,10 @@ make
 DIZINLER="UPDATE_DB DESIGNER"
 for dizin in $DIZINLER
     do
-    echo -e "\n\n$dizin DERLENIYOR\n\n"
+    echo "\n\n$dizin DERLENIYOR\n\n"
     cd $dizin
     qmake
     make -j 8
     cd ..
-    echo -e "\n\n$dizin DERLENDI\n\n"
+    echo "\n\n$dizin DERLENDI\n\n"
 done

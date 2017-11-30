@@ -1,4 +1,4 @@
-#include <QtGui>
+#include <QtWidgets>
 #include <QHBoxLayout>
 #include <QToolButton>
 #include <QLineEdit>
@@ -6,6 +6,8 @@
 #include <QCalendarWidget>
 #include "adak_utils.h"
 #include "QAdakDate.h"
+#include <QMessageBox>
+#include <QDate>
 
 /****************************************************************
                QAdakDate::QAdakDate
@@ -223,7 +225,7 @@ void QAdakDate::TRY_TO_SET_DATE(const QString &date_str)
         current_year = user_text.mid(4,4).toInt();
     }
 
-    current_date.setYMD(current_year,current_month,current_day);
+    current_date.setDate(current_year,current_month,current_day);
 
     SET_DATE( current_date );
 }

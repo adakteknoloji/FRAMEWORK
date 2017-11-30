@@ -1,4 +1,5 @@
 @echo off
+set MSVC=1
 
 for %%d IN (UTILS,SQL,ADAK_STD,QCommaEdit,QSearchEdit,QLimitedTextEdit,QAdakDate,ODS_IO) do CALL BUILD_MSVC__.BAT %%d
 

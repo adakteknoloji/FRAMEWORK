@@ -131,7 +131,7 @@ QString MSSQL_PLUGIN::CREATE_COLUMN_SQL( QString const& column_name,
     QString column_sentence = column_name;
 
     if ( is_array EQ true ) {
-        column_sentence += " " + GET_COLUMN_TYPE_NAME ( TEXT, 1 );
+        column_sentence += " " + GET_COLUMN_TYPE_NAME ( ADAK_SQL_TEXT, 1 );
         if ( is_not_null EQ true ) {
             column_sentence += " NOT NULL";
         }
@@ -142,7 +142,7 @@ QString MSSQL_PLUGIN::CREATE_COLUMN_SQL( QString const& column_name,
     }
 
     switch (column_type) {
-        case INTEGER :
+        case ADAK_SQL_INTEGER :
         default      :
 
             column_sentence += " " + GET_COLUMN_TYPE_NAME ( column_type ) +  " ";
@@ -152,12 +152,12 @@ QString MSSQL_PLUGIN::CREATE_COLUMN_SQL( QString const& column_name,
             }
             break;
 
-        case TEXT:
+        case ADAK_SQL_TEXT:
             column_sentence += " " + GET_COLUMN_TYPE_NAME ( column_type ) + "(" + QVariant(length).toString() + ")";
             break;
 
-        case REAL   :
-        case BLOB   :
+        case ADAK_SQL_REAL   :
+        case ADAK_SQL_BLOB   :
             column_sentence += " " + GET_COLUMN_TYPE_NAME ( column_type ) +  " ";
             break;
     }
@@ -211,7 +211,7 @@ QString MSSQL_PLUGIN::ADD_ONE_COLUMN_SQL ( int column_number, TABLE_STRUCT curre
     QString add_column_sentence  = QString("ALTER TABLE %1 ADD %2 ").arg(table_name).arg(column_name);
 
     if ( current_column.is_array EQ true ) {
-        add_column_sentence += " " + GET_COLUMN_TYPE_NAME ( TEXT, 1 );
+        add_column_sentence += " " + GET_COLUMN_TYPE_NAME ( ADAK_SQL_TEXT, 1 );
         if ( current_column.is_not_null EQ true ) {
             add_column_sentence += " NOT NULL";
         }
@@ -222,13 +222,13 @@ QString MSSQL_PLUGIN::ADD_ONE_COLUMN_SQL ( int column_number, TABLE_STRUCT curre
     }
 
     switch ( current_column.type ) {
-        case INTEGER :
-        case REAL    :
-        case BLOB    :
+        case ADAK_SQL_INTEGER :
+        case ADAK_SQL_REAL    :
+        case ADAK_SQL_BLOB    :
         default      :
             add_column_sentence += " " + GET_COLUMN_TYPE_NAME ( current_column.type ) +  " ";
             break;
-        case TEXT:
+        case ADAK_SQL_TEXT:
             add_column_sentence += " " + GET_COLUMN_TYPE_NAME ( current_column.type ) +  "(" + QVariant(current_column.length).toString() + ") ";
             break;
     }
@@ -249,17 +249,17 @@ QString MSSQL_PLUGIN::ADD_ONE_COLUMN_SQL ( int column_number, TABLE_STRUCT curre
 QString MSSQL_PLUGIN::GET_COLUMN_TYPE_NAME ( COLUMN_TYPE p_column_type, int is_array )
 {
     switch ( p_column_type ) {
-        case INTEGER :
+        case ADAK_SQL_INTEGER :
         default      :
             return "INT";
-        case TEXT:
+        case ADAK_SQL_TEXT:
             if ( is_array EQ 1 ) {
                 return "BINARY";
             }
             return "NVARCHAR";
-        case REAL:
+        case ADAK_SQL_REAL:
             return "REAL";
-        case BLOB:
+        case ADAK_SQL_BLOB:
             return "BINARY";
     }
     return "";

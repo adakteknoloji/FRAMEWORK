@@ -1,6 +1,6 @@
 #include <QDir>
 #include <QDate>
-#include <QWebSettings>
+#include <QWebEngineSettings>
 #include <QFont>
 #include <QSettings>
 #include <QByteArray>
@@ -35,8 +35,10 @@ typedef void (* P_KULLANICI_TAM_YETKI_FONKSIYONU)();
 //Bunlar burda doldurup ise yaramadigi zaman direk temizlenmeli.
 static QList<P_KULLANICI_TAM_YETKI_FONKSIYONU> G_TAM_YETKILENDIRME_FONKSIYONLARI;
 
-extern ADAK_SQL *G_YONETIM_DB;
-extern ADAK_SQL *DB;
+extern ADAK_SQL * G_YONETIM_DB;
+extern ADAK_SQL * DB;
+extern bool       g_auto_login_flag;
+
 
 bool        m_first_db_process = false;
 int         m_veritabani_sayisi = 0;
@@ -100,6 +102,10 @@ int PROGRAMA_GIRIS (int argc, char *argv[] , int display_id, int program_id, QWi
 int START_PROGRAM(int argc, char *argv[], USER_LOGIN_INFO_STRUCT *P_USER_INFO, QWidget * parent)
 {
     SET_USER_LOGIN_STATUS( USER_ON_INIT );
+
+    if (g_auto_login_flag EQ true) {
+        P_USER_INFO->is_auto_login = true;
+    }
 
     if( P_USER_INFO->is_auto_login EQ true ) {
         SET_USER_LOGIN_STATUS( USER_LOGINNED );
@@ -795,6 +801,9 @@ int LOGIN( USER_LOGIN_INFO_STRUCT *P_USER_INFO)
             break;
         }
         else {
+            if (DB EQ NULL) {
+                exit (1);
+            }
             if ( DB->SQL_TABLES_EXISTS("") EQ false ) {
 
                 yonetici_izni_alindi = YONETICI_IZNI_AL();
@@ -1398,10 +1407,14 @@ void INIT_PROGRAM_DEFAULTS( )
         QApplication::setFont ( serifFont );
     #endif
 
-    QWebSettings::globalSettings()->setAttribute(QWebSettings::PluginsEnabled, true);
-    QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));
+    QWebEngineSettings::globalSettings()->setAttribute(QWebEngineSettings::PluginsEnabled, true);
+
+    /* ###BURAK### setCoderForTr ve setCodecForCStrings 5.8'de bug oluşturdukarı için silinmiş. Sorun çıkarsa yerine geçen
+     * fonksiyonlar yazılacak. 09.02.2017 */
+
+    //QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));
     QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
-    QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
+    //QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
 
     QCoreApplication::setOrganizationName(QObject::tr("Adak Technology"));
     QCoreApplication::setOrganizationDomain(ADAK_PROGRAM_WEB(ADAK_DISPLAY_ID()));

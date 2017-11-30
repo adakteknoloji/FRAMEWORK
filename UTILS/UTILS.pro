@@ -1,6 +1,6 @@
 include (../INCLUDE/adak.pri)
 
-QT += network
+QT        += xml sql network widgets printsupport uiplugin webenginewidgets
 
 INCLUDEPATH += include \
     ../INCLUDE \

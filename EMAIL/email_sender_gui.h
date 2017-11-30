@@ -1,7 +1,7 @@
 #ifndef EMAIL_SENDER_GUI_H
 #define EMAIL_SENDER_GUI_H
 
-#include <QtGui/QDialog>
+#include <QDialog>
 #include "batch_kernel.h"
 
 

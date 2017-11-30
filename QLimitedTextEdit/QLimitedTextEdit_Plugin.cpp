@@ -67,7 +67,8 @@ QString QLimitedTextEdit_Plugin::includeFile() const
         return "QLimitedTextEdit.h";
 }
 
-
-Q_EXPORT_PLUGIN2(QLimitedTextEdit_Plugin, QLimitedTextEdit_Plugin)
+/* 5.8 MACRO GECISI 09.02.2017 BURAK*/
+Q_PLUGIN_METADATA ("com.adak.framework.QLimitedTextEdit_Plugin")
+//Q_EXPORT_PLUGIN2(QLimitedTextEdit_Plugin, QLimitedTextEdit_Plugin)
 
 

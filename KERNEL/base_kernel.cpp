@@ -9,7 +9,7 @@
 #include <QScrollBar>
 #include <QCloseEvent>
 #include <QCryptographicHash>
-#include <QWebView>
+#include <QWebEngineView>
 #include <QEventLoop>
 #include <QUrl>
 #include <QNetworkRequest>

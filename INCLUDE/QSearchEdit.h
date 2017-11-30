@@ -5,7 +5,7 @@
 #include <QLineEdit>
 #include <QHBoxLayout>
 #include <QLocale>
-#include <QtDesigner/QDesignerExportWidget>
+#include <QDesignerExportWidget>
 
 //NOT:: Bu widget kullanilmak istendiginde slot olarak SEARCH_BUTTON_CLICKED(QWidget *,QLineEdit *,QPushButton *) tanimlanmali.
 //Bu sekilde widgettaki butona tiklandiginda otomatik olarak bu slot a duser.

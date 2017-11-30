@@ -1,9 +1,8 @@
 include (../INCLUDE/adak.pri)
+qtHaveModule(webview)
 
-QT += sql \
-    network \
-    webkit \
-    xml
+QT        += xml sql network widgets printsupport uiplugin webenginewidgets
+
 TARGET = LOGIN
 TEMPLATE = lib
 CONFIG += static

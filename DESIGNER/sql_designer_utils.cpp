@@ -14,14 +14,14 @@ extern ADAK_SQL *   DB;
 QString GET_ADAK_SQL_ENUM_STRING ( int adak_sql_enum )
 {
     switch ( adak_sql_enum ) {
-        case INTEGER :
-            return "INTEGER";
-        case TEXT :
-            return "TEXT";
-        case REAL :
-            return "REAL";
-         case BLOB :
-            return "BLOB";
+        case ADAK_SQL_INTEGER :
+            return "ADAK_SQL_INTEGER";
+        case ADAK_SQL_TEXT :
+            return "ADAK_SQL_TEXT";
+        case ADAK_SQL_REAL :
+            return "ADAK_SQL_REAL";
+         case ADAK_SQL_BLOB :
+            return "ADAK_SQL_BLOB";
          default :
              return NULL;
     }
@@ -33,17 +33,21 @@ QString GET_ADAK_SQL_ENUM_STRING ( int adak_sql_enum )
 
 int GET_ADAK_SQL_ENUM ( QString adak_sql_enum_string )
 {
-    if ( adak_sql_enum_string EQ "INTEGER" ) {
-        return INTEGER;
+    if ( adak_sql_enum_string EQ "ADAK_SQL_INTEGER"  OR
+         adak_sql_enum_string EQ "INTEGER") {
+        return ADAK_SQL_INTEGER;
     }
-    else if ( adak_sql_enum_string EQ "TEXT" ) {
-        return TEXT;
+    else if ( adak_sql_enum_string EQ "ADAK_SQL_TEXT" OR
+              adak_sql_enum_string EQ "TEXT") {
+        return ADAK_SQL_TEXT;
     }
-    else if ( adak_sql_enum_string EQ "REAL" ) {
-        return REAL;
+    else if ( adak_sql_enum_string EQ "ADAK_SQL_REAL" OR
+              adak_sql_enum_string EQ "REAL") {
+        return ADAK_SQL_REAL;
     }
-    else if ( adak_sql_enum_string EQ "BLOB" ) {
-        return BLOB;
+    else if ( adak_sql_enum_string EQ "ADAK_SQL_BLOB" OR
+              adak_sql_enum_string EQ "BLOB") {
+        return ADAK_SQL_BLOB;
     }
     else {
         return -1;

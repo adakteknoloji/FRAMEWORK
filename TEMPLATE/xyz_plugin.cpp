@@ -1,4 +1,4 @@
-#include <QtGui>
+#include <QtWidgets>
 #include "adak_sql.h"
 #include "xyz_plugin.h"
 #include "xyz_db.h"

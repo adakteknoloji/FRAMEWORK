@@ -1,7 +1,7 @@
 include (../INCLUDE/adak.pri)
 
-QT         += sql network
-QT         -= gui
+QT        += xml sql network widgets printsupport uiplugin webenginewidgets
+QT        -= gui
 
 TARGET      = UPDATE_DB
 CONFIG     += console

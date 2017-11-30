@@ -1,6 +1,6 @@
 @echo off
 
-set DEST_DIR=\ADAK\FRAMEWORK
+set DEST_DIR=..\FRAMEWORK
 
 
 mkdir %DEST_DIR%

@@ -158,7 +158,7 @@ bool ALANLARI_YAZ ( int tablo_id )
     while ( sql_query.NEXT() EQ true ) {
         file_content += tab(4,"{");
         file_content += "\"" + sql_query.VALUE(0).toString() + "\", ";
-        file_content += sql_query.VALUE(1).toString() + ", ";
+        file_content += GET_ADAK_SQL_ENUM_STRING(GET_ADAK_SQL_ENUM(sql_query.VALUE(1).toString())) + ", ";
         file_content += sql_query.VALUE(2).toString() + ", ";
         if (sql_query.VALUE(3).toInt() EQ 0 ) {
             file_content += QString("false") + ", ";
@@ -236,7 +236,7 @@ bool HEADER_ICIN_INDEX_YAPISI_OLUSTUR (int index_sayisi, int tablo_id )
         if ( i EQ 0 ) {
             QString alan_adi = GET_ALAN_ADI( tablo_id, INDEXLER_ARRAY[i]);
             file_content += tab (4, "{ ");
-            file_content += QString("PRIMARY , 1, {") + "\"" + alan_adi  + "\"" + "}";
+            file_content += QString("ADAK_SQL_PRIMARY , 1, {") + "\"" + alan_adi  + "\"" + "}";
             file_content += " }";
             index_sayisi--;
             if (index_sayisi > 0 ) {
@@ -252,7 +252,7 @@ bool HEADER_ICIN_INDEX_YAPISI_OLUSTUR (int index_sayisi, int tablo_id )
                 }
             }
             file_content += tab (4, "{ ");
-            file_content += "INDEX , " + QVariant(indexteki_kolon_sayisi).toString() + ", { ";
+            file_content += "ADAK_SQL_INDEX , " + QVariant(indexteki_kolon_sayisi).toString() + ", { ";
             for (int j = 0; j < indexteki_kolon_sayisi; j++ ) {
                 QString alan_adi = GET_ALAN_ADI( tablo_id, INDEXLER_ARRAY[i+j]);
                 file_content += "\"" + alan_adi  + "\"" ;

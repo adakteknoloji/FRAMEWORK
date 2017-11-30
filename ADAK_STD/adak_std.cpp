@@ -1,4 +1,4 @@
-#include <QComboBox>
+#include <QtWidgets/QComboBox>
 
 #include "sql_ddl.h"
 #include "adak_std.h"

@@ -1,6 +1,6 @@
 include (../INCLUDE/adak.pri)
-
-QT += sql network webkit
+qtHaveModule(webview)
+QT        += xml sql network widgets printsupport uiplugin webenginewidgets
 TARGET = ADAK_STD
 TEMPLATE = lib
 CONFIG  += static

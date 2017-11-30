@@ -1,8 +1,8 @@
 #ifndef KULLANICI_SECIMI_H
 #define KULLANICI_SECIMI_H
 
-#include <QtGui/QDialog>
-#include <QtGui/QTableWidget>
+#include <QDialog>
+#include <QTableWidget>
 #include "secim_kerneli.h"
 
 class KULLANICI_SECIMI : public SECIM_KERNELI
