@@ -39,7 +39,6 @@ extern ADAK_SQL * G_YONETIM_DB;
 extern ADAK_SQL * DB;
 extern bool       g_auto_login_flag;
 
-
 bool        m_first_db_process = false;
 int         m_veritabani_sayisi = 0;
 static int  m_user_login_status = USER_ON_LOGIN_SCREEN;
@@ -106,7 +105,6 @@ int START_PROGRAM(int argc, char *argv[], USER_LOGIN_INFO_STRUCT *P_USER_INFO, Q
     if (g_auto_login_flag EQ true) {
         P_USER_INFO->is_auto_login = true;
     }
-
     if( P_USER_INFO->is_auto_login EQ true ) {
         SET_USER_LOGIN_STATUS( USER_LOGINNED );
         m_first_db_process = true;
@@ -805,7 +803,6 @@ int LOGIN( USER_LOGIN_INFO_STRUCT *P_USER_INFO)
                 exit (1);
             }
             if ( DB->SQL_TABLES_EXISTS("") EQ false ) {
-
                 yonetici_izni_alindi = YONETICI_IZNI_AL();
                 break;
             }
