@@ -68,5 +68,5 @@ QString QAdakDate_Plugin::includeFile() const
 }
 
 /* 5.8 MACRO GECISI 09.02.2017 BURAK*/
-Q_PLUGIN_METADATA ("com.adak.framework.QAdakDate_Plugin")
+Q_PLUGIN_METADATA (IID "com.adak.framework.QAdakDate_Plugin")
 //Q_EXPORT_PLUGIN2(QAdakDate, QAdakDate_Plugin)

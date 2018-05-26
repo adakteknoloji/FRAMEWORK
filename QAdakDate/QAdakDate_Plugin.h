@@ -6,6 +6,8 @@
 class QAdakDate_Plugin : public QObject, public QDesignerCustomWidgetInterface
 {
         Q_OBJECT
+        /* 5.8 MACRO GECISI 09.02.2017 BURAK*/
+        Q_PLUGIN_METADATA (IID "org.qt-project.Qt.QDesignerCustomWidgetInterface")
         Q_INTERFACES(QDesignerCustomWidgetInterface)
 
 public:
@@ -25,6 +27,8 @@ public:
 private:
         bool        initialized;
 };
+
+
 
 /* 5.8 MACRO GECISI 09.02.2017 BURAK*/
 #define QQAdakDate_Plugin_Plugin_iid "com.adak.framework.QAdakDate_Plugin"

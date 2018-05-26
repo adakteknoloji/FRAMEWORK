@@ -19,3 +19,5 @@ rm -rf TASARIMCI/LNX64
 rm -rf UPDATE_DB/LNX64
 rm -rf UTILS/LNX64
 rm -rf YONETIM/LNX64
+
+rm -f  .qmake.stash */.qmake.stash
