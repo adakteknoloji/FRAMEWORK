@@ -105,10 +105,10 @@ QString VIRGUL_EKLE(const QString &cevrilecek_sayi, int precision, bool eksi_deg
 
     length = cevrilen_sayi.length();
 
-    if (cevrilen_sayi.contains(DECIMAL_SEPERATOR()) > 0 ) {
+    if (cevrilen_sayi.contains(DECIMAL_SEPERATOR()) EQ true ) {
         length = cevrilen_sayi.indexOf(DECIMAL_SEPERATOR());
     }
-    else if (cevrilen_sayi.contains(' ') > 0) {
+    else if (cevrilen_sayi.contains(' ') EQ true) {
         length = cevrilen_sayi.indexOf(' ');
     }
 

@@ -1,6 +1,7 @@
 #ifndef ADAK_BASE_H
 #define ADAK_BASE_H
     #include "adak_defines.h"
+    #include <QString>
 
     #define             NUM_OF_ADAK_PROGRAMS      100
 
@@ -110,28 +111,6 @@
 
     // GONDERMIS OLDUGUNUZ TARIHIN GUN_NO SUNU YANI ARRAY_INDISINI GERI DONDERIR
     int                MALI_YIL_ARRAY_INDIS   ( QDate p_date );
-
-
-
-
-    // ROUND (1234.21 , 1) ==> 1234.2
-    // ROUND (1234.21 , 2) ==> 1234.21
-    // ROUND (1234.21 , 3) ==> 1234.210
-
-    double              ROUND               ( double deger, int precision = 2);
-    double              ROUND_UP            ( double deger, int precision = 2);
-    double              ROUND_DOWN          ( double deger, int precision = 2);
-
-    /* Ornek :
-       a=1.5021
-       b=1.5021
-       c=1.5021 iken
-      
-      
-       ROUND (a+b+c) bize 4.51 
-       ROUND (a) + ROUND (b) + ROUND (c) bize 4.50 verir.
-     
-     */
 
     QString             ADAK_YAZIYLA_YAZ   ( double yazdirilacak_sayi, QString para_birimi = "");
 

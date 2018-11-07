@@ -1,6 +1,6 @@
 #! /bin/bash
 
-DEST_DIR=/ADAK/FRAMEWORK
+DEST_DIR=../FRAMEWORK
 
 
 mkdir -p $DEST_DIR

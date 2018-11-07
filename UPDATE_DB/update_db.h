@@ -2,6 +2,7 @@
 #define UPDATE_DB_H
 
 #include "adak_sql_enums.h"
+#include <QString>
 
 int             FIND_FIRST_INDEX    ( QString current_string                    );
 int             FIND_LAST_INDEX     ( int first_index,  QString current_string  );

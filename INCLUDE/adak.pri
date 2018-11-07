@@ -1,4 +1,14 @@
-CONFIG += qt debug
+CONFIG += qt
+release_mode=$$(ADAK_RELEASE)
+!isEmpty(release_mode) {
+    CONFIG  -= debug
+    CONFIG  += release
+}
+else {
+    CONFIG  += debug
+    CONFIG  -= release
+}
+
 DEFINES += USING_PCH
 OBJ_ext=o
 libADAK=libADAK.a
@@ -36,12 +46,6 @@ win32 {
         }
         DEFINES += LINUX
     }
-}
-
-release_mode=$$(ADAK_RELEASE)
-!isEmpty(release_mode) {
-    CONFIG  -= debug
-    CONFIG  += release
 }
 
 OBJECTS_DIR = $$OBJDIR

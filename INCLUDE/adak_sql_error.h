@@ -1,7 +1,7 @@
 #ifndef ADAK_SQL_ERROR_H
 #define ADAK_SQL_ERROR_H
 
-#include "adak_defines.h"
+#include "adak_utils.h"
 
 class QSqlDatabase;
 class QSqlQuery;
