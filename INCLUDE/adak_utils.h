@@ -20,6 +20,24 @@
     bool                DELETE_FILE        ( const QString& file_path );
 
 
+    // ROUND (1234.21 , 1) ==> 1234.2
+    // ROUND (1234.21 , 2) ==> 1234.21
+    // ROUND (1234.21 , 3) ==> 1234.210
+
+    double              ROUND               ( double deger, int precision = 2);
+    double              ROUND_UP            ( double deger, int precision = 2);
+    double              ROUND_DOWN          ( double deger, int precision = 2);
+
+    /* Ornek :
+       a=1.5021
+       b=1.5021
+       c=1.5021 iken
+
+
+       ROUND (a+b+c) bize 4.51
+       ROUND (a) + ROUND (b) + ROUND (c) bize 4.50 verir.
+
+     */
 
     // malloc ve free yerine MALLOC ve FREE kullanmaliyiz.
     // Bu fonksiyonlar alinan hafizayi tamamen temizliyor
